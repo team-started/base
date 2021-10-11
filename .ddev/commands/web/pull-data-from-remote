@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Pull data (database, filadmin and uploads folder) from remove server
+## Usage: pulldata [args]
+## Example: "ddev pulldata production" or "ddev pulldata stage"
+
+
+/var/www/html/craft/pull-data/pull_from_$@.sh

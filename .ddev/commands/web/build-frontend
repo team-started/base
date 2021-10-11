@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Build the frontend
+## Usage: build-frontend
+## Example: "ddev build-frontend"
+
+cd /var/www/html/app/frontend/ && npm run build:dev:backend

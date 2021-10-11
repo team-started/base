@@ -1,0 +1,13 @@
+{
+	"lang": "de",
+	"markdown": {
+		"typographer": true,
+		"plugins": {
+			"imsize": {},
+			"container-pandoc": {}
+		}
+	},
+	"css": [
+		"docs/assets/css/style.css"
+	]
+}

@@ -1,0 +1,6 @@
+editor:
+  config:
+    ############################################################################
+    # Important: Do not use the minified version here as the cascade seems broken
+    #            at the moment and some list styles would not work in the RTE.
+    contentsCss: "EXT:starter_sitepackage/Resources/Public/Frontend/Css/ckeditor.min.css"
