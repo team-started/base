@@ -1,0 +1,25 @@
+.split-monorepo:template:
+  stage: split-packages
+  image:
+    name: symplify2/monorepo-split:latest
+    entrypoint: [ "/usr/bin/env" ]
+  parallel:
+    matrix:
+      - LOCAL_PATH: "app/backend/packages/starter"
+        SPLIT_REPOSITORY: "team/starter"
+      - LOCAL_PATH: "app/backend/packages/starter_nessa"
+        SPLIT_REPOSITORY: "team/starter-nessa"
+      - LOCAL_PATH: "app/backend/packages/starter_sitepackage"
+        SPLIT_REPOSITORY: "team/starter-sitepackage"
+      - LOCAL_PATH: "app/backend/packages/starter_twig"
+        SPLIT_REPOSITORY: "team/starter-twig"
+  variables:
+    GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+    PACKAGE_DIRECTORY: $LOCAL_PATH
+    REPOSITORY_ORGANIZATION: "starterteam"
+    REPOSITORY_NAME: $SPLIT_REPOSITORY
+    BRANCH: "main"
+    USER_NAME: $GITLAB_USER_NAME
+    USER_EMAIL: $GITLAB_USER_EMAIL
+    REPOSITORY_HOST: "gitlab.com"
+  interruptible: false
