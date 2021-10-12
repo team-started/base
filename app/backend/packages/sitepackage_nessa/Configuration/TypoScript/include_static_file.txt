@@ -1,0 +1,3 @@
+EXT:starter/Configuration/TypoScript/,
+EXT:starter_sitepackage/Configuration/TypoScript/,
+EXT:starter_nessa/Configuration/TypoScript/

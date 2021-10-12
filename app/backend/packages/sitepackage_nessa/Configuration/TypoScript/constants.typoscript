@@ -1,0 +1,33 @@
+starter {
+  config {
+    headerComment = StarterTeam
+  }
+
+  paths {
+    #pathToPrivate = EXT:customer_sitepackage/Resources/Private/
+    #pathToPublic = EXT:customer_sitepackage/Resources/Public/
+
+    #defaultTemplateName = {$tx_startertwig.pageFolderName}/l-default.twig
+  }
+
+  branch {
+    title =
+
+    images {
+      #favicon = {$starter.paths.pathToPublic}Frontend/images/favicon.png
+      #logo = {$starter.paths.pathToPublic}images/logo.svg
+    }
+  }
+
+  tracking {
+    disableAtBackendLogin = 1
+
+    google {
+      tagManagerID =
+    }
+
+    cookieBot {
+      id =
+    }
+  }
+}
