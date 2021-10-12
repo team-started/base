@@ -89,23 +89,8 @@ return [
         'content_defender' => [
             'packagePath' => 'typo3conf/ext/content_defender/',
         ],
-        'starter_sitepackage' => [
-            'packagePath' => 'typo3conf/ext/starter_sitepackage/',
-        ],
-        'starter' => [
-            'packagePath' => 'typo3conf/ext/starter/',
-        ],
         'pti' => [
             'packagePath' => 'typo3conf/ext/pti/',
-        ],
-        'starter_twig' => [
-            'packagePath' => 'typo3conf/ext/starter_twig/',
-        ],
-        'starter_nessa' => [
-            'packagePath' => 'typo3conf/ext/starter_nessa/',
-        ],
-        'customer_sitepackage' => [
-            'packagePath' => 'typo3conf/ext/customer_sitepackage/',
         ],
     ],
     'version' => 5,
