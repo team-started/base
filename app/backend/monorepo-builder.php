@@ -29,12 +29,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             [
                 'type' => 'path',
                 'url' => './packages/*'
-            ],
-            [
-                'type' => 'vcs',
-                'url' => 'git@gitlab.com:starterteam/team/base.git',
-                'canonical' => true
-            ],
+            ]
         ],
         ComposerJsonSection::REQUIRE_DEV => [
             'phpunit/phpunit' => '^9.5',

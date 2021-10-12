@@ -68,11 +68,6 @@
         {
             "type": "path",
             "url": "./packages/*"
-        },
-        {
-            "canonical": true,
-            "type": "vcs",
-            "url": "git@gitlab.com:starterteam/team/base.git"
         }
     ],
     "extra": {
