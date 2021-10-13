@@ -40,6 +40,8 @@ class ProjectSetup
 
         // Result-path => template
         $this->templates = [
+            '.build/.gitlab-ci.basic-example.yml' => '.build/.gitlab-ci.basic-example.yml',
+            '.build/.gitlab-ci.fractal-example.yml' => '.build/.gitlab-ci.fractal-example.yml',
             '.ddev/config.yaml' => '.ddev/config.yaml',
             'craft/bin/config.sh' => 'craft/bin/config.sh',
             'app/backend/composer.json' => 'app/backend/composer.json',

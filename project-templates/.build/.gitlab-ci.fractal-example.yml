@@ -1,0 +1,111 @@
+include:
+  - local: '/.build/ci/templates/deployTemplate.yml'
+  - local: '/.build/ci/templates/containerTemplate.yml'
+  #- local: '/.build/ci/linting-backend.yml'
+  #- local: '/.build/ci/linting-frontend.yml'
+
+#workflow:
+#  rules:
+#    - if: '$CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS'
+#      when: never # Do not run branch (push) pipelines when an MR is open on the branch
+#    - when: always # Run all other pipeline types, or replace with specific workflow rule
+
+stages:
+  - devops-build
+  - build
+  - deploy
+
+cache:
+  # each branch always use the same cache
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .cache/.npm/
+    - app/frontend/node_modules/
+    - app/backend/vendor/
+
+variables:
+  APP_PUBLIC_DIRECTORY: 'public'
+  DEPLOYMENT_PHP_BINARY: "$PHP_BINARY"
+  # Tell composer to save and load it's cache within the .cache folder
+  NODE_CACHE_DIR: "$CI_PROJECT_DIR/.cache/node_modules"
+  COMPOSER_CACHE_DIR: "$CI_PROJECT_DIR/.cache/composer"
+  SURF_WORKSPACE: "$CI_PROJECT_DIR/.caches/surf_workspace"
+
+
+####
+# build needed docker container
+####
+build:deploy-container:
+  extends: .build-container:template
+  variables:
+    DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:deploy
+    DOCKER_IMAGE_PATH: ./.build/docker/deploy/
+
+build:frontend-lint-container:
+  extends: .build-container:template
+  variables:
+    DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:frontend
+    DOCKER_IMAGE_PATH: ./.build/docker/lint-frontend/
+
+build:backend-lint-container:
+  extends: .build-container:template
+  variables:
+    DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:backend
+    DOCKER_IMAGE_PATH: ./.build/docker/lint-backend/
+
+
+####
+# Build frontend assets and deploy app
+####
+build:frontend:
+  image: $CI_REGISTRY_IMAGE:frontend
+  stage: build
+  before_script:
+    - cd ./app/frontend
+    - npm ci --cache .cache/.npm --prefer-offline
+  script:
+    - echo "Build frontend for $CI_COMMIT_SHA"
+    # compile JS and Scss
+    - npm run build:dev:backend
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+  artifacts:
+    expire_in: 1h
+    paths:
+      - .cache/.npm/_logs
+      - app/frontend/build
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_BRANCH == "staging"'
+      when: always
+
+deploy:staging:
+  extends: .deploy-app:template
+  dependencies:
+    - build:frontend
+  environment:
+    name: staging
+    url: https://staging.example.com
+  variables:
+    APP_CONTEXT: 'Production/Staging'
+    DEPLOYMENT_SOURCE: 'sha1:$CI_COMMIT_SHA'
+    DEPLOYMENT_KEEP_RELEASES: '1'
+    DEPLOYMENT_TASKS: 'fixAccessRightsTask,fixFolderStructureTask,copyFractalArtifactsTask,copyTwigDataToSitepackageTask'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "staging"'
+      when: manual
+
+deploy:prod:
+  extends: .deploy-app:template
+  dependencies:
+    - build:frontend
+  environment:
+    name: production
+    url: https://www.example.com
+  variables:
+    APP_CONTEXT: 'Production'
+    DEPLOYMENT_SOURCE: 'sha1:$CI_COMMIT_SHA'
+    DEPLOYMENT_KEEP_RELEASES: '3'
+    DEPLOYMENT_TASKS: 'fixAccessRightsTask,fixFolderStructureTask,copyTwigDataToSitepackageTask'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual

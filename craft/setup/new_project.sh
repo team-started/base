@@ -72,6 +72,10 @@ mkdir "$BUILD_DIR/"app/backend/public/typo3conf/ext || exit 1
 echo -e "creating copy..."
 rsync $SOURCE_DIR/.editorconfig $SOURCE_DIR/.gitattributes $SOURCE_DIR/.gitignore $BUILD_DIR
 
+###
+# Sync gitlab-ci files and exclude customized pipeline
+###
+rsync -r $SOURCE_DIR/.build $BUILD_DIR --exclude .gitlab-ci.yml
 rsync -r $SOURCE_DIR/.ddev $BUILD_DIR
 
 rsync $SOURCE_DIR/craft/data/.gitkeep $BUILD_DIR/craft/data/.gitkeep
