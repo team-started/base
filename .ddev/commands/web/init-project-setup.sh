@@ -2,8 +2,8 @@
 
 ## Description: Please use "ddev setup project instead!"
 ## Usage: init-project name secret
-## NOTE: This script exists so we can run code inside the ddev container!
 
+# This script exists so we can run code inside the ddev container!
 # at least two arguments are required
 if [ "$#" -lt 2 ]; then
   echo "please use 'ddev setup project' - this is just a wrapper command!"

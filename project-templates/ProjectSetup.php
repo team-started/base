@@ -34,6 +34,7 @@ class ProjectSetup
             $this->log("Please provide the project name as the first parameter!");
             exit(1);
         }
+
         $this->projectName = $args[1];
         $this->version = $args[2];
         $this->buildDir = '/var/www/html/_build/';
@@ -90,14 +91,7 @@ class ProjectSetup
 
             $destFolder = dirname($destPath);
             if (!is_dir($destFolder)) {
-                $this->log("Create folder '$destFolder'");
                 mkdir($destFolder, 0777, true);
-            }
-
-            if (file_exists($destPath)) {
-                $this->log("Overwriting file '$destPath'");
-            } else {
-                $this->log("Writing file '$destPath'");
             }
 
             $content = file_get_contents($srcPath);

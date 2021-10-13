@@ -17,10 +17,10 @@
 # NOTE: Now all uses of `sed`, `readlink`, `zcat`, etc. will refer to their GNU implementation in your script below.
 # NOTE: In order to use the original implementation for Mac OS X again you'd have to do `unalias ...` (as in line 7 above).
 
-GREEN="\e[0;32m"
-YELLOW="\e[0;33m"
-RED="\e[0;31m"
-NO_COLOR="\e[0;0m"
+GREEN="\033[0;32m"
+YELLOW="\033[0;33m"
+RED="\033[0;31m"
+NO_COLOR="\033[0;0m"
 
 if [ "$SSH_KEYS" = "The agent has no identities." ]; then
   echo ""
@@ -69,42 +69,69 @@ mkdir -p "$BUILD_DIR/"{app/backend/{packages,public,var,vendor},app/frontend,app
 mkdir "$BUILD_DIR/"app/backend/public/typo3conf || exit 1
 mkdir "$BUILD_DIR/"app/backend/public/typo3conf/ext || exit 1
 
-echo -e "creating copy..."
+echo -e "${YELLOW}Copy required files and folders...${NO_COLOR}"
+
+###
+# Sync basic files in root
+###
 rsync $SOURCE_DIR/.editorconfig $SOURCE_DIR/.gitattributes $SOURCE_DIR/.gitignore $BUILD_DIR
 
 ###
 # Sync gitlab-ci files and exclude customized pipeline
 ###
 rsync -r $SOURCE_DIR/.build $BUILD_DIR --exclude .gitlab-ci.yml
-rsync -r $SOURCE_DIR/.ddev $BUILD_DIR
 
+###
+# Sync DDEV files
+###
+rsync -r $SOURCE_DIR/.ddev $BUILD_DIR \
+  --exclude .ddev-docker-compose-base.yaml \
+  --exclude .ddev-docker-compose-full.yaml \
+  --exclude setup.sh \
+  --exclude init-project-setup.sh
+
+###
+# Sync craft folder
+###
 rsync $SOURCE_DIR/craft/data/.gitkeep $BUILD_DIR/craft/data/.gitkeep
-rsync -rl $SOURCE_DIR/app/backend/config\
-          $SOURCE_DIR/app/backend/.gitignore\
-    $BUILD_DIR/app/backend/
 
+###
+# Sync basic files and folders for backend
+###
+rsync -r $SOURCE_DIR/app/backend/config \
+  $SOURCE_DIR/app/backend/.gitignore \
+  $BUILD_DIR/app/backend/
+
+###
+# Sync TYPO3 specific files
+###
 rsync $SOURCE_DIR/app/backend/public/.htaccess $BUILD_DIR/app/backend/public/.htaccess
 rsync $SOURCE_DIR/app/backend/public/typo3conf/.gitignore $BUILD_DIR/app/backend/public/typo3conf/.gitignore
 rsync $SOURCE_DIR/app/backend/public/typo3conf/AdditionalConfiguration.php $BUILD_DIR/app/backend/public/typo3conf/AdditionalConfiguration.php
 rsync $SOURCE_DIR/app/backend/public/typo3conf/LocalConfiguration.php $BUILD_DIR/app/backend/public/typo3conf/LocalConfiguration.php
+
+###
+# Sync CustomerSitepackage recursive
+###
 rsync -r $SOURCE_DIR/app/backend/packages/customer_sitepackage $BUILD_DIR/app/backend/packages
 
+###
+# Sync Surf app without documentation folder
+###
 rsync -r $SOURCE_DIR/.surf $BUILD_DIR --exclude documentation/
 
 #rsync -rl $SOURCE_DIR/app/frontend/extensions\
 #          $SOURCE_DIR/app/frontend/project\
 #    $BUILD_DIR/app/frontend/
 
-#rsync -r $SOURCE_DIR/test $BUILD_DIR
-
 # wrapping the command here to run PHP inside the container!
 # (replacing variables in files is easier in PHP)
 ddev init-project "$PROJECT_NAME" "$VERSION"
 
-echo -e "Finishing..."
-cd $BUILD_DIR && git init && git checkout --quiet -b main && git add . && git commit -m "[init] project @ $VERSION"
+echo "${YELLOW}Initialize project '$PROJECT_NAME' with git${NO_COLOR}"
+cd $BUILD_DIR && git init --quiet && git checkout --quiet -b main && git add . && git commit -m "[init] project @ $VERSION"
 cd $SCRIPT_DIR
 mv $BUILD_DIR $TARGET_DIR
 
 echo -e "${GREEN}DONE${NO_COLOR}"
-echo -e "Go to your project: ${GREEN}cd ../$PROJECT_NAME${NO_COLOR}"
+echo -e "Go to your project with: ${GREEN}cd ../$PROJECT_NAME${NO_COLOR}"
