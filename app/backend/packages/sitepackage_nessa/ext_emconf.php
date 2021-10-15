@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['sitepackage_nessa'] = [
     'title' => 'StarterTeam sitepackage nessa',
     'description' => 'StarterTeam sitepackage extension for EXT:starter-nessa',
     'category' => 'distribution',

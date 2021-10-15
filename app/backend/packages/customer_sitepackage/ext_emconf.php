@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['customer_sitepackage'] = [
     'title' => 'StarterTeam basic sitepackage',
     'description' => 'StarterTeam basic sitepackage extension',
     'category' => 'distribution',
