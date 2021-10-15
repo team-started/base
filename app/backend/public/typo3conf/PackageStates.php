@@ -95,6 +95,12 @@ return [
         'starter_sitepackage' => [
             'packagePath' => 'typo3conf/ext/starter_sitepackage/',
         ],
+        'starter_nessa' => [
+            'packagePath' => 'typo3conf/ext/starter_nessa/',
+        ],
+        'sitepackage_nessa' => [
+            'packagePath' => 'typo3conf/ext/sitepackage_nessa/',
+        ],
         'pti' => [
             'packagePath' => 'typo3conf/ext/pti/',
         ],
@@ -103,9 +109,6 @@ return [
         ],
         'customer_sitepackage' => [
             'packagePath' => 'typo3conf/ext/customer_sitepackage/',
-        ],
-        'starter_nessa' => [
-            'packagePath' => 'typo3conf/ext/starter_nessa/',
         ],
     ],
     'version' => 5,

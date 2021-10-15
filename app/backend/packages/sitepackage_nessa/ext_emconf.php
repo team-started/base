@@ -11,7 +11,7 @@ $EM_CONF[$_EXTKEY] = [
             'typo3' => '10.4.0-10.4.99',
             'starter' => '*',
             'starter_sitepackage' => '*',
-            'starter-nessa' => '*'
+            'starter_nessa' => '*'
         ],
         'conflicts' => [
             'css_styled_content' => '*'

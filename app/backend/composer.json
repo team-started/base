@@ -75,6 +75,7 @@
             "extension-key": [
                 "starter_twig",
                 "starter_nessa",
+                "sitepackage_nessa",
                 "customer_sitepackage",
                 "starter_sitepackage",
                 "starter"
@@ -104,6 +105,7 @@
     },
     "replace": {
         "starterteam/customer-site-package": "self.version",
+        "starterteam/site-package-nessa": "self.version",
         "starterteam/starter": "self.version",
         "starterteam/starter-nessa": "self.version",
         "starterteam/starter-sitepackage": "self.version",
