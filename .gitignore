@@ -17,5 +17,7 @@ Thumbs.db
 
 node_modules
 
+_build
+
 /craft/data/*
 !/craft/data/.gitkeep
