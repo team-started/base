@@ -9,7 +9,7 @@
 		unalias readlink sed zcat
 		alias readlink=greadlink sed=gsed zcat=gzcat
 	} || {
-		echo 'ERROR: GNU utils required for Mac. You may use homebrew to install them: brew install coreutils gnu-sed'
+		echo '[ERROR] GNU utils required for Mac. You may use homebrew to install them: brew install coreutils gnu-sed'
 		exit 1
 	}
 }
@@ -24,7 +24,7 @@ NO_COLOR="\033[0;0m"
 
 if [ "$SSH_KEYS" = "The agent has no identities." ]; then
   echo ""
-  echo -e "${RED}Error: no SSH key"
+  echo -e "${RED}[ERROR] No SSH key"
   echo -e "${NO_COLOR}use ${YELLOW}ddev auth ssh${NO_COLOR} to add your key"
   exit 1
 fi
@@ -34,7 +34,7 @@ PROJECT_NAME="$(echo -e "${PROJECT_NAME}" | tr -d '[:space:]')"
 
 case $PROJECT_NAME in
     starterteam-base)
-      echo -e "${RED}The project name is reserved by StarterTeam. Please use another project name.${NO_COLOR}"
+      echo -e "${RED}[ERROR] The project name is reserved by StarterTeam. Please use another project name.${NO_COLOR}"
       exit 1
 	;;
     help)
@@ -55,21 +55,21 @@ TARGET_DIR="$SCRIPT_DIR/../../../$PROJECT_NAME"
 VERSION=$(git tag --sort=-v:refname | head -1)
 
 if [ -e "$TARGET_DIR" ]; then
-    echo -e "${RED}$TARGET_DIR already exists!${NO_COLOR}"
+    echo -e "${RED}[ERROR] Project '$PROJECT_NAME' already exists!${NO_COLOR}"
     exit 1;
 fi
 
 if [ -e "$BUILD_DIR" ]; then
-    echo -e "${RED}$BUILD_DIR already exists! (just delete it?)${NO_COLOR}"
+    echo -e "${RED}[ERROR] Directory $BUILD_DIR already exists! (just delete it?)${NO_COLOR}"
     exit 1;
 fi
 
-echo "${GREEN}Project setup${NO_COLOR} \"${YELLOW}$PROJECT_NAME${NO_COLOR}\" from starterteam-base \"$VERSION\""
-mkdir -p "$BUILD_DIR/"{app/backend/{packages,public,var,vendor},app/frontend,app/craft/data} || exit 1
+echo -e "${YELLOW}Project setup${NO_COLOR} \"${GREEN}$PROJECT_NAME${NO_COLOR}\" ${YELLOW}from starterteam-base ${NO_COLOR}${GREEN}\"$VERSION\"${NO_COLOR}"
+mkdir -p "$BUILD_DIR/"{app/backend/{packages,public},app/frontend,craft/data} || exit 1
 mkdir "$BUILD_DIR/"app/backend/public/typo3conf || exit 1
 mkdir "$BUILD_DIR/"app/backend/public/typo3conf/ext || exit 1
 
-echo -e "${YELLOW}Copy required files and folders...${NO_COLOR}"
+echo -e "${YELLOW}Copy required files and folders ...${NO_COLOR}"
 
 ###
 # Sync basic files in root
@@ -124,12 +124,23 @@ rsync -r $SOURCE_DIR/.surf $BUILD_DIR --exclude documentation/
 #          $SOURCE_DIR/app/frontend/project\
 #    $BUILD_DIR/app/frontend/
 
+###
+# Sync project template files
+###
+rsync -r $SOURCE_DIR/project-templates/ $BUILD_DIR --exclude ProjectSetup.php
+
+echo -e "${YELLOW}Set project name and version in new project ...${NO_COLOR}"
 # wrapping the command here to run PHP inside the container!
 # (replacing variables in files is easier in PHP)
 ddev init-project "$PROJECT_NAME" "$VERSION"
 
-echo "${YELLOW}Initialize project '$PROJECT_NAME' with git${NO_COLOR}"
-cd $BUILD_DIR && git init --quiet && git checkout --quiet -b main && git add . && git commit -m "[init] project @ $VERSION"
+echo -e "${YELLOW}Initialize project '$PROJECT_NAME' with git ...${NO_COLOR}"
+cd $BUILD_DIR && \
+  git init --quiet && \
+  git checkout --quiet -b main && \
+  git add . -A >> /dev/null && \
+  git commit -m "[init] project @$VERSION" >> /dev/null
+
 cd $SCRIPT_DIR
 mv $BUILD_DIR $TARGET_DIR
 
