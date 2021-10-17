@@ -11,4 +11,4 @@ if [ "$#" -lt 2 ]; then
 fi
 
 # do the heavy lifting in PHP:
-./../project-templates/ProjectSetup.php "$@"
+./../../project-templates/ProjectSetup.php "$@"
