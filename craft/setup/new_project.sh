@@ -49,10 +49,12 @@ esac;
 
 
 SCRIPT_DIR="$(dirname "$(greadlink -f "$0")")"
-SOURCE_DIR="$SCRIPT_DIR/../.."
-BUILD_DIR="$SCRIPT_DIR/../../_build"
-TARGET_DIR="$SCRIPT_DIR/../../../$PROJECT_NAME"
-VERSION=$(git tag --sort=-v:refname | head -1)
+BASE_CRAFT_DIRECTOR="$(dirname "$(greadlink -f "$SCRIPT_DIR")")"
+
+SOURCE_DIR="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")"
+BUILD_DIR="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/_build"
+PROJECT_TEMPLATES_DIRECTORY="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/project-templates"
+NEW_PROJECT_DIR="../$PROJECT_NAME"
 
 if [ -e "$TARGET_DIR" ]; then
     echo -e "${RED}[ERROR] Project '$PROJECT_NAME' already exists!${NO_COLOR}"
@@ -85,6 +87,7 @@ rsync -r $SOURCE_DIR/.build $BUILD_DIR --exclude .gitlab-ci.yml
 # Sync DDEV files
 ###
 rsync -r $SOURCE_DIR/.ddev $BUILD_DIR \
+  --exclude .config.yaml \
   --exclude .ddev-docker-compose-base.yaml \
   --exclude .ddev-docker-compose-full.yaml \
   --exclude setup.sh \
@@ -93,6 +96,7 @@ rsync -r $SOURCE_DIR/.ddev $BUILD_DIR \
 ###
 # Sync craft folder
 ###
+rsync -r $SOURCE_DIR/craft $BUILD_DIR --exclude config.sh --exclude data --exclude setup
 rsync $SOURCE_DIR/craft/data/.gitkeep $BUILD_DIR/craft/data/.gitkeep
 
 ###
@@ -127,13 +131,16 @@ rsync -r $SOURCE_DIR/.surf $BUILD_DIR --exclude documentation/
 ###
 # Sync project template files
 ###
-rsync -r $SOURCE_DIR/project-templates/ $BUILD_DIR --exclude ProjectSetup.php
+rsync -r $PROJECT_TEMPLATES_DIRECTORY/ $BUILD_DIR --exclude ProjectSetup.php
 
 echo -e "${YELLOW}Set project name and version in new project ...${NO_COLOR}"
 # wrapping the command here to run PHP inside the container!
 # (replacing variables in files is easier in PHP)
 ddev init-project "$PROJECT_NAME" "$VERSION"
 
+###
+# Initialize new project with and move folder outside of current project
+###
 echo -e "${YELLOW}Initialize project '$PROJECT_NAME' with git ...${NO_COLOR}"
 cd $BUILD_DIR && \
   git init --quiet && \
@@ -141,8 +148,8 @@ cd $BUILD_DIR && \
   git add . -A >> /dev/null && \
   git commit -m "[init] project @$VERSION" >> /dev/null
 
-cd $SCRIPT_DIR
-mv $BUILD_DIR $TARGET_DIR
+cd $SOURCE_DIR
+mv $BUILD_DIR $NEW_PROJECT_DIR
 
 echo -e "${GREEN}DONE${NO_COLOR}"
 echo -e "Go to your project with: ${GREEN}cd ../$PROJECT_NAME${NO_COLOR}"

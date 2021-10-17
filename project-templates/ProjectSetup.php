@@ -1,5 +1,7 @@
 #!/usr/bin/php
 <?php
+declare(strict_types=1);
+
 /***************************************************************
  *  Copyright notice
  *
@@ -21,12 +23,12 @@
  */
 class ProjectSetup
 {
-    protected $projectName;
-    protected $version;
-    protected $buildDir;
-    protected $templates = [];
-    protected $replacements = [];
-    protected $variables = [];
+    protected string $projectName;
+    protected string $version;
+    protected string $buildDir;
+    protected array $templates = [];
+    protected array $replacements = [];
+    protected array $variables = [];
 
     public function __construct($args)
     {
@@ -41,10 +43,6 @@ class ProjectSetup
 
         // Result-path => template
         $this->templates = [
-            '.build/.gitlab-ci.basic-example.yml' => '.build/.gitlab-ci.basic-example.yml',
-            '.build/.gitlab-ci.fractal-example.yml' => '.build/.gitlab-ci.fractal-example.yml',
-            '.ddev/config.yaml' => '.ddev/config.yaml',
-            'craft/bin/config.sh' => 'craft/bin/config.sh',
             'app/backend/composer.json' => 'app/backend/composer.json',
         ];
 
@@ -61,7 +59,6 @@ class ProjectSetup
      */
     public function run()
     {
-        $this->log("ProjectSetup.php '{$this->projectName}'");
         $this->initVariables();
         $this->createFromTemplates();
         $this->replaceInFiles();
@@ -84,7 +81,6 @@ class ProjectSetup
      */
     protected function createFromTemplates()
     {
-        $this->log("\nCreating files from Templates");
         foreach ($this->templates as $dest => $src) {
             $destPath = $this->buildDir . $dest;
             $srcPath = __DIR__ . '/' . $src;
@@ -96,7 +92,11 @@ class ProjectSetup
 
             $content = file_get_contents($srcPath);
             $content = str_replace(array_keys($this->variables), array_values($this->variables), $content);
-            file_put_contents($destPath, $content);
+            $fileCreated = file_put_contents($destPath, $content);
+
+            if (!$fileCreated || !file_exists($srcPath)) {
+                $this->log('[ERROR] file not created ' . $destPath);
+            }
         }
     }
 
@@ -106,7 +106,6 @@ class ProjectSetup
     protected function replaceInFiles()
     {
         foreach ($this->replacements as $replacement) {
-
             $searchValues = array_keys($replacement['replace']);
             $replaceValues = array_values($replacement['replace']);
             $replaceValues = str_replace(array_keys($this->variables), array_values($this->variables), $replaceValues);
