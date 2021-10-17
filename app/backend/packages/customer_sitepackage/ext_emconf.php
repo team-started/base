@@ -13,8 +13,11 @@ $EM_CONF['customer_sitepackage'] = [
             'starter_sitepackage' => '*',
         ],
         'conflicts' => [
-            'css_styled_content' => '*'
+            'css_styled_content' => '*',
         ],
-        'suggests' => [],
+        'suggests' => [
+            'starter_twig' => '*',
+            'starter_nessa' => '*',
+        ],
     ]
 ];
