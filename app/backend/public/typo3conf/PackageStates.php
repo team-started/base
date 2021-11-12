@@ -95,20 +95,20 @@ return [
         'starter_sitepackage' => [
             'packagePath' => 'typo3conf/ext/starter_sitepackage/',
         ],
-        'starter_nessa' => [
-            'packagePath' => 'typo3conf/ext/starter_nessa/',
-        ],
-        'sitepackage_nessa' => [
-            'packagePath' => 'typo3conf/ext/sitepackage_nessa/',
-        ],
         'pti' => [
             'packagePath' => 'typo3conf/ext/pti/',
         ],
         'starter_twig' => [
             'packagePath' => 'typo3conf/ext/starter_twig/',
         ],
+        'starter_nessa' => [
+            'packagePath' => 'typo3conf/ext/starter_nessa/',
+        ],
         'customer_sitepackage' => [
             'packagePath' => 'typo3conf/ext/customer_sitepackage/',
+        ],
+        'sitepackage_nessa' => [
+            'packagePath' => 'typo3conf/ext/sitepackage_nessa/',
         ],
     ],
     'version' => 5,
