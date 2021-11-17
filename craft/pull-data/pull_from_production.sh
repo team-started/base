@@ -11,7 +11,8 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 
 . "$SCRIPT_DIR/../config/config.sh"
 
-# NOW=$(date --rfc-3339=seconds)
+DB_CONFIG_FILE="${SCRIPT_DIR}/../config/database.config"
+
 FILENAME_SQL=database_production.sql
 
 # REMOTE
@@ -27,26 +28,14 @@ REMOTE_PATH=$REMOTE_PRODUCTION_PATH
 REMOTE_DATA_PATH=$REMOTE_PRODUCTION_DATA_PATH
 
 # Exclude remote tables
-DUMP_OPTS=""
-DUMP_OPTS=$DUMP_OPTS" --exclude be_sessions"
-DUMP_OPTS=$DUMP_OPTS" --exclude sys_template"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_hash"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_hash_tags"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_imagesizes"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_imagesizes_tags"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_pages"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_pagesection"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_pagesection_tags"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_pages_tags"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_rootline"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_rootline_tags"
-DUMP_OPTS=$DUMP_OPTS" --exclude cache_treelist"
-DUMP_OPTS=$DUMP_OPTS" --exclude fe_sessions"
-DUMP_OPTS=$DUMP_OPTS" --exclude sys_file_processedfile"
-DUMP_OPTS=$DUMP_OPTS" --exclude sys_history"
-DUMP_OPTS=$DUMP_OPTS" --exclude sys_lockedrecords"
-DUMP_OPTS=$DUMP_OPTS" --exclude sys_log"
-DUMP_OPTS=$DUMP_OPTS" --exclude sys_refindex"
+DUMP_OPTS=
+for line in `cat ${DB_DIR}/${DB_BACKUP_CONFIG_FILE}`;do
+	IFS=';' read -a array <<< "$line"
+	if [[ "${array[1]}" == "no_data" ]]
+		then
+			DUMP_OPTS=$DUMP_OPTS" --exclude "${array[0]}
+	fi
+done
 
 if [[ ${IGNORE_BE_USER_DSGVO} -eq 0 ]]
     then
