@@ -9,7 +9,7 @@
 # directory this script is in
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 
-. "$SCRIPT_DIR/../bin/config.sh"
+. "$SCRIPT_DIR/../config/config.sh"
 
 # NOW=$(date --rfc-3339=seconds)
 FILENAME_SQL=database_staging.sql
