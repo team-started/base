@@ -56,7 +56,10 @@ BUILD_DIR="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/_build"
 PROJECT_TEMPLATES_DIRECTORY="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/project-templates"
 NEW_PROJECT_DIR="../$PROJECT_NAME"
 
-if [ -e "$TARGET_DIR" ]; then
+#VERSION=$(git tag --sort=-v:refname | head -1)
+VERSION=3.0.0
+
+if [ -e "$NEW_PROJECT_DIR" ]; then
     echo -e "${RED}[ERROR] Project '$PROJECT_NAME' already exists!${NO_COLOR}"
     exit 1;
 fi
@@ -104,6 +107,7 @@ rsync $SOURCE_DIR/craft/data/.gitkeep $BUILD_DIR/craft/data/.gitkeep
 ###
 rsync -r $SOURCE_DIR/app/backend/config \
   $SOURCE_DIR/app/backend/.gitignore \
+  $SOURCE_DIR/app/backend/.php-cs-fixer.php \
   $BUILD_DIR/app/backend/
 
 ###

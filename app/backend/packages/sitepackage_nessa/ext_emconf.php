@@ -11,11 +11,11 @@ $EM_CONF['sitepackage_nessa'] = [
             'typo3' => '10.4.0-10.4.99',
             'starter' => '*',
             'starter_sitepackage' => '*',
-            'starter_nessa' => '*'
+            'starter_nessa' => '*',
         ],
         'conflicts' => [
-            'css_styled_content' => '*'
+            'css_styled_content' => '*',
         ],
         'suggests' => [],
-    ]
+    ],
 ];

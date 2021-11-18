@@ -12,6 +12,7 @@ msi.iws
 .Trashes
 ehthumbs.db
 Thumbs.db
+.php-cs-fixer.cache
 
 /public/*
 !/public/.htaccess

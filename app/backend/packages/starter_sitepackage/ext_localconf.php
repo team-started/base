@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 foreach (['default', 'minimal', 'link' ] as $variant) {

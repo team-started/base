@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Run PHP-CS-Fixer in packages folder
+## Usage: php-fix-code
+## Example: "ddev php-fix-code"
+
+cd /var/www/html/app/backend/
+
+php ./vendor/bin/php-cs-fixer fix --diff

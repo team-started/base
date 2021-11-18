@@ -12,8 +12,8 @@ $EM_CONF['starter_sitepackage'] = [
             'starter' => '3.0.0-3.99.99',
         ],
         'conflicts' => [
-            'css_styled_content' => '*'
+            'css_styled_content' => '*',
         ],
         'suggests' => [],
-    ]
+    ],
 ];

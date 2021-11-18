@@ -19,5 +19,5 @@ $EM_CONF['customer_sitepackage'] = [
             'starter_twig' => '*',
             'starter_nessa' => '*',
         ],
-    ]
+    ],
 ];
