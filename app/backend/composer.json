@@ -86,6 +86,15 @@
     ],
     "extra": {
         "typo3/cms": {
+			"extension-key": [
+				"customer_sitepackage",
+				"sitepackage_nessa",
+				"starter",
+				"starter_freya",
+				"starter_nessa",
+				"starter_sitepackage",
+				"starter_twig"
+			],
 			"cms-package-dir": "{$vendor-dir}/typo3/cms"
         },
 		"enable-patching": true,
@@ -126,6 +135,15 @@
         "post-update-cmd": [
             "@create-symlinks"
         ]
+    },
+    "replace": {
+        "starterteam/customer-site-package": "self.version",
+        "starterteam/site-package-nessa": "self.version",
+        "starterteam/starter": "self.version",
+        "starterteam/starter-freya": "self.version",
+        "starterteam/starter-nessa": "self.version",
+        "starterteam/starter-sitepackage": "self.version",
+        "starterteam/starter-twig": "self.version"
     },
 	"minimum-stability": "dev",
 	"prefer-stable": true

@@ -20,8 +20,6 @@ Thumbs.db
 /.eslintcache
 /developer.config.js
 
-.DS_Store
-
 # local env files
 .env
 .env.local
