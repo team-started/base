@@ -7,6 +7,8 @@
     matrix:
       - LOCAL_PATH: "app/backend/packages/starter"
         SPLIT_REPOSITORY: "team/starter"
+      - LOCAL_PATH: "app/backend/packages/starter_freya"
+        SPLIT_REPOSITORY: "team/starter-freya"
       - LOCAL_PATH: "app/backend/packages/starter_nessa"
         SPLIT_REPOSITORY: "team/starter-nessa"
       - LOCAL_PATH: "app/backend/packages/starter_sitepackage"

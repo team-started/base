@@ -60,6 +60,7 @@
     },
     "autoload": {
         "psr-4": {
+            "StarterTeam\\StarterFreya\\": "packages/starter_freya/Classes",
             "StarterTeam\\StarterNessa\\": "packages/starter_nessa/Classes",
             "StarterTeam\\StarterTwig\\": "packages/starter_twig/Classes",
             "StarterTeam\\Starter\\": "packages/starter/Classes"
@@ -74,12 +75,13 @@
     "extra": {
         "typo3/cms": {
             "extension-key": [
-                "starter_twig",
-                "starter_nessa",
-                "sitepackage_nessa",
                 "customer_sitepackage",
+                "sitepackage_nessa",
+                "starter",
+                "starter_freya",
+                "starter_nessa",
                 "starter_sitepackage",
-                "starter"
+                "starter_twig"
             ],
             "cms-package-dir": "{$vendor-dir}/typo3/cms"
         }
@@ -97,6 +99,10 @@
             "ext-xmlwriter": "1",
             "ext-json": "1",
             "ext-gd": "1"
+        },
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
         }
     },
     "scripts": {
@@ -108,6 +114,7 @@
         "starterteam/customer-site-package": "self.version",
         "starterteam/site-package-nessa": "self.version",
         "starterteam/starter": "self.version",
+        "starterteam/starter-freya": "self.version",
         "starterteam/starter-nessa": "self.version",
         "starterteam/starter-sitepackage": "self.version",
         "starterteam/starter-twig": "self.version"
