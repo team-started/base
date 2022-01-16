@@ -97,6 +97,10 @@
             "ext-xmlwriter": "1",
             "ext-json": "1",
             "ext-gd": "1"
+        },
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
         }
     },
     "scripts": {
