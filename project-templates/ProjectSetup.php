@@ -1,5 +1,6 @@
 #!/usr/bin/php
 <?php
+
 declare(strict_types=1);
 
 /***************************************************************
@@ -19,7 +20,6 @@ declare(strict_types=1);
  *
  * - Overwrites config files of the prototype with those used in projects
  * - deletes files/folders used in the prototype only
- *
  */
 class ProjectSetup
 {
@@ -33,7 +33,7 @@ class ProjectSetup
     public function __construct($args)
     {
         if (!isset($args[1])) {
-            $this->log("Please provide the project name as the first parameter!");
+            $this->log('Please provide the project name as the first parameter!');
             exit(1);
         }
 
@@ -48,8 +48,8 @@ class ProjectSetup
 
         $this->replacements = [
             [
-                'files'=> ['.ddev/config.yaml'],
-                'replace' => ['starter-base' => '@PROJECT_NAME@']
+                'files' => ['.ddev/config.yaml'],
+                'replace' => ['starter-base' => '@PROJECT_NAME@'],
             ],
         ];
     }
