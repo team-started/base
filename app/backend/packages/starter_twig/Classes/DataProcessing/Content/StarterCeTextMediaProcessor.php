@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
 use PrototypeIntegration\PrototypeIntegration\Processor\MediaProcessor;
@@ -66,7 +67,7 @@ class StarterCeTextMediaProcessor implements PtiDataProcessor
     /**
      * @var array
      */
-    protected $configuration;
+    protected $configuration = [];
 
     /**
      * @var ContentObjectRenderer
@@ -131,29 +132,17 @@ class StarterCeTextMediaProcessor implements PtiDataProcessor
             'grid' => $this->getGrid($data, $mediaItems),
         ];
 
-        $twigData = array_merge($twigData, $mediaItems);
-
-        return $twigData;
+        return array_merge($twigData, $mediaItems);
     }
 
-    /**
-     * @param array $data
-     * @return array
-     */
     protected function getHeader(array $data): array
     {
-        $header = [
+        return [
             'headline' => $this->headlineProcessor->processHeadline($data),
             'subline' => $this->headlineProcessor->processSubLine($data),
         ];
-
-        return $header;
     }
 
-    /**
-     * @param array $data
-     * @return array|bool
-     */
     protected function getMediaItems(array $data): array
     {
         $resultMedia = [
@@ -187,11 +176,6 @@ class StarterCeTextMediaProcessor implements PtiDataProcessor
         return $resultMedia;
     }
 
-    /**
-     * @param array $data
-     * @param array $mediaItems
-     * @return array
-     */
     protected function getGrid(array $data, array &$mediaItems): array
     {
         $items = null;

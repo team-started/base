@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\StarterNessa\ViewHelpers\Format;
 
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
@@ -63,9 +65,6 @@ class UpperViewHelper extends AbstractViewHelper
     /**
      * Applies strtoupper() on the specified value.
      *
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param \TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext
      * @see https://www.php.net/manual/function.strtoupper.php
      * @return string
      */

@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace StarterTeam\StarterTwig\Twig\Loader;
 
 use Twig\Error\LoaderError;
@@ -49,7 +50,7 @@ class Typo3Loader implements LoaderInterface
         try {
             $this->findTemplate($name);
             return true;
-        } catch (LoaderError $e) {
+        } catch (LoaderError $loaderError) {
             return false;
         }
     }

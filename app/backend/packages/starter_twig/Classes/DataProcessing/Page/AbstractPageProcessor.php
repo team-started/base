@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace StarterTeam\StarterTwig\DataProcessing\Page;
 
 use TYPO3\CMS\Core\Context\Context;
@@ -23,7 +24,7 @@ abstract class AbstractPageProcessor
     /**
      * @var array
      */
-    protected $conf;
+    protected $conf = [];
 
     /**
      * @var ObjectManager

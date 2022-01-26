@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
 use PrototypeIntegration\PrototypeIntegration\Processor\MediaProcessor;
@@ -18,7 +19,7 @@ class StarterCeMediaProcessor implements PtiDataProcessor
     /**
      * @var array
      */
-    protected $configuration;
+    protected $configuration = [];
 
     /**
      * @var ContentObjectRenderer
@@ -63,7 +64,7 @@ class StarterCeMediaProcessor implements PtiDataProcessor
     {
         $this->configuration = $configuration;
 
-        $twigData = [
+        return [
             'uid' => $data['uid'],
             'header' => $this->getHeader($data),
             'space_before_class' => $data['space_before_class'],
@@ -75,28 +76,16 @@ class StarterCeMediaProcessor implements PtiDataProcessor
             ],
             'items' => $this->renderGalleryItems($data),
         ];
-
-        return $twigData;
     }
 
-    /**
-     * @param array $data
-     * @return array
-     */
     protected function getHeader(array $data): array
     {
-        $header = [
+        return [
             'headline' => $this->headlineProcessor->processHeadline($data),
             'subline' => $this->headlineProcessor->processSubLine($data),
         ];
-
-        return $header;
     }
 
-    /**
-     * @param array $data
-     * @return array
-     */
     protected function renderGalleryItems(array $data): array
     {
         $resultMedia = [];

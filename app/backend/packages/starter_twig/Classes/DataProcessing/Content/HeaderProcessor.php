@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
@@ -15,7 +16,7 @@ class HeaderProcessor implements PtiDataProcessor
     /**
      * @var array
      */
-    protected array $configuration;
+    protected array $configuration = [];
 
     /**
      * @var ContentObjectRenderer
@@ -39,7 +40,7 @@ class HeaderProcessor implements PtiDataProcessor
     {
         $this->configuration = $configuration;
 
-        $twigData = [
+        return [
             'uid' => $data['uid'],
             'header' => [
                 'headline' => $this->headlineProcessor->processHeadline($data),
@@ -49,7 +50,5 @@ class HeaderProcessor implements PtiDataProcessor
             'space_after_class' => $data['space_after_class'],
             'tx_starter_backgroundcolor' => $data['tx_starter_backgroundcolor'],
         ];
-
-        return $twigData;
     }
 }

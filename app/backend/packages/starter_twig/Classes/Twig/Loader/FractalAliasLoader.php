@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace StarterTeam\StarterTwig\Twig\Loader;
 
 use Symfony\Component\Finder\Finder;
@@ -23,10 +24,7 @@ class FractalAliasLoader extends FilesystemLoader
      */
     private $templatePath;
 
-    /**
-     * @var array
-     */
-    private $aliases = [];
+    private array $aliases = [];
 
     public function __construct(string $templateRootPath = null)
     {
@@ -76,10 +74,12 @@ class FractalAliasLoader extends FilesystemLoader
         if (isset($this->cache[$name])) {
             return $this->cache[$name];
         }
+
         if (isset($this->errorCache[$name])) {
             if (!$throw) {
                 return false;
             }
+
             throw new LoaderError($this->errorCache[$name]);
         }
 
@@ -87,10 +87,12 @@ class FractalAliasLoader extends FilesystemLoader
         if (!empty($path) && \is_file($path)) {
             return $this->cache[$name] = $path;
         }
+
         $this->errorCache[$name] = \sprintf('Unable to find template "%s".', $name);
         if (!$throw) {
             return false;
         }
+
         throw new LoaderError($this->errorCache[$name]);
     }
 

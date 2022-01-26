@@ -28,8 +28,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ComposerJsonSection::REPOSITORIES => [
             [
                 'type' => 'path',
-                'url' => './packages/*'
-            ]
+                'url' => './packages/*',
+            ],
         ],
         ComposerJsonSection::REQUIRE_DEV => [
             'phpunit/phpunit' => '^9.5',
@@ -38,7 +38,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services = $containerConfigurator->services();
 
-    # release workers - in order to execute
+    // release workers - in order to execute
     $services->set(UpdateReplaceReleaseWorker::class);
     $services->set(SetCurrentMutualDependenciesReleaseWorker::class);
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\Starter\DataProcessing;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;
@@ -54,12 +56,10 @@ class ColumnGridDataProcessor implements DataProcessorInterface
 
     protected function translateColumnGridItem(array $data): array
     {
-        $translatedColumnGridItem = [
+        return [
             'data' => $data,
             'renderedHtml' => $this->renderColumnsGridContent($data),
         ];
-
-        return $translatedColumnGridItem;
     }
 
     protected function renderColumnsGridContent(array $data): string
@@ -67,7 +67,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
         //$itemContent = $this->getColumnGridItems($data, 'uid');
         $this->contentObjectRender->data = $data;
 
-        $renderedContentModules = $this->contentObjectRender->cObjGetSingle(
+        return $this->contentObjectRender->cObjGetSingle(
             '< styles.content.get',
             [
                 'select.' => [
@@ -77,7 +77,5 @@ class ColumnGridDataProcessor implements DataProcessorInterface
                 ],
             ]
         );
-
-        return $renderedContentModules;
     }
 }

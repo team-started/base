@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\Starter\Form\FormDataProvider;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;
@@ -7,11 +9,7 @@ use TYPO3\CMS\Backend\Form\FormDataProviderInterface;
 
 class TcaColPosItem implements FormDataProviderInterface
 {
-    /**
-     * @param array $result
-     * @return array
-     */
-    public function addData(array $result)
+    public function addData(array $result): array
     {
         if ('tt_content' !== $result['tableName'] || empty($result['databaseRow']['colPos'])) {
             return $result;

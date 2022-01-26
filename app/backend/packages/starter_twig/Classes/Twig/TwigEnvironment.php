@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace StarterTeam\StarterTwig\Twig;
 
 use StarterTeam\StarterTwig\Twig\Loader\Typo3Loader;
@@ -20,7 +21,7 @@ class TwigEnvironment extends Environment implements SingletonInterface
     /**
      * @var array
      */
-    protected $configuration;
+    protected $configuration = [];
 
     public function __construct()
     {
@@ -64,8 +65,6 @@ class TwigEnvironment extends Environment implements SingletonInterface
 
     /**
      * Returns the path to the twig cache directory.
-     *
-     * @return string
      */
     public static function getCacheDirectory(): string
     {
@@ -78,17 +77,14 @@ class TwigEnvironment extends Environment implements SingletonInterface
     protected function getAdditionalLoaders(): array
     {
         $loaderClasses = $this->configuration['loader'] ?: [];
-        $loader = array_map(function (string $loaderClass) {
-            return GeneralUtility::makeInstance($loaderClass);
-        }, $loaderClasses);
 
-        return $loader;
+        return array_map(fn (string $loaderClass) => GeneralUtility::makeInstance($loaderClass), $loaderClasses);
     }
 
     /**
      * @return string/null
      */
-    protected function getTemplateStoragePath()
+    protected function getTemplateStoragePath(): ?string
     {
         $rootTemplatePath = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get(
             'starter_twig',
@@ -108,17 +104,15 @@ class TwigEnvironment extends Environment implements SingletonInterface
                 'starter_twig',
                 'namespaces'
             );
-        } catch (ExtensionConfigurationExtensionNotConfiguredException $e) {
+        } catch (ExtensionConfigurationExtensionNotConfiguredException $extensionConfigurationExtensionNotConfiguredException) {
             return [];
-        } catch (ExtensionConfigurationPathDoesNotExistException $e) {
+        } catch (ExtensionConfigurationPathDoesNotExistException $extensionConfigurationPathDoesNotExistException) {
             return [];
         }
 
-        $namespaces = array_map(
+        return array_map(
             '\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName',
             $namespaces
         );
-
-        return $namespaces;
     }
 }

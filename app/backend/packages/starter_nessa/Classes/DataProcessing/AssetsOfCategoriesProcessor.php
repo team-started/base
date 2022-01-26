@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\StarterNessa\DataProcessing;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -57,17 +59,15 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         );
 
         $categoriesWithData = [];
-        if (!empty($fileRecords)) {
-            foreach ($fileRecords as $record) {
-                $processedData[$targetVariableName][] = [
-                    'file' => $resourceFactory->getFileObject($record['uid']),
-                    'category' => [
-                        'uid' => $record['categoryUid'],
-                        'title' => $record['title'],
-                    ],
-                ];
-                array_push($categoriesWithData, $record['categoryUid']);
-            }
+        foreach ($fileRecords as $record) {
+            $processedData[$targetVariableName][] = [
+                'file' => $resourceFactory->getFileObject($record['uid']),
+                'category' => [
+                    'uid' => $record['categoryUid'],
+                    'title' => $record['title'],
+                ],
+            ];
+            array_push($categoriesWithData, $record['categoryUid']);
         }
 
         $result = array_unique($categoriesWithData);
@@ -77,6 +77,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
                 $processedData['portfolioCategories'][$index]['assetsAvailable'] = true;
             }
         }
+
         return $processedData;
     }
 
@@ -86,7 +87,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('sys_file');
 
-        $statement = $queryBuilder
+        return $queryBuilder
             ->select('sys_file.uid', 'sys_category.title', 'sys_category.uid as categoryUid')
             ->from('sys_file')
             ->join(
@@ -126,7 +127,5 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
             ->orderBy('sys_file.' . $sorting)
             ->execute()
             ->fetchAllAssociative();
-
-        return $statement;
     }
 }
