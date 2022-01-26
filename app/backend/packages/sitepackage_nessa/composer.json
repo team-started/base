@@ -1,14 +1,14 @@
 {
     "name": "starterteam/site-package-nessa",
     "type": "typo3-cms-extension",
-    "description": "",
+    "description": "StarterTeam sitepackage extension for EXT:starter-nessa",
     "license": "proprietary",
     "require": {
         "php": "^7.4",
         "typo3/cms-core": "^10.4",
         "starterteam/starter": "^3.0",
         "starterteam/starter-sitepackage": "^3.0",
-		"starterteam/starter-nessa": "^3.0"
+        "starterteam/starter-nessa": "^3.0"
     },
     "extra": {
         "typo3/cms": {

@@ -9,36 +9,46 @@ stages:
   - backend-linting
 
 ###
+# Rector with PHP and TYPO3 rules
+###
+rector:
+  extends: .backend-linting
+  stage: backend-linting
+  script:
+    - composer install -d app/backend
+    - app/backend/vendor/bin/rector --ansi --dry-run --no-progress-bar --output-format=console --config=app/backend/rector.php
+
+###
 # PHP syntax check
 # see https://github.com/php-parallel-lint/PHP-Parallel-Lint
 ###
-phplint:
-  extends: .backend-linting
-  stage: backend-linting
-  variables:
-    REPORT_FOLDER: "documentation/doc/code-quality"
-    SCAN_FOLDER: "./app/backend/packages"
-  script:
-    - parallel-lint --colors -e php --blame --no-progress $SCAN_FOLDER > $REPORT_FOLDER/php-code-style.md
+#phplint:
+#  extends: .backend-linting
+#  stage: backend-linting
+#  variables:
+#    REPORT_FOLDER: "documentation/doc/code-quality"
+#    SCAN_FOLDER: "./app/backend/packages"
+#  script:
+#    - parallel-lint --colors -e php --blame --no-progress $SCAN_FOLDER > $REPORT_FOLDER/php-code-style.md
 
 ###
 # PHP code style check
 ###
-phpCS:
-  stage: backend-linting
-  variables:
-    SCANNER_RELEASE: "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar"
-  script:
-    - curl -OL $SCANNER_RELEASE
-    - php ./phpcs.phar ./Classes --standard=PSR2 --colors
-  tags:
-    - docker
+#phpCS:
+#  stage: backend-linting
+#  variables:
+#    SCANNER_RELEASE: "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar"
+#  script:
+#    - curl -OL $SCANNER_RELEASE
+#    - php ./phpcs.phar ./Classes --standard=PSR2 --colors
+#  tags:
+#    - docker
 
 ###
 # TypoScript linter
 ###
-typoscriptlint:
-  stage: backend-linting
-  script:
-    - ./.craft/bin/typoscript-lint -c ./.build/typoscript-lint.yml --fail-on-warnings
-  allow_failure: true
+#typoscriptlint:
+#  stage: backend-linting
+#  script:
+#    - ./.craft/bin/typoscript-lint -c ./.build/typoscript-lint.yml --fail-on-warnings
+#  allow_failure: true
