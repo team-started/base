@@ -1,0 +1,14 @@
+include:
+  - local: '/.build/ci/templates/containerTemplate.yml'
+
+stages:
+  - devops-build
+
+##
+# Job to build a docker container for generell backend linting
+##
+build:backend-lint-container:
+  extends: .build-container:template
+  variables:
+    DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:backend
+    DOCKER_IMAGE_PATH: ./.build/docker/lint-backend/
