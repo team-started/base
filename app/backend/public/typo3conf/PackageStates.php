@@ -92,9 +92,6 @@ return [
         'starter' => [
             'packagePath' => 'typo3conf/ext/starter/',
         ],
-        'starter_sitepackage' => [
-            'packagePath' => 'typo3conf/ext/starter_sitepackage/',
-        ],
         'pti' => [
             'packagePath' => 'typo3conf/ext/pti/',
         ],

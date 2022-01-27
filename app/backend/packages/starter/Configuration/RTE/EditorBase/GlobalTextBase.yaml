@@ -9,13 +9,6 @@ editor:
         attributes:
           class: "intro-text"
 
-      ##########################################################################
-      # Inline styles
-      - name: "Text rot"
-        element: "span"
-        attributes:
-          class: "color-red"
-
 processing:
   allowTags:
     - s

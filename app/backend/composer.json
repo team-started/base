@@ -79,7 +79,6 @@
                 "starter_nessa",
                 "sitepackage_nessa",
                 "customer_sitepackage",
-                "starter_sitepackage",
                 "starter"
             ],
             "cms-package-dir": "{$vendor-dir}/typo3/cms"
@@ -114,7 +113,6 @@
         "starterteam/site-package-nessa": "self.version",
         "starterteam/starter": "self.version",
         "starterteam/starter-nessa": "self.version",
-        "starterteam/starter-sitepackage": "self.version",
         "starterteam/starter-twig": "self.version"
     }
 }

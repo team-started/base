@@ -9,8 +9,6 @@
         SPLIT_REPOSITORY: "team/starter"
       - LOCAL_PATH: "app/backend/packages/starter_nessa"
         SPLIT_REPOSITORY: "team/starter-nessa"
-      - LOCAL_PATH: "app/backend/packages/starter_sitepackage"
-        SPLIT_REPOSITORY: "team/starter-sitepackage"
       - LOCAL_PATH: "app/backend/packages/starter_twig"
         SPLIT_REPOSITORY: "team/starter-twig"
   variables:

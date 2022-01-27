@@ -31,7 +31,6 @@
 		"pti/pti": "dev-master",
 		"starterteam/customer-site-package": "@dev",
 		"starterteam/starter": "@VERSION_BUGFIX@",
-		"starterteam/starter-sitepackage": "@VERSION_BUGFIX@",
 		"symfony/dotenv": "^5.2",
 		"typo3/cms-backend": "^10.4",
 		"typo3/cms-belog": "^10.4",

@@ -75,10 +75,10 @@ classesAnchor:
 
 classes:
   o-link:
-    name: 'LLL:EXT:starter_sitepackage/Resources/Private/Language/locallang_backend.xlf:ckeditor.link.internal'
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.internal'
   o-link--download:
-    name: 'LLL:EXT:starter_sitepackage/Resources/Private/Language/locallang_backend.xlf:ckeditor.link.download'
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.download'
   o-link--external:
-    name: 'LLL:EXT:starter_sitepackage/Resources/Private/Language/locallang_backend.xlf:ckeditor.link.external'
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.external'
   o-link--email:
-    name: 'LLL:EXT:starter_sitepackage/Resources/Private/Language/locallang_backend.xlf:ckeditor.link.email'
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.email'
