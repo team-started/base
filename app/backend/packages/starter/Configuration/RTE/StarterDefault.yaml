@@ -2,15 +2,11 @@ imports:
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-  # This file could currently not use (T3 v10.4.20). I don't know why the css is not loaded
-  #- { resource: "EXT:starter_sitepackage/Configuration/RTE/Editor/GlobalBase.yaml" }
-  - { resource: "EXT:starter_sitepackage/Configuration/RTE/Editor/GlobalTextBase.yaml" }
-  - { resource: "EXT:starter_sitepackage/Configuration/RTE/Editor/GlobalLinkBase.yaml" }
+  - { resource: "EXT:starter/Configuration/RTE/EditorBase/GlobalTextBase.yaml" }
+  - { resource: "EXT:starter/Configuration/RTE/EditorBase/GlobalLinkBase.yaml" }
 
 editor:
   config:
-    contentsCss: "EXT:starter_sitepackage/Resources/Public/Frontend/Css/ckeditor.min.css"
-
     format_tags: "p;h2;h3"
 
     toolbarGroups:

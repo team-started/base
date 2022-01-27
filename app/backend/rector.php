@@ -41,7 +41,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/packages/starter_nessa/',
         __DIR__ . '/packages/customer_sitepackage/',
         __DIR__ . '/packages/sitepackage_nessa/',
-        __DIR__ . '/packages/starter_sitepackage/',
     ]);
 
     $parameters->set(Option::SKIP, [

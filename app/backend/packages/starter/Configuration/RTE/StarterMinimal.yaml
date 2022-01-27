@@ -5,8 +5,6 @@ imports:
 
 editor:
   config:
-    contentsCss: "EXT:starter_sitepackage/Resources/Public/Frontend/Css/ckeditor.min.css"
-
     format_tags: "p;pre"
 
     toolbarGroups:

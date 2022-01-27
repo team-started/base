@@ -10,7 +10,6 @@ $EM_CONF['customer_sitepackage'] = [
         'depends' => [
             'typo3' => '10.4.0-10.4.99',
             'starter' => '*',
-            'starter_sitepackage' => '*',
         ],
         'conflicts' => [
             'css_styled_content' => '*',

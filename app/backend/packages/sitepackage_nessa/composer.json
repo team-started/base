@@ -7,7 +7,6 @@
         "php": "^7.4",
         "typo3/cms-core": "^10.4",
         "starterteam/starter": "^3.0",
-        "starterteam/starter-sitepackage": "^3.0",
         "starterteam/starter-nessa": "^3.0"
     },
     "extra": {
