@@ -10,7 +10,6 @@ $EM_CONF['sitepackage_nessa'] = [
         'depends' => [
             'typo3' => '10.4.0-10.4.99',
             'starter' => '*',
-            'starter_sitepackage' => '*',
             'starter_nessa' => '*',
         ],
         'conflicts' => [

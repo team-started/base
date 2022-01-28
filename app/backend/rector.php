@@ -20,7 +20,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $containerConfigurator->import(Typo3SetList::TYPO3_104);
     $containerConfigurator->import(Typo3SetList::COMPOSER_PACKAGES_104_CORE);
-    $containerConfigurator->import(Typo3SetList::COMPOSER_PACKAGES_104_EXTENSIONS);
 
     // In order to have a better analysis from phpstan we teach it here some more things
     //$parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, Typo3Option::PHPSTAN_FOR_RECTOR_PATH);
@@ -42,7 +41,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/packages/starter_nessa/',
         __DIR__ . '/packages/customer_sitepackage/',
         __DIR__ . '/packages/sitepackage_nessa/',
-        __DIR__ . '/packages/starter_sitepackage/',
     ]);
 
     $parameters->set(Option::SKIP, [
