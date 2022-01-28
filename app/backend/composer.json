@@ -80,6 +80,7 @@
         "typo3/cms": {
             "extension-key": [
                 "customer_sitepackage",
+                "starter_freya",
                 "starter_twig",
                 "sitepackage_nessa",
                 "starter",
