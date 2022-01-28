@@ -109,10 +109,10 @@
         ]
     },
     "replace": {
-        "starterteam/customer-site-package": "self.version",
-        "starterteam/site-package-nessa": "self.version",
-        "starterteam/starter": "self.version",
-        "starterteam/starter-nessa": "self.version",
-        "starterteam/starter-twig": "self.version"
+        "starterteam/customer-site-package": "3.0.0",
+        "starterteam/site-package-nessa": "3.0.0",
+        "starterteam/starter": "3.0.0",
+        "starterteam/starter-nessa": "3.0.0",
+        "starterteam/starter-twig": "3.0.0"
     }
 }
