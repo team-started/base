@@ -1,0 +1,15 @@
+{% if env != 'TYPO3' %}
+<!doctype html>
+<html lang="de">
+<head>
+    <title>{{ pageData.title }}</title>
+    {% include '@h-head' %}
+</head>
+{% endif %}
+
+{% block body %}
+{% endblock %}
+
+{% if env != 'TYPO3' %}
+</html>
+{% endif %}

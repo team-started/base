@@ -1,0 +1,9 @@
+<h3>direkt den Pfad angesprochen</h3>
+<svg class="o-icon icon-{{icon}} {{class}}">
+  <use xlink:href="/assets/sprite.svg#{{icon}}" />
+</svg>
+
+<h3>per Twig function</h3>
+<svg class="o-icon icon-{{icon}} {{class}}">
+  <use xlink:href="{{resolveIcon(icon)}}" />
+</svg>

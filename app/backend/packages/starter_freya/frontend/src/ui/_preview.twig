@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Preview of {{ _target.label }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
+    <body>
+        {% block content %}
+            {{ yield | raw }}
+        {% endblock %}
+        <script type="text/javascript" src="../../assets/js/app.js"></script>
+    </body>
+</html>

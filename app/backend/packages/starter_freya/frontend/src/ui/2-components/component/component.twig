@@ -1,0 +1,26 @@
+<div class="c-component">
+    Text component: {{ text }}
+
+    <h3>Include an object</h3>
+    <p>
+        include '@namespace/folder/template.twig'
+    </p>   
+    {% include '@object/objects/object.twig' %}
+
+    <h3>Übergabe des Textes von dem object</h3>
+    <p>
+       Siehe config.js: Hier wird nicht das Feld "text" (die Feldname ist zufällig identisch) aus der component angezeigt, sondern der Text des objects.<br>
+       Dafür muss es eine entsprechende Variante in dem Object geben.
+    </p>
+    {% include '@object/objects/object.twig' with object %}
+
+    <h3>Übergabe eines Parameters an das object</h3>
+    <p>
+       Hier wird ein Parameter an das Object übergeben.
+    </p>
+    {% include '@object/objects/object.twig' with {
+            'parameter': 'parameter-from-component'
+        }
+    %}
+
+</div>

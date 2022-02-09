@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+
+<base href="/">
+
+{#
+<!-- Place favicon.ico and apple-touch-icon(s) in the directory favicons in the root directory -->
+{% include '@h-favicons' %}
+
+<script>
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+</script>
+#}
+
+{# for testing purposes it can be added to the FEPT like this #}
+
+{# ie11 Custom Properties Polyfill -> must be added like this in TYPO3 #}
+{#<script>window.MSInputMethodContext && document.documentMode && document.write('<script src="/assets/js/ie11CustomProperties.min.js"><\x2fscript>');</script>#}
+{# ie11 srcset Polyfill -> must be added like this in TYPO3 #}
+{#<script>window.MSInputMethodContext && document.documentMode && document.write('<script src="/assets/js/picturefill.min.js"><\x2fscript>');</script>#}
+
+<link rel="stylesheet" type="text/css" href="../../assets/css/app.min.css">
+{#
+<link rel="stylesheet" href="/css/main.css">
+<script src="assets/js/jquery.js" defer></script>
+<script src="/js/base.js" defer></script>
+<script src="/js/main.js" defer></script>
+<script src="/assets/js/ie11CustomProperties.min.js"></script>
+<script src="/assets/js/picturefill.min.js"></script>
+ #}
