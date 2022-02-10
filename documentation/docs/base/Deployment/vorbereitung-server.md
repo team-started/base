@@ -71,47 +71,17 @@ ist jeweils eine Datei mit dem Namen _.env_ anzulegen. In dieser Datei werden nu
 > * Sollte ein einzutragender Wert Sonderzeichen enthalten, so ist der gesamte Wert mit doppelten Anführungsstrichen (") zu umschließen
 > * Ebenfalls ist es wichtig darauf zu achten, keine Leerzeichen vor und nach dem Gleichzeichen (=) zu setzen.
 
-Eine Beispieldatei befindet sich innerhalb des Projektes unter `/.surf/.env_example`.
+Eine Beispieldatei befindet sich innerhalb des Projektes unter `/app/backend/.env.dist`.
 
-```sh
-TYPO3_CONTEXT=
-TYPO3_INSTALL_TOOL_PASSWORD=
-TYPO3_TRUSTED_HOSTS_PATTERN=
-TYPO3_GFX_PROCESSOR=ImageMagick
-TYPO3_GFX_PROCESSOR_PATH=/usr/bin/
-TYPO3_GFX_PROCESSOR_PATH_LZW=/usr/bin/
-TYPO3_GFX_PROCESSOR_COLORSPACE=sRGB
-TYPO3_DB_DEFAULT_HOST=
-TYPO3_DB_DEFAULT_USER=
-TYPO3_DB_DEFAULT_PASSWORD=
-TYPO3_DB_DEFAULT_PORT=3306
-TYPO3_DB_DEFAULT_DBNAME=
-TYPO3_BE_WARNING_EMAIL_ADDR=
-TYPO3_BE_WARNING_MODE=
-TYPO3_MAIL_DEFAULT_MAIL_FROM_ADDRESS=
-TYPO3_MAIL_DEFAULT_MAIL_FROM_Name=
-```
+### Sonderfall Multi-Domain-Installation
 
-#### Beispiel-Konfiguration mit Environments für eine Staging-Instanz
+In der `.env` Datei wird die URL für die erste Domain mittels der Variablen `TYPO3_BASEURL_MAIN` definiert. Diese Variable
+ist in der `config.yaml` der Site-Configuration bereits definiert.
 
-```sh
-TYPO3_CONTEXT="Production/Staging"
-TYPO3_INSTALL_TOOL_PASSWORD=joh316
-TYPO3_TRUSTED_HOSTS_PATTERN=
-TYPO3_GFX_PROCESSOR=ImageMagick
-TYPO3_GFX_PROCESSOR_PATH=/usr/bin/
-TYPO3_GFX_PROCESSOR_PATH_LZW=/usr/bin/
-TYPO3_GFX_PROCESSOR_COLORSPACE=RGB
-TYPO3_DB_DEFAULT_HOST=db1111.mydbserver.com
-TYPO3_DB_DEFAULT_USER=usr_p000000
-TYPO3_DB_DEFAULT_PASSWORD="ein%besonderes?passwort"
-TYPO3_DB_DEFAULT_PORT=3306
-TYPO3_DB_DEFAULT_DBNAME=usr_p000000_p2
-TYPO3_BE_WARNING_EMAIL_ADDR=
-TYPO3_BE_WARNING_MODE=
-TYPO3_MAIL_DEFAULT_MAIL_FROM_ADDRESS="noreply@kundendomain.com"
-TYPO3_MAIL_DEFAULT_MAIL_FROM_Name="dummy kundenname"
-```
+Sollte die TYPO3 Installation eine Mutli-Domain-Installation sein, so wird für die nächste Domain eine neue Variable
+benötigt, z.B. `TYPO3_BASEURL_SECOND` und diese Variable wird für die 2te `config.yaml` in der Site-Configuration
+verwendet.
+
 
 > Weiterführende Themen
 > * [Deployment](./index.md)

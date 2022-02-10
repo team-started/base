@@ -48,7 +48,7 @@ class ProjectSetup
 
         $this->replacements = [
             [
-                'files' => ['.ddev/config.yaml'],
+                'files' => ['app/backend/.env', 'app/backend/.env.dist', '.ddev/config.yaml'],
                 'replace' => ['starter-base' => '@PROJECT_NAME@'],
             ],
         ];

@@ -59,13 +59,8 @@ return [
     ],
     'GFX' => [
         'processor_allowTemporaryMasksAsPng' => false,
-        'processor_colorspace' => 'RGB',
         'processor_effects' => true,
         'processor_enabled' => true,
-    ],
-    'MAIL' => [
-        'transport' => 'sendmail',
-        'transport_sendmail_command' => '/usr/sbin/sendmail -t -i',
     ],
     'SYS' => [
         'caching' => [
@@ -111,8 +106,6 @@ return [
         ],
         'ipAnonymization' => 2,
         'mediafile_ext' => 'jpg,jpeg,png,youtube,vimeo',
-        'phpTimeZone' => 'Europe/Berlin',
-        'systemLocale' => 'de_DE.UTF-8',
         'systemMaintainers' => null,
     ],
 ];

@@ -20,10 +20,6 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         'FE' => [
             'debug' => true
         ],
-        'MAIL' => [
-            'transport' => 'smtp',
-            'transport_smtp_server' => 'localhost:1025',
-        ],
         'SYS' => [
             'clearCacheSystem' => true,
             'displayErrors' => true,
@@ -31,7 +27,6 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
             'sqlDebug' => true,
             'enableDeprecationLog' => 'file',
             'systemLogLevel' => 0,
-            'trustedHostsPattern' => '.*',
             'systemLog' => 'error_log',
             'syslogErrorReporting' => true,
             'belogErrorReporting' => true
