@@ -1,2 +1,1 @@
-EXT:starter/Configuration/TypoScript/,
-EXT:starter_twig/Configuration/TypoScript/
+EXT:starter/Configuration/TypoScript/
