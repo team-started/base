@@ -1,0 +1,47 @@
+.documentation:
+  image: $CI_REGISTRY_IMAGE:backend
+  variables:
+    DOC_FOLDER: "./documentation"
+    STATIC_FOLDER: "$DOC_FOLDER/static/"
+    VENDOR_FOLDER: "$DOC_FOLDER/vendor/"
+  rules:
+    - if: $CI_COMMIT_TAG
+    - when: never
+
+stages:
+  - documentation
+
+install:
+  extends: .documentation
+  stage: documentation
+  script:
+    - composer install -d $DOC_FOLDER
+  artifacts:
+    paths:
+      - VENDOR_FOLDER
+
+build:
+  extends: .documentation
+  stage: documentation
+  dependencies:
+    - install
+  script:
+    - cd $DOC_FOLDER
+    - vendor/bin/daux generate
+  artifacts:
+    paths:
+      - $STATIC_FOLDER
+
+pages:
+  extends: .documentation
+  stage: documentation
+  dependencies:
+    - build
+  script:
+    # remove all files and folder they not necessary for documentation
+    - rm -r public
+    - mv $STATIC_FOLDER public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days

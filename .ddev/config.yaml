@@ -17,6 +17,8 @@ hooks:
   - exec: chmod 755 -R /var/www/html/craft/
   - exec: composer install -d /var/www/html/app/backend
   - exec: /var/www/html/craft/bin/initialize_backend.sh
+  - exec: composer install -d /var/www/html/documentation
+  - exec: /var/www/html/craft/bin/create_symlinks.sh
 working_dir:
   web: /var/www/html/app/backend
 use_dns_when_possible: true
