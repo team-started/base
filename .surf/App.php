@@ -225,6 +225,8 @@ function getStaticRsyncExcludes()
         '.gitattributes',
         '.gitignore',
         '.php_cs.dist',
+        '/app/backend/.env',
+        '/app/backend/.env.dist',
         '/app/backend/composer.json',
         '/app/backend/composer.lock',
         '/app/backend/configuration',
@@ -256,7 +258,8 @@ function addSymlinks(CMS &$application): void
     $symLinks = [
         'public/fileadmin' => '../../../../../shared/Data/fileadmin',
         'public/uploads' => '../../../../../shared/Data/uploads',
-        'log' => '../../../../../shared/Data/log',
+        'log' => '../../../../shared/Data/log',
+        '.env' => '../../../../shared/conf/.env',
     ];
 
     if (!empty(getenv('APP_CONTEXT')) && getenv('APP_CONTEXT') !== 'Production') {

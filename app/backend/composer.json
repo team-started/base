@@ -21,10 +21,10 @@
     ],
     "require": {
         "php": "^7.4",
+        "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^6.4",
         "ichhabrecht/content-defender": "^3.0",
         "pti/pti": "dev-master",
-        "symfony/dotenv": "^5.2",
         "twig/twig": "^3",
         "typo3/cms-backend": "^10.4",
         "typo3/cms-belog": "^10.4",
@@ -105,7 +105,8 @@
         },
         "allow-plugins": {
             "typo3/class-alias-loader": true,
-            "typo3/cms-composer-installers": true
+            "typo3/cms-composer-installers": true,
+            "helhum/dotenv-connector": true
         }
     },
     "scripts": {

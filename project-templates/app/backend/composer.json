@@ -24,14 +24,19 @@
 			"ext-xmlwriter": "1",
 			"ext-json": "1",
 			"ext-gd": "1"
+		},
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true,
+			"helhum/dotenv-connector": true
 		}
 	},
 	"require": {
+		"helhum/dotenv-connector": "^3.0",
 		"helhum/typo3-console": "^6.4",
 		"pti/pti": "dev-master",
 		"starterteam/customer-site-package": "@dev",
 		"starterteam/starter": "@VERSION_BUGFIX@",
-		"symfony/dotenv": "^5.2",
 		"typo3/cms-backend": "^10.4",
 		"typo3/cms-belog": "^10.4",
 		"typo3/cms-beuser": "^10.4",

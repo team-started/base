@@ -1,11 +1,4 @@
 base: '%env(TYPO3_BASEURL_MAIN)%'
-baseVariants:
-  -
-    base: '%env(TYPO3_BASEURL_MAIN_STAGING)%'
-    condition: 'applicationContext == "Production/Staging"'
-  -
-    base: '%env(TYPO3_BASEURL_MAIN_DEVELOPMENT)%'
-    condition: 'applicationContext == "Development"'
 errorHandling: []
 languages:
   -
