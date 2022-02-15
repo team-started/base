@@ -56,8 +56,7 @@ BUILD_DIR="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/_build"
 PROJECT_TEMPLATES_DIRECTORY="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/project-templates"
 NEW_PROJECT_DIR="../$PROJECT_NAME"
 
-#VERSION=$(git tag --sort=-v:refname | head -1)
-VERSION=3.0.0
+VERSION=$(git tag --sort=-v:refname | head -1)
 
 if [ -e "$NEW_PROJECT_DIR" ]; then
     echo -e "${RED}[ERROR] Project '$PROJECT_NAME' already exists!${NO_COLOR}"

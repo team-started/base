@@ -11,5 +11,5 @@ Thumbs.db
 .svn
 .sass-cache
 
-_docpress
-node_modules
+static
+vendor

@@ -4,6 +4,7 @@ include:
   - local: '/.build/ci/container-build.yml'
   - local: '/.build/ci/linting-backend.yml'
   #- local: '/.build/ci/linting-frontend.yml'
+  - local: '/.build/ci/documentation.yml'
 
 #workflow:
 #  rules:
@@ -15,6 +16,7 @@ stages:
   - devops-build
   - backend-linting
   - split-packages
+  - documentation
 
 cache:
   # each branch always use the same cache
@@ -23,6 +25,7 @@ cache:
     - .cache/.npm/
     - app/frontend/node_modules/
     - app/backend/vendor/
+    - app/documentation/vendor/
 
 variables:
   APP_PUBLIC_DIRECTORY: 'public'

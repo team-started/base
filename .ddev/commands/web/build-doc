@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Generate static documentation
+## Usage: build-doc
+## Example: "ddev build-doc"
+
+cd /var/www/html/documentation/ && \
+    vendor/bin/daux generate
