@@ -73,6 +73,9 @@ Webpack settings can be done in `config/settings.webpack.js`
 
 see: `fractal.config.js`, `tsconfig.json`, `settings.webpack.js`
 
+#### Folders
+A Folder always needs to be written in plural "buttons", because of namespacing issues.
+
 ### Developer Settings
 Developer settings can be done in `developer.config.js`. First duplicate `developer.config.js.tmpl` and rename it to `developer.config.js`.
 
