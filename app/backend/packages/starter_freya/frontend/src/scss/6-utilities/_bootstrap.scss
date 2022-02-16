@@ -1,0 +1,13 @@
+// TODO: (Ticket #50) Sass: Mixin für Visibility Helperclasses
+.d-md-only {
+    @extend .d-none;
+    @extend .d-md-block;
+    @extend .d-lg-none;
+}
+
+// TODO: (Ticket #51) Sass: Mixin für Container max-width
+.container-md-fixed {
+    @extend .container-md;
+
+    max-width: map-get($map: $container-max-widths, $key: md);
+}

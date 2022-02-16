@@ -1,0 +1,15 @@
+{#
+containerUid: Uid der Komponente
+container: Bootstrap Container-Typ
+containerComponentType: Typ der Kompomente
+tx_starter_visibility: Sichtbarkeit auf den Breakpoints
+space_before_class: Abstand vor dem Container
+space_after_class: Abstand nach dem Container
+containerComponent: Die Componente / Contentelement
+#}
+
+
+
+<div id="{{ containerUid }}" class="{{ container }} {{ containerComponentType }} {{ tx_starter_visibility }} {{ space_before_class }} {{ space_after_class }}">
+    {{ containerComponent }}
+</div>
