@@ -1,7 +1,7 @@
 import { registerComponent } from '@/js/utils';
 
 // import component, { className as componentClassName } from './component/index';
-import teaser, { className as teaserClassName } from './teaser/index';
+import teaser, { className as teaserClassName } from './teasers/index';
 
 // and so on...
 

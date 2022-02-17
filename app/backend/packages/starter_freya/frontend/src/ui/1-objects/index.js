@@ -2,8 +2,8 @@ import { registerComponent } from '@/js/utils';
 
 import buttonCta, { className as buttonCtaClassName } from './buttons/button-cta/index';
 import button, { className as buttonClassName } from './buttons/index';
-import icon, { className as iconClassName } from './icon/index';
-import image, { className as imageClassName } from './image/index';
+import icon, { className as iconClassName } from './icons/index';
+import image, { className as imageClassName } from './images/index';
 // import object, { className as objectClassName } from './objects/index';
 // import objectCta, { className as objectCtaClassName } from './objects/object-cta/index';
 // and so on...
