@@ -3,20 +3,30 @@ containerComponent: Enthält die jeweilige Komponente
 containerUid: Uid der Komponente
 containerComponentType: Typ der Kompomente
 
-Wenn es einen Hintergrund über volle breite gibt, gibt es einen Wrapper.
-Der eigentliche Container ist container-inner.twig
+Wenn es einen Hintergrund über volle Breite gibt, gibt es einen Wrapper.
 #}
 
-{% set containerComponent = block('component') %}
+
+
 {% set containerUid = uid ? 'con' ~ uid %}
 {% set containerComponentType = componentType ? 'container--' ~ componentType : 'container--no-type' %}
+
+{% set containerContent %}
+    <div id="{{ containerUid }}" class="{{ container }} {{ containerComponentType }} {{ tx_starter_visibility }} {{ space_before_class }} {{ space_after_class }}">
+        {% block moduleContentBlock %}{% endblock %}
+    </div>
+{% endset %}
 
 
 
 {% if tx_starter_background_fluid and tx_starter_background %}
+
     <div class="{{ tx_starter_background }} {{ tx_starter_visibility }}">
-        {% include '@component/containers/snippets/container-inner.twig' %}
+        {{ containerContent }}
     </div>
+
 {% else %}
-    {% include '@component/containers/snippets/container-inner.twig' %}
+
+    {{ containerContent }}
+
 {% endif %}

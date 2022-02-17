@@ -22,7 +22,7 @@ module.exports = {
     // 'order/properties-order': ['width', 'height'],
     'scss/at-import-no-partial-leading-underscore': null,
     'scss/at-import-partial-extension': null,
-    'scss/no-global-function-names': null, // Bootstrap hat Funktionen, die dem Standard nicht entsprechen! https://sass-lang.com/documentation/cli/migrator
+    'scss/no-global-function-names': null, // Bootstrap hat Functions, die dem Standart nichtn entsprechen! https://sass-lang.com/documentation/cli/migrator
     'scss/at-extend-no-missing-placeholder': null
   },
 }

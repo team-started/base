@@ -5,14 +5,14 @@
 
 
 
-{% extends '@container' %}
+{% extends '@component/containers/container.twig' %}
 
-{% block component %}
+{% block moduleContentBlock %}
   <div class="row">
     <div class="col">
       <div id="c{{ uid }}" class="{{ componentClass }} {{ componentBackgound }}">
         {{ bodytext }}
-      </div>  
+      </div>
     </div>
   </div>
 {% endblock %}
