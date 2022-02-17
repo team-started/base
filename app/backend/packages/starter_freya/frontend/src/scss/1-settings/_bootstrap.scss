@@ -1,1 +1,49 @@
-// Hier werden Bootstrap setting überschrieben
+// set overrides for Bootstrap setting here
+// siehe: https://getbootstrap.com/docs/5.1/customize/options/
+
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+// Die Farben werden zur besseren Übersicht gesondert definiert
+@import "colors";
+
+// Bootstrap theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// 4. Include any optional Bootstrap CSS as needed
+// Layout
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+
+// Components
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/list-group";
+
+// Helpers
+@import "~bootstrap/scss/helpers";
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "~bootstrap/scss/utilities/api";
