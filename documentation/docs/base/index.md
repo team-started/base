@@ -2,19 +2,18 @@
 
 # Inhaltsübersicht
 
-1. [Mitarbeit](Mitarbeit/index.md)
-1. [Die Distribution](Distribution/index.md)
-1. Kundenprojekt
-    1. [Kundenprojekt erstellen](Kundenprojekt/project-anlegen.md)
-    1. [Kundenprojekt synchronisieren](Kundenprojekt/project-synchronisieren.md)
-1. [DDEV](Ddev/index.md)
-1. [Composer](Composer/index.md)
-1. [TYPO3-Console](TYPO3-Console/index.md)
-1. [Deployment](Deployment/index.md)
-    1. [Vorbereitung auf dem Zielserver](Deployment/vorbereitung-server.md)
-    1. [Deployment einrichten](Deployment/gitlab.md)
-    1. [Konfiguration Gitlab-CI](Deployment/gitlab-ci.md)
-1. Cheatsheet
-    1. [Markdown-Docpress](Cheatsheet/markdown-docpress.md)
-1. [FAQ](Faq/index.md)
-1. [Changelog](Changelog/changelog.md)
+1. [Mitarbeit](001_Mitarbeit)
+2. [Die Distribution](002_Distribution)
+3. Kundenprojekt
+    1. [Kundenprojekt erstellen](003_Kundenprojekt/project-anlegen.md)
+    1. [Kundenprojekt synchronisieren](003_Kundenprojekt/project-synchronisieren.md)
+4. Tools
+   1. [DDEV](005_Tools/Ddev)
+   2. [Composer](005_Tools/Composer)
+   3. [TYPO3-Console](005_Tools/TYPO3-Console)
+5. [Deployment](004_Deployment)
+    1. [Vorbereitung auf dem Zielserver](004_Deployment/vorbereitung-server.md)
+    1. [Deployment einrichten](004_Deployment/gitlab.md)
+    1. [Konfiguration Gitlab-CI](004_Deployment/gitlab-ci.md)
+6. [FAQ](006_FAQ)
+7. [Changelog](030_Changelog)

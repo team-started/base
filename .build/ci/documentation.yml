@@ -11,35 +11,28 @@
 stages:
   - documentation
 
-install:
-  extends: .documentation
-  stage: documentation
-  script:
-    - composer install -d $DOC_FOLDER
-  artifacts:
-    paths:
-      - VENDOR_FOLDER
-
 build:
   extends: .documentation
   stage: documentation
-  dependencies:
-    - install
   script:
     - cd $DOC_FOLDER
-    - vendor/bin/daux generate
+    - composer install --no-progress
+    - vendor/bin/daux generate -q
   artifacts:
     paths:
       - $STATIC_FOLDER
+  cache:
+    key: doc-composer-cache
+    paths:
+      - $VENDOR_FOLDER
 
 pages:
   extends: .documentation
   stage: documentation
   dependencies:
     - build
+  needs: ["build"]
   script:
-    # remove all files and folder they not necessary for documentation
-    - rm -r public
     - mv $STATIC_FOLDER public/
   artifacts:
     paths:

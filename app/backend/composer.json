@@ -120,7 +120,6 @@
         "starterteam/starter": "self.version",
         "starterteam/starter-freya": "self.version",
         "starterteam/starter-nessa": "self.version",
-        "starterteam/starter-sitepackage": "self.version",
         "starterteam/starter-twig": "self.version"
     }
 }
