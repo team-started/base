@@ -25,7 +25,6 @@ cache:
     - .cache/.npm/
     - app/frontend/node_modules/
     - app/backend/vendor/
-    - app/documentation/vendor/
 
 variables:
   APP_PUBLIC_DIRECTORY: 'public'
