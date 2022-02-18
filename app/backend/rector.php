@@ -19,7 +19,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::PHP_74);
 
     $containerConfigurator->import(Typo3SetList::TYPO3_104);
+    $containerConfigurator->import(Typo3SetList::TYPO3_11);
     $containerConfigurator->import(Typo3SetList::COMPOSER_PACKAGES_104_CORE);
+    $containerConfigurator->import(Typo3SetList::COMPOSER_PACKAGES_110_CORE);
 
     // In order to have a better analysis from phpstan we teach it here some more things
     //$parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, Typo3Option::PHPSTAN_FOR_RECTOR_PATH);
@@ -31,7 +33,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_74);
 
     // If you have an editorconfig and changed files should keep their format enable it here
-    // $parameters->set(Option::ENABLE_EDITORCONFIG, true);
+    $parameters->set(Option::ENABLE_EDITORCONFIG, true);
 
     // If you only want to process one/some TYPO3 extension(s), you can specify its path(s) here.
     // If you use the option --config change __DIR__ to getcwd()
@@ -46,6 +48,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::SKIP, [
         // this rule require PHP 8.0 in project
         \Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector::class,
+        // this rule require PHP 8.1 in project
+        \Rector\CodingStyle\Rector\ClassConst\RemoveFinalFromConstRector::class,
     ]);
 
     // This is used by the class \Ssch\TYPO3Rector\Rector\PostRector\FullQualifiedNamePostRector to force FQN in paths and files
@@ -88,5 +92,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ]
         );
     $services->set(ExtensionComposerRector::class)
-        ->call('configure', [[ExtensionComposerRector::TYPO3_VERSION_CONSTRAINT => '^10.4']]);
+        ->call('configure', [[ExtensionComposerRector::TYPO3_VERSION_CONSTRAINT => '^11.5']]);
 };

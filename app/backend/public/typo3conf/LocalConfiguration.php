@@ -25,7 +25,7 @@ return [
     ],
     'EXTCONF' => [
         'helhum-typo3-console' => [
-            'initialUpgradeDone' => '10.4',
+            'initialUpgradeDone' => '11.5',
         ],
         'lang' => [
             'availableLanguages' => [
@@ -41,6 +41,7 @@ return [
             'loginFootnote' => '',
             'loginHighlightColor' => '',
             'loginLogo' => '',
+            'loginLogoAlt' => '',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '0',
