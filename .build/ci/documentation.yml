@@ -18,13 +18,14 @@ install:
     - composer install -d $DOC_FOLDER
   artifacts:
     paths:
-      - VENDOR_FOLDER
+      - $VENDOR_FOLDER
 
 build:
   extends: .documentation
   stage: documentation
   dependencies:
     - install
+  needs: ["install"]
   script:
     - cd $DOC_FOLDER
     - vendor/bin/daux generate
@@ -37,9 +38,8 @@ pages:
   stage: documentation
   dependencies:
     - build
+  needs: ["build"]
   script:
-    # remove all files and folder they not necessary for documentation
-    - rm -r public
     - mv $STATIC_FOLDER public/
   artifacts:
     paths:
