@@ -42,7 +42,7 @@ geprüft werden, ob eine SSH-Verbindung ohne Angabe eines Passworts möglich ist
 ### Konfiguration der Sh-Skripte
 
 Um die Funktion nutzen zu können, muss die _config.sh_ im Ordner _craft/_ konfiguriert werden. Das PHP-Binary ist je
-nach Hoster unterschiedlich, eine aktuelle Liste befindet sich in den [FAQ unter PHP Binary nach Hoster](../Faq/index.md).
+nach Hoster unterschiedlich, eine aktuelle Liste befindet sich in den [FAQ unter PHP Binary nach Hoster](../006_FAQ/index.md).
 
 Die einkommentierten Anweisungen müssen nur ausgefüllt und auskommentiert werden, sofern zusätzlich zu Production und
 Staging ein weiterer Remote benötigt wird.

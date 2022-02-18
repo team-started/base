@@ -24,7 +24,7 @@ TYPO3-Console ohne weitere Pfadangaben auf der lokalen Shell ausführen.
 Auf einem Webserver kann die TYPO3-Console innerhalb des Verzeichnis "current" verwendet werden. Zudem muss vor dem
 TYPO3-Console Befehl das passende PHP-Binary hinzugefügt werden. Das PHP-Binary unterscheidet sich je nach Hoster und
 verwendeter PHP Version. Eine entsprechende Liste der PHP-Binaries ist im Beschreibung zum
-[FAQ unter PHP Binary nach Hoster](../Faq/index.md) hinterlegt.
+[FAQ unter PHP Binary nach Hoster](../../006_FAQ/index.md) hinterlegt.
 
 ::: { .info }
 **Beispiel für Hoster Mittwald:**
@@ -65,7 +65,7 @@ __[PATH]__ bezieht sich hierbei auf den Konfigurationsindex in der LocalConfigur
 In der Ausgabe erhält man grüne und rote Zeilen, wobei die roten Zeilen Konfigurationen aus der LocalConfiguration.php
 und grüne Zeilen, Konfigurationen aus der AdditionalConfiguration.php sind (siehe beispielhaften Screenshot).
 
-![TYPO3-Console configuration:show GFX](../assets/images/typo3-console-configuration-show_example.png)
+![TYPO3-Console configuration:show GFX](../../assets/images/typo3-console-configuration-show_example.png)
 
 ### Sprachupdate durchführen
 
