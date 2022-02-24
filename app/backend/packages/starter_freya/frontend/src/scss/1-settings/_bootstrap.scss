@@ -1,30 +1,14 @@
-// set overrides for Bootstrap setting here
-// siehe: https://getbootstrap.com/docs/5.1/customize/options/
-
+// see: https://getbootstrap.com/docs/5.1/customize/sass/#importing
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-// Die Farben werden zur besseren Übersicht gesondert definiert
-@import "colors";
-
-// Bootstrap theme-colors-map
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-);
-$theme-colors: map-merge($theme-colors, $custom-colors);
+$body-bg: map-get($colors, "white") !default;
+$body-color: map-get($grays, "800") !default;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
-
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 

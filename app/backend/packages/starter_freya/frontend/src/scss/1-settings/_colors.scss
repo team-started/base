@@ -1,7 +1,21 @@
-// Projekt-Farben
-// Die Projektfarben sind genauso verfügbar, wie alle anderen Farben,
-// z.B. bg-brand1 btn-brand2 oder --bs-brand1
-$custom-colors: (
-  "brand1": #0AE1AE,
-  "brand2": #FB8A40,
+// Die die hier bestehenden Farben müssen immer belegt sein.
+// Weitere Farben können projektabhängig ergänzt werden. 
+
+// Farben, die in den Bootstrap Klassen umgesetzt werden, z.B. .btn-info1
+$theme-colors: (
+  "primary": #6D8394,
+  "secondary": #cfe0e6,
+  "info1": #d8872b,
+  "info2": #0a8a15,
+) !default;
+
+// definiert nötige Farben und setzt nur nötige Bootstrap Standardfarben aus dem :root
+$colors: (
+  "white": #fff,
+) !default;
+
+// definiert nötige Grautöne und setzt nur nötige Grautöne im :root
+$grays: (
+  "100": #fefefe,
+  "800": #333,
 ) !default;

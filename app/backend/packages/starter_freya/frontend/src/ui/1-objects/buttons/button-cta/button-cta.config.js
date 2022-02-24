@@ -1,22 +1,40 @@
 'use strict';
 
+const _ = require('../../../../../config/helpers');
+
 module.exports = {
     context: {
-        text: 'button-cta default',
+        tx_starter_cta_link: {
+            config: {
+                uri: '#',
+                target: '',
+                class: '',
+                title: '',
+            },
+        },
+        tx_starter_cta_text: _.lorem(20, 'max 20'),
     },
     variants: [
         {
-            name: 'v1',
-            label: 'variant 1',
+            name: 'cta1',
+            label: 'cta 1',
             context: {
-                text: 'button-cta variant 1',
+                tx_starter_cta_link: {
+                    config: {
+                        class: 'info1',
+                    },
+                },
             },
         },
         {
-            name: 'v2',
-            label: 'variant 2',
+            name: 'cta2',
+            label: 'cta 2',
             context: {
-                text: 'button-cta variant 2',
+                tx_starter_cta_link: {
+                    config: {
+                        class: 'info2',
+                    },
+                },
             },
         },
     ],

@@ -7,13 +7,12 @@ module.exports = {
     context: {
         uid: 111,
         tx_starter_container: '',
-        tx_starter_visibility: '',
+        tx_starter_showbyscreensize: '',
         space_before_class: '',
         space_after_class: '',
         bodytext: _.lorem(200, 'max 200: '),
         tx_starter_background: '',
         tx_starter_background_fluid: '',
-        tx_starter_showbyscreensize: 'tx_starter_showbyscreensize',
     },
     variants: [
         {
@@ -48,14 +47,14 @@ module.exports = {
             name: 'background',
             label: 'background',
             context: {
-                tx_starter_background: 'bg-info',
+                tx_starter_background: 'bg-info1',
             },
         },
         {
             name: 'background-fluid',
             label: 'background fluid',
             context: {
-                tx_starter_background: 'bg-info',
+                tx_starter_background: 'bg-info2',
                 tx_starter_background_fluid: true,
             },
         },
@@ -84,10 +83,10 @@ module.exports = {
             },
         },
         {
-            name: 'visibility',
+            name: 'show-by-mediaquery',
             label: 'show for medium only',
             context: {
-                tx_starter_visibility: 'd-md-only',
+                tx_starter_showbyscreensize: 'd-md-only',
             },
         },
         {

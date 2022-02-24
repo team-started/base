@@ -4,6 +4,6 @@ const _ = require('../../../../config/helpers');
 
 module.exports = {
     context: {
-        text: _.lorem(20, 'max 20'),
+        date: '20.02.2022',
     },
 };

@@ -1,18 +1,11 @@
 {#
-containerComponent: Enthält die jeweilige Komponente
-containerUid: Uid der Komponente
-containerComponentType: Typ der Kompomente
+containerContent: Enthält die jeweilige Inhalt des Containers
 
 Wenn es einen Hintergrund über volle Breite gibt, gibt es einen Wrapper.
 #}
 
-
-
-{% set containerUid = uid ? 'con' ~ uid %}
-{% set containerComponentType = componentType ? 'container--' ~ componentType : 'container--no-type' %}
-
 {% set containerContent %}
-    <div id="{{ containerUid }}" class="{{ container }} {{ containerComponentType }} {{ tx_starter_visibility }} {{ space_before_class }} {{ space_after_class }}">
+    <div id="con{{ uid }}" class="{{ tx_starter_container|default('container') }} container-{{ CType|default('no-type') }} {{ tx_starter_showbyscreensize }} {{ space_before_class }} {{ space_after_class }}">
         {% block moduleContentBlock %}{% endblock %}
     </div>
 {% endset %}
@@ -21,7 +14,7 @@ Wenn es einen Hintergrund über volle Breite gibt, gibt es einen Wrapper.
 
 {% if tx_starter_background_fluid and tx_starter_background %}
 
-    <div class="{{ tx_starter_background }} {{ tx_starter_visibility }}">
+    <div class="{{ tx_starter_background }} {{ tx_starter_showbyscreensize }}">
         {{ containerContent }}
     </div>
 
