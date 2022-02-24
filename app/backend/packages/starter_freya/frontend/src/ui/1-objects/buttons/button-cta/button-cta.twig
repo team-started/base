@@ -1,3 +1,18 @@
-<div class="o-button-cta">
-    Text button-cta: {{ text }}
-</div>
+{#
+thisCtaClass:           Klasse des Buttons für tx_starter_cta_link.config.class, default: 'btn btn-primary'
+tx_starter_cta_link:    tx_starter_cta_link.config.class muss gemerged werden, geht leider nbicht anders in Twig
+#}
+
+{% set thisCtaClass = tx_starter_cta_link.config.class ? 'btn btn-' ~ tx_starter_cta_link.config.class : 'btn btn-primary' %}
+{% set tx_starter_cta_link = tx_starter_cta_link|merge({config: (tx_starter_cta_link.config|merge({class: thisCtaClass})) }) %}
+
+
+
+{% if tx_starter_cta_link.config.uri %}
+    {% embed '@object/links/link.twig' with {
+        'link': tx_starter_cta_link,
+        'tx_starter_cta_text': tx_starter_cta_text,
+    } only %}
+        {% block link %}{{ tx_starter_cta_text }}{% endblock %}
+    {% endembed %}
+{% endif %}
