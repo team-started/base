@@ -38,7 +38,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ComposerJsonSection::REQUIRE => [
             'php' => '^7.4',
             'helhum/typo3-console' => '^6.4',
-            'symfony/dotenv' => '^5.2',
             'typo3/cms-backend' => '^10.4',
             'typo3/cms-belog' => '^10.4',
             'typo3/cms-beuser' => '^10.4',
