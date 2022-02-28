@@ -3,7 +3,6 @@ const pkg = require('../package.json');
 
 const root = resolve(__dirname, '../');
 const config = resolve(root, 'config');
-const templates = resolve(config, 'templates');
 const src = resolve(root, 'src');
 const ui = resolve(src, 'ui');
 const assets = resolve(src, 'assets');
@@ -20,16 +19,12 @@ const settings = {
         config,
         src,
         ui,
-        templates,
         assets,
         public: resolve(root, 'public'),
         npmPackages: resolve(root, 'node_modules'),
         icons: resolve(assets, 'icons'),
         fonts: resolve(assets, 'fonts'),
         images: resolve(assets, 'images'),
-    },
-    ENTRIES: {
-        js: 'index.js',
     },
     DEV: {
         showStats: false,
@@ -56,6 +51,7 @@ const settings = {
         hashCss: false,
         hashAssets: false,
         buildManifest: false,
+        bundleAnalyzer: false,
         useSourceMap: false,
         // https://webpack.js.org/configuration/devtool/
         typeSourceMap: 'source-map',
@@ -102,11 +98,6 @@ const settings = {
         errorDetails: true,
     },
     ICONS: {
-        outputDir: resolve(src, 'scss', 'elements'),
-        template: resolve(templates, 'hbs', 'icons-template.hbs'),
-        scssName: '_icons-generated.scss',
-        jsonName: '_icons-generated.json',
-        fontName: 'Icons',
         spriteName: 'sprite.svg',
     },
     OPTIONS: {

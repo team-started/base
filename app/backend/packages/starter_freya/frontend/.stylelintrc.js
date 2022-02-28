@@ -13,6 +13,7 @@ module.exports = {
       customSyntax: 'postcss-scss'
     },
   ],
+  ignoreFunctions: ["map-get"],
   rules: {
     'at-rule-no-unknown': [
       true,
@@ -40,6 +41,7 @@ module.exports = {
     'scss/at-import-partial-extension': null,
     // Bootstrap hat Funktionen, die dem Standard nicht entsprechen! https://sass-lang.com/documentation/cli/migrator
     'scss/no-global-function-names': null,
-    'scss/at-extend-no-missing-placeholder': null
+    'scss/at-extend-no-missing-placeholder': null,
+    'function-no-unknown': null,
   },
 }

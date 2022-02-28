@@ -42,8 +42,12 @@ $ npm run build
 $ npm run build:icons
 
 
-# preview build
-$ npm run preview:build
+# preview fractal
+$ npm run preview:fractal
+
+
+# analyze bundle - set bundleAnalyzer to tru (see Developer Settings)
+$ npm run preview:bundle
 ```
 
 ### Linting
@@ -79,12 +83,13 @@ A Folder always needs to be written in plural "buttons", because of namespacing 
 ### Developer Settings
 Developer settings can be done in `developer.config.js`. First duplicate `developer.config.js.tmpl` and rename it to `developer.config.js`.
 
-| Name          | Type | Default    | Categorie | Info                                                     |
-| ------------- | ---- | ---------- | --------- | -------------------------------------------------------- |
-| notifier      | BOL  | false      | PLUGIN    |                                                          |
-| showStats     | BOL  | false      | DEV       |                                                          |
-| useSourceMap  | BOL  | true       | DEV       |                                                          |
-| typeSourceMap | STR  | source-map | DEV       | [Devtool](https://webpack.js.org/configuration/devtool/) |
+| Name           | Type | Default    | Categorie | Info                                                                             |
+| -------------- | ---- | ---------- | --------- | -------------------------------------------------------------------------------- |
+| notifier       | BOL  | false      | PLUGIN    | [webpack-build-notifier](https://www.npmjs.com/package/webpack-build-notifier)   |
+| showStats      | BOL  | false      | DEV       |                                                                                  |
+| useSourceMap   | BOL  | true       | DEV       |                                                                                  |
+| typeSourceMap  | STR  | source-map | DEV       | [Devtool](https://webpack.js.org/configuration/devtool/)                         |
+| bundleAnalyzer | BOL  | false      | BUILD     | [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) |
 
 
 ### Vscode Settings

@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -67,6 +68,12 @@ module.exports = merge(common, {
         }),
 
         (BUILD.buildManifest ? true : undefined) && new WebpackManifestPlugin(),
+        (BUILD.bundleAnalyzer ? true : undefined) &&
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+                analyzerMode: 'static',
+                reportFilename: 'index.html',
+            }),
     ]),
 
     // https://webpack.js.org/configuration/optimization/

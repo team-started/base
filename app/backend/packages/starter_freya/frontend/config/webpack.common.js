@@ -1,5 +1,7 @@
 const WebpackBar = require('webpackbar');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const { resolve } = require('path');
 
 const { DIR, DEV, BUILD, RESOLVER, ICONS, isDevelopment } = require('./settings');
@@ -21,7 +23,7 @@ module.exports = {
     module: {
         rules: [
             // JavaScript: Use Babel to transpile JavaScript files
-            { test: /\.js$/, use: ['babel-loader', 'eslint-loader'] },
+            { test: /\.js$/, use: ['babel-loader'] },
             {
                 // TODO: Muss svg für sich stehen?
                 // https://dev.to/smelukov/webpack-5-asset-modules-2o3h
@@ -62,6 +64,8 @@ module.exports = {
                 },
             ],
         }),
+        new ESLintPlugin(),
+        new StylelintPlugin(),
         new WebpackBar(isDevelopment ? DEV.barOption : BUILD.barOption),
     ],
 

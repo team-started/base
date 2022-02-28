@@ -4,7 +4,7 @@ const theme = require('@frctl/mandelbrot');
 const twigAdapter = require('@frctl/twig');
 const helpers = require('./config/helpers');
 
-const { PKG, DIR, BUILD } = require('./config/settings');
+const { PKG, DIR, BUILD, isProduction } = require('./config/settings');
 
 const customTheme = theme({
     skin: {
@@ -16,13 +16,19 @@ const customTheme = theme({
 
 /**
  * Setup Project, See https://www.fractal.build for Documentation
- * */
+ */
 fractal.set('project.title', PKG.name);
 
 fractal.docs.set('path', `${DIR.root}/docs`);
 
 fractal.web.set('builder.dest', BUILD.fractal);
 fractal.web.set('static.path', BUILD.dist);
+
+/**
+ * Exclude folder, See https://fractal.build/guide/components/configuration-reference.html#global-configuration-options for Documentation
+ */
+const excludes = isProduction ? ['**/0-playground/**'] : [];
+fractal.components.set('exclude', ['**/node_modules/**', ...excludes]);
 
 /**
  * Define Component Statuses and set Prototype to default
@@ -93,7 +99,8 @@ fractal.web.set('server.syncOptions', {
     },
 });
 
-customTheme.addLoadPath(`${DIR.root}/theme-overrides`);
+// TODO: Braucht ihr daas noch?
+// customTheme.addLoadPath(`${DIR.root}/theme-overrides`);
 
 fractal.web.theme(customTheme);
 
