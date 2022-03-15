@@ -1,0 +1,38 @@
+#!/bin/bash
+
+## Description: Build the frontend in development mode with watching for changes
+## Usage: frontend-start custom|freya|nessa
+## Example: "ddev frontend-start" (default is "custom")", "ddev frontend-start freya", "ddev frontend-start nessa"
+
+BASE_PATH="/var/www/html/app/"
+THEME_FRONTEND_FOLDER=$BASE_PATH"backend/packages/"
+CUSTOM_FRONTEND_PATH=$BASE_PATH"frontend/"
+FRONTEND_BUILD_FOLDER=""
+
+if [ $# -eq 0 ] ; then
+    if [[ -d $CUSTOM_FRONTEND_PATH ]] ; then
+        FRONTEND_BUILD_FOLDER=$CUSTOM_FRONTEND_PATH
+    else
+        echo "[ERROR] No custom frontend available under '${CUSTOM_FRONTEND_PATH}'"
+        exit 1
+    fi
+fi
+
+case $1 in
+    freya|nessa)
+        FRONTEND_BUILD_FOLDER=$THEME_FRONTEND_FOLDER"starter_$1/frontend/"
+	;;
+    *)
+        echo "[ERROR] Invalid theme name: $1"
+        exit 1
+esac
+
+if [[ $FRONTEND_BUILD_FOLDER != "" && -d $FRONTEND_BUILD_FOLDER ]]
+then
+    cd $FRONTEND_BUILD_FOLDER && \
+        npm i --quiet && \
+        npm run start --silent
+else
+    echo "[ERROR] No frontend available under '${FRONTEND_BUILD_FOLDER}'"
+    exit 1
+fi
