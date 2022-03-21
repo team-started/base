@@ -18,7 +18,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
 
     $parameters->set(Option::DEFAULT_BRANCH_NAME, 'main');
-    $parameters->set(Option::PACKAGE_ALIAS_FORMAT, '<major>.<minor>.x-dev');
+    $parameters->set(Option::PACKAGE_ALIAS_FORMAT, '<major>.x-dev');
     $parameters->set(Option::PACKAGE_DIRECTORIES, [
         __DIR__ . '/packages',
     ]);
@@ -37,8 +37,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ],
         ComposerJsonSection::REQUIRE => [
             'php' => '^7.4',
+            'helhum/dotenv-connector' => '^3.0',
             'helhum/typo3-console' => '^7.0',
-            'symfony/dotenv' => '^5.2',
             'typo3/cms-backend' => '^11.5',
             'typo3/cms-belog' => '^11.5',
             'typo3/cms-beuser' => '^11.5',

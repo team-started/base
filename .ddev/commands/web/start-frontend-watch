@@ -1,7 +1,0 @@
-#!/bin/bash
-
-## Description: Watch frontend changes
-## Usage: start-frontend-watching
-## Example: "ddev start-frontend-watching"
-
-cd /var/www/html/app/frontend/ && npm run build:dev:watch
