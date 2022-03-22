@@ -35,8 +35,6 @@ module.exports = {
         ]
       },
     ],
-    // 'order/order': ['custom-properties', 'declarations'],
-    // 'order/properties-order': ['width', 'height'],
     'scss/at-import-no-partial-leading-underscore': null,
     'scss/at-import-partial-extension': null,
     // Bootstrap hat Funktionen, die dem Standard nicht entsprechen! https://sass-lang.com/documentation/cli/migrator
