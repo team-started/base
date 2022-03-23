@@ -1,52 +1,17 @@
 'use strict';
 
 const _ = require('../../../../config/helpers');
+const globalConfig = require('../module-general.config');
 
 module.exports = {
     context: {
+        ...globalConfig,
         CType: 'images',
         date: '',
-        header: {
-            header: '',
-            header_layout: '',
-            header_link: '',
-            header_position: '',
-            tx_starter_headercolor: '',
-            tx_starter_headerfontsize: '',
-        },
         imagecols: '1',
         items: ['@picture'],
-        layout: '',
-        overline: {
-            header_position: '',
-            tx_starter_overline: '',
-        },
-        space_after_class: '',
-        space_before_class: '',
-        subheader: {
-            header_position: '',
-            subheader: '',
-        },
-        uid: 999,
-        tx_starter_background: '',
-        tx_starter_background_fluid: '',
-        tx_starter_bordercolor: '',
-        tx_starter_container: '',
-        tx_starter_cta_link: {
-            config: {
-                uri: '',
-                target: '',
-                class: '',
-                title: '',
-            },
-        },
-        tx_starter_cta_text: '',
         tx_starter_imagecols_medium: '1',
         tx_starter_imagecols_large: '1',
-        tx_starter_showbyscreensize: '',
-        tx_starter_textclass: '',
-        tx_starter_textcolor: '',
-        tx_starter_width: '',
     },
     variants: [
         {
