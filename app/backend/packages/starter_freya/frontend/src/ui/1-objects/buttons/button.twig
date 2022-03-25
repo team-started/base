@@ -1,3 +1,12 @@
-<div class="o-button">
-    Text button: {{ text }}
-</div>
+{% set link = {
+    'config':
+        {
+            'uri': link.config.uri,
+            'target': link.config.target,
+            'title': link.config.title,
+            'class': 'btn btn-' ~ link.config.class|default('primary')
+        }
+    }
+%}
+
+{% include '@object/links/link.twig' with link %}

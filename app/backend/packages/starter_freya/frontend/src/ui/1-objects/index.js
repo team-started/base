@@ -1,7 +1,5 @@
 import { registerComponent } from '@/js/utils';
 
-import buttonCta, { className as buttonCtaClassName } from './buttons/button-cta/index';
-import button, { className as buttonClassName } from './buttons/index';
 import icon, { className as iconClassName } from './icons/index';
 import picture, { className as pictureClassName } from './pictures/index';
 // import object, { className as objectClassName } from './objects/index';
@@ -11,8 +9,6 @@ import picture, { className as pictureClassName } from './pictures/index';
 const objects = [
     // { comp: object, class: objectClassName },
     // { comp: objectCta, class: objectCtaClassName },
-    { comp: button, class: buttonClassName },
-    { comp: buttonCta, class: buttonCtaClassName },
     { comp: icon, class: iconClassName },
     { comp: picture, class: pictureClassName },
     // and so on...

@@ -43,11 +43,11 @@ siehe: https://getbootstrap.com/docs/4.0/content/images/ (beachte auch Quellcode
 
 {% set linkContent %}
     {% if metaData.link.config.uri %}
-        {% embed '@object/links/link.twig' %}
-            {% block link %}
-                {{ pictureContent }}
-            {% endblock %}
-        {% endembed %}
+            {% embed '@object/links/link.twig' with metaData.link %}
+                {% block link %}
+                    {{ pictureContent }}
+                {% endblock %}
+            {% endembed %}
     {% else %}
         {{ pictureContent }}
     {% endif %}

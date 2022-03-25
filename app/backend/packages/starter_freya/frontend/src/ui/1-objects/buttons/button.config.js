@@ -4,6 +4,14 @@ const _ = require('../../../../config/helpers');
 
 module.exports = {
     context: {
-        text: _.lorem(20, 'max 20'),
+        link: {
+            config: {
+                uri: '#',
+                target: '',
+                class: '',
+                title: '',
+            },
+        },
+        text: _.lorem(20, 'Button Text'),
     },
 };

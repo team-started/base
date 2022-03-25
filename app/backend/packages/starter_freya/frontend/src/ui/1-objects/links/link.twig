@@ -1,3 +1,3 @@
-<a href="{{ metaData.link.config.uri }}" target="{{ metaData.link.config.target }}" title="{{ metaData.link.config.title }}" class="{{ metaData.link.config.class }}">
-    {% block link %}{% endblock %}
+<a href="{{ config.uri }}" target="{{ config.target }}" title="{{ config.title }}" class="{{ config.class }}">
+    {% block link %}{{ text }}{% endblock %}
 </a>
