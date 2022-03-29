@@ -30,7 +30,14 @@ module.exports = {
             },
         },
         {
-            name: 'md-fixed',
+            name: 'md-fixed-small',
+            label: 'max-width small',
+            context: {
+                tx_starter_container: 'container-sm-fixed',
+            },
+        },
+        {
+            name: 'md-fixed-medium',
             label: 'max-width medium',
             context: {
                 tx_starter_container: 'container-md-fixed',
