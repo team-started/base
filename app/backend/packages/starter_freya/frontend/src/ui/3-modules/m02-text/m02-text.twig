@@ -1,29 +1,31 @@
 {#
-componentBackgound:   Wenn der Background fluid ist, dann wird er im Container gesetzt, ansonsten hier, in der Componente.
+componentBackground: Wenn der Background fluid ist, dann wird er im Container gesetzt, ansonsten hier, in der Componente.
 #}
 
-{% set componentBackgound = tx_starter_background_fluid ? '' : tx_starter_background %}
+{% set componentBackground = tx_starter_background_fluid ? '' : tx_starter_background %}
 
 
 
 {% extends '@component/containers/container.twig' %}
 
 {% block moduleContentBlock %}
-  <div class="row">
-    <div class="col">
-      <div id="c{{ uid }}" class="m-{{ CType }} {{ componentBackgound }}">
+
+    <div id="c{{ uid }}" class="m-{{ CType }} {{ componentBackground }}">
+
         {% include '@component/module/moduleheaders/moduleheader.twig' with {
-          'date': date,
-          'header': header,
-          'subheader': subheader,
-          'overline': overline,
+            'date': date,
+            'header': header,
+            'subheader': subheader,
+            'overline': overline,
         } only %}
+
         {{ bodytext }}
+
         {% include '@component/module/modulefooters/modulefooter.twig' with {
-          'tx_starter_cta_link': tx_starter_cta_link,
-          'tx_starter_cta_text': tx_starter_cta_text,
+            'tx_starter_cta_link': tx_starter_cta_link,
+            'tx_starter_cta_text': tx_starter_cta_text,
         } only %}
-      </div>
+
     </div>
-  </div>
+
 {% endblock %}

@@ -1,7 +1,7 @@
 {#
-containerContent: Enthält die jeweilige Inhalt des Containers
+containerContent: Enthält den jeweilige Inhalt des Containers
 
-Wenn es einen Hintergrund über volle Breite gibt, gibt es einen Wrapper.
+Wenn es einen Hintergrund über volle Breite gibt, wird um den Container ein zusätzlicher Wrapper gesetzt.
 #}
 
 {% set containerContent %}
@@ -13,13 +13,9 @@ Wenn es einen Hintergrund über volle Breite gibt, gibt es einen Wrapper.
 
 
 {% if tx_starter_background_fluid and tx_starter_background %}
-
     <div class="{{ tx_starter_background }} {{ tx_starter_showbyscreensize }}">
         {{ containerContent }}
     </div>
-
 {% else %}
-
     {{ containerContent }}
-
 {% endif %}
