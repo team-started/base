@@ -115,9 +115,25 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
+        "create-symlinks": [
             "ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"
-        ]
+        ],
+		"create-package-symlinks": [
+			"mkdir -p public/typo3conf/ext",
+			"cd public/typo3conf/ext && ln -sfn ../../../packages/sitepackage_nessa sitepackage_nessa",
+			"cd public/typo3conf/ext && ln -sfn ../../../packages/starter starter",
+			"cd public/typo3conf/ext && ln -sfn ../../../packages/starter_nessa starter_nessa",
+			"cd public/typo3conf/ext && ln -sfn ../../../packages/starter_twig starter_twig"
+		],
+        "post-install-cmd": [
+            "@create-symlinks"
+        ],
+        "post-update-cmd": [
+            "@create-symlinks"
+        ],
+		"pre-install-cmd": [
+			"@create-package-symlinks"
+		]
     },
     "replace": {
         "starterteam/customer-site-package": "self.version",

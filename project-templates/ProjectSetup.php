@@ -49,7 +49,10 @@ class ProjectSetup
         $this->replacements = [
             [
                 'files' => ['app/backend/.env', 'app/backend/.env.dist', '.ddev/config.yaml', 'Readme.md'],
-                'replace' => ['starter-base' => '@PROJECT_NAME@'],
+                'replace' => [
+                    'starter-base' => '@PROJECT_NAME@',
+                    'TYPO3_BASEURL_NESSA="https://nessa.ddev.site/"' => '#TYPO3_BASEURL_OTHER=""',
+                ],
             ],
         ];
     }

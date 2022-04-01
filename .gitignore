@@ -20,4 +20,5 @@ node_modules
 _build
 
 /craft/data/*
-!/craft/data/.gitkeep
+!/craft/data/demo-assets
+!/craft/data/demo-sql

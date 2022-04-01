@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Truncate database table and import demo data with sync of demo files
+## Usage: demo-data
+## Example: "ddev demo-data"
+
+/var/www/html/craft/bin/initialize_demo.sh

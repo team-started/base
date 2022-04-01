@@ -21,11 +21,7 @@ Thumbs.db
 !/public/typo3conf/LocalConfiguration.php
 !/public/typo3conf/AdditionalConfiguration.php
 /public/typo3conf/ENABLE_INSTALL_TOOL
-
-/public/typo3conf/ext/*
-!/public/typo3conf/ext/customer_sitepackage
-!/public/typo3conf/ext/sitepackage_nessa
-!/public/typo3conf/ext/starter*
+/public/typo3conf/ext
 
 /vendor
 /var/
