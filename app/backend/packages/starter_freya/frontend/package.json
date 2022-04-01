@@ -17,7 +17,7 @@
 		"build:fractal": "fractal build",
 		"build:icons": "node ./config/compiler/icons.js",
 		"preview:fractal": "npx http-server build/prototype",
-		"preview:bundle": "npx http-server build/static",
+		"preview:analyze": "npx http-server build/static",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:js": "eslint . --fix",
 		"lint:css": "stylelint \"./src/**/*.scss\" --fix --config .stylelintrc.js --ignore-path .stylelintignore",

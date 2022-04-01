@@ -47,7 +47,7 @@ $ npm run preview:fractal
 
 
 # analyze bundle - set bundleAnalyzer to tru (see Developer Settings)
-$ npm run preview:bundle
+$ npm run preview:analyze
 ```
 
 ### Linting

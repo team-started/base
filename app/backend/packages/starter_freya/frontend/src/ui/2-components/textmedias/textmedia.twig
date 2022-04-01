@@ -1,0 +1,19 @@
+{#
+Diese Komponente wird überall verwendet, wo es ein Accordion gibt.
+see: src/ui/3-modules/m03-textmedia
+see: src/ui/2-components/accordions/_accordion-body/accordion-body.twig
+
+imageorient.inside:     Bild im Text oder neben dem Text, default: neben dem Text.
+thisGridImageColsSmall: Backendseitig kann auch eine 0 kommen, was 12 bedeutet.
+#}
+
+{% set thisGridImageColsSmall = grid.imageCols.small == 0 ? 12 : grid.imageCols.small %}
+{% set thisImageHideOnSmall = grid.hideOnSmall ? 'd-none d-md-block' : '' %}
+
+
+
+{% if imageorient.inside %}
+    {% include '@component/textmedias/_textmedia-inside/textmedia-inside.twig' with textmedia %}
+{% else %}
+    {% include '@component/textmedias/_textmedia-beside/textmedia-beside.twig' with textmedia %}
+{% endif %}
