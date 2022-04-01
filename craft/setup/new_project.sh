@@ -78,7 +78,7 @@ echo -e "${YELLOW}Copy required files and folders ...${NO_COLOR}"
 ###
 # Sync basic files in root
 ###
-rsync $SOURCE_DIR/.editorconfig $SOURCE_DIR/.gitattributes $SOURCE_DIR/.gitignore $BUILD_DIR
+rsync $SOURCE_DIR/.editorconfig $SOURCE_DIR/.gitattributes $PROJECT_TEMPLATES_DIRECTORY/.gitignore $BUILD_DIR
 
 ###
 # Sync gitlab-ci files and exclude customized pipeline
@@ -93,13 +93,14 @@ rsync -r $SOURCE_DIR/.ddev $BUILD_DIR \
   --exclude .ddev-docker-compose-base.yaml \
   --exclude .ddev-docker-compose-full.yaml \
   --exclude setup.sh \
-  --exclude init-project-setup.sh
+  --exclude init-project-setup.sh \
+  --exclude demo-data.sh
 
 ###
 # Sync craft folder
 ###
-rsync -r $SOURCE_DIR/craft $BUILD_DIR --exclude config.sh --exclude data --exclude setup
-rsync $SOURCE_DIR/craft/data/.gitkeep $BUILD_DIR/craft/data/.gitkeep
+rsync -r $SOURCE_DIR/craft $BUILD_DIR --exclude config.sh --exclude data --exclude setup --exclude initialize_demo.sh
+touch $BUILD_DIR/craft/data.gitkeep
 
 ###
 # Sync basic files and folders for backend
