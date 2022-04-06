@@ -31,6 +31,24 @@ module.exports = {
             },
         },
         {
+            label: 'image beside left 12-6-6',
+            name: 'image-beside-left-show',
+            context: {
+                grid: {
+                    imageCols: {
+                        small: '12',
+                        medium: '6',
+                        large: '6',
+                    },
+                    hideOnSmall: false,
+                },
+                imageorient: {
+                    x: 'left',
+                    inside: false,
+                },
+            },
+        },
+        {
             label: 'image beside left hide-on-small 12-6-6',
             name: 'image-beside-left-hide',
             context: {
@@ -41,24 +59,6 @@ module.exports = {
                         large: '6',
                     },
                     hideOnSmall: true,
-                },
-                imageorient: {
-                    x: 'left',
-                    inside: false,
-                },
-            },
-        },
-        {
-            label: 'image beside left show-on-small 12-6-6',
-            name: 'image-beside-left-show',
-            context: {
-                grid: {
-                    imageCols: {
-                        small: '12',
-                        medium: '6',
-                        large: '6',
-                    },
-                    hideOnSmall: false,
                 },
                 imageorient: {
                     x: 'left',
