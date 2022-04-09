@@ -24,7 +24,8 @@
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^7.0",
         "ichhabrecht/content-defender": "^3.2",
-        "pti/pti": "dev-feature/support_t3v11",
+        "starterteam/site-package-nessa": "@dev",
+        "starterteam/starter-twig": "dev-main",
         "symfony/dotenv": "^5.2",
         "twig/twig": "^3",
         "typo3/cms-backend": "^11.5",
@@ -70,12 +71,12 @@
     },
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://packagist.starter.team"
-        },
-        {
             "type": "path",
             "url": "./packages/*"
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.starter.team"
         },
         {
             "type": "vcs",
@@ -84,15 +85,7 @@
     ],
     "extra": {
         "typo3/cms": {
-            "extension-key": [
-                "customer_sitepackage",
-                "starter_freya",
-                "starter_twig",
-                "sitepackage_nessa",
-                "starter",
-                "starter_nessa"
-            ],
-            "cms-package-dir": "{$vendor-dir}/typo3/cms"
+			"cms-package-dir": "{$vendor-dir}/typo3/cms"
         }
     },
     "config": {
@@ -118,29 +111,13 @@
         "create-symlinks": [
             "ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"
         ],
-		"create-package-symlinks": [
-			"mkdir -p public/typo3conf/ext",
-			"cd public/typo3conf/ext && ln -sfn ../../../packages/sitepackage_nessa sitepackage_nessa",
-			"cd public/typo3conf/ext && ln -sfn ../../../packages/starter starter",
-			"cd public/typo3conf/ext && ln -sfn ../../../packages/starter_nessa starter_nessa",
-			"cd public/typo3conf/ext && ln -sfn ../../../packages/starter_twig starter_twig"
-		],
         "post-install-cmd": [
             "@create-symlinks"
         ],
         "post-update-cmd": [
             "@create-symlinks"
-        ],
-		"pre-install-cmd": [
-			"@create-package-symlinks"
-		]
+        ]
     },
-    "replace": {
-        "starterteam/customer-site-package": "self.version",
-        "starterteam/site-package-nessa": "self.version",
-        "starterteam/starter": "self.version",
-        "starterteam/starter-freya": "self.version",
-        "starterteam/starter-nessa": "self.version",
-        "starterteam/starter-twig": "self.version"
-    }
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }

@@ -25,47 +25,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // for "merge" command
     $parameters->set(Option::DATA_TO_APPEND, [
-        ComposerJsonSection::REPOSITORIES => [
-            [
-                'type' => 'path',
-                'url' => './packages/*',
-            ],
-            [
-                'type' => 'composer',
-                'url' => 'https://packagist.starter.team'
-            ]
-        ],
-        ComposerJsonSection::REQUIRE => [
-            'php' => '^7.4',
-            'helhum/dotenv-connector' => '^3.0',
-            'helhum/typo3-console' => '^7.0',
-            'typo3/cms-backend' => '^11.5',
-            'typo3/cms-belog' => '^11.5',
-            'typo3/cms-beuser' => '^11.5',
-            'typo3/cms-core' => '^11.5',
-            'typo3/cms-extbase' => '^11.5',
-            'typo3/cms-extensionmanager' => '^11.5',
-            'typo3/cms-filelist' => '^11.5',
-            'typo3/cms-fluid' => '^11.5',
-            'typo3/cms-fluid-styled-content' => '^11.5',
-            'typo3/cms-form' => '^11.5',
-            'typo3/cms-frontend' => '^11.5',
-            'typo3/cms-impexp' => '^11.5',
-            'typo3/cms-info' => '^11.5',
-            'typo3/cms-install' => '^11.5',
-            'typo3/cms-lowlevel' => '^11.5',
-            'typo3/cms-recordlist' => '^11.5',
-            'typo3/cms-redirects' => '^11.5',
-            'typo3/cms-reports' => '^11.5',
-            'typo3/cms-rte-ckeditor' => '^11.5',
-            'typo3/cms-scheduler' => '^11.5',
-            'typo3/cms-seo' => '^11.5',
-            'typo3/cms-setup' => '^11.5',
-            'typo3/cms-sys-note' => '^11.5',
-            'typo3/cms-t3editor' => '^11.5',
-            'typo3/cms-tstemplate' => '^11.5',
-            'typo3/cms-viewpage' => '^11.5',
-        ],
         ComposerJsonSection::REQUIRE_DEV => [
             'rector/rector' => '^0.12.15',
             'typo3/coding-standards' => '^0.5.0',
@@ -80,7 +39,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
 
     // release workers - in order to execute
-    $services->set(UpdateReplaceReleaseWorker::class);
     $services->set(SetCurrentMutualDependenciesReleaseWorker::class);
 
     #$services->set(AddTagToChangelogReleaseWorker::class);
