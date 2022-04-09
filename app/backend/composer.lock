@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed589fdc32c74b73a8bb0ee36b50e7e0",
+    "content-hash": "ed99ed83b32b08d17d6c0c8df78c190a",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2374,8 +2374,36 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "starterteam/site-package-freya",
+            "version": "dev-task/basic-be_integration",
+            "dist": {
+                "type": "path",
+                "url": "./packages/sitepackage_freya",
+                "reference": "9ed793ea45eefda1281c9b609706ce2906e6e69f"
+            },
+            "require": {
+                "php": "^7.4",
+                "starterteam/starter": "dev-main",
+                "starterteam/starter-freya": "dev-main",
+                "typo3/cms-core": "^11.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "sitepackage_freya"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "StarterTeam sitepackage demo extension for EXT:starter-freya",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "starterteam/site-package-nessa",
-            "version": "dev-bugfix/fix-local-dev-with-composer",
+            "version": "dev-task/basic-be_integration",
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_nessa",
@@ -2442,6 +2470,46 @@
                 }
             ],
             "description": "Add description...",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "starterteam/starter-freya",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/starter_freya",
+                "reference": "1bfacc88f3684b40a7fda540bd421ba27b0eedb5"
+            },
+            "require": {
+                "php": "^7.4",
+                "starterteam/starter-twig": "dev-main",
+                "typo3/cms-core": "^11.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "starter_freya"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Wolfram",
+                    "email": "c.wolfram@chriwo.de"
+                },
+                {
+                    "name": "Marc Fell",
+                    "email": "marc@fell.hamburg"
+                }
+            ],
+            "description": "Theme extension for EXT:starter and EXT:starter-twig",
+            "support": {
+                "issues": "https://gitlab.com/starterteam/team/starter-freya/-/issues"
+            },
             "transport-options": {
                 "relative": true
             }
@@ -8267,8 +8335,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "starterteam/site-package-nessa": 20,
-        "starterteam/starter-twig": 20
+        "starterteam/site-package-freya": 20,
+        "starterteam/site-package-nessa": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

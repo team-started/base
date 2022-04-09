@@ -1,0 +1,12 @@
+tx_startertwig {
+  ceFolderName = 3-modules
+  componentFolderName = 2-components
+  objectsFolderName = 1-objects
+  pageFolderName = _layouts
+}
+
+starter {
+  paths {
+    defaultTemplateName = {$tx_startertwig.pageFolderName}/l-default.twig
+  }
+}

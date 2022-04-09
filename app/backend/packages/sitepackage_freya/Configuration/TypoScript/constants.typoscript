@@ -1,0 +1,30 @@
+starter {
+  config {
+    headerComment = StarterTeam - Demo Theme Freya
+  }
+
+  pid {
+    defaultHomePageUid = 1000
+  }
+
+  branch {
+    title =
+
+    images {
+      #favicon = {$starter.paths.pathToPublic}Frontend/images/favicon.png
+      #logo = {$starter.paths.pathToPublic}images/logo.svg
+    }
+  }
+
+  tracking {
+    disableAtBackendLogin = 1
+
+    google {
+      tagManagerID =
+    }
+
+    cookieBot {
+      id =
+    }
+  }
+}
