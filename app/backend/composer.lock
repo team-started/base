@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cacfba1f3fef48f822d87911f926a970",
+    "content-hash": "ed589fdc32c74b73a8bb0ee36b50e7e0",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2372,6 +2372,170 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "starterteam/site-package-nessa",
+            "version": "dev-bugfix/fix-local-dev-with-composer",
+            "dist": {
+                "type": "path",
+                "url": "./packages/sitepackage_nessa",
+                "reference": "c2c0418a375d8cc99015381b3ad6308a000b8846"
+            },
+            "require": {
+                "php": "^7.4",
+                "starterteam/starter": "dev-main",
+                "starterteam/starter-nessa": "dev-main",
+                "typo3/cms-core": "^11.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "sitepackage_nessa"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "StarterTeam sitepackage extension for EXT:starter-nessa",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "starterteam/starter",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/starter",
+                "reference": "2c6aa16dd3b0534496bf1980bb30caca682ba0e0"
+            },
+            "require": {
+                "ichhabrecht/content-defender": "^3.2",
+                "php": "^7.4",
+                "typo3/cms-core": "^11.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "starter"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StarterTeam\\Starter\\": "Classes"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Fell",
+                    "email": "marc@fell.hamburg"
+                },
+                {
+                    "name": "Christian Wolfram",
+                    "email": "c.wolfram@chriwo.de"
+                }
+            ],
+            "description": "Add description...",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "starterteam/starter-nessa",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/starter_nessa",
+                "reference": "e928e730a0813da37a7960e81b86eb3b1ea3cd99"
+            },
+            "require": {
+                "php": "^7.4",
+                "starterteam/starter": "dev-main",
+                "typo3/cms-core": "^11.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "starter_nessa"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StarterTeam\\StarterNessa\\": "Classes"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Schmid",
+                    "email": "m.schmid@visual-fx.ch"
+                },
+                {
+                    "name": "Christian Wolfram",
+                    "email": "c.wolfram@chriwo.de"
+                }
+            ],
+            "description": "Theme extension for EXT:starter with bootstrap",
+            "support": {
+                "issues": "https://gitlab.com/starterteam/team/starter-nessa/-/issues"
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "starterteam/starter-twig",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/starter_twig",
+                "reference": "d15cdd09cf96a148c12d1c8b9af4430af2743af5"
+            },
+            "require": {
+                "php": "^7.4",
+                "pti/pti": "dev-feature/support_t3v11",
+                "starterteam/starter": "dev-main",
+                "twig/twig": "^3",
+                "typo3/cms-core": "^11.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "starter_twig"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StarterTeam\\StarterTwig\\": "Classes"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Wolfram",
+                    "email": "c.wolfram@chriwo.de"
+                }
+            ],
+            "description": "TYPO3 data processing to handle twig templates",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "symfony/cache",
@@ -8101,11 +8265,12 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
-        "pti/pti": 20
+        "starterteam/site-package-nessa": 20,
+        "starterteam/starter-twig": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.4"
