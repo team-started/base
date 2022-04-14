@@ -40,3 +40,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# TYPO3
+/Resources/Private
+!/Resources/Private/.gitkeep
+/Resources/Public
+!/Resources/Public/.gitkeep

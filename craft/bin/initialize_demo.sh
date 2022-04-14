@@ -14,6 +14,7 @@ rm -f ${LOCAL_PATH}/truncate.sql
 # Import demo data for theme-nessa
 cat \
     $LOCAL_PATH/craft/data/demo-sql/_default/*.sql \
+    $LOCAL_PATH/craft/data/demo-sql/freya/*.sql \
     | ${TYPO3CMS} database:import
 
 # Sync demo assets into fileadmin

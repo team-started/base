@@ -1,0 +1,2 @@
+@import 'EXT:starter_freya/Configuration/TypoScript/Extension/Twig/CoreContentElements/'
+@import 'EXT:starter_freya/Configuration/TypoScript/Extension/Twig/StarterContentElements/'
