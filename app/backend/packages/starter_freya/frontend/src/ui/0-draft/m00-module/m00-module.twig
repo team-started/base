@@ -11,12 +11,8 @@ componentBackground: Wenn der Background fluid ist, dann wird er im Container ge
 {% block moduleContentBlock %}
 
     <div id="c{{ uid }}" class="m-{{ CType }} {{ componentBackground }}">
-
-        <div class="m-module">
-            {% include '@object/objects/object.twig' %}
-            {% include '@component/components/component.twig' %}
-        </div>
-
+        {% include '@object/objects/object.twig' %}
+        {% include '@component/components/component.twig' %}
     </div>
 
 {% endblock %}
