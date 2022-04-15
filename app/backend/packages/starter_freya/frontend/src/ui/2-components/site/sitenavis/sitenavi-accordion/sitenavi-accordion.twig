@@ -1,0 +1,28 @@
+<div class="{{ thisClass }}__wrapper show-for-large">
+    <nav>
+        <ul class="{{ thisClass }} {{ pathForThis }} {{thisLevelClass}} js-navi-desktop">
+            {% for item in items %}
+                <li id="dn{{ item.uid }}" class="{{ thisClass }}__item {{thisHasSubnavi}}">
+                    <span class="{{ patentClass }}__link {{ thisItemStatus }} {{thisHasSubnavi}}">
+                        <span class="{{ patentClass }}__title">{{ item.title }}</span>
+                    </span>
+                    {% if item.children %}
+                        <ul class="{{ patentClass }} {{thisLevelClass}} page--{{page}}">
+                            {% for child in item.children %}
+                                {% set thisChildStatus = child.current ? 'is-current' %}
+
+                                <li id="dn{{ child.uid }}" class="{{ thisClass }}__item">
+                                    <a  href="{{ child.link }}"
+                                        target="{{ child.target }}"
+                                        class="{{ patentClass }}__link {{ thisChildStatus }}">
+                                        <span class="{{ patentClass }}__title">{{ child.title }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
