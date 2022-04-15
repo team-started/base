@@ -1,22 +1,24 @@
 'use strict';
 
+const _ = require('../../../../config/helpers');
+
 module.exports = {
     context: {
-        text: 'object-other default',
+        text: _.lorem(50, 'max 50'),
     },
     variants: [
         {
             name: 'v1',
             label: 'variant 1',
             context: {
-                text: 'object-other default variant 1',
+                text: 'Object mit einem anderen Markup (twig)',
             },
         },
         {
             name: 'v2',
             label: 'variant 2',
             context: {
-                text: 'object-other default variant 2',
+                text: 'Object mit einem anderen Setup (config.js)',
             },
         },
     ],
