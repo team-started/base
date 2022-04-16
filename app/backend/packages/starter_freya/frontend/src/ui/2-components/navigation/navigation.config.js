@@ -83,6 +83,24 @@ module.exports = {
                                 },
                                 image: '@picture--navigation',
                                 spacer: 0,
+                                children: [
+                                    {
+                                        uid: 1311,
+                                        active: 0,
+                                        current: 0,
+                                        text: 'Das ist die 4. Ebene, die wird nicht mehr angezeigt.',
+                                        link: {
+                                            config: {
+                                                uri: '#',
+                                                target: '',
+                                                class: '',
+                                                title: '',
+                                            },
+                                        },
+                                        image: '',
+                                        spacer: 0,
+                                    },
+                                ],
                             },
                             {
                                 uid: 132,
