@@ -201,7 +201,7 @@ module.exports = {
                 },
                 image: '',
                 spacer: 0,
-                _children: [
+                children: [
                     {
                         uid: 31,
                         active: 0,
