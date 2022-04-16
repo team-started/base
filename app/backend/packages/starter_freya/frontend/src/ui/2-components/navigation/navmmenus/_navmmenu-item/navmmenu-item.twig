@@ -1,6 +1,7 @@
 {#
 link:   setzt den Context und modifiziert Link-Objekt
 text:   setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
+level:  level der Navi, hier erste Unternavi, also mindestens 2
 #}
 
 {% set link = 
@@ -10,21 +11,25 @@ text:   setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
                 'uri': item.link.config.uri,
                 'target': item.link.config.target,
                 'title': item.link.config.title,
-                'class': item.link.config.class
+                'class': 'nav-link ' ~ item.link.config.class
             }
     }
 %}
 {% set text = item.text %}
+{% set level = level + 1 %}
 
 
 
-<li id="{{ item.uid }}" class="">
+<li id="{{ item.uid }}" class="nav-item">
     {% include '@object/links/link.twig' with link %}
 
     {% if item.children %}
-        <ul class="list-unstyled">
+        <ul class="level-{{ level }} list-unstyled">
             {% for item in item.children %}
-                {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with { item: item } only %}
+                {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with { 
+                    item: item,
+                    level: level
+                } only %}
             {% endfor %}
         </ul>
     {% endif %}

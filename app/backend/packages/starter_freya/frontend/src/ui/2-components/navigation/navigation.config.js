@@ -24,7 +24,7 @@ module.exports = {
                         uid: 11,
                         active: 0,
                         current: 0,
-                        text: 'Ein etwas längerer Titel der Unterseite 1',
+                        text: 'Ein etwas längerer Titel der Unterseite 1 1',
                         link: {
                             config: {
                                 uri: '#',
@@ -40,7 +40,7 @@ module.exports = {
                         uid: 12,
                         active: 1,
                         current: 1,
-                        text: 'Unterseite 2, active, current',
+                        text: 'Unterseite 1 2, active, current',
                         link: {
                             config: {
                                 uri: '#',
@@ -56,7 +56,7 @@ module.exports = {
                         uid: 13,
                         active: 0,
                         current: 0,
-                        text: 'Unterseite 3, class, title',
+                        text: 'Unterseite 1 3, class, title',
                         link: {
                             config: {
                                 uri: '#',
@@ -72,7 +72,7 @@ module.exports = {
                                 uid: 131,
                                 active: 0,
                                 current: 0,
-                                text: 'Unterunterseite 3 1',
+                                text: 'Unterunterseite 1 3 1',
                                 link: {
                                     config: {
                                         uri: '#',
@@ -88,7 +88,7 @@ module.exports = {
                                 uid: 132,
                                 active: 1,
                                 current: 1,
-                                text: 'Unterunterseite 3 2',
+                                text: 'Unterunterseite 1 3 2',
                                 link: {
                                     config: {
                                         uri: '#',
@@ -106,7 +106,7 @@ module.exports = {
                         uid: 14,
                         active: 0,
                         current: 0,
-                        text: 'Unterseite 4',
+                        text: 'Unterseite 1 4',
                         link: {
                             config: {
                                 uri: '#',
@@ -151,6 +151,24 @@ module.exports = {
                 },
                 image: '',
                 spacer: 0,
+                _children: [
+                    {
+                        uid: 31,
+                        active: 0,
+                        current: 0,
+                        text: 'Ein etwas längerer Titel der Unterseite 3 1',
+                        link: {
+                            config: {
+                                uri: '#',
+                                target: '',
+                                class: '',
+                                title: '',
+                            },
+                        },
+                        image: '@picture--navigation',
+                        spacer: 0,
+                    },
+                ],
             },
         ],
     },
