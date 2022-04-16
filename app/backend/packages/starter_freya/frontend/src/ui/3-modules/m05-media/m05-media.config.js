@@ -6,7 +6,7 @@ const globalConfig = require('../module-general.config');
 module.exports = {
     context: {
         ...globalConfig,
-        CType: 'images',
+        CType: 'media',
         date: '',
         imagecols: '1',
         items: ['@picture'],
