@@ -109,5 +109,40 @@ module.exports = {
                 },
             },
         },
+        {
+            name: 'navigation',
+            context: {
+                figure: false,
+                placeholder: {
+                    uri: {
+                        default: 'https://via.placeholder.com/40x40/ccc/F00?text=png-40',
+                    },
+                },
+                default: {
+                    uri: {
+                        default: 'https://via.placeholder.com/80x80/ccc/F00?text=png-80',
+                    },
+                    mq: '80w',
+                    width: 80,
+                    height: 80,
+                    webP: {
+                        default: 'https://via.placeholder.com/80x80.webp/ccc/000?text=WebP-80',
+                        fileType: 'image/webp',
+                    },
+                },
+                variants: [
+                    {
+                        mq: '80w', // es ist eine Variante nötig, aber es braucht kein größeres Bild
+                        uri: {
+                            default: 'https://via.placeholder.com/80x80/ccc/F00?text=png-80',
+                        },
+                        webP: {
+                            default: 'https://via.placeholder.com/80x80.webp/ccc/000?text=WebP-80',
+                            fileType: 'image/webp',
+                        },
+                    },
+                ],
+            },
+        },
     ],
 };

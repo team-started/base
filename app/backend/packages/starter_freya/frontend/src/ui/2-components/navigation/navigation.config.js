@@ -17,6 +17,7 @@ module.exports = {
                         title: 'title',
                     },
                 },
+                image: '@picture--navigation',
                 spacer: 0,
                 children: [
                     {
@@ -32,6 +33,7 @@ module.exports = {
                                 title: '',
                             },
                         },
+                        image: '@picture--navigation',
                         spacer: 0,
                     },
                     {
@@ -47,6 +49,7 @@ module.exports = {
                                 title: '',
                             },
                         },
+                        image: '',
                         spacer: 0,
                     },
                     {
@@ -62,6 +65,7 @@ module.exports = {
                                 title: 'Unterseite 3',
                             },
                         },
+                        image: '',
                         spacer: 0,
                         children: [
                             {
@@ -77,6 +81,7 @@ module.exports = {
                                         title: '',
                                     },
                                 },
+                                image: '@picture--navigation',
                                 spacer: 0,
                             },
                             {
@@ -92,6 +97,7 @@ module.exports = {
                                         title: '',
                                     },
                                 },
+                                image: '',
                                 spacer: 0,
                             },
                         ],
@@ -109,6 +115,7 @@ module.exports = {
                                 title: '',
                             },
                         },
+                        image: '',
                         spacer: 0,
                     },
                 ],
@@ -126,6 +133,7 @@ module.exports = {
                         title: '',
                     },
                 },
+                image: '',
                 spacer: 0,
             },
             {
@@ -141,6 +149,7 @@ module.exports = {
                         title: '',
                     },
                 },
+                image: '',
                 spacer: 0,
             },
         ],
