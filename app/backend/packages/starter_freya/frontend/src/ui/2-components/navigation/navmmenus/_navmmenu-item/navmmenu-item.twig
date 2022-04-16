@@ -38,7 +38,7 @@ level <= 3: die Navigation ist zZ nur für drei Level ausgelegt
     {% include '@object/links/link.twig' with link %}
 
     {% if item.children and level <= 3 %}
-        <ul class="{{ (level == 2) ? 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4' : '' }} level-{{ level }} d-none list-unstyled">
+        <ul class="{{ (level == 2) ? 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center d-none' : '' }} level-{{ level }} list-unstyled">
             {% for item in item.children %}
                 {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with { 
                     item: item,
