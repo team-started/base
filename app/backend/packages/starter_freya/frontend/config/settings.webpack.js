@@ -74,6 +74,7 @@ const settings = {
     RESOLVER: {
         '@': src,
         '@draft': resolve(ui, '0-draft'),
+        '@playground': resolve(ui, '0-playground'),
         '@object': resolve(ui, '1-objects'),
         '@component': resolve(ui, '2-components'),
         '@module': resolve(ui, '3-modules'),

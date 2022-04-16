@@ -24,7 +24,7 @@ text:   setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
     {% if item.children %}
         <ul class="list-unstyled">
             {% for item in item.children %}
-                {% include '@component/navs/_nav-item/nav-item.twig' with { item: item } only %}
+                {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with { item: item } only %}
             {% endfor %}
         </ul>
     {% endif %}
