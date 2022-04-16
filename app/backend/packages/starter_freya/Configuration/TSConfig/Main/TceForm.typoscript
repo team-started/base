@@ -1,0 +1,14 @@
+TCEFORM {
+  pages {
+
+  }
+
+  tt_content {
+    # TYPO3-Core CE's
+    CType.keepItems := addToList(text)
+
+    # EXT:starter CE's
+    CType.keepItems := addToList(starter_media)
+    CType.keepItems := addToList(starter_accordion)
+  }
+}

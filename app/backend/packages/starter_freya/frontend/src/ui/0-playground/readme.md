@@ -6,5 +6,5 @@
 
 ## Naming
 
-Die Verzeichnisse brauchen hier, anders als bei "1-objects" und "2-folders" nicht im Plural notiert werden.
+Die Verzeichnisse brauchen hier, anders als bei "1-objects" und "2-components" nicht im Plural notiert werden.
 Im Playground gibt es keine Restriktionen, weil Sourcen aus dem Playground nirgends eingebunden werden dürfen.

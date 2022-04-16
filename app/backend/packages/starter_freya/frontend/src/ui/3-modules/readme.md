@@ -7,12 +7,11 @@
 ## Nummernbereiche
 
 - 00: Example
-- 01 - 24: TYPO3 Core
+- 01 - 24: TYPO3 Core, bzw. Core-angelehnt
 - 25 - 49: Starter
 - 50 - 74: Theme
 - 75 - 99: Custom
 
 ## Verzeichnisnamen
 
-Die Verzeichnisse brauche hier, anders als bei "1-objects" und "2-folders" nicht im Plural notiert werden.
-Es gibt in Modulen (= TYPO3 Contentelemente) keine Varianten.
+Die Verzeichnisse brauchen hier, anders als bei "1-objects" und "2-components", nicht im Plural notiert werden.
