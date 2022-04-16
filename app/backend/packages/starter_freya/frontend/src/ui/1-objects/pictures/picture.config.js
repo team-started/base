@@ -115,29 +115,30 @@ module.exports = {
                 figure: false,
                 placeholder: {
                     uri: {
-                        default: 'https://via.placeholder.com/40x40/ccc/F00?text=png-40',
+                        default: 'https://via.placeholder.com/60x30/ccc/F00?text=png-60',
                     },
                 },
                 default: {
                     uri: {
-                        default: 'https://via.placeholder.com/80x80/ccc/F00?text=png-80',
+                        default: 'https://via.placeholder.com/150x75/ccc/F00?text=png-150',
                     },
                     mq: '80w',
                     width: 80,
                     height: 80,
                     webP: {
-                        default: 'https://via.placeholder.com/80x80.webp/ccc/000?text=WebP-80',
+                        default: 'https://via.placeholder.com/150x75.webp/ccc/000?text=WebP-150',
                         fileType: 'image/webp',
                     },
                 },
                 variants: [
                     {
-                        mq: '80w', // es ist eine Variante nötig, aber es braucht kein größeres Bild
+                        mq: '150w',
                         uri: {
-                            default: 'https://via.placeholder.com/80x80/ccc/F00?text=png-80',
+                            default: 'https://via.placeholder.com/300x150/ccc/F00?text=png-300',
                         },
                         webP: {
-                            default: 'https://via.placeholder.com/80x80.webp/ccc/000?text=WebP-80',
+                            default:
+                                'https://via.placeholder.com/300x150.webp/ccc/000?text=WebP-300',
                             fileType: 'image/webp',
                         },
                     },

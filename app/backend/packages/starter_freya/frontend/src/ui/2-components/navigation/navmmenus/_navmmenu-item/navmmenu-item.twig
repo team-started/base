@@ -1,10 +1,14 @@
 {#
 link:       setzt den Context und modifiziert Link-Objekt
 text:       setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
+image:      setzt den Context, damit '@object/pictures/picture.twig' das verarbeiten kann
 level:      level der Navi, hier erste Unternavi, also mindestens 2
+level == 3: nur die 2. Ebene hat ein Bild (das ist etwas verwirrend, aber stimmt so ... dieser Code ruft sich rekursiv auf)
 level == 2: nur die 2. Ebene ist in einem Grid
 #}
 
+{% set active = item.active ? 'active ' %}
+{% set current = item.current ? 'current ' %}
 {% set link = 
     {
         'config':
@@ -12,16 +16,20 @@ level == 2: nur die 2. Ebene ist in einem Grid
                 'uri': item.link.config.uri,
                 'target': item.link.config.target,
                 'title': item.link.config.title,
-                'class': 'nav-link ' ~ item.link.config.class
+                'class': 'nav-link ' ~ active ~ current ~ item.link.config.class
             }
     }
 %}
 {% set text = item.text %}
+{% set image = item.image %}
 {% set level = level + 1 %}
 
 
 
-<li id="{{ item.uid }}" class="{{ (level == 3) ? 'col' : '' }} nav-item">
+<li id="{{ item.uid }}" class="nav-item">
+    {% if level == 3 %}
+        {% include '@object/pictures/picture.twig' with image only %}
+    {% endif %}
     {% include '@object/links/link.twig' with link %}
 
     {% if item.children %}

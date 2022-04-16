@@ -12,9 +12,9 @@ module.exports = {
                 link: {
                     config: {
                         uri: '#',
-                        target: 'target',
-                        class: 'class',
-                        title: 'title',
+                        target: 'link-target',
+                        class: 'link-class',
+                        title: 'link-title',
                     },
                 },
                 image: '@picture--navigation',
@@ -65,7 +65,7 @@ module.exports = {
                                 title: 'Unterseite 3',
                             },
                         },
-                        image: '',
+                        image: '@picture--navigation',
                         spacer: 0,
                         children: [
                             {
