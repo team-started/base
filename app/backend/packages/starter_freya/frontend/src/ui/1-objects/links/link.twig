@@ -1,3 +1,9 @@
+{#
+{% block link %} ist nötig, weil es hier embeded wird: src/ui/1-objects/pictures/picture.twig
+#}
+
+
+
 <a href="{{ config.uri }}" target="{{ config.target }}" title="{{ config.title }}" class="{{ config.class }}">
     {% block link %}{{ text }}{% endblock %}
 </a>
