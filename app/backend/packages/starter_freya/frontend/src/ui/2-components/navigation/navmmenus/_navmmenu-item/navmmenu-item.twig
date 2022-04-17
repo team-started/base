@@ -5,12 +5,10 @@ image:      setzt den Context, damit '@object/pictures/picture.twig' das verarbe
 level:      level der Navi, hier erste Unternavi, also mindestens 2
 level == 3: nur die 2. Ebene hat ein Bild (das ist etwas verwirrend, aber stimmt so ... dieser Code ruft sich rekursiv auf)
 level == 2: nur die 2. Ebene ist in einem Grid
-level <= 3: die Navigation ist zZ nur für drei Level ausgelegt
+level <= 3: die Navigation ist zZ nur für max drei Level ausgelegt
 #}
 
-{# <pre>
-    {{ dump(item.children) }}
-</pre> #}
+
 
 {% set children = item.children ? 'has-children ' %}
 {% set current = item.current ? 'current ' %}

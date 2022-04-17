@@ -4,10 +4,12 @@ style="display: block; width: 100%; max-width: 100%;"
 additionalClass: optionale zusätzliche Klassen, wie z.B. .rounded oder .float-left
 
 pictureContent: nur das eigentliche Bild mit LazyLoading, picture wegen den Varienten (webp, ...)
-linkContent: Wrapper, wenn es einen Link gibt
-figure: per default wird <figure> immer gewrappt, da das der Standard für Contentbilder ist (description immer möglich)
+linkContent:    Wrapper, wenn es einen Link gibt
+figure:         per default wird <figure> immer gewrappt, da das der Standard für Contentbilder ist (description immer möglich)
 
-siehe: https://getbootstrap.com/docs/4.0/content/images/ (beachte auch Quellcode)
+link:           bereitet den Link für das picture partial auf
+
+siehe:          https://getbootstrap.com/docs/4.0/content/images/ (beachte auch Quellcode)
 #}
 
 {% if default.uri.default %}
@@ -45,7 +47,18 @@ siehe: https://getbootstrap.com/docs/4.0/content/images/ (beachte auch Quellcode
 
     {% set linkContent %}
         {% if metaData.link.config.uri %}
-            {% embed '@object/links/link.twig' %}
+            {% set link = 
+                {
+                    'config':
+                        {
+                            'uri': metaData.link.config.uri,
+                            'target': metaData.link.config.target,
+                            'title': metaData.link.config.title,
+                            'class': metaData.link.config.class
+                        }
+                }
+            %}
+            {% embed '@object/links/link.twig' with link %}
                 {% block link %}
                     {{ pictureContent }}
                 {% endblock %}

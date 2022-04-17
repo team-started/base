@@ -7,7 +7,7 @@ level: level der Navi, hier root, also 1
 <div class="c-navmmenu">
     <ul class="nav level-{{ level }} justify-content-center">
         {% for item in items %}
-            {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with { 
+            {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with {
                 item: item,
                 level: level
             } only %}

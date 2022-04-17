@@ -1,20 +1,19 @@
+// Blendet die zweite Navigationsebene ein / aus.
+
 function Component($elements) {
     function init() {
-        const naviItems = document.querySelectorAll('.c-navmmenu .level-1  > li.has-children');
+        const navItems = document.querySelectorAll('.c-navmmenu ul.level-1  > li.has-children');
 
-        console.log('Init component');
-        console.dir($elements);
+        for (let i = 0; i < navItems.length; ++i) {
+            const navItem = navItems[i];
+            const subNav = navItem.querySelector('ul.level-2');
 
-        for (let i = 0; i < naviItems.length; ++i) {
-            const naviItem = naviItems[i];
-            const subNavi = naviItem.querySelector('ul');
-
-            naviItem.addEventListener('mouseover', () => {
-                subNavi.classList.remove('d-none');
+            navItem.addEventListener('mouseover', () => {
+                subNav.classList.remove('d-none');
             });
 
-            naviItem.addEventListener('mouseout', () => {
-                subNavi.classList.add('d-none');
+            navItem.addEventListener('mouseout', () => {
+                subNav.classList.add('d-none');
             });
         }
     }

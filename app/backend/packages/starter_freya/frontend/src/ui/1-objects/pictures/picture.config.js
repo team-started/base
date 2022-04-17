@@ -100,7 +100,7 @@ module.exports = {
                 metaData: {
                     link: {
                         config: {
-                            uri: 'image-link',
+                            uri: '#',
                             target: '_blank',
                             class: 'image-link-class',
                             title: 'image-link-title',
