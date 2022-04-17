@@ -110,6 +110,25 @@ module.exports = {
             },
         },
         {
+            name: 'metadata-link',
+            label: 'Metadata and link',
+            context: {
+                metaData: {
+                    description: 'image-description',
+                    alternative: 'image-alternative',
+                    title: 'image-title',
+                    link: {
+                        config: {
+                            uri: '#',
+                            target: '_blank',
+                            class: 'image-link-class',
+                            title: 'image-link-title',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name: 'navigation',
             context: {
                 figure: false,

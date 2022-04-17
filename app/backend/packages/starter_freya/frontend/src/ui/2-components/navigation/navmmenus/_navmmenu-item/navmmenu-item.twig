@@ -1,5 +1,7 @@
 {#
 link:       setzt den Context und modifiziert Link-Objekt
+            Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
+            Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
 text:       setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
 image:      setzt den Context, damit '@object/pictures/picture.twig' das verarbeiten kann
 level:      level der Navi, hier erste Unternavi, also mindestens 2
@@ -31,7 +33,11 @@ level <= 3: die Navigation ist zZ nur für max drei Level ausgelegt
 
 <li id="{{ item.uid }}" class="nav-item {{ children }}">
     {% if level == 3 %}
-        {% include '@object/pictures/picture.twig' with image only %}
+        {% embed '@object/links/link.twig' with link %}
+            {% block link %}
+                {% include '@object/pictures/picture.twig' with image only %}
+            {% endblock %}
+        {% endembed %}
     {% endif %}
     {% include '@object/links/link.twig' with link %}
 
