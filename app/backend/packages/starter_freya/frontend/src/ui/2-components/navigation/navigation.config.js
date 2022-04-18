@@ -18,7 +18,7 @@ module.exports = {
                     },
                 },
                 icon: '',
-                image: '@picture--navigation',
+                image: '@picture--navigation-image',
                 spacer: 0,
                 children: [
                     {
@@ -35,7 +35,7 @@ module.exports = {
                             },
                         },
                         icon: '@picture--navigation-icon',
-                        image: '@picture--navigation',
+                        image: '@picture--navigation-image',
                         spacer: 0,
                     },
                     {
@@ -69,7 +69,7 @@ module.exports = {
                             },
                         },
                         icon: '@picture--navigation-icon',
-                        image: '@picture--navigation',
+                        image: '@picture--navigation-image',
                         spacer: 0,
                         children: [
                             {
@@ -86,7 +86,7 @@ module.exports = {
                                     },
                                 },
                                 icon: '@picture--navigation-icon',
-                                image: '@picture--navigation',
+                                image: '@picture--navigation-image',
                                 spacer: 0,
                                 children: [
                                     {
@@ -228,7 +228,7 @@ module.exports = {
                             },
                         },
                         icon: '',
-                        image: '@picture--navigation',
+                        image: '@picture--navigation-image',
                         spacer: 0,
                     },
                 ],

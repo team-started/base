@@ -6,6 +6,5 @@ module.exports = {
     label: 'Megamenu',
     context: {
         ...navigationConfig.context,
-        CType: 'navmmenu',
     },
 };
