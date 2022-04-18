@@ -17,7 +17,7 @@ module.exports = {
                         title: 'link-title',
                     },
                 },
-                image: '@picture--navigation',
+                image: '@picture--navigation-image',
                 spacer: 0,
                 children: [
                     {
@@ -33,7 +33,7 @@ module.exports = {
                                 title: '',
                             },
                         },
-                        image: '@picture--navigation',
+                        image: '@picture--navigation-image',
                         spacer: 0,
                     },
                     {
@@ -65,7 +65,7 @@ module.exports = {
                                 title: 'Unterseite 3',
                             },
                         },
-                        image: '@picture--navigation',
+                        image: '@picture--navigation-image',
                         spacer: 0,
                         children: [
                             {
@@ -81,7 +81,7 @@ module.exports = {
                                         title: '',
                                     },
                                 },
-                                image: '@picture--navigation',
+                                image: '@picture--navigation-image',
                                 spacer: 0,
                                 children: [
                                     {
@@ -215,7 +215,7 @@ module.exports = {
                                 title: '',
                             },
                         },
-                        image: '@picture--navigation',
+                        image: '@picture--navigation-image',
                         spacer: 0,
                     },
                 ],

@@ -129,7 +129,7 @@ module.exports = {
             },
         },
         {
-            name: 'navigation',
+            name: 'navigation-image',
             context: {
                 figure: false,
                 placeholder: {
