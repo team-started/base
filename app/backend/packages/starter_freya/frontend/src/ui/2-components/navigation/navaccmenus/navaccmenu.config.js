@@ -3,9 +3,8 @@
 const navigationConfig = require('../navigation.config');
 
 module.exports = {
-    label: 'Accordion Menu',
+    label: 'Accordion',
     context: {
         ...navigationConfig.context,
-        CType: 'navaccmenu',
     },
 };
