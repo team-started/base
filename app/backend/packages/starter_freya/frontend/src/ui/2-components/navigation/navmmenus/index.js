@@ -1,6 +1,6 @@
 // Blendet die zweite Navigationsebene ein / aus.
 
-function Component($elements) {
+function Component() {
     function init() {
         const navItems = document.querySelectorAll('.c-navmmenu ul.level-1  > li.has-children');
 
