@@ -1,3 +1,11 @@
+{#
+link:       setzt den Context und modifiziert Link-Objekt
+            Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
+            Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
+#}
+
+
+
 <div class="c-siteheader">
     <div class="c-siteheader__contact d-flex justify-content-between align-items-center">
         <div>
@@ -6,12 +14,25 @@
         <div>
             <img class="c-siteheader__logo" alt="self-Logo" src="/assets/images/logo.svg">
         </div>
-        <div>
-            <img class="c-siteheader__logo" alt="self-Logo" src="/assets/images/sm-facebook.svg">
-            <img class="c-siteheader__logo" alt="self-Logo" src="/assets/images/sm-instagram.svg">
-            <img class="c-siteheader__logo" alt="self-Logo" src="/assets/images/sm-twitter.svg">
-            <img class="c-siteheader__logo" alt="self-Logo" src="/assets/images/sm-linkedin.svg">
-            <img class="c-siteheader__logo" alt="self-Logo" src="/assets/images/sm-xing.svg">
+        <div class="d-flex">
+            {% for item in sm %}
+                {% set link = 
+                    {
+                        'config':
+                            {
+                                'uri': item.link.config.uri,
+                                'target': item.link.config.target,
+                                'title': item.link.config.title,
+                                'class': item.link.config.class
+                            }
+                    }
+                %}
+                {% embed '@object/links/link.twig' with link %}
+                    {% block link %}
+                        {% include '@object/images/image.twig' with item.image only %}
+                    {% endblock %}
+                {% endembed %}
+            {% endfor %}
         </div>
     </div>
     <hr>

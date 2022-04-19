@@ -1,0 +1,36 @@
+{#
+placeholder:    Wenn das Image von src/ui/1-objects/pictures/picture.twig übergeben wird, gibt es einen placeholder.
+                Diese Bilder sind vom Backend generiert und haben viele Varianten.
+                Wenn Images direct im Template eingebunden sind, gibt es weniger Parameter und eben keinen placeholder.
+
+Beispiel normales Bild (additionalClass ist optional):
+    {% include '@object/images/image.twig' with {
+        'src': '/assets/images/_dev/example.png',
+        'alt': 'alt text',
+        'title': 'title text',
+        'additionalClass': 'additionalClass'
+    } only %}
+#}
+
+
+
+{% if placeholder %}
+    <img
+        src="{{ placeholder }}"
+        data-src="{{ src }}"
+        alt="{{ alt }}"
+        title="{{ title }}"
+        data-sizes="auto"
+        class="o-image figure-img img-fluid lazyload {{ additionalClass }}"
+        style="display: block; width: 100%; max-width: 100%;"
+    />
+{% else %}
+    <img
+        src="{{ src }}"
+        data-src="{{ src }}"
+        alt="{{ alt }}"
+        title="{{ title }}"
+        class="o-image lazyload {{ additionalClass }}"
+        style="display: block; width: 100%; max-width: 100%;"
+    />
+{% endif %}

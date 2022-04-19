@@ -1,6 +1,6 @@
 import { registerComponent } from '@/js/utils';
 
-import icon, { className as iconClassName } from './icons/index';
+import icon, { className as iconClassName } from '../0-playground/p-icons/index';
 import picture, { className as pictureClassName } from './pictures/index';
 // import object, { className as objectClassName } from './objects/index';
 // import objectCta, { className as objectCtaClassName } from './objects/object-cta/index';

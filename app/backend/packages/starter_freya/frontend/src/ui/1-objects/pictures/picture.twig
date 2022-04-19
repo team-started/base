@@ -33,15 +33,13 @@ siehe:          https://getbootstrap.com/docs/4.0/content/images/ (beachte auch 
                     {{ variant.uri.default }} {{ variant.mq }},
                 {% endfor %}
             "/>
-            <img
-                src="{{ placeholder.uri.default }}"
-                data-src="{{ default.uri.default }}"
-                alt="{{ metaData.alternative }}"
-                title="{{ metaData.title }}"
-                data-sizes="auto"
-                class="o-image figure-img img-fluid lazyload {{ additionalClass }}"
-                style="display: block; width: 100%; max-width: 100%;"
-            />
+            {% include '@object/images/image.twig' with {
+                'placeholder': placeholder.uri.default,
+                'src': default.uri.default,
+                'alt': metaData.alternative,
+                'title': metaData.title,
+                'additionalClass': additionalClass
+            } only %}
         </picture>
     {% endset %}
 

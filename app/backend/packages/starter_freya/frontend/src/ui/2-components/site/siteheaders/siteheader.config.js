@@ -4,57 +4,77 @@ module.exports = {
     context: {
         sm: {
             facebook: {
-                image: '/assets/images/_dev/sm-facebook.svg',
+                image: {
+                    src: '/assets/images/sm-facebook.svg',
+                    alt: 'facebook',
+                    title: '',
+                },
                 link: {
                     config: {
                         uri: 'https://facebook.com',
                         target: '_blank',
                         class: '',
-                        title: 'facebook',
+                        title: '',
                     },
                 },
             },
             instagram: {
-                image: '/assets/images/_dev/sm-instagram.svg',
+                image: {
+                    src: '/assets/images/sm-instagram.svg',
+                    alt: 'instagram',
+                    title: '',
+                },
                 link: {
                     config: {
                         uri: 'https://instagram.com',
                         target: '_blank',
                         class: '',
-                        title: 'instagram',
+                        title: '',
                     },
                 },
             },
             linkedin: {
-                image: '/assets/images/_dev/sm-linkedin.svg',
+                image: {
+                    src: '/assets/images/sm-linkedin.svg',
+                    alt: 'linkedin',
+                    title: '',
+                },
                 link: {
                     config: {
                         uri: 'https://de.linkedin.com',
                         target: '_blank',
                         class: '',
-                        title: 'linkedin',
+                        title: '',
                     },
                 },
             },
             twitter: {
-                image: '/assets/images/_dev/sm-twitter.svg',
+                image: {
+                    src: '/assets/images/sm-twitter.svg',
+                    alt: 'twitter',
+                    title: '',
+                },
                 link: {
                     config: {
                         uri: 'https://twitter.com/',
                         target: '_blank',
                         class: '',
-                        title: 'twitter',
+                        title: '',
                     },
                 },
             },
             xing: {
-                image: '/assets/images/_dev/sm-xing.svg',
+                image: {
+                    src: '/assets/images/sm-xing.svg',
+                    alt: 'xing',
+                    title: '',
+                },
                 link: {
                     config: {
                         uri: 'https://www.xing.com/',
                         target: '_blank',
                         class: '',
-                        title: 'xing',
+                        title: '',
                     },
                 },
             },
