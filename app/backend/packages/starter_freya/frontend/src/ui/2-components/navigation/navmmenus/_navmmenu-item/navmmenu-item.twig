@@ -16,7 +16,7 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
 {% set children = item.children ? 'has-children ' %}
 {% set current = item.current ? 'current ' %}
 {% set active = item.active ? 'active ' %}
-{% set link = 
+{% set link =
     {
         'config':
             {
@@ -41,12 +41,13 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
             {% endblock %}
         {% endembed %}
     {% endif %}
+
     {% include '@object/links/link.twig' with link %}
 
     {% if item.children and level <= 3 %}
         <ul class="{{ (level == 2) ? 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center d-none' : '' }} level-{{ level }} list-unstyled">
             {% for item in item.children %}
-                {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with { 
+                {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with {
                     item: item,
                     level: level
                 } only %}
