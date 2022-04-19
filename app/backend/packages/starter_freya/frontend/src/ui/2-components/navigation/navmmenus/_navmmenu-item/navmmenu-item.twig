@@ -2,7 +2,6 @@
 link:       setzt den Context und modifiziert Link-Objekt
             Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
             Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
-text:       setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
 image:      setzt den Context, damit '@object/pictures/picture.twig' das verarbeiten kann
 level:      level der Navi, hier erste Unternavi, also mindestens 2
 level == 3: nur die 2. Ebene hat ein Bild (das ist etwas verwirrend, aber stimmt so ... dieser Code ruft sich rekursiv auf)
@@ -27,23 +26,22 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
             }
     }
 %}
-{% set text = item.text %}
 {% set image = item.image %}
 {% set level = level + 1 %}
 
 
 
 <li id="{{ item.uid }}" class="nav-item {{ children }}">
-    {% if level == 3 and item.image %}
-        {% embed '@object/links/link.twig' with link %}
-            {% block link %}
+    
+    {% embed '@object/links/link.twig' with link %}
+        {% block link %}
+            {% if level == 3 and item.image %}
                 {% include '@object/pictures/picture.twig' with image only %}
-            {% endblock %}
-        {% endembed %}
-    {% endif %}
-
-    {% include '@object/links/link.twig' with link %}
-
+            {% endif %}
+            {{ item.text }}
+        {% endblock %}
+    {% endembed %}
+    
     {% if item.children and level <= 3 %}
         <ul class="{{ (level == 2) ? 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center d-none' : '' }} level-{{ level }} list-unstyled">
             {% for item in item.children %}
