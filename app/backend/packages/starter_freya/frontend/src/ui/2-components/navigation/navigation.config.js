@@ -174,7 +174,7 @@ module.exports = {
                 uid: 2,
                 active: 0,
                 current: 0,
-                text: 'Page 2<br>mit Zeilenumbruch',
+                text: 'Seite 2<br>mit Zeilenumbruch',
                 link: {
                     config: {
                         uri: '#',
@@ -190,7 +190,7 @@ module.exports = {
                 uid: 3,
                 active: 0,
                 current: 0,
-                text: 'Page 3, target: _blank',
+                text: 'Seite 3, im neuen Tab',
                 link: {
                     config: {
                         uri: '#',
