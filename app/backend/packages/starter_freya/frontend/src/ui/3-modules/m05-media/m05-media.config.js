@@ -1,12 +1,11 @@
 'use strict';
 
-const _ = require('../../../../config/helpers');
 const globalConfig = require('../module-general.config');
 
 module.exports = {
     context: {
         ...globalConfig,
-        CType: 'images',
+        CType: 'starter-media',
         date: '',
         imagecols: '1',
         items: ['@picture'],
