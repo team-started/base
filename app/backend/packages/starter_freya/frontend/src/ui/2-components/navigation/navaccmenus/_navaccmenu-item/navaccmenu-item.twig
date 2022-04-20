@@ -1,13 +1,15 @@
 {#
 link:       setzt den Context und modifiziert Link-Objekt
-            Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
-            Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
-text:       setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
+            Links des HMENU haben keinen title, daher wird dies nicht übergeben.
+text:       '@object/links/link.twig' kann 'item.title' nicht verarbeiten
 level:      level der Navi, hier erste Unternavi, also mindestens 2
 level <= 3: die Navigation ist zZ nur für max drei Level ausgelegt
 children:   Flag, wenn es Unterseiten gibt.
 current:    Flag für den Menüpunkt, der die aktuelle Seite repräsentiert.
 active:     Flag, wenn ein Menüpunkt in der Rootline ist.
+uid:        zusammengesetzte uid
+pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. wenn eine Navigation in einem Contentelement verwendet wird.
+            In der Praxis wird das kaum vorkommen, wenn Navigationen im Seitenheader verwendet werden.
 #}
 
 {% set children = item.children ? 'has-children ' %}
@@ -17,30 +19,31 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
     {
         'config':
             {
-                'uri': item.link.config.uri,
-                'target': item.link.config.target,
-                'title': item.link.config.title,
-                'class': 'nav-link flex-grow-1 ' ~ active ~ current ~ item.link.config.class
+                'uri': item.link,
+                'target': item.target,
+                'class': 'nav-link flex-grow-1 ' ~ active ~ current
             }
     }
 %}
-{% set text = item.text %}
+{% set text = item.title %}
 {% set level = level + 1 %}
+{% set uid = 'navaccmenu' ~ pid ~ '-' ~ item.uid %}
 
 
 
-<li id="{{ item.uid }}" class="nav-item {{ children }}">
+<li id="{{ uid }}" class="nav-item {{ children }}">
     <div class="d-flex justify-content-between align-items-center">
         {% include '@object/links/link.twig' with link %}
         {% if item.children and level <= 3 %}
-            <button class="collapse-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#item{{ item.uid }}-collapse"></button>
+            <button class="collapse-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ uid }}-collapse"></button>
         {% endif %}
     </div>
 
     {% if item.children and level <= 3 %}
-        <ul id="item{{ item.uid }}-collapse" class="level-{{ level }} collapse list-unstyled">
+        <ul id="{{ uid }}-collapse" class="level-{{ level }} collapse list-unstyled">
             {% for item in item.children %}
                 {% include '@component/navigation/navaccmenus/_navaccmenu-item/navaccmenu-item.twig' with {
+                    pid: pid,
                     item: item,
                     level: level
                 } only %}
