@@ -3,10 +3,10 @@ link:       setzt den Context und modifiziert Link-Objekt
             Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
             Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
 image:      setzt den Context, damit '@object/pictures/picture.twig' das verarbeiten kann
-level:      level der Navi, hier erste Unternavi, also mindestens 2
+level:      Ebene der Navigation, hier erste Unternavigation, also mindestens 2
 level == 3: nur die 2. Ebene hat ein Bild (das ist etwas verwirrend, aber stimmt so ... dieser Code ruft sich rekursiv auf)
 level == 2: nur die 2. Ebene ist in einem Grid
-level <= 3: die Navigation ist zZ nur für max drei Level ausgelegt
+level <= 3: die Navigation ist z.Z. nur für max drei Level ausgelegt
 children:   Flag, wenn es Unterseiten gibt.
 current:    Flag für den Menüpunkt, der die aktuelle Seite repräsentiert.
 active:     Flag, wenn ein Menüpunkt in der Rootline ist.
@@ -32,7 +32,7 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
 
 
 <li id="{{ item.uid }}" class="nav-item {{ children }}">
-    
+
     {% embed '@object/links/link.twig' with link %}
         {% block link %}
             {% if level == 3 and item.image %}
@@ -41,7 +41,7 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
             {{ item.text }}
         {% endblock %}
     {% endembed %}
-    
+
     {% if item.children and level <= 3 %}
         <ul class="{{ (level == 2) ? 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center d-none' : '' }} level-{{ level }} list-unstyled">
             {% for item in item.children %}
