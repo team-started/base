@@ -26,7 +26,7 @@ header_link.config.uri:     der Link wird nur optional embeded
                 'header': header,
                 'link': header_link,
             } only %}
-                {% block link %}{{ header }}{% endblock %}
+                {% block linkContent %}{{ header }}{% endblock %}
             {% endembed %}
         {% else %}
             {{ header }}

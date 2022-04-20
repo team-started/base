@@ -1,7 +1,8 @@
 /*
-JS für die Component.
-Wird nur initialisiert, wenn die Klasse entsprechend dem Molule ist (className = '.c-component';).
+Optionales JS für eine Komponente.
+Wird nur initialisiert, wenn die Klasse entsprechend der Komponente ist (className = '.c-component';).
 Die 'console.log' und 'if ...' stehen nur exemplarisch für jeden anderen JS Code.
+'function Component' meint 'js component', dieses Naming muss so bleiben.
 */
 
 function Component($elements) {
