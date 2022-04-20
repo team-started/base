@@ -1,8 +1,8 @@
 {#
-Der Text wird im Context von Twig übergeben, daher scheint dies in Fractal leer.
+{% block linkContent %}: ermöglich es den übergebenen {{ text }} als Default Inhalt zu setzen. Sollte dies nicht
+gewünscht sein, kann in dem aufrufenden Template {% block linkContent %} überschrieben werden.
 
-{% block link %}: ist nötig, weil Bilder embeded werden: src/ui/1-objects/pictures/picture.twig
-Bedeutet: Anstelle des Blocks wird das Bild eingesetzt.
+see: https://twig.symfony.com/doc/3.x/tags/embed.html
 #}
 
 {% set target = config.target ? 'target="' ~ config.target ~ '"' %}
@@ -11,11 +11,11 @@ Bedeutet: Anstelle des Blocks wird das Bild eingesetzt.
 
 
 {% if config.uri %}
-    <a href="{{ config.uri }}" {{ target }} {{ title }} {{ class }}">
-        {% block link %}{{ text }}{% endblock %}
+    <a href="{{ config.uri }}" {{ target }} {{ title }} {{ class }}>
+        {% block linkContent %}{{ text }}{% endblock %}
     </a>
 {% else %}
     <span class="{{ config.class }}">
-        {% block link %}{{ text }}{% endblock %}
+        {% block linkContent %}{{ text }}{% endblock %}
     </span>
 {% endif %}

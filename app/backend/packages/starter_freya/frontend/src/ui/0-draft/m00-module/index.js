@@ -1,7 +1,8 @@
 /*
-JS für das Module.
-Wird nur initialisiert, wenn die Klasse entsprechend dem Molule ist (className = '.m-example';).
+Optionales JS für das Modul.
+Wird nur initialisiert, wenn die Klasse entsprechend dem Modul ist (className = '.m-example';).
 Die 'console.log' und 'if ...' stehen nur exemplarisch für jeden anderen JS Code.
+'function Component' meint 'js component', dieses Naming muss so bleiben.
 */
 
 function Component($elements) {

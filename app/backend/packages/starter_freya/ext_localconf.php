@@ -12,10 +12,8 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['starter_twig']['namespaces'] = [
 ];
 
 $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['starter_twig']['finderNotPath'] = [
+    '0-draft',
     '0-playground',
-    '1-objects/objects',
-    '2-components/component',
-    '3-modules/_m00-modules',
     '4-pages',
     '_preview'
 ];

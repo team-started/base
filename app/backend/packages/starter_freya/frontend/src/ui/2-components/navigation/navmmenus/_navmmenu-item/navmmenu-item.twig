@@ -34,7 +34,7 @@ pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. w
 <li id="navmmenu{{ pid }}-{{ item.uid }}" class="nav-item {{ children }}">
 
     {% embed '@object/links/link.twig' with link %}
-        {% block link %}
+        {% block linkContent %}
             {% if level == 3 and item.image %}
                 {% include '@object/pictures/picture.twig' with item.image only %}
             {% endif %}
