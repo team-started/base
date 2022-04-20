@@ -6,4 +6,4 @@ alle Module beziehen. Das gilt für Fractal-eigene Funktionen, wie für native J
 
 Daher wird die Uid nun in Twig modifiziert ('merge').
 
-Bei Images wird die Variante für drei Bilder genutzt, siehe config.js ('@m05-images--images3').
+Bei Images wird die Variante für drei Bilder genutzt, siehe config.js ('@m05-media--images3').
