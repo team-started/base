@@ -1,0 +1,19 @@
+{#
+level:  Ebene der Navigation, hier root, also 1
+pid:    Der Navigation kann optional eine uid übergeben werden, z.B. wenn eine Navigation in einem Contentelement verwendet wird.
+        In der Praxis wird das kaum vorkommen, wenn Navigationen im Seitenheader verwendet werden.
+#}
+
+{% set level = 1 %}
+
+<div id="navmmenu{{ uid }}" class="c-navmmenu">
+    <ul class="nav level-{{ level }} justify-content-center">
+        {% for item in items %}
+            {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with {
+                pid: uid,
+                item: item,
+                level: level
+            } only %}
+        {% endfor %}
+    </ul>
+</div>

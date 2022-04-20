@@ -62,9 +62,11 @@ $utilities: map-merge(
 
 // Components
 @import '~bootstrap/scss/accordion';
+@import '~bootstrap/scss/breadcrumb';
 @import '~bootstrap/scss/buttons';
 @import '~bootstrap/scss/card';
 @import '~bootstrap/scss/list-group';
+@import '~bootstrap/scss/nav';
 
 // Helpers
 @import '~bootstrap/scss/helpers';

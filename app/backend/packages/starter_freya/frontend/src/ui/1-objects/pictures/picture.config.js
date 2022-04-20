@@ -100,13 +100,68 @@ module.exports = {
                 metaData: {
                     link: {
                         config: {
-                            uri: 'image-link',
+                            uri: '#',
                             target: '_blank',
                             class: 'image-link-class',
                             title: 'image-link-title',
                         },
                     },
                 },
+            },
+        },
+        {
+            name: 'metadata-link',
+            label: 'Metadata and link',
+            context: {
+                metaData: {
+                    description: 'image-description',
+                    alternative: 'image-alternative',
+                    title: 'image-title',
+                    link: {
+                        config: {
+                            uri: '#',
+                            target: '_blank',
+                            class: 'image-link-class',
+                            title: 'image-link-title',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name: 'navigation-image',
+            context: {
+                figure: false,
+                placeholder: {
+                    uri: {
+                        default: 'https://via.placeholder.com/60x30/ccc/F00?text=png-60',
+                    },
+                },
+                default: {
+                    uri: {
+                        default: 'https://via.placeholder.com/150x75/ccc/F00?text=png-150',
+                    },
+                    mq: '80w',
+                    width: 80,
+                    height: 80,
+                    webP: {
+                        default: 'https://via.placeholder.com/150x75.webp/ccc/000?text=WebP-150',
+                        fileType: 'image/webp',
+                    },
+                },
+                variants: [
+                    {
+                        mq: '150w',
+                        uri: {
+                            default: 'https://via.placeholder.com/300x150/ccc/F00?text=png-300',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/300x150.webp/ccc/000?text=WebP-300',
+                            fileType: 'image/webp',
+                        },
+                    },
+                ],
             },
         },
     ],
