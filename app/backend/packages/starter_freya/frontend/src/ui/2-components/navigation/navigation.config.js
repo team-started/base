@@ -9,7 +9,7 @@ module.exports = {
                 uid: 1,
                 active: 1,
                 current: 0,
-                text: 'Seite 1, active',
+                title: 'Seite 1, active',
                 link: {
                     config: {
                         uri: '#',
@@ -25,7 +25,7 @@ module.exports = {
                         uid: 11,
                         active: 0,
                         current: 0,
-                        text: 'Ein etwas längerer Titel der Unterseite 1 1',
+                        title: 'Ein etwas längerer Titel der Unterseite 1 1',
                         link: {
                             config: {
                                 uri: '#',
@@ -41,7 +41,7 @@ module.exports = {
                         uid: 12,
                         active: 1,
                         current: 1,
-                        text: 'Unterseite 1 2, active, current',
+                        title: 'Unterseite 1 2, active, current',
                         link: {
                             config: {
                                 uri: '#',
@@ -57,7 +57,7 @@ module.exports = {
                         uid: 13,
                         active: 0,
                         current: 0,
-                        text: 'Unterseite 1 3, class, title',
+                        title: 'Unterseite 1 3, class, title',
                         link: {
                             config: {
                                 uri: '#',
@@ -73,7 +73,7 @@ module.exports = {
                                 uid: 131,
                                 active: 0,
                                 current: 0,
-                                text: 'Unterunterseite 1 3 1',
+                                title: 'Unterunterseite 1 3 1',
                                 link: {
                                     config: {
                                         uri: '#',
@@ -89,7 +89,7 @@ module.exports = {
                                         uid: 1311,
                                         active: 0,
                                         current: 0,
-                                        text: 'Das ist die 4. Ebene, die wird nicht mehr angezeigt.',
+                                        title: 'Das ist die 4. Ebene, die wird nicht mehr angezeigt.',
                                         link: {
                                             config: {
                                                 uri: '#',
@@ -107,7 +107,7 @@ module.exports = {
                                 uid: 132,
                                 active: 1,
                                 current: 1,
-                                text: 'Unterunterseite 1 3 2',
+                                title: 'Unterunterseite 1 3 2',
                                 link: {
                                     config: {
                                         uri: '#',
@@ -125,7 +125,7 @@ module.exports = {
                         uid: 14,
                         active: 0,
                         current: 0,
-                        text: 'Unterseite 1 4',
+                        title: 'Unterseite 1 4',
                         link: {
                             config: {
                                 uri: '#',
@@ -141,7 +141,7 @@ module.exports = {
                         uid: 15,
                         active: 0,
                         current: 0,
-                        text: 'Unterseite 1 5',
+                        title: 'Unterseite 1 5',
                         link: {
                             config: {
                                 uri: '#',
@@ -157,7 +157,7 @@ module.exports = {
                         uid: 16,
                         active: 0,
                         current: 0,
-                        text: 'Unterseite 1 6',
+                        title: 'Unterseite 1 6',
                         link: {
                             config: {
                                 uri: '#',
@@ -175,7 +175,7 @@ module.exports = {
                 uid: 2,
                 active: 0,
                 current: 0,
-                text: 'Seite 2<br>mit Zeilenumbruch',
+                title: 'Seite 2<br>mit Zeilenumbruch',
                 link: {
                     config: {
                         uri: '#',
@@ -191,7 +191,7 @@ module.exports = {
                 uid: 3,
                 active: 0,
                 current: 0,
-                text: 'Seite 3, im neuen Tab',
+                title: 'Seite 3, im neuen Tab',
                 link: {
                     config: {
                         uri: '#',
@@ -207,7 +207,7 @@ module.exports = {
                         uid: 31,
                         active: 0,
                         current: 0,
-                        text: 'Ein etwas längerer Titel der Unterseite 3 1',
+                        title: 'Ein etwas längerer Titel der Unterseite 3 1',
                         link: {
                             config: {
                                 uri: '#',

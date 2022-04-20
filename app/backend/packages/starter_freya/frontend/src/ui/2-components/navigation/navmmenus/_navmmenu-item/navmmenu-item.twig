@@ -40,7 +40,7 @@ pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. w
             {% if level == 3 and item.image %}
                 {% include '@object/pictures/picture.twig' with image only %}
             {% endif %}
-            {{ item.text }}
+            {{ item.title }}
         {% endblock %}
     {% endembed %}
 
