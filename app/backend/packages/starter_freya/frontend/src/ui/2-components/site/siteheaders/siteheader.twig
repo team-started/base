@@ -1,42 +1,36 @@
 {#
-link:       setzt den Context und modifiziert Link-Objekt
-            Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
-            Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
+CType:  meint in diesem Fall 'ComponentType'
+link:   Der Link wird gesondert gewrappt, weil der Link nicht im Bild gespeichert wird, redaktionell im Backend editiert werden kann.
 #}
 
+{% set CType = 'siteheader' %}
 
-
-<div class="c-siteheader">
-    <div class="c-siteheader__contact d-flex justify-content-between align-items-center">
+<div class="c-{{ CType }}">
+    <div class="c-{{ CType }}__contact d-flex justify-content-between align-items-center">
         <div class="w-33">
             contact
         </div>
         <div class="w-33">
-            <img class="c-siteheader__logo" alt="self-Logo" src="/assets/images/logo.svg">
+            {% include '@object/images/image.twig' with {
+                'src': '/assets/images/logo.svg',
+                'alt': '',
+                'title': '',
+                'additionalClass': 'c-' ~ CType ~'__logo'
+            } only %}
         </div>
-        <div class="d-flex w-33">
+        <div class="d-flex justify-content-end w-33">
             {% for item in sm %}
-                {% set link = 
-                    {
-                        'config':
-                            {
-                                'uri': item.link.config.uri,
-                                'target': item.link.config.target,
-                                'title': item.link.config.title,
-                                'class': item.link.config.class
-                            }
-                    }
-                %}
-                {% embed '@object/links/link.twig' with link %}
-                    {% block link %}
-                        {% include '@object/images/image.twig' with item.image only %}
+                {% set image = item.image|merge({'additionalClass': 'c-' ~ CType ~'__sm'}) %}
+                {% embed '@object/links/link.twig' with item.link %}
+                    {% block linkContent %}
+                        {% include '@object/images/image.twig' with image only %}
                     {% endblock %}
                 {% endembed %}
             {% endfor %}
         </div>
     </div>
     <hr>
-    <div class="c-siteheader__nav">
+    <div class="c-{{ CType }}__nav">
         <div>
             navi
         </div>
