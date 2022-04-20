@@ -2,6 +2,7 @@
 link:       setzt den Context und modifiziert Link-Objekt
             Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
             Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
+            Links des HMENU haben keinen title, daher wird dies nicht übergeben.
 level:      Ebene der Navigation, hier erste Unternavigation, also mindestens 2
 level == 3: nur die 2. Ebene hat ein Bild (das ist etwas verwirrend, aber stimmt so ... dieser Code ruft sich rekursiv auf)
 level == 2: nur die 2. Ebene ist in einem Grid
@@ -20,10 +21,9 @@ pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. w
     {
         'config':
             {
-                'uri': item.link.config.uri,
-                'target': item.link.config.target,
-                'title': item.link.config.title,
-                'class': 'nav-link ' ~ active ~ current ~ item.link.config.class
+                'uri': item.link,
+                'target': item.target,
+                'class': 'nav-link ' ~ active ~ current
             }
     }
 %}

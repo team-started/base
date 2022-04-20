@@ -5,10 +5,13 @@ Der Text wird im Context von Twig übergeben, daher scheint dies in Fractal leer
 Bedeutet: Anstelle des Blocks wird das Bild eingesetzt.
 #}
 
+{% set target = config.target ? 'target="' ~ config.target ~ '"' %}
+{% set title = config.title ? 'title="' ~ config.title ~ '"' %}
+{% set class = config.class ? 'class="' ~ config.class ~ '"' %}
 
 
 {% if config.uri %}
-    <a href="{{ config.uri }}" target="{{ config.target }}" title="{{ config.title }}" class="{{ config.class }}">
+    <a href="{{ config.uri }}" {{ target }} {{ title }} {{ class }}">
         {% block link %}{{ text }}{% endblock %}
     </a>
 {% else %}
