@@ -3,6 +3,7 @@
 module.exports = {
     label: 'Navigation',
     context: {
+        uid: 777,
         items: [
             {
                 uid: 1,

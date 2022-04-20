@@ -2,19 +2,23 @@
 
 function Component() {
     function init() {
-        const navItems = document.querySelectorAll('.c-navmmenu ul.level-1  > li.has-children');
+        const navs = document.querySelectorAll('.c-navmmenu');
 
-        for (let i = 0; i < navItems.length; ++i) {
-            const navItem = navItems[i];
-            const subNav = navItem.querySelector('ul.level-2');
+        for (let i = 0; i < navs.length; i++) {
+            const navItems = navs[i].querySelectorAll('ul.level-1  > li.has-children');
 
-            navItem.addEventListener('mouseover', () => {
-                subNav.classList.remove('d-none');
-            });
+            for (let i = 0; i < navItems.length; ++i) {
+                const navItem = navItems[i];
+                const subNav = navItem.querySelector('ul.level-2');
 
-            navItem.addEventListener('mouseout', () => {
-                subNav.classList.add('d-none');
-            });
+                navItem.addEventListener('mouseover', () => {
+                    subNav.classList.remove('d-none');
+                });
+
+                navItem.addEventListener('mouseout', () => {
+                    subNav.classList.add('d-none');
+                });
+            }
         }
     }
 

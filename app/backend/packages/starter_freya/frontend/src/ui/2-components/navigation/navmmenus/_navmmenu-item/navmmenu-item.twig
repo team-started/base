@@ -10,6 +10,8 @@ level <= 3: die Navigation ist z.Z. nur für max drei Level ausgelegt
 children:   Flag, wenn es Unterseiten gibt.
 current:    Flag für den Menüpunkt, der die aktuelle Seite repräsentiert.
 active:     Flag, wenn ein Menüpunkt in der Rootline ist.
+pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. wenn eine Navigation in einem Contentelement verwendet wird.
+            In der Praxis wird das kaum vorkommen, wenn Navigationen im Seitenheader verwendet werden.
 #}
 
 {% set children = item.children ? 'has-children ' %}
@@ -31,7 +33,7 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
 
 
 
-<li id="{{ item.uid }}" class="nav-item {{ children }}">
+<li id="navmmenu{{ pid }}-{{ item.uid }}" class="nav-item {{ children }}">
 
     {% embed '@object/links/link.twig' with link %}
         {% block link %}
@@ -46,6 +48,7 @@ active:     Flag, wenn ein Menüpunkt in der Rootline ist.
         <ul class="{{ (level == 2) ? 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center d-none' : '' }} level-{{ level }} list-unstyled">
             {% for item in item.children %}
                 {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with {
+                    pid: pid,
                     item: item,
                     level: level
                 } only %}
