@@ -1,8 +1,6 @@
 # Pages
 
-- Pages zeigen components und modules im Kontext einer exemplarischen Seite
-
-## Verzeichnisnamen
-
-Die Verzeichnisse brauche hier, anders als bei "1-objects" und "2-folders" nicht im Plural notiert werden.
-Es gibt in Pages (= TYPO3 Content-Elemente) keine Varianten, bzw. pages werden nirgends inkludiert.
+- Pages haben keine Verbindung zu TYPO3. Sie dienen auschließlich dazu, eine Page in Fractal zu zeigen.
+- Pages zeigen components oder modules im Kontext einer exemplarischen Seite.
+- Die Verzeichnisse brauchen hier nicht im Plural notiert werden.
+  

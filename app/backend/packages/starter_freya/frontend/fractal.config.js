@@ -27,7 +27,7 @@ fractal.web.set('static.path', BUILD.dist);
 /**
  * Exclude folder, See https://fractal.build/guide/components/configuration-reference.html#global-configuration-options for Documentation
  */
-const excludes = isProduction ? ['**/0-playground/**'] : [];
+const excludes = isProduction ? ['**/0-playground/**', '**/0-draft/**'] : [];
 fractal.components.set('exclude', ['**/node_modules/**', ...excludes]);
 
 /**
@@ -78,6 +78,7 @@ fractal.components.engine(
         // usage: {{ capitalize(value) }}
         functions: helpers,
         namespaces: {
+            draft: './0-draft',
             object: './1-objects',
             component: './2-components',
             module: './3-modules',
