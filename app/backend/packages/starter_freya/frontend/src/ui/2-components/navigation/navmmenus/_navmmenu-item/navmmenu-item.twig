@@ -2,7 +2,6 @@
 link:       setzt den Context und modifiziert Link-Objekt
             Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
             Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
-image:      setzt den Context, damit '@object/pictures/picture.twig' das verarbeiten kann
 level:      Ebene der Navigation, hier erste Unternavigation, also mindestens 2
 level == 3: nur die 2. Ebene hat ein Bild (das ist etwas verwirrend, aber stimmt so ... dieser Code ruft sich rekursiv auf)
 level == 2: nur die 2. Ebene ist in einem Grid
@@ -28,7 +27,6 @@ pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. w
             }
     }
 %}
-{% set image = item.image %}
 {% set level = level + 1 %}
 
 
@@ -38,7 +36,7 @@ pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. w
     {% embed '@object/links/link.twig' with link %}
         {% block link %}
             {% if level == 3 and item.image %}
-                {% include '@object/pictures/picture.twig' with image only %}
+                {% include '@object/pictures/picture.twig' with item.image only %}
             {% endif %}
             {{ item.title }}
         {% endblock %}
