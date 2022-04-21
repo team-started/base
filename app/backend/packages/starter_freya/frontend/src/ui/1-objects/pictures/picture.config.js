@@ -164,5 +164,41 @@ module.exports = {
                 ],
             },
         },
+        {
+            name: 'navigation-icon',
+            context: {
+                figure: false,
+                placeholder: {
+                    uri: {
+                        default: 'https://via.placeholder.com/40x40/ccc/F00?text=png-40',
+                    },
+                },
+                default: {
+                    uri: {
+                        default: 'https://via.placeholder.com/80x80/ccc/F00?text=png-80',
+                    },
+                    mq: '80w',
+                    width: 80,
+                    height: 80,
+                    webP: {
+                        default: 'https://via.placeholder.com/80x80.webp/ccc/000?text=WebP-80',
+                        fileType: 'image/webp',
+                    },
+                },
+                variants: [
+                    {
+                        mq: '160w',
+                        uri: {
+                            default: 'https://via.placeholder.com/160x160/ccc/F00?text=png-160',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/160x160.webp/ccc/000?text=WebP-160',
+                            fileType: 'image/webp',
+                        },
+                    },
+                ],
+            },
+        },
     ],
 };
