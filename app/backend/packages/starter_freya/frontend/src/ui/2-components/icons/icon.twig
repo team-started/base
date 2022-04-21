@@ -1,0 +1,6 @@
+                {% embed '@object/links/link.twig' with item.link %}
+                    {% block linkContent %}
+                        {% include '@object/images/image.twig' with image only %}
+                    {% endblock %}
+                {% endembed %}
+                {{ text }}
