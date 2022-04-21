@@ -4,8 +4,11 @@
       height: 60px;
    }
 
-   &__sm .o-image {
-      width: auto;
-      height: 30px;
+   &__contact,
+   &__sm { 
+      .o-image {
+         width: auto;
+         height: 30px;
+      }
    }
 }

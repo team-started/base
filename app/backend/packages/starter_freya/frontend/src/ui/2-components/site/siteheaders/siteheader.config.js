@@ -2,25 +2,59 @@
 
 module.exports = {
     context: {
-        sm: {
-            applestore: {
+        contact: {
+            map: {
                 image: {
-                    src: '/assets/images/applestore.svg',
-                    alt: 'xing',
+                    src: '/assets/images/other/pin.svg',
+                    alt: 'Anfahrt',
                     title: '',
                 },
                 link: {
                     config: {
-                        uri: 'https://www.apple.com/de',
-                        target: '_blank',
+                        uri: '#',
+                        target: '',
                         class: '',
                         title: '',
                     },
                 },
             },
+            mail: {
+                image: {
+                    src: '/assets/images/bootstrap/envelope.svg',
+                    alt: 'E-mail',
+                    title: '',
+                },
+                link: {
+                    config: {
+                        uri: 'mailto:fritz.eierschale@example.org',
+                        target: '',
+                        class: '',
+                        title: '',
+                    },
+                },
+                text: 'fritz.eierschale@example.org',
+            },
+            phone: {
+                image: {
+                    src: '/assets/images/bootstrap/telephone.svg',
+                    alt: 'Telefon',
+                    title: '',
+                },
+                link: {
+                    config: {
+                        uri: 'tel:+499123456789',
+                        target: '',
+                        class: '',
+                        title: '',
+                    },
+                },
+                text: '09123 456789',
+            },
+        },
+        sm: {
             facebook: {
                 image: {
-                    src: '/assets/images/facebook.svg',
+                    src: '/assets/images/sm/facebook.svg',
                     alt: 'facebook',
                     title: '',
                 },
@@ -33,24 +67,9 @@ module.exports = {
                     },
                 },
             },
-            googleplay: {
-                image: {
-                    src: '/assets/images/googleplay.svg',
-                    alt: 'xing',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://play.google.com/store?gl=DE',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
             instagram: {
                 image: {
-                    src: '/assets/images/instagram.svg',
+                    src: '/assets/images/sm/instagram.svg',
                     alt: 'instagram',
                     title: '',
                 },
@@ -65,193 +84,13 @@ module.exports = {
             },
             jitsi: {
                 image: {
-                    src: '/assets/images/jitsi.svg',
+                    src: '/assets/images/sm/jitsi.svg',
                     alt: 'xing',
                     title: '',
                 },
                 link: {
                     config: {
                         uri: 'https://meet.jit.si/',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            linkedin: {
-                image: {
-                    src: '/assets/images/linkedin.svg',
-                    alt: 'linkedin',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://de.linkedin.com',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            pinterest: {
-                image: {
-                    src: '/assets/images/pinterest.svg',
-                    alt: 'linkedin',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://www.pinterest.de/',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            skype: {
-                image: {
-                    src: '/assets/images/skype.svg',
-                    alt: 'xing',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://www.skype.com/de/',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            snapchat: {
-                image: {
-                    src: '/assets/images/snapchat.svg',
-                    alt: 'linkedin',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://accounts.snapchat.com/',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            teams: {
-                image: {
-                    src: '/assets/images/teams.svg',
-                    alt: 'xing',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://www.microsoft.com/de-de/microsoft-teams/log-in',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            tiktok: {
-                image: {
-                    src: '/assets/images/tiktok.svg',
-                    alt: 'linkedin',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://www.tiktok.com/de-DE',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            twitter: {
-                image: {
-                    src: '/assets/images/twitter.svg',
-                    alt: 'twitter',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://twitter.com/',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            vimeo: {
-                image: {
-                    src: '/assets/images/vimeo.svg',
-                    alt: 'linkedin',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://vimeo.com/de',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            whatsapp: {
-                image: {
-                    src: '/assets/images/whatsapp.svg',
-                    alt: 'linkedin',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://www.whatsapp.com/?lang=de',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            xing: {
-                image: {
-                    src: '/assets/images/xing.svg',
-                    alt: 'xing',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://www.xing.com/',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            youtube: {
-                image: {
-                    src: '/assets/images/youtube.svg',
-                    alt: 'xing',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://www.youtube.com/',
-                        target: '_blank',
-                        class: '',
-                        title: '',
-                    },
-                },
-            },
-            zoom: {
-                image: {
-                    src: '/assets/images/zoom.svg',
-                    alt: 'xing',
-                    title: '',
-                },
-                link: {
-                    config: {
-                        uri: 'https://explore.zoom.us/de',
                         target: '_blank',
                         class: '',
                         title: '',

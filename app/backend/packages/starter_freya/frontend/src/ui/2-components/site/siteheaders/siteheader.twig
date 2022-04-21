@@ -5,9 +5,12 @@ CType:  meint in diesem Fall 'ComponentType'
 {% set CType = 'siteheader' %}
 
 <div class="c-{{ CType }}">
-    <div class="c-{{ CType }}__contact d-flex justify-content-between align-items-center">
-        <div class="w-33">
-            contact
+    <div class="c-{{ CType }}__top d-flex justify-content-between align-items-center">
+        <div class="d-flex flex-column align-items-start w-33">
+            {% for item in contact %}
+                {% set item = item|merge({ 'additionalClass': 'c-' ~ CType ~'__contact' }) %}
+                {% include '@component/icons/icon.twig' with item only %}
+            {% endfor %}
         </div>
         <div class="w-33">
             {% include '@object/images/image.twig' with {
