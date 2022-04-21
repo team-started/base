@@ -79,6 +79,7 @@ fractal.components.engine(
         functions: helpers,
         namespaces: {
             draft: './0-draft',
+            playground: './0-playground',
             object: './1-objects',
             component: './2-components',
             module: './3-modules',
