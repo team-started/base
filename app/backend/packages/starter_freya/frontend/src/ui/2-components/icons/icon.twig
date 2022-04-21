@@ -1,6 +1,29 @@
-                {% embed '@object/links/link.twig' with item.link %}
-                    {% block linkContent %}
-                        {% include '@object/images/image.twig' with image only %}
-                    {% endblock %}
-                {% endembed %}
-                {{ text }}
+{#
+CType:              meint in diesem Fall 'ComponentType'
+additionalClass:    hier können Klassen für das Templating übergeben werden
+#}
+
+{% set CType = 'icon' %}
+{% if text %}
+    {% set iconLayout = 'd-flex' %}
+    {% set iconLayout = (layout == 'text-right') ? iconLayout ~ ' align-items-center' : iconLayout %}
+    {% set iconLayout = (layout == 'text-bottom') ? iconLayout ~ ' flex-column align-items-center' : iconLayout %}
+    {% set iconLayout = (layout == 'text-left') ? iconLayout ~ ' flex-row-reverse align-items-center' : iconLayout %}
+    {% set iconLayout = (layout == 'text-top') ? iconLayout ~ ' flex-column-reverse align-items-center' : iconLayout %}
+{% endif %}
+{% set link = link|merge({ 'additionalClass': iconLayout }) %}
+
+<div class="c-{{ CType }} {{ additionalClass }}">
+    {% embed '@object/links/link.twig' with link %}
+        {% block linkContent %}
+            <span class="c-{{ CType }}__image">
+                {% include '@object/images/image.twig' with image only %}
+            </span>
+            {% if text %}
+                <span class="c-{{ CType }}__text">
+                    {{ text }}
+                </span>
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+</div>
