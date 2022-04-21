@@ -63,6 +63,21 @@ module.exports = {
                     },
                 },
             },
+            jitsi: {
+                image: {
+                    src: '/assets/images/jitsi.svg',
+                    alt: 'xing',
+                    title: '',
+                },
+                link: {
+                    config: {
+                        uri: 'https://meet.jit.si/',
+                        target: '_blank',
+                        class: '',
+                        title: '',
+                    },
+                },
+            },
             linkedin: {
                 image: {
                     src: '/assets/images/linkedin.svg',
@@ -93,6 +108,21 @@ module.exports = {
                     },
                 },
             },
+            skype: {
+                image: {
+                    src: '/assets/images/skype.svg',
+                    alt: 'xing',
+                    title: '',
+                },
+                link: {
+                    config: {
+                        uri: 'https://www.skype.com/de/',
+                        target: '_blank',
+                        class: '',
+                        title: '',
+                    },
+                },
+            },
             snapchat: {
                 image: {
                     src: '/assets/images/snapchat.svg',
@@ -102,6 +132,21 @@ module.exports = {
                 link: {
                     config: {
                         uri: 'https://accounts.snapchat.com/',
+                        target: '_blank',
+                        class: '',
+                        title: '',
+                    },
+                },
+            },
+            teams: {
+                image: {
+                    src: '/assets/images/teams.svg',
+                    alt: 'xing',
+                    title: '',
+                },
+                link: {
+                    config: {
+                        uri: 'https://www.microsoft.com/de-de/microsoft-teams/log-in',
                         target: '_blank',
                         class: '',
                         title: '',
@@ -192,6 +237,21 @@ module.exports = {
                 link: {
                     config: {
                         uri: 'https://www.youtube.com/',
+                        target: '_blank',
+                        class: '',
+                        title: '',
+                    },
+                },
+            },
+            zoom: {
+                image: {
+                    src: '/assets/images/zoom.svg',
+                    alt: 'xing',
+                    title: '',
+                },
+                link: {
+                    config: {
+                        uri: 'https://explore.zoom.us/de',
                         target: '_blank',
                         class: '',
                         title: '',

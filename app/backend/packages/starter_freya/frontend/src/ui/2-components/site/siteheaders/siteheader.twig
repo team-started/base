@@ -19,12 +19,8 @@ CType:  meint in diesem Fall 'ComponentType'
         </div>
         <div class="d-flex justify-content-end w-33">
             {% for item in sm %}
-                {% set image = item.image|merge({'additionalClass': 'c-' ~ CType ~'__sm'}) %}
-                {% embed '@object/links/link.twig' with item.link %}
-                    {% block linkContent %}
-                        {% include '@object/images/image.twig' with image only %}
-                    {% endblock %}
-                {% endembed %}
+                {% set item = item|merge({ 'additionalClass': 'c-' ~ CType ~'__sm' }) %}
+                {% include '@component/icons/icon.twig' with item only %}
             {% endfor %}
         </div>
     </div>
