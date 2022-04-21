@@ -1,26 +1,39 @@
 {#
 CType:              meint in diesem Fall 'ComponentType'
+textMargin:         Abstand zwischen Bild und Text
 additionalClass:    hier können Klassen für das Templating übergeben werden
 #}
 
 {% set CType = 'icon' %}
 {% if text %}
-    {% set iconLayout = 'd-flex' %}
-    {% set iconLayout = (layout == 'text-right') ? iconLayout ~ ' align-items-center' : iconLayout %}
-    {% set iconLayout = (layout == 'text-bottom') ? iconLayout ~ ' flex-column align-items-center' : iconLayout %}
-    {% set iconLayout = (layout == 'text-left') ? iconLayout ~ ' flex-row-reverse align-items-center' : iconLayout %}
-    {% set iconLayout = (layout == 'text-top') ? iconLayout ~ ' flex-column-reverse align-items-center' : iconLayout %}
+    {% if layout == 'text-right' %}
+        {% set layout = 'align-items-center' %}
+        {% set textMargin = 'ms-2' %}
+    {% endif %}
+    {% if layout == 'text-bottom' %}
+        {% set layout = 'flex-column align-items-center' %}
+        {% set textMargin = 'mt-2' %}
+    {% endif %}
+    {% if layout == 'text-left' %}
+        {% set layout = 'flex-row-reverse align-items-center' %}
+        {% set textMargin = 'me-2' %}
+    {% endif %}
+    {% if layout == 'text-top' %}
+        {% set layout = 'flex-column-reverse align-items-center' %}
+        {% set textMargin = 'mb-2' %}
+    {% endif %}
+    {% set layout = 'd-flex ' ~ layout %}
 {% endif %}
-{% set link = link|merge({ 'additionalClass': iconLayout }) %}
+{% set link = link|merge({ 'additionalClass': layout }) %}
 
 <div class="c-{{ CType }} {{ additionalClass }}">
     {% embed '@object/links/link.twig' with link %}
         {% block linkContent %}
-            <span class="c-{{ CType }}__image">
+            <span>
                 {% include '@object/images/image.twig' with image only %}
             </span>
             {% if text %}
-                <span class="c-{{ CType }}__text">
+                <span class="{{ textMargin }}">
                     {{ text }}
                 </span>
             {% endif %}
