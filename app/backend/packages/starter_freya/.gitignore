@@ -42,7 +42,6 @@ yarn-error.log*
 *.sw*
 
 # TYPO3
-/Resources/Private
-!/Resources/Private/.gitkeep
+/Resources/Private/Frontend
 /Resources/Public
 !/Resources/Public/.gitkeep

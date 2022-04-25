@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-04-216T09:46:40Z"
+		  product-name="starter_freya">
+		<header/>
+		<body>
+
+			<trans-unit id="breakpoints.xsmall">
+				<source>Extra small</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.small">
+				<source>Small</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.medium">
+				<source>Medium</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.large">
+				<source>Large</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.xlarge">
+				<source>Extra large</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.xxlarge">
+				<source>Extra extra large</source>
+			</trans-unit>
+
+			<trans-unit id="tx_starter_visibility.">
+				<source>Visibility off</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_visibility.">
+				<source>Visibility only up</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_visibility.">
+				<source>Visibility until</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

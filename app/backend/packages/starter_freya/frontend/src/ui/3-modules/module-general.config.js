@@ -39,6 +39,6 @@ module.exports = {
         },
     },
     tx_starter_cta_text: _.lorem(20, 'max 20'),
-    tx_starter_showbyscreensize: '',
+    tx_starter_visibility: '',
     tx_starter_width: '',
 };
