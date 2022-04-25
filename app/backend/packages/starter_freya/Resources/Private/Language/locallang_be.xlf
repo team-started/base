@@ -5,6 +5,39 @@
 		<header/>
 		<body>
 
+			<trans-unit id="tx_starter_width.container-sm">
+				<source>Content only to full width for "Small"</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md">
+				<source>Content only to full width for "Medium" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg">
+				<source>Content only to full width for "Large" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl">
+				<source>Content only to full width for "Extra large" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl">
+				<source>Content only to full width for "Extra extra large" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-fluid">
+				<source>Content always over full screen width</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-sm-fixed">
+				<source>Always limit content to the width of "Small".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md-fixed">
+				<source>Always limit content to the width of "Medium".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg-fixed">
+				<source>Always limit content to the width of "Large".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl-fixed">
+				<source>Always limit content to the width of "Extra large".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl-fixed">
+				<source>Always limit content to the width of "Extra extra large".</source>
+			</trans-unit>
 			<trans-unit id="breakpoints.xsmall">
 				<source>Extra small</source>
 			</trans-unit>
@@ -24,13 +57,13 @@
 				<source>Extra extra large</source>
 			</trans-unit>
 
-			<trans-unit id="tx_starter_visibility.">
+			<trans-unit id="tx_starter_visibility.I.visibility-off">
 				<source>Visibility off</source>
 			</trans-unit>
-			<trans-unit id="tx_starter_visibility.">
+			<trans-unit id="tx_starter_visibility.I.visibility-only-up">
 				<source>Visibility only up</source>
 			</trans-unit>
-			<trans-unit id="tx_starter_visibility.">
+			<trans-unit id="tx_starter_visibility.I.visibility-until">
 				<source>Visibility until</source>
 			</trans-unit>
 

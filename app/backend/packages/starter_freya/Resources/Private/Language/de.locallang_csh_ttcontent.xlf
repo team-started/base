@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-04-21T09:46:40Z"
+		  product-name="starter_freya">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_starter_width.description">
+				<source>Defines how the width of the content should behave on different screen sizes.</source>
+				<target>Definiert wie sich die Breite des Inhalts auf unterschiedlichen Bildschirmgrößen verhalten soll.</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

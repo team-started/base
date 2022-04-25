@@ -17,3 +17,6 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['starter_twig']['finderNotPath'] = [
     '4-pages',
     '_preview'
 ];
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:starter/Resources/Private/Language/locallang_be.xlf'][] =
+    'EXT:starter_freya/Resources/Private/Language/Override/starter_locallang_be.xlf';

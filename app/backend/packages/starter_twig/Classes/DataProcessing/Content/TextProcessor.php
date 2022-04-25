@@ -75,6 +75,7 @@ class TextProcessor implements PtiDataProcessor
             'tx_starter_visibility' => $data['tx_starter_visibility'],
             'tx_starter_backgroundcolor' => $data['tx_starter_backgroundcolor'],
             'tx_starter_background_fluid' => (bool) $data['tx_starter_background_fluid'],
+            'tx_starter_container' => $data['tx_starter_width'],
         ];
     }
 

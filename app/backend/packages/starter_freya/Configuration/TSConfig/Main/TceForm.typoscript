@@ -10,5 +10,21 @@ TCEFORM {
     # EXT:starter CE's
     CType.keepItems := addToList(starter_media)
     CType.keepItems := addToList(starter_accordion)
+
+    tx_starter_width {
+      addItems {
+        container-sm = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-sm
+        container-md = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-md
+        container-lg = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-lg
+        container-xl = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-xl
+        container-xxl = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-xxl
+        container-fluid = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-fluid
+        container-sm-fixed = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-sm-fixed
+        container-md-fixed = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-md-fixed
+        container-lg-fixed = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-lg-fixed
+        container-xl-fixed = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-xl-fixed
+        container-xxl-fixed = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-xxl-fixed
+      }
+    }
   }
 }

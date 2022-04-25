@@ -5,6 +5,50 @@
 		<header/>
 		<body>
 
+			<trans-unit id="tx_starter_width.container-sm">
+				<source>Content only to full width for "Small"</source>
+				<target>Inhalt nur auf volle Breite bei "Small"</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md">
+				<source>Content only to full width for "Medium" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Medium" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg">
+				<source>Content only to full width for "Large" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Large" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl">
+				<source>Content only to full width for "Extra large" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Extra large" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl">
+				<source>Content only to full width for "Extra extra large" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Extra extra large" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-fluid">
+				<source>Content always over full screen width</source>
+				<target>Inhalt immer über volle Bildschirmbreite</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-sm-fixed">
+				<source>Always limit content to the width of "Small".</source>
+				<target>Inhalt immer auf die Breite von "Small" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md-fixed">
+				<source>Always limit content to the width of "Medium".</source>
+				<target>Inhalt immer auf die Breite von "Medium" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg-fixed">
+				<source>Always limit content to the width of "Large".</source>
+				<target>Inhalt immer auf die Breite von "Large" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl-fixed">
+				<source>Always limit content to the width of "Extra large".</source>
+				<target>Inhalt immer auf die Breite von "Extra large" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl-fixed">
+				<source>Always limit content to the width of "Extra extra large".</source>
+				<target>Inhalt immer auf die Breite von "Extra extra large" begrenzen</target>
+			</trans-unit>
 			<trans-unit id="breakpoints.xsmall">
 				<source>Extra small</source>
 				<target>Extra small</target>

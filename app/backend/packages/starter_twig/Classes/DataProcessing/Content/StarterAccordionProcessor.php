@@ -116,6 +116,7 @@ class StarterAccordionProcessor implements PtiDataProcessor
             'items' => $this->renderAccordionItems($accordionItems),
             'tx_starter_visibility' => $data['tx_starter_visibility'],
             'tx_starter_background_fluid' => (bool) $data['tx_starter_background_fluid'],
+            'tx_starter_container' => $data['tx_starter_width'],
         ];
     }
 
