@@ -3,6 +3,18 @@ CType:  meint in diesem Fall 'ComponentType'
 #}
 
 {% set CType = 'siteheader' %}
+{% set burger =
+    {
+        'image':
+            {
+                src: '/assets/images/other/burger.svg',
+                alt: 'navigation',
+                title: 'navigation',
+            },
+        'layout': 'text-left',
+        'text': 'menu',
+    }
+%}
 
 <div class="c-{{ CType }}">
     <div class="c-{{ CType }}__top d-flex justify-content-between align-items-center">
@@ -30,7 +42,8 @@ CType:  meint in diesem Fall 'ComponentType'
     <hr>
     <div class="c-{{ CType }}__nav">
         <div>
-            navi
-        </div>
+            {% include '@component/navigation/navaccmenus/navaccmenu.twig' %}
+            {% include '@component/navigation/navmmenus/navmmenu.twig' %}
+            {% include '@component/icons/icon.twig' with burger %}
     </div>
 </div>

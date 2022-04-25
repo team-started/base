@@ -1,7 +1,10 @@
 'use strict';
 
+const navigationConfig = require('../../navigation/navigation.config');
+
 module.exports = {
     context: {
+        ...navigationConfig.context,
         contact: {
             map: {
                 image: {

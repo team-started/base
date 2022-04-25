@@ -1,30 +1,36 @@
 {#
 CType:              meint in diesem Fall 'ComponentType'
+class:              string der nötigen Klassen
 textMargin:         Abstand zwischen Bild und Text
 additionalClass:    hier können Klassen für das Templating übergeben werden
 #}
 
 {% set CType = 'icon' %}
 {% if text %}
-    {% if layout == 'text-right' %}
-        {% set layout = 'align-items-center' %}
-        {% set textMargin = 'ms-2' %}
-    {% endif %}
+    {# text-right, default #}
+    {% set class = 'align-items-center' %}
+    {% set textMargin = 'ms-2' %}
+
     {% if layout == 'text-bottom' %}
-        {% set layout = 'flex-column align-items-center' %}
+        {% set class = 'flex-column align-items-center' %}
         {% set textMargin = 'mt-2' %}
     {% endif %}
+
     {% if layout == 'text-left' %}
-        {% set layout = 'flex-row-reverse align-items-center' %}
+        {% set class = 'flex-row-reverse align-items-center' %}
         {% set textMargin = 'me-2' %}
     {% endif %}
+
     {% if layout == 'text-top' %}
-        {% set layout = 'flex-column-reverse align-items-center' %}
+        {% set class = 'flex-column-reverse align-items-center' %}
         {% set textMargin = 'mb-2' %}
     {% endif %}
-    {% set layout = 'd-flex ' ~ layout %}
+
+    {% set class = 'd-flex ' ~ class %}
 {% endif %}
-{% set link = link|merge({ 'additionalClass': layout }) %}
+{% if link %}
+    {% set link = link|merge({ 'additionalClass': class }) %}
+{% endif %}
 
 <div class="c-{{ CType }} {{ additionalClass }}">
     {% embed '@object/links/link.twig' with link %}

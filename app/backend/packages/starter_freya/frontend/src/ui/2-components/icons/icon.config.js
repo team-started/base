@@ -24,6 +24,13 @@ module.exports = {
             },
         },
         {
+            name: 'image-text-no-link',
+            context: {
+                link: '',
+                text: _.lorem(20, 'No link:'),
+            },
+        },
+        {
             name: 'text-right',
             context: {
                 layout: 'text-right',
