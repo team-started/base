@@ -41,9 +41,12 @@ CType:  meint in diesem Fall 'ComponentType'
     </div>
     <hr>
     <div class="c-{{ CType }}__nav">
-        <div>
-            {% include '@component/navigation/navaccmenus/navaccmenu.twig' %}
-            {% include '@component/navigation/navmmenus/navmmenu.twig' %}
-            {% include '@component/icons/icon.twig' with burger %}
+        <div class="d-flex justify-content-between d-lg-none">
+            {% include '@component/navigation/navaccmenus/navaccmenu.twig' with navigation only %}
+            {% include '@component/icons/icon.twig' with burger only %}
+        </div>
+        <div class="d-lg-from">
+            {% include '@component/navigation/navmmenus/navmmenu.twig' with navigation only %}
+        </div>
     </div>
 </div>

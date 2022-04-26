@@ -4,7 +4,9 @@ const navigationConfig = require('../../navigation/navigation.config');
 
 module.exports = {
     context: {
-        ...navigationConfig.context,
+        navigation: {
+            ...navigationConfig.context,
+        },
         contact: {
             map: {
                 image: {

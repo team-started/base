@@ -1,14 +1,12 @@
 {#
-level:  Ebene der Navigation, hier root, also 1
-pid:    Der Navigation kann optional eine uid übergeben werden, z.B. wenn eine Navigation in einem Content-Element
-        verwendet wird.
+level:              Ebene der Navigation, hier root, also 1
+pid:                Der Navigation kann optional eine uid übergeben werden, z.B. wenn eine Navigation in einem Content-Element verwendet wird.
+additionalClass:    hier können Klassen für das Templating übergeben werden, z.B. 'd-lg-none'
 #}
 
 {% set level = 1 %}
 
-
-
-<div id="navaccmenu{{ uid }}" class="c-navaccmenu">
+<div id="navaccmenu{{ uid }}" class="c-navaccmenu {{ additionalClass }}">
     <ul class="level-{{ level }} list-unstyled">
         {% for item in items %}
             {% include '@component/navigation/navaccmenus/_navaccmenu-item/navaccmenu-item.twig' with {

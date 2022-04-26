@@ -28,9 +28,7 @@ additionalClass:    hier können Klassen für das Templating übergeben werden
 
     {% set class = 'd-flex ' ~ class %}
 {% endif %}
-{% if link %}
-    {% set link = link|merge({ 'additionalClass': class }) %}
-{% endif %}
+{% set link = link|default('')|merge({ 'additionalClass': class }) %}
 
 <div class="c-{{ CType }} {{ additionalClass }}">
     {% embed '@object/links/link.twig' with link %}
