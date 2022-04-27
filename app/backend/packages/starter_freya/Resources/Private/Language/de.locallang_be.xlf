@@ -73,7 +73,6 @@
 				<source>Extra extra large</source>
 				<target>Extra extra large</target>
 			</trans-unit>
-
 			<trans-unit id="tx_starter_visibility.I.visibility-off">
 				<source>Visibility off</source>
 				<target>Sichtbarkeit ab</target>
@@ -85,6 +84,26 @@
 			<trans-unit id="tx_starter_visibility.I.visibility-until">
 				<source>Visibility until</source>
 				<target>Sichtbarkeit bis</target>
+			</trans-unit>
+			<trans-unit id="space_class.1">
+				<source>Extra small</source>
+				<target>Kleiner</target>
+			</trans-unit>
+			<trans-unit id="space_class.2">
+				<source>Small</source>
+				<target>Klein</target>
+			</trans-unit>
+			<trans-unit id="space_class.3">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="space_class.4">
+				<source>Large</source>
+				<target>Groß</target>
+			</trans-unit>
+			<trans-unit id="space_class.5">
+				<source>Extra large</source>
+				<target>Größer</target>
 			</trans-unit>
 
 		</body>

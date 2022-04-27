@@ -66,6 +66,21 @@
 			<trans-unit id="tx_starter_visibility.I.visibility-until">
 				<source>Visibility until</source>
 			</trans-unit>
+			<trans-unit id="space_class.1">
+				<source>Extra small</source>
+			</trans-unit>
+			<trans-unit id="space_class.2">
+				<source>Small</source>
+			</trans-unit>
+			<trans-unit id="space_class.3">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="space_class.4">
+				<source>Large</source>
+			</trans-unit>
+			<trans-unit id="space_class.5">
+				<source>Extra large</source>
+			</trans-unit>
 
 		</body>
 	</file>
