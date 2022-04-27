@@ -1,6 +1,5 @@
 'use strict';
 
-const _ = require('../../../../config/helpers');
 const globalConfig = require('../module-general.config');
 
 module.exports = {
