@@ -9,10 +9,7 @@
         <body class="pageLayout--{{ layout }} pageType--{{ pageData.doktype }}">
 {% endif %}
 
-<main id="main">
-    {% block body %}
-    {% endblock %}
-</main>
+{% block body %}{% endblock %}
 
 {% if env != 'CMS' %}
             {% include '@h-foot' %}
