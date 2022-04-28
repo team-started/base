@@ -5,8 +5,6 @@ thisAlignX:     Bild links oder rechts ... default: Bild links.
 
 {% set thisAlignX = imageorient.x == 'right' ? 'flex-md-row' : 'flex-md-row-reverse' %}
 
-
-
 <div class="row flex-column {{ thisAlignX }} align-items-center align-items-md-start">
     <div class="col">
         {% include '@object/rtes/rte.twig' with {

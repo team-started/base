@@ -5,8 +5,7 @@ siehe src/ui/2-components/accordions/accordion.twig
 <div id="collapse{{ itemUid }}"
      class="accordion-collapse collapse"
      aria-labelledby="heading{{ itemUid }}"
-     data-bs-parent="{{ toggle|default(true) ? '#' ~ uid }}"
->
+     data-bs-parent="{{ toggle|default(true) ? '#' ~ uid }}">
 
     <div class="accordion-body">
         {% if text and image %}

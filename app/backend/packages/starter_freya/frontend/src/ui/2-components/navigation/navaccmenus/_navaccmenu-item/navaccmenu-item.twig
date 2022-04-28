@@ -29,8 +29,6 @@ pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. w
 {% set level = level + 1 %}
 {% set identifier = 'navaccmenu' ~ pid ~ '-' ~ item.uid %}
 
-
-
 <li id="{{ identifier }}" class="nav-item {{ children }}">
     <div class="d-flex justify-content-between align-items-center">
         {% include '@object/links/link.twig' with link %}

@@ -17,8 +17,6 @@ title:          Für ein Item: der Titel
 
 {% set uid = 'acc' ~ uid %}
 
-
-
 <div class="c-accordion accordion" id="{{ uid }}">
     {% for accordion in items %}
         {% set itemUid = uid ~ '-' ~ loop.index %}

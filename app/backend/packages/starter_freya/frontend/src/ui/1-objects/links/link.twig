@@ -9,7 +9,6 @@ see: https://twig.symfony.com/doc/3.x/tags/embed.html
 {% set title = config.title ? 'title="' ~ config.title ~ '"' %}
 {% set class = config.class ? 'class="' ~ config.class ~ '"' %}
 
-
 {% if config.uri %}
     <a href="{{ config.uri }}" {{ target }} {{ title }} {{ class }}>
         {% block linkContent %}{{ text }}{% endblock %}
