@@ -108,9 +108,13 @@ touch $BUILD_DIR/craft/data.gitkeep
 rsync -r $SOURCE_DIR/app/backend/config \
   $SOURCE_DIR/app/backend/.gitignore \
   $SOURCE_DIR/app/backend/.php-cs-fixer.php \
-  $SOURCE_DIR/app/backend/.env \
   $SOURCE_DIR/app/backend/.env.dist \
   $BUILD_DIR/app/backend/
+
+###
+# Rename .env file
+###
+cp $BUILD_DIR/app/backend/.env.dist $BUILD_DIR/app/backend/.env
 
 ###
 # Sync TYPO3 specific files
