@@ -1,2 +1,12 @@
 @import 'EXT:starter_freya/Configuration/TypoScript/Extension/Twig/CoreContentElements/'
 @import 'EXT:starter_freya/Configuration/TypoScript/Extension/Twig/StarterContentElements/'
+
+page {
+  includeCSS {
+    app = EXT:starter_freya/Resources/Public/Frontend/css/app.min.css
+  }
+
+  includeJSFooterlibs {
+    app = EXT:starter_freya/Resources/Public/Frontend/js/app.min.js
+  }
+}
