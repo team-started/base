@@ -25,7 +25,7 @@
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^7.0",
         "ichhabrecht/content-defender": "^3.2",
-        "starterteam/site-package-freya": "@dev",
+        "starterteam/site-package-freya": "dev-main",
         "starterteam/site-package-nessa": "@dev",
         "symfony/dotenv": "^5.2",
         "twig/twig": "^3",
