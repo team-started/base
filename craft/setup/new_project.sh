@@ -39,9 +39,10 @@ case $PROJECT_NAME in
 	;;
     help)
       echo ""
-      echo -e "ddev setup ${YELLOW}<project-name>${NO_COLOR}"
+      echo -e "ddev setup ${YELLOW}<project-name> [git-version]${NO_COLOR}"
       echo ""
       echo -e "${YELLOW}<project-name>: ${NO_COLOR}Project name without spaces"
+      echo -e "${YELLOW}[git-version]: ${NO_COLOR}Optional version tag of base to create a new project. If empty use latest tag."
       echo ""
       exit 0;
     ;;
@@ -56,7 +57,19 @@ BUILD_DIR="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/_build"
 PROJECT_TEMPLATES_DIRECTORY="$(dirname "$(greadlink -f "$BASE_CRAFT_DIRECTOR")")/project-templates"
 NEW_PROJECT_DIR="../$PROJECT_NAME"
 
-VERSION=$(git tag --sort=-v:refname | head -1)
+GIT_VERSION=${2}
+if [ ! -z "$GIT_VERSION" ]
+then
+    USED_VERSION=$(git describe --exact-match --tags ${GIT_VERSION})
+else
+    USED_VERSION=$(git describe --tags $(git rev-list --tags --max-count=1))
+    GIT_VERSION="latest"
+fi
+
+if [ -z "$USED_VERSION" ]; then
+    echo -e "${RED}[ERROR] Version '$GIT_VERSION' not found!${NO_COLOR}"
+    exit 1;
+fi
 
 if [ -e "$NEW_PROJECT_DIR" ]; then
     echo -e "${RED}[ERROR] Project '$PROJECT_NAME' already exists!${NO_COLOR}"
@@ -68,7 +81,7 @@ if [ -e "$BUILD_DIR" ]; then
     exit 1;
 fi
 
-echo -e "${YELLOW}Project setup${NO_COLOR} \"${GREEN}$PROJECT_NAME${NO_COLOR}\" ${YELLOW}from starterteam-base ${NO_COLOR}${GREEN}\"$VERSION\"${NO_COLOR}"
+echo -e "${YELLOW}Project setup${NO_COLOR} \"${GREEN}$PROJECT_NAME${NO_COLOR}\" ${YELLOW}from starterteam-base ${NO_COLOR}${GREEN}\"$USED_VERSION\"${NO_COLOR}"
 mkdir -p "$BUILD_DIR/"{app/backend/{packages,public},app/frontend,craft/data} || exit 1
 mkdir "$BUILD_DIR/"app/backend/public/typo3conf || exit 1
 mkdir "$BUILD_DIR/"app/backend/public/typo3conf/ext || exit 1
@@ -146,17 +159,17 @@ rsync -r $PROJECT_TEMPLATES_DIRECTORY/ $BUILD_DIR --exclude ProjectSetup.php
 echo -e "${YELLOW}Set project name and version in new project ...${NO_COLOR}"
 # wrapping the command here to run PHP inside the container!
 # (replacing variables in files is easier in PHP)
-ddev init-project "$PROJECT_NAME" "$VERSION"
+ddev init-project "$PROJECT_NAME" "$USED_VERSION"
 
 ###
 # Initialize new project with and move folder outside of current project
 ###
-echo -e "${YELLOW}Initialize project '$PROJECT_NAME' with git ...${NO_COLOR}"
+echo -e "${YELLOW}Initialize project '$PROJECT_NAME' in version '$USED_VERSION' with git ...${NO_COLOR}"
 cd $BUILD_DIR && \
   git init --quiet && \
   git checkout --quiet -b main && \
   git add . -A >> /dev/null && \
-  git commit -m "[init] project @$VERSION" >> /dev/null
+  git commit -m "[init] project @$USED_VERSION" >> /dev/null
 
 cd $SOURCE_DIR
 mv $BUILD_DIR $NEW_PROJECT_DIR
