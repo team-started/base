@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Description: Create a new project
-## Usage: setup help|<project-name>
+## Usage: setup help|<project-name> [git-version]
 ## Example: "ddev setup my-new-project"
 
 
