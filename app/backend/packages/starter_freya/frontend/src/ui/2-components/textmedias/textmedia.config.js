@@ -17,7 +17,7 @@ module.exports = {
             x: '',
             inside: '',
         },
-        text: _.lorem(1000, 'textmedia:'),
+        bodytext: _.lorem(1000, 'textmedia:'),
     },
     variants: [
         {
