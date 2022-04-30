@@ -19,9 +19,9 @@ componentBackground: Wenn der Background fluid ist, dann wird er im Container ge
 
         <div
             class="row row-cols-1 row-cols-sm-{{ imagecols|default(1) }} row-cols-md-{{ tx_starter_imagecols_medium|default(1) }} row-cols-lg-{{ tx_starter_imagecols_large|default(1) }} g-3">
-            {% for picture in items %}
+            {% for item in items %}
                 <div class="col">
-                    {% include '@object/pictures/picture.twig' with picture only %}
+                    {% include '@object/pictures/picture.twig' with item.image only %}
                 </div>
             {% endfor %}
         </div>
