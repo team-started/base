@@ -21,6 +21,7 @@
     ],
     "require": {
         "php": "^7.4",
+        "cweagans/composer-patches": "^1.7",
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^7.0",
         "ichhabrecht/content-defender": "^3.2",
@@ -85,7 +86,14 @@
     "extra": {
         "typo3/cms": {
 			"cms-package-dir": "{$vendor-dir}/typo3/cms"
-        }
+        },
+		"enable-patching": true,
+		"composer-exit-on-patch-failure": true,
+		"patches": {
+			"pti/pti": {
+				"Prepend site base uri to assets": "patches/pti_prepend_site_uri_assets.patch"
+			}
+		}
     },
     "config": {
         "secure-http": true,
@@ -103,7 +111,8 @@
         "allow-plugins": {
             "typo3/class-alias-loader": true,
             "typo3/cms-composer-installers": true,
-            "helhum/dotenv-connector": true
+            "helhum/dotenv-connector": true,
+            "cweagans/composer-patches": true
         }
     },
     "scripts": {

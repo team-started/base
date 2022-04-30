@@ -116,6 +116,13 @@ rsync -r $SOURCE_DIR/craft $BUILD_DIR --exclude config.sh --exclude data --exclu
 touch $BUILD_DIR/craft/data.gitkeep
 
 ###
+# Sync patches, of folder exists
+###
+if [ -e "${SOURCE_DIR}/app/backend/patches" ]; then
+    rsync -r $SOURCE_DIR/app/backend/patches $BUILD_DIR/app/backend
+fi
+
+###
 # Sync basic files and folders for backend
 ###
 rsync -r $SOURCE_DIR/app/backend/config \
