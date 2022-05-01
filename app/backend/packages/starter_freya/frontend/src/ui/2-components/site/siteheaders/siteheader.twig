@@ -1,40 +1,10 @@
-{#
-CType:  meint in diesem Fall 'ComponentType'
-#}
+{% set identifier = 'siteheader' %}
 
-{% set CType = 'siteheader' %}
-{% set openMenu =
-    {
-        'image':
-            {
-                src: '/assets/images/other/burger.svg',
-                alt: 'navigation',
-                title: 'navigation',
-            },
-        'layout': 'text-left',
-        'text': 'open menu',
-        'additionalClass': 'c-' ~ CType ~'__toggle',
-    }
-%}
-{% set closeMenu =
-    {
-        'image':
-            {
-                src: '/assets/images/bootstrap/x-lg.svg',
-                alt: 'navigation',
-                title: 'navigation',
-            },
-        'layout': 'text-left',
-        'text': 'close',
-        'additionalClass': 'd-none c-' ~ CType ~'__toggle',
-    }
-%}
-
-<div class="c-{{ CType }}">
-    <div class="c-{{ CType }}__top d-flex justify-content-between align-items-center">
+<div class="c-{{ identifier }}">
+    <div class="c-{{ identifier }}__top d-flex justify-content-between align-items-center">
         <div class="d-flex flex-column align-items-start w-33">
             {% for item in contact %}
-                {% set item = item|merge({ 'additionalClass': 'c-' ~ CType ~'__contact' }) %}
+                {% set item = item|merge({ 'additionalClass': 'c-' ~ identifier ~'__contact' }) %}
                 {% include '@component/icons/icon.twig' with item only %}
             {% endfor %}
         </div>
@@ -43,27 +13,27 @@ CType:  meint in diesem Fall 'ComponentType'
                 'src': '/assets/images/logo.svg',
                 'alt': '',
                 'title': '',
-                'additionalClass': 'c-' ~ CType ~'__logo'
+                'additionalClass': 'c-' ~ identifier ~'__logo'
             } only %}
         </div>
         <div class="d-flex justify-content-end w-33">
             {% for item in sm %}
-                {% set item = item|merge({ 'additionalClass': 'c-' ~ CType ~'__sm' }) %}
+                {% set item = item|merge({ 'additionalClass': 'c-' ~ identifier ~'__sm' }) %}
                 {% include '@component/icons/icon.twig' with item only %}
             {% endfor %}
         </div>
     </div>
     <hr>
-    <div class="c-{{ CType }}__nav">
-        <div class="d-flex justify-content-end d-lg-none">
-            {% include '@component/navigation/navaccmenus/navaccmenu.twig' with  { 
-                items: navigation.items,
-                additionalClass: 'd-none flex-grow-1'
-            } only %}
-            {% include '@component/icons/icon.twig' with openMenu only %}
-            {% include '@component/icons/icon.twig' with closeMenu only %}
+    <div class="c-{{ identifier }}__nav">
+        <div class="d-lg-none c-{{ identifier }}__nav-mobile">
+            <div class="text-end">
+                <span class="c-{{ identifier }}__toggle collapsed" data-bs-toggle="collapse" data-bs-target="#{{ identifier }}-collapse"></span>
+            </div>
+            <div id="{{ identifier }}-collapse" class="collapse">
+                {% include '@component/navigation/navaccmenus/navaccmenu.twig' with navigation only %}
+            </div>
         </div>
-        <div class="d-lg-from">
+        <div class="d-lg-from c-{{ identifier }}__nav-desktop">
             {% include '@component/navigation/navmmenus/navmmenu.twig' with navigation only %}
         </div>
     </div>

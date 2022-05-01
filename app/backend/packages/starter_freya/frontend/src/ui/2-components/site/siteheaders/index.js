@@ -1,16 +1,25 @@
-function Component($elements) {
-    function init() {
-        const navaccmenu = document.querySelector('#navaccmenu');
-        const toggles = document.querySelectorAll('.c-siteheader__toggle');
+import Collapse from 'bootstrap/js/dist/collapse';
 
-        for (let i = 0; i < toggles.length; i++) {
-            toggles[i].addEventListener('click', function () {
-                navaccmenu.classList.toggle('d-none');
-                for (let j = 0; j < toggles.length; j++) {
-                    toggles[j].classList.toggle('d-none');
-                }
-            });
-        }
+function Component() {
+    function init() {
+        let scrollpos = window.scrollY;
+        const header = document.querySelector('.c-siteheader');
+        const headerHeight = header.offsetHeight;
+
+        document.querySelector('body').style.paddingTop = headerHeight + 'px';
+
+        const add_class_on_scroll = () => header.classList.add('page-scrolled');
+        const remove_class_on_scroll = () => header.classList.remove('page-scrolled');
+
+        window.addEventListener('scroll', function () {
+            scrollpos = window.scrollY;
+
+            if (scrollpos >= headerHeight) {
+                add_class_on_scroll();
+            } else {
+                remove_class_on_scroll();
+            }
+        });
     }
 
     init();

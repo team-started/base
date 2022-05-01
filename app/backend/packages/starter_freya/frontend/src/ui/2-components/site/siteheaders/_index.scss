@@ -1,15 +1,23 @@
+$siteheader-icon-height: 30px !default;
+
 .c-siteheader {
+   position: fixed;
+   z-index: map-get($map: $zindex-map, $key: siteheader);
+   top: 0;
+   right: 0;
+   left: 0;
+   background-color: $white;
+
    &__logo {
       width: auto;
-      height: 60px;
+      height: ($siteheader-icon-height * 2);
    }
 
    &__contact,
-   &__sm,
-   &__toggle { 
+   &__sm { 
       .o-image {
          width: auto;
-         height: 30px;
+         height: $siteheader-icon-height;
       }
    }
 
@@ -19,5 +27,20 @@
 
    &__toggle {
       cursor: pointer;
+
+      &::after {
+         content: '';
+         display: inline-block;
+         width: $siteheader-icon-height;
+         height: $siteheader-icon-height;
+         background-image: url('assets/images/bootstrap/x-lg.svg');
+         background-position: center center;
+         background-size: contain;
+         background-repeat: no-repeat;
+      }
+
+      &.collapsed::after {
+         background-image: url('assets/images/other/burger.svg');
+      }
    }
 }
