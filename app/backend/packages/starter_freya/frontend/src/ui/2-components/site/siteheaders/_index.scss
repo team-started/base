@@ -5,10 +5,19 @@
    }
 
    &__contact,
-   &__sm { 
+   &__sm,
+   &__toggle { 
       .o-image {
          width: auto;
          height: 30px;
       }
+   }
+
+   &__sm:not(:last-child) {
+      @extend .me-2;
+   }
+
+   &__toggle {
+      cursor: pointer;
    }
 }

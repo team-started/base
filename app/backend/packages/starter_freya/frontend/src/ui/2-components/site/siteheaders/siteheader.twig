@@ -3,7 +3,7 @@ CType:  meint in diesem Fall 'ComponentType'
 #}
 
 {% set CType = 'siteheader' %}
-{% set burger =
+{% set openMenu =
     {
         'image':
             {
@@ -12,7 +12,21 @@ CType:  meint in diesem Fall 'ComponentType'
                 title: 'navigation',
             },
         'layout': 'text-left',
-        'text': 'menu',
+        'text': 'open menu',
+        'additionalClass': 'c-' ~ CType ~'__toggle',
+    }
+%}
+{% set closeMenu =
+    {
+        'image':
+            {
+                src: '/assets/images/bootstrap/x-lg.svg',
+                alt: 'navigation',
+                title: 'navigation',
+            },
+        'layout': 'text-left',
+        'text': 'close',
+        'additionalClass': 'd-none c-' ~ CType ~'__toggle',
     }
 %}
 
@@ -41,9 +55,13 @@ CType:  meint in diesem Fall 'ComponentType'
     </div>
     <hr>
     <div class="c-{{ CType }}__nav">
-        <div class="d-flex justify-content-between d-lg-none">
-            {% include '@component/navigation/navaccmenus/navaccmenu.twig' with navigation only %}
-            {% include '@component/icons/icon.twig' with burger only %}
+        <div class="d-flex justify-content-end d-lg-none">
+            {% include '@component/navigation/navaccmenus/navaccmenu.twig' with  { 
+                items: navigation.items,
+                additionalClass: 'd-none flex-grow-1'
+            } only %}
+            {% include '@component/icons/icon.twig' with openMenu only %}
+            {% include '@component/icons/icon.twig' with closeMenu only %}
         </div>
         <div class="d-lg-from">
             {% include '@component/navigation/navmmenus/navmmenu.twig' with navigation only %}
