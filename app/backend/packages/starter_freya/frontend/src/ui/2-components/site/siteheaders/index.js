@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import Collapse from 'bootstrap/js/dist/collapse';
+/* eslint-enable no-unused-vars */
 
 function Component() {
     function init() {
@@ -6,8 +8,10 @@ function Component() {
         const header = document.querySelector('.c-siteheader');
         const headerHeight = header.offsetHeight;
 
-        document.querySelector('body').style.paddingTop = headerHeight + 'px';
+        /* setzt im Body oben einen Abstand, damit der Content nicht unter der Nac´vigation verschwindet */
+        document.querySelector('body').style.marginTop = headerHeight + 'px';
 
+        /* setzt im siteheader eine Klasse, nachdem die Seite ein Stüchcken gescrollt wurde */
         const add_class_on_scroll = () => header.classList.add('page-scrolled');
         const remove_class_on_scroll = () => header.classList.remove('page-scrolled');
 
