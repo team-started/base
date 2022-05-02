@@ -2,8 +2,6 @@
 identifier: zusammengesetzter String
 uid:        Dürfte immer leer sein, außer diese Komponente wird in einem Contentelement verwendet.
 breadcrumb: Ist die nötige Klasse für Bootstrap.
-current:    Flag für ein Item, das die aktuelle Seite repräsentiert.
-active:     Flag, wenn ein Item in der Rootline ist, was in diesem Fall (breadcrumb) für alle Items zutrifft.
 #}
 
 {% set identifier = 'bc' ~ uid %}
@@ -15,9 +13,10 @@ active:     Flag, wenn ein Item in der Rootline ist, was in diesem Fall (breadcr
     <nav>
         <ol id="{{ identifier }}" class="breadcrumb">
             {% for item in items %}
-                <li class="breadcrumb-item">
-                    <a href="#">Home</a>
-                </li>
+                {% include '@component/breadcrumbs/_breadcrumb-item/breadcrumb-item.twig' with {
+                    identifier: identifier,
+                    item: item,
+                } only %}
             {% endfor %}
         </ol>
     </nav>
