@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+    label: 'Breadcrumb',
     context: {
         items: [
             {
