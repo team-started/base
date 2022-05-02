@@ -1,13 +1,24 @@
-{% set identifier = 'breadcrumb' %}
+{#
+identifier: zusammengesetzter String
+uid:        Dürfte immer leer sein, außer diese Komponente wird in einem Contentelement verwendet.
+breadcrumb: Ist die nötige Klasse für Bootstrap.
+current:    Flag für ein Item, das die aktuelle Seite repräsentiert.
+active:     Flag, wenn ein Item in der Rootline ist, was in diesem Fall (breadcrumb) für alle Items zutrifft.
+#}
+
+{% set identifier = 'bc' ~ uid %}
 
 {% extends '@component/containers/container.twig' %}
 
 {% block moduleContentBlock %}
 
     <nav>
-        <ol class="{{ identifier }}">
-            <li class="{{ identifier }}-item"><a href="#">Home</a></li>
-            <li class="{{ identifier }}-item active">Library</li>
+        <ol id="{{ identifier }}" class="breadcrumb">
+            {% for item in items %}
+                <li class="breadcrumb-item">
+                    <a href="#">Home</a>
+                </li>
+            {% endfor %}
         </ol>
     </nav>
 

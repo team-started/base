@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-    label: 'Breadcrumb',
     context: {
         items: [
             {
@@ -42,4 +41,12 @@ module.exports = {
             },
         ],
     },
+    variants: [
+        {
+            name: 'contentelement',
+            context: {
+                uid: 333,
+            },
+        },
+    ],
 };
