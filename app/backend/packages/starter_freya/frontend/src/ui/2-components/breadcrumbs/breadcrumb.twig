@@ -1,0 +1,14 @@
+{% set identifier = 'breadcrumb' %}
+
+{% extends '@component/containers/container.twig' %}
+
+{% block moduleContentBlock %}
+
+    <nav>
+        <ol class="{{ identifier }}">
+            <li class="{{ identifier }}-item"><a href="#">Home</a></li>
+            <li class="{{ identifier }}-item active">Library</li>
+        </ol>
+    </nav>
+
+{% endblock %}
