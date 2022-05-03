@@ -200,5 +200,124 @@ module.exports = {
                 ],
             },
         },
+        {
+            name: 'small',
+            context: {
+                figure: false,
+                placeholder: {
+                    uri: {
+                        default: 'https://via.placeholder.com/60x40/ccc/F00?text=png-60',
+                    },
+                },
+                default: {
+                    uri: {
+                        default: 'https://via.placeholder.com/400x267/ccc/F00?text=png-400',
+                    },
+                    mq: '400w',
+                    width: 400,
+                    height: 267,
+                    webP: {
+                        default: 'https://via.placeholder.com/400x267.webp/ccc/000?text=WebP-400',
+                        fileType: 'image/webp',
+                    },
+                },
+                variants: [
+                    {
+                        mq: '800w',
+                        uri: {
+                            default: 'https://via.placeholder.com/800x534/ccc/F00?text=png-800',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/800x534.webp/ccc/000?text=WebP-800',
+                            fileType: 'image/webp',
+                        },
+                    },
+                ],
+            },
+        },
+        {
+            name: 'medium',
+            context: {
+                figure: false,
+                placeholder: {
+                    uri: {
+                        default: 'https://via.placeholder.com/71x40/ccc/F00?text=png-71',
+                    },
+                },
+                default: {
+                    uri: {
+                        default: 'https://via.placeholder.com/600x256/ccc/F00?text=png-600',
+                    },
+                    mq: '600w',
+                    width: 600,
+                    height: 338,
+                    webP: {
+                        default: 'https://via.placeholder.com/600x338.webp/ccc/000?text=WebP-600',
+                        fileType: 'image/webp',
+                    },
+                },
+                variants: [
+                    {
+                        mq: '1000w',
+                        uri: {
+                            default: 'https://via.placeholder.com/1000x563/ccc/F00?text=png-1000',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/1000x563.webp/ccc/000?text=WebP-1000',
+                            fileType: 'image/webp',
+                        },
+                    },
+                ],
+            },
+        },
+        {
+            name: 'large',
+            context: {
+                figure: false,
+                placeholder: {
+                    uri: {
+                        default: 'https://via.placeholder.com/93x40/ccc/F00?text=png-93',
+                    },
+                },
+                default: {
+                    uri: {
+                        default: 'https://via.placeholder.com/600x257/ccc/F00?text=png-600',
+                    },
+                    mq: '600w',
+                    width: 600,
+                    height: 257,
+                    webP: {
+                        default: 'https://via.placeholder.com/600x257.webp/ccc/000?text=WebP-600',
+                        fileType: 'image/webp',
+                    },
+                },
+                variants: [
+                    {
+                        mq: '1200w',
+                        uri: {
+                            default: 'https://via.placeholder.com/1200x514/ccc/F00?text=png-1200',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/1200x514.webp/ccc/000?text=WebP-1200',
+                            fileType: 'image/webp',
+                        },
+                    },
+                    {
+                        mq: '2400w',
+                        uri: {
+                            default: 'https://via.placeholder.com/2400x1029/ccc/F00?text=png-2400',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/2400x1029.webp/ccc/000?text=WebP-2400',
+                            fileType: 'image/webp',
+                        },
+                    },
+                ],
+            },
+        },
     ],
 };
