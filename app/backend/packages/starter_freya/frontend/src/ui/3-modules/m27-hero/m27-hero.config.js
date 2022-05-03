@@ -14,7 +14,7 @@ module.exports = {
     },
     variants: [
         {
-            name: 'image-only',
+            name: 'images-only',
             context: {
                 bodytext: '',
                 date: '',
@@ -22,6 +22,20 @@ module.exports = {
                 overline: '',
                 subheader: '',
                 tx_starter_cta_link: '',
+            },
+        },
+        {
+            name: 'small-image-only',
+            context: {
+                bodytext: '',
+                date: '',
+                overline: '',
+                subheader: '',
+                tx_starter_cta_link: '',
+                image: {
+                    medium: '',
+                    large: '',
+                },
             },
         },
     ],

@@ -1,9 +1,15 @@
 {#
-tx_starter_background_fluid, tx_starter_background: Bei diesem CE kann kein Hintergrund gesetzt werden, daher gibt es hier auch kein componentBackgound, wie in anderen CEs.
+tx_starter_background_fluid, tx_starter_background:
+Bei diesem CE kann kein Hintergrund gesetzt werden, daher gibt es hier auch kein componentBackgound, wie in anderen CEs.
+
+imageMedium:    Nimmt das Bild für small, falls medium nicht gesetzt ist.
+imageLarge:     Nimmt das Bild für medium, falls large nicht gesetzt ist.
 #}
 
 {% set tx_starter_background_fluid = false %}
 {% set tx_starter_background = false %}
+{% set imageMedium = image.medium ? image.medium : image.small %}
+{% set imageLarge = image.large ? image.large : imageMedium %}
 
 {% extends '@component/containers/container.twig' %}
 
@@ -12,8 +18,8 @@ tx_starter_background_fluid, tx_starter_background: Bei diesem CE kann kein Hint
     <div id="c{{ uid }}" class="m-{{ CType }} position-relative overflow-hidden">
         
         {% include '@object/pictures/picture.twig' with image.small|merge({'additionalClassPicture': 'd-md-none'}) only %}
-        {% include '@object/pictures/picture.twig' with image.medium|merge({'additionalClassPicture': 'd-md-only'}) only %}
-        {% include '@object/pictures/picture.twig' with image.large|merge({'additionalClassPicture': 'd-lg-from'}) only %}
+        {% include '@object/pictures/picture.twig' with imageMedium|merge({'additionalClassPicture': 'd-md-only'}) only %}
+        {% include '@object/pictures/picture.twig' with imageLarge|merge({'additionalClassPicture': 'd-lg-from'}) only %}
 
         {% if bodytext or date or header or overline or subheader or tx_starter_cta_link %}
             <div class="m-{{ CType }}__overlay m-t-3 m-t-md-0 p-md-3">
