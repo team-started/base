@@ -98,11 +98,15 @@ class StarterCeMediaProcessor implements PtiDataProcessor
     protected function renderGalleryItems(array $data): array
     {
         $resultMedia = [];
+        $imageConfig = $this->configuration['imageConfig'] ?? [];
+        $imagePlaceholderConfig = $this->configuration['imageConfigPlaceholder'] ?? [];
+
         $mediaElements = $this->mediaProcessor->renderMedia(
             $data,
             'tt_content',
             'assets',
-            $this->configuration['imageConfig']
+            $imageConfig,
+            $imagePlaceholderConfig
         );
 
         foreach ($mediaElements as $index => $mediaElement) {
@@ -116,6 +120,8 @@ class StarterCeMediaProcessor implements PtiDataProcessor
             if ($mediaElement['type'] == 'image') {
                 $resultMedia[$index]['image'] = $mediaElement['image'];
                 $resultMedia[$index]['image']['uid'] = $mediaElement['uid'];
+                $resultMedia[$index]['image']['placeholder'] =
+                    isset($mediaElement['thumbnail']) ? $mediaElement['thumbnail']['default'] : null;
             } else {
                 $resultMedia[$index]['video'] = $mediaElement['video'];
                 $resultMedia[$index]['video']['uid'] = $mediaElement['uid'];
