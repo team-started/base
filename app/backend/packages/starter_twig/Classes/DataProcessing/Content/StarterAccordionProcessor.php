@@ -110,7 +110,9 @@ class StarterAccordionProcessor implements PtiDataProcessor
         return [
             'uid' => $data['uid'],
             'CType' => str_replace('_', '-', $data['CType']),
-            'header' => $this->getHeader($data),
+            'header' => $this->headlineProcessor->processHeadline($data),
+            'subheader' => $this->headlineProcessor->processSubLine($data),
+            'overline' => $this->headlineProcessor->processOverLine($data),
             'space_before_class' => $data['space_before_class'],
             'space_after_class' => $data['space_after_class'],
             'items' => $this->renderAccordionItems($accordionItems),
@@ -120,6 +122,9 @@ class StarterAccordionProcessor implements PtiDataProcessor
         ];
     }
 
+    /**
+     * @deprecated since 4.0.0 and would be remove in 5.0.0
+     */
     protected function getHeader(array $data): array
     {
         return [
@@ -193,11 +198,15 @@ class StarterAccordionProcessor implements PtiDataProcessor
                 continue;
             }
 
+            $imageConfig = $this->configuration['imageConfig'][$assetField] ?? [];
+            $imagePlaceholderConfig = $this->configuration['imageConfigPlaceholder'][$assetField] ?? [];
+
             $mediaFileData = $this->mediaProcessor->renderMedia(
                 $accordionItem,
                 self::ACCORDION_TABLE,
                 $assetField,
-                $this->configuration['imageConfig'][$assetField]
+                $imageConfig,
+                $imagePlaceholderConfig
             );
 
             if (count($mediaFileData) != 1) {
@@ -213,6 +222,8 @@ class StarterAccordionProcessor implements PtiDataProcessor
             if ($mediaFileData[0]['type'] == 'image') {
                 $resultMedia[$assetField]['image'] = $mediaFileData[0]['image'];
                 $resultMedia[$assetField]['image']['uid'] = $mediaFileData[0]['uid'];
+                $resultMedia[$assetField]['image']['placeholder'] =
+                    isset($mediaFileData[0]['thumbnail']) ? $mediaFileData[0]['thumbnail']['default'] : null;
             } else {
                 $resultMedia[$assetField]['video'] = $mediaFileData[0]['video'];
                 $resultMedia[$assetField]['video']['uid'] = $mediaFileData[0]['uid'];
