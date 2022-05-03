@@ -12,4 +12,17 @@ module.exports = {
             large: '@picture--large',
         },
     },
+    variants: [
+        {
+            name: 'image-only',
+            context: {
+                bodytext: '',
+                date: '',
+                header: '',
+                overline: '',
+                subheader: '',
+                tx_starter_cta_link: '',
+            },
+        },
+    ],
 };
