@@ -17,11 +17,9 @@ componentBackgound: Wenn der Background fluid ist, dann wird er im Container ges
             'overline': overline,
         } only %}
 
-        {% include '@component/accordions/accordion.twig' with {
-            'uid': uid,
-            'items': items,
-            'toggle': tx_starter_accordion_toggle,
-        } only %}
+        {% include '@object/pictures/picture.twig' with image.small|merge({'additionalClassPicture': 'd-md-none'}) only %}
+        {% include '@object/pictures/picture.twig' with image.medium|merge({'additionalClassPicture': 'd-md-only'}) only %}
+        {% include '@object/pictures/picture.twig' with image.large|merge({'additionalClassPicture': 'd-lg-from'}) only %}
 
         {% include '@component/module/modulefooters/modulefooter.twig' with {
             'tx_starter_cta_link': tx_starter_cta_link,

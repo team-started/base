@@ -6,5 +6,10 @@ module.exports = {
     context: {
         ...globalConfig,
         CType: 'hero',
+        image: {
+            small: '@picture--small',
+            medium: '@picture--medium',
+            large: '@picture--large',
+        },
     },
 };

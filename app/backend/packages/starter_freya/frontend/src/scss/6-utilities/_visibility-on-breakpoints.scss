@@ -1,12 +1,17 @@
 // Da ich keine Idee hatte, wie man das dynamisch per Loop erzeugen kann, ist das hier hart gecodet.
-// -
-// Loops funktionieren NICHT, weil Sass keine dynamischen Variablen unterstützt, z.B.:
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// Loops funktionieren NICHT, weil Sass keine dynamischen Variablen unterstützt, z.B. geht nicht:
 // @each $screen-size, $max-width in $grid-breakpoints {
 //     .d-#{$screen-size}-from {
 //         @extend .d-none;
 //         @extend .d-#{$screen-size}-block;
 //     }
 // }
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// Ein Beispiel, welche Klassen gesetzt werden müssen, um etwas jeweils auf small, medium und large anzuzeigen:
+// small:   d-md-none   -> Bootstap Standard, "verberge etwas ab medium"
+// medium:  d-md-only   -> Starter Klasse, die Bootstap Klassen kombiniert, "zeige etwas nur auf medium"
+// large:   d-lg-from   -> Starter Klasse, die Bootstap Klassen kombiniert, "zeige etwas ab large"
 
 .d-sm-from {
     @extend .d-none;
