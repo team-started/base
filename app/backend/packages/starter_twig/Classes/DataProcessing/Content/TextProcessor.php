@@ -67,7 +67,9 @@ class TextProcessor implements PtiDataProcessor
         return [
             'uid' => $data['uid'],
             'CType' => str_replace('_', '-', $data['CType']),
-            'header' => $this->getHeader($data),
+            'header' => $this->headlineProcessor->processHeadline($data),
+            'subheader' => $this->headlineProcessor->processSubLine($data),
+            'overline' => $this->headlineProcessor->processOverLine($data),
             'space_before_class' => $data['space_before_class'],
             'space_after_class' => $data['space_after_class'],
             'bodytext' =>  $this->bodyTextProcessor->processBodyText($data),
@@ -79,6 +81,9 @@ class TextProcessor implements PtiDataProcessor
         ];
     }
 
+    /**
+     * @deprecated since 4.0.0 and would be remove in 5.0.0
+     */
     protected function getHeader(array $data): array
     {
         return [

@@ -67,7 +67,9 @@ class StarterCeMediaProcessor implements PtiDataProcessor
         return [
             'uid' => $data['uid'],
             'CType' => str_replace('_', '-', $data['CType']),
-            'header' => $this->getHeader($data),
+            'header' => $this->headlineProcessor->processHeadline($data),
+            'subheader' => $this->headlineProcessor->processSubLine($data),
+            'overline' => $this->headlineProcessor->processOverLine($data),
             'space_before_class' => $data['space_before_class'],
             'space_after_class' => $data['space_after_class'],
             'columns' => [
@@ -82,6 +84,9 @@ class StarterCeMediaProcessor implements PtiDataProcessor
         ];
     }
 
+    /**
+     * @deprecated since 4.0.0 and would be remove in 5.0.0
+     */
     protected function getHeader(array $data): array
     {
         return [
@@ -93,11 +98,15 @@ class StarterCeMediaProcessor implements PtiDataProcessor
     protected function renderGalleryItems(array $data): array
     {
         $resultMedia = [];
+        $imageConfig = $this->configuration['imageConfig'] ?? [];
+        $imagePlaceholderConfig = $this->configuration['imageConfigPlaceholder'] ?? [];
+
         $mediaElements = $this->mediaProcessor->renderMedia(
             $data,
             'tt_content',
             'assets',
-            $this->configuration['imageConfig']
+            $imageConfig,
+            $imagePlaceholderConfig
         );
 
         foreach ($mediaElements as $index => $mediaElement) {
@@ -111,6 +120,8 @@ class StarterCeMediaProcessor implements PtiDataProcessor
             if ($mediaElement['type'] == 'image') {
                 $resultMedia[$index]['image'] = $mediaElement['image'];
                 $resultMedia[$index]['image']['uid'] = $mediaElement['uid'];
+                $resultMedia[$index]['image']['placeholder'] =
+                    isset($mediaElement['thumbnail']) ? $mediaElement['thumbnail']['default'] : null;
             } else {
                 $resultMedia[$index]['video'] = $mediaElement['video'];
                 $resultMedia[$index]['video']['uid'] = $mediaElement['uid'];

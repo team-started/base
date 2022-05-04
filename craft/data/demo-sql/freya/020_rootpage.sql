@@ -9,7 +9,7 @@ INSERT INTO `pages` SET
 	is_siteroot = 1,
 	backend_layout = '',
 	backend_layout_next_level = '',
-	tsconfig_includes = 'EXT:sitepackage_freya/Configuration/TypoScript/TSConfig/PageTs.typoscript',
+	tsconfig_includes = 'EXT:sitepackage_freya/Configuration/TSConfig/PageTs.typoscript',
 	description = 'Theme-Freya DE - Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Sed a libero. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Aenean imperdiet. Nullam vel sem.',
 	keywords = 'TYPO3, Theme Erweiterung, Sitepackage'
 ;
@@ -24,7 +24,7 @@ INSERT INTO `pages` SET
 	is_siteroot = 1,
 	backend_layout = '',
 	backend_layout_next_level = '',
-	tsconfig_includes = 'EXT:sitepackage_freya/Configuration/TypoScript/TSConfig/PageTs.typoscript',
+	tsconfig_includes = 'EXT:sitepackage_freya/Configuration/TSConfig/PageTs.typoscript',
 
 	title = 'Theme Freya',
 	description = 'Theme-Freya EN - Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Sed a libero. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Aenean imperdiet. Nullam vel sem.',
