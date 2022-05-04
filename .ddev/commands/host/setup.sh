@@ -5,7 +5,7 @@
 ## Example: "ddev setup my-new-project"
 
 
-SCRIPT=../../craft/setup/new_project.sh
+SCRIPT=./craft/setup/new_project.sh
 if [ -x "$SCRIPT" ]; then
   $SCRIPT "$@"
 else
