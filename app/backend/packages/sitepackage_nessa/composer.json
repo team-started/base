@@ -6,8 +6,8 @@
     "require": {
         "php": "^7.4",
         "typo3/cms-core": "^11.5",
-        "starterteam/starter": "^4.0",
-        "starterteam/starter-nessa": "^4.0"
+        "starterteam/starter": "^4.1",
+        "starterteam/starter-nessa": "^4.1"
     },
     "extra": {
         "typo3/cms": {
