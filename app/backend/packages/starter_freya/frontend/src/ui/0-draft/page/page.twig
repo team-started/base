@@ -1,0 +1,7 @@
+{% render '@siteheader' %}
+
+{% include '@module/m02-text/m02-text.twig' with text|merge({'uid': '1'}) %}
+{% include '@module/m02-text/m02-text.twig' with text|merge({'uid': '2'}) %}
+{% include '@module/m05-images/m05-images.twig' with images|merge({'uid': '3'}) %}
+
+{% render '@sitefooter' %}

@@ -1,0 +1,18 @@
+{#
+default(xx):    Falls imageCols nicht gesetzt ist, gibt es immer einen definierten default.
+thisAlignX:     Bild links oder rechts ... default: Bild links.
+#}
+
+{% set thisAlignX = imageorient.x == 'right' ? 'flex-md-row' : 'flex-md-row-reverse' %}
+
+<div class="row flex-column {{ thisAlignX }} align-items-center align-items-md-start">
+    <div class="col">
+        {% include '@object/rtes/rte.twig' with {
+            'rte': bodytext
+        } only %}
+    </div>
+    <div class="col-{{ thisGridImageColsSmall|default(12) }} col-md-{{ grid.imageCols.medium|default(3) }} col-lg-{{ grid.imageCols.large|default(6) }}
+                {{ thisImageHideOnSmall }} {{ thisImageHideOnMedium }} {{ thisImageHideOnLarge }} mt-3 mt-md-0">
+        {% include '@object/pictures/picture.twig' with image only %}
+    </div>
+</div>

@@ -1,0 +1,33 @@
+{#
+componentBackgound: Wenn der Background fluid ist, dann wird er im Container gesetzt, ansonsten hier, in der Componente.
+#}
+
+{% set componentBackgound = tx_starter_background_fluid ? '' : tx_starter_background %}
+
+{% extends '@component/containers/container.twig' %}
+
+{% block moduleContentBlock %}
+
+    <div id="c{{ uid }}" class="m-{{ CType }} {{ componentBackgound }}">
+
+        {% include '@component/module/moduleheaders/moduleheader.twig' with {
+            'date': date,
+            'header': header,
+            'subheader': subheader,
+            'overline': overline,
+        } only %}
+
+        {% include '@component/accordions/accordion.twig' with {
+            'uid': uid,
+            'items': items,
+            'toggle': tx_starter_accordion_toggle,
+        } only %}
+
+        {% include '@component/module/modulefooters/modulefooter.twig' with {
+            'tx_starter_cta_link': tx_starter_cta_link,
+            'tx_starter_cta_text': tx_starter_cta_text,
+        } only %}
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{#
+componentBackground: Wenn der Background fluid ist, dann wird er im Container gesetzt, ansonsten hier, in der Componente.
+#}
+
+{% set componentBackground = tx_starter_background_fluid ? '' : tx_starter_background %}
+
+{% extends '@component/containers/container.twig' %}
+
+{% block moduleContentBlock %}
+
+    <div id="c{{ uid }}" class="m-{{ CType }} {{ componentBackground }}">
+
+        {% include '@component/module/moduleheaders/moduleheader.twig' with {
+            'date': date,
+            'header': header,
+            'subheader': subheader,
+            'overline': overline,
+        } only %}
+
+        <div
+            class="row row-cols-1 row-cols-sm-{{ imagecols|default(1) }} row-cols-md-{{ tx_starter_imagecols_medium|default(1) }} row-cols-lg-{{ tx_starter_imagecols_large|default(1) }} g-3">
+            {% for item in items %}
+                <div class="col">
+                    {% include '@object/pictures/picture.twig' with item.image only %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% include '@component/module/modulefooters/modulefooter.twig' with {
+            'tx_starter_cta_link': tx_starter_cta_link,
+            'tx_starter_cta_text': tx_starter_cta_text,
+        } only %}
+
+    </div>
+
+{% endblock %}

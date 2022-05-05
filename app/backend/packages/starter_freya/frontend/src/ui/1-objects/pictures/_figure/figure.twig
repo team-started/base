@@ -1,0 +1,14 @@
+{#
+style="display: block; width: 100%; max-width: 100%;"
+--> als inline style, damit das sofort da ist, ansonsten ist es nicht responsive
+additionalClass: optionale zusätzliche Klassen, wie z.B. .text-right
+
+siehe: https://getbootstrap.com/docs/4.0/content/figures/
+#}
+
+<figure class="figure" style="display: block; width: 100%; max-width: 100%;">
+    {% block figure %}{% endblock %}
+    {% if metaData.description %}
+        <figcaption class="figure-caption {{ additionalClass }}">{{ metaData.description }}</figcaption>
+    {% endif %}
+</figure>

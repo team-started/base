@@ -4,6 +4,7 @@
 ## Usage: setup help|<project-name> [git-version]
 ## Example: "ddev setup my-new-project"
 
+
 SCRIPT=./craft/setup/new_project.sh
 if [ -x "$SCRIPT" ]; then
   $SCRIPT "$@"

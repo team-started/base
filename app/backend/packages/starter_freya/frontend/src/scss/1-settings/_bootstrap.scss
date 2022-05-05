@@ -1,0 +1,75 @@
+// see: https://getbootstrap.com/docs/5.1/customize/sass/#importing
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '~bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+$body-bg: map-get($colors, 'white') !default;
+$body-color: map-get($grays, '800') !default;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+
+// 4. Include any optional Bootstrap CSS as needed
+// Layout
+@import '~bootstrap/scss/utilities';
+
+// Hier werden die Helperklassen für "width" erweitert.
+// Bootstrap default: z.B. w-33 für 1/3 Breite.
+// Was es nicht gibt: w-4 für die Breite von 4 Columns, also 1/3 Breite und dies auch nicht responsive.
+// Was hier hinzu gefügt wird: w-md-cols4 -> TYPO3 übergibt 4 Columns -> 1/3 Breite ab Breakpoint medium
+// see: https://getbootstrap.com/docs/5.1/utilities/sizing/
+// used: src/ui/2-components/textmedias/_textmedia-inside/textmedia-inside.twig
+$utilities: map-merge(
+    $utilities,
+    (
+        'width':
+            map-merge(
+                map-get($utilities, 'width'),
+                (
+                    responsive: true,
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, 'width'), 'values'),
+                            (
+                                'col1': 8.3333%,
+                                'col2': 16.6667%,
+                                'col3': 25%,
+                                'col4': 33.3333%,
+                                'col5': 41.6667%,
+                                'col6': 50%,
+                                'col7': 58.3333%,
+                                'col8': 66.6667%,
+                                'col9': 75%,
+                                'col10': 83.3333%,
+                                'col11': 91.6667%,
+                                'col12': 100%,
+                            )
+                        ),
+                )
+            ),
+    )
+);
+
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/containers';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/transitions';
+
+// Components
+@import '~bootstrap/scss/accordion';
+@import '~bootstrap/scss/breadcrumb';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/card';
+@import '~bootstrap/scss/list-group';
+@import '~bootstrap/scss/nav';
+
+// Helpers
+@import '~bootstrap/scss/helpers';
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import '~bootstrap/scss/utilities/api';

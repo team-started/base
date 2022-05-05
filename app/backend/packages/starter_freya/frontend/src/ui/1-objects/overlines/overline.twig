@@ -1,0 +1,8 @@
+{#
+tx_starter_overline:             Text
+header_position:    Ausrichtung, optional
+#}
+
+{% if tx_starter_overline %}
+    <div class="o-overline {{ header_position }}">{{ tx_starter_overline }}</div>
+{% endif %}

@@ -1,0 +1,35 @@
+{#
+Diese Komponente wird überall verwendet, wo es ein Accordion gibt.
+see: src/ui/3-modules/m26-accordion
+
+see: https://getbootstrap.com/docs/5.0/components/accordion/
+see: https://getbootstrap.com/docs/5.0/components/collapse/
+
+itemUid:        uid eines Accordion Item
+toggle:         Schalter, ob ein Item geöffnet bleibt, wenn sich ein anderes öffnet, oder nicht
+uid:            uid des CE, daraus wird eine uid für das Accordion erzeugt
+grid:           Für ein Item: Optionen für TextMedia, also wenn ein Item Bild und Text hat
+image:          Für ein Item: das Bild
+imageorient:    Für ein Item: Bildausrichtung für TextMedia (inside, beside, links, rechts)
+text:           Für ein Item: der Text
+title:          Für ein Item: der Titel
+#}
+
+{% set uid = 'acc' ~ uid %}
+
+<div class="c-accordion accordion" id="{{ uid }}">
+    {% for accordion in items %}
+        {% set itemUid = uid ~ '-' ~ loop.index %}
+        
+        {% include '@component/accordions/_accordion-item/accordion-item.twig' with {
+            'itemUid': itemUid,
+            'toggle': toggle,
+            'uid': uid,
+            'grid': accordion.grid,
+            'image': accordion.image,
+            'imageorient': accordion.imageorient,
+            'text': accordion.text,
+            'title': accordion.title,
+        } only %}
+    {% endfor %}
+</div>

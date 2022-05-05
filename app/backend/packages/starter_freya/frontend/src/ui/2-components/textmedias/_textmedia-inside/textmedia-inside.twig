@@ -1,0 +1,21 @@
+{#
+Damit das Floating funktioniert, muss das Bild im Quellcode über dem Text stehen.
+Auf small soll das Bild aber unter den Text fallen.
+Deswegen sind die Klassen auf small für Flexbox und ab medium für Floating.
+
+ w-md-col[...]:     w-md-col4 -> TYPO3 übergibt 4 Columns -> 1/3 Breite ab Breakpoint medium
+[...]default(xx):   Falls imageCols nicht gesetzt ist, gibt es immer einen definierten default.
+thisAlignX:         Bild links oder rechts, inclusive dem entsprecheden margin ... default: Bild links.
+#}
+
+{% set thisAlignX = imageorient.x == 'right' ? 'float-md-end ms-md-3' : 'float-md-start me-md-3' %}
+
+<div class="d-flex align-items-center flex-column-reverse d-md-block clearfix">
+    <div class="col-{{ thisGridImageColsSmall|default(12) }} w-md-col{{ grid.imageCols.medium|default(3) }} w-lg-col{{ grid.imageCols.large|default(6) }}
+                {{ thisImageHideOnSmall }} {{ thisImageHideOnMedium }} {{ thisImageHideOnLarge }} mt-3 mt-md-0 {{ thisAlignX }}">
+        {% include '@object/pictures/picture.twig' with image only %}
+    </div>
+    {% include '@object/rtes/rte.twig' with {
+        'rte': bodytext
+    } only %}
+</div>

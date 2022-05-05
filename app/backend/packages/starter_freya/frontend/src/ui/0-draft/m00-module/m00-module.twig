@@ -1,0 +1,23 @@
+{#
+componentBackground: Wenn der Background fluid ist, dann wird er im Container gesetzt, ansonsten hier im Modul.
+#}
+
+{% set componentBackground = tx_starter_background_fluid ? '' : tx_starter_background %}
+
+{% extends '@component/containers/container.twig' %}
+
+{% block moduleContentBlock %}
+
+    <div id="c{{ uid }}" class="m-{{ CType }} {{ componentBackground }}">
+
+        Beachte: Einbindung einer Komponente oder Objekt im Projekt mit Namespacing:
+        {# {% include '@object/objects/object.twig' %} #}
+        {# {% include '@component/components/component.twig' %} #}
+
+        Hier nur mit dem Pfad zu 0-draft:
+        {% include '@draft/objects/object.twig' %}
+        {% include '@draft/components/component.twig' %}
+
+    </div>
+
+{% endblock %}

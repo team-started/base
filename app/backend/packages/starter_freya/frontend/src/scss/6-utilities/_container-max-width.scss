@@ -1,0 +1,11 @@
+// Erweitert Bootstrap um eine Container-Klasse, wie eine maximale Breite definiert.
+// Looped über $container-max-widths, see: node_modules/bootstrap/scss/_variables.scss
+// css, z.B.: .container-sm-fixed { max-width: 540px; }
+
+@each $screen-size, $max-width in $container-max-widths {
+    .container-#{$screen-size}-fixed {
+        @extend .container-#{$screen-size};
+
+        max-width: #{$max-width};
+    }
+}

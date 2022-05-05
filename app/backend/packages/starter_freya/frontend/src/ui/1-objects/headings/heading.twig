@@ -1,0 +1,33 @@
+{#
+header:                     Text
+header_layout,
+thisHeaderLayout:           SEO Level vom Heading, default = 2
+tx_starter_headerfontsize:  überschreibe Schriftgröße mit anderer SEO Schriftgröße
+thisFontSize:               aus thisHeaderLayout und tx_starter_headerfontsize resultierende Schriftgröße
+thisHeaderLayout = 99:      dieses Heading ist aus SEO-Sicht kein Heading, soll aber so aussehen
+thisHeadingTag:             wenn es kein Heading sein soll, ist es ein <div class="h99">
+thisHeaderLayout = 100:     dieses Heading wird im Frontend nicht angezeigt
+header_position:            Ausrichtung, optional
+tx_starter_headercolor:     Schriftfarbe, optional
+tx_starter_headerclass:     Klasse, optional
+header_link.config.uri:     der Link wird nur optional embeded
+#}
+
+{% set thisHeaderLayout = header_layout ? header_layout : 2 %}
+{% set thisHeadingTag = thisHeaderLayout == 99 ? 'div' : 'h' ~ thisHeaderLayout %}
+{% set thisFontSize = tx_starter_headerfontsize ? 'h' ~ tx_starter_headerfontsize : 'h' ~ thisHeaderLayout %}
+
+{% if header and thisHeaderLayout != 100 %}
+    <{{ thisHeadingTag }} class="o-heading {{ thisFontSize }} {{ header_position }} {{ tx_starter_headercolor }}">
+        {% if header_link.config.uri %}
+            {% embed '@object/links/link.twig' with {
+                'header': header,
+                'link': header_link,
+            } only %}
+                {% block linkContent %}{{ header }}{% endblock %}
+            {% endembed %}
+        {% else %}
+            {{ header }}
+        {% endif %}
+    </{{ thisHeadingTag }}>
+{% endif %}

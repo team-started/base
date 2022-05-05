@@ -1,0 +1,18 @@
+{% set componentType = 'text' %}
+{% set container = tx_starter_container ? tx_starter_container : 'container' %}
+{% set componentClass = 'c-' ~ componentType %}
+{% set componentBackgound = tx_starter_background_fluid == '' ? tx_starter_background %}
+
+
+
+{% extends '@component/containers/container.twig' %}
+
+{% block moduleContentBlock %}
+  <div class="row">
+    <div class="col">
+      <div id="c{{ uid }}" class="{{ componentClass }} {{ componentBackgound }}">
+        {{ bodytext }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

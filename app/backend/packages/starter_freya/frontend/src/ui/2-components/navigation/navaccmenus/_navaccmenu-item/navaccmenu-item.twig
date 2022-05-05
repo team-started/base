@@ -1,0 +1,51 @@
+{#
+link:       setzt den Context und modifiziert Link-Objekt
+            Links des HMENU haben keinen title, daher wird dies nicht übergeben.
+text:       '@object/links/link.twig' kann 'item.title' nicht verarbeiten
+level:      Ebene der Navigation, hier erste Unternavigation, also mindestens 2
+level <= 3: die Navigation ist zZ nur für max drei Level ausgelegt
+children:   Flag, wenn es Unterseiten gibt.
+current:    Flag für den Menüpunkt, der die aktuelle Seite repräsentiert.
+active:     Flag, wenn ein Menüpunkt in der Rootline ist.
+identifier: zusammengesetzter String
+pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. wenn eine Navigation in einem Contentelement verwendet wird.
+            In der Praxis wird das kaum vorkommen, wenn Navigationen im Seitenheader verwendet werden.
+#}
+
+{% set children = item.children ? 'has-children ' %}
+{% set current = item.current ? 'current ' %}
+{% set active = item.active ? 'active ' %}
+{% set link =
+    {
+        'config':
+            {
+                'uri': item.link,
+                'target': item.target,
+                'class': 'nav-link flex-grow-1 ' ~ active ~ current
+            }
+    }
+%}
+{% set text = item.title %}
+{% set level = level + 1 %}
+{% set identifier = 'navaccmenu' ~ pid ~ '-' ~ item.uid %}
+
+<li id="{{ identifier }}" class="nav-item {{ children }}">
+    <div class="d-flex justify-content-between align-items-center">
+        {% include '@object/links/link.twig' with link %}
+        {% if item.children and level <= 3 %}
+            <button class="collapse-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ identifier }}-collapse"></button>
+        {% endif %}
+    </div>
+
+    {% if item.children and level <= 3 %}
+        <ul id="{{ identifier }}-collapse" class="level-{{ level }} collapse list-unstyled">
+            {% for item in item.children %}
+                {% include '@component/navigation/navaccmenus/_navaccmenu-item/navaccmenu-item.twig' with {
+                    pid: pid,
+                    item: item,
+                    level: level
+                } only %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

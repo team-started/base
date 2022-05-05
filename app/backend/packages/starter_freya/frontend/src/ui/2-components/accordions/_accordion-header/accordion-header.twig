@@ -1,0 +1,15 @@
+{#
+siehe src/ui/2-components/accordions/accordion.twig
+#}
+
+<h2 class="accordion-header" id="heading{{ itemUid }}">
+    <button class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse{{ itemUid }}"
+            aria-expanded="false"
+            aria-controls="collapse{{ itemUid }}"
+    >
+        {{ title }}
+    </button>
+</h2>

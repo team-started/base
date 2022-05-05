@@ -1,0 +1,29 @@
+{
+    "name": "starterteam/starter-freya",
+    "type": "typo3-cms-extension",
+    "description": "Theme extension for EXT:starter and EXT:starter-twig",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Christian Wolfram",
+            "email": "c.wolfram@chriwo.de"
+        },
+        {
+            "name": "Marc Fell",
+            "email": "marc@fell.hamburg"
+        }
+    ],
+    "support": {
+        "issues": "https://gitlab.com/starterteam/team/starter-freya/-/issues"
+    },
+    "require": {
+        "php": "^7.4",
+        "typo3/cms-core": "^11.5",
+        "starterteam/starter-twig": "dev-main"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "starter_freya"
+        }
+    }
+}

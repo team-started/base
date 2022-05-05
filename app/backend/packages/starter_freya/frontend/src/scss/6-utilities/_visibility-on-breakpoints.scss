@@ -1,0 +1,103 @@
+// Da ich keine Idee hatte, wie man das dynamisch per Loop erzeugen kann, ist das hier hart gecodet.
+// -
+// Loops funktionieren NICHT, weil Sass keine dynamischen Variablen unterstützt, z.B.:
+// @each $screen-size, $max-width in $grid-breakpoints {
+//     .d-#{$screen-size}-from {
+//         @extend .d-none;
+//         @extend .d-#{$screen-size}-block;
+//     }
+// }
+
+.d-sm-from {
+    @extend .d-none;
+    @extend .d-sm-block;
+}
+
+.d-md-from {
+    @extend .d-none;
+    @extend .d-md-block;
+}
+
+.d-lg-from {
+    @extend .d-none;
+    @extend .d-lg-block;
+}
+
+.d-xl-from {
+    @extend .d-none;
+    @extend .d-xl-block;
+}
+
+.d-xxl-from {
+    @extend .d-none;
+    @extend .d-xxl-block;
+}
+
+.d-xs-only {
+    @extend .d-sm-none;
+}
+
+.d-sm-only {
+    @extend .d-none;
+    @extend .d-sm-block;
+    @extend .d-md-none;
+}
+
+.d-md-only {
+    @extend .d-none;
+    @extend .d-md-block;
+    @extend .d-lg-none;
+}
+
+.d-lg-only {
+    @extend .d-none;
+    @extend .d-lg-block;
+    @extend .d-xl-none;
+}
+
+.d-xl-only {
+    @extend .d-none;
+    @extend .d-xl-block;
+    @extend .d-xxl-none;
+}
+
+.d-xxl-only {
+    @extend .d-none;
+    @extend .d-xxl-block;
+}
+
+@include media-breakpoint-only(xs) { 
+    .d-xs-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(sm) { 
+    .d-sm-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(md) { 
+    .d-md-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(lg) { 
+    .d-lg-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(xl) { 
+    .d-xl-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(xxl) { 
+    .d-xxl-none-only {
+        display: none !important;
+    }
+ }

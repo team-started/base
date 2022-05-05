@@ -1,0 +1,19 @@
+{#
+containerContent: Enthält den jeweilige Inhalt des Containers
+
+Wenn es einen Hintergrund über volle Breite gibt, wird um den Container ein zusätzlicher Wrapper gesetzt.
+#}
+
+{% set containerContent %}
+    <div id="con{{ uid }}" class="{{ tx_starter_container|default('container') }} container-{{ CType|default('no-type') }} {{ tx_starter_visibility }} {{ space_before_class }} {{ space_after_class }}">
+        {% block moduleContentBlock %}{% endblock %}
+    </div>
+{% endset %}
+
+{% if tx_starter_background_fluid and tx_starter_background %}
+    <div class="{{ tx_starter_background }} {{ tx_starter_visibility }}">
+        {{ containerContent }}
+    </div>
+{% else %}
+    {{ containerContent }}
+{% endif %}

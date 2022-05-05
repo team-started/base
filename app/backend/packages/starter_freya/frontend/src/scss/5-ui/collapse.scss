@@ -1,0 +1,18 @@
+// Bootstrap collapse hat keinen Button, daher wird hier der Accordion-Button adaptiert und angepasst.
+
+.collapse-button {
+    @extend .accordion-button;
+
+    width: auto;
+    background-color: unset;
+
+    &:not(.collapsed) {
+        background-color: unset;
+        box-shadow: unset;
+    }
+
+    &:focus {
+        border-color: unset;
+        box-shadow: unset;
+    }
+}

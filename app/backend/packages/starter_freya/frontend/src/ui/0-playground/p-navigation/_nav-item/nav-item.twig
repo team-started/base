@@ -1,0 +1,29 @@
+{#
+link:   setzt den Context und modifiziert Link-Objekt
+text:   setzt den Context, damit '@object/links/link.twig' das verarbeiten kann
+#}
+
+{% set link = 
+    {
+        'config':
+            {
+                'uri': item.link.config.uri,
+                'target': item.link.config.target,
+                'title': item.link.config.title,
+                'class': item.link.config.class
+            }
+    }
+%}
+{% set text = item.text %}
+
+<li id="{{ item.uid }}" class="">
+    {% include '@object/links/link.twig' with link %}
+
+    {% if item.children %}
+        <ul class="list-unstyled">
+            {% for item in item.children %}
+                {% include '@playground/p-navigation/_nav-item/nav-item.twig' with { item: item } only %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

@@ -25,8 +25,8 @@
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^7.0",
         "ichhabrecht/content-defender": "^3.2",
+        "starterteam/site-package-freya": "dev-main",
         "starterteam/site-package-nessa": "@dev",
-        "starterteam/starter-twig": "dev-main",
         "symfony/dotenv": "^5.2",
         "twig/twig": "^3",
         "typo3/cms-backend": "^11.5",
@@ -64,6 +64,7 @@
     },
     "autoload": {
         "psr-4": {
+            "StarterTeam\\StarterFreya\\": "packages/starter_freya/Classes",
             "StarterTeam\\StarterNessa\\": "packages/starter_nessa/Classes",
             "StarterTeam\\StarterTwig\\": "packages/starter_twig/Classes",
             "StarterTeam\\Starter\\": "packages/starter/Classes"

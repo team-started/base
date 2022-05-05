@@ -1,0 +1,18 @@
+{% if env != 'CMS' %}
+    <!doctype html>
+    <html lang="de">
+        <head>
+            <title>{{ pageData.title }}</title>
+            {% include '@h-head' %}
+        </head>
+
+        <body class="pageLayout--{{ layout }} pageType--{{ pageData.doktype }}">
+{% endif %}
+
+{% block body %}{% endblock %}
+
+{% if env != 'CMS' %}
+            {% include '@h-foot' %}
+        </body>
+    </html>
+{% endif %}

@@ -1,0 +1,54 @@
+{#
+link:       setzt den Context und modifiziert Link-Objekt
+            Der Link wird in diesem Fall gesondert gewrappt, weil der Link hier nicht im Bild gespeichert wird, sondern von der Navi vorgegeben wird.
+            Ansonsten würde das picture partial einen Link auch selber handlen - aber hier halt nicht.
+            Links des HMENU haben keinen title, daher wird dies nicht übergeben.
+level:      Ebene der Navigation, hier erste Unternavigation, also mindestens 2
+level == 3: nur die 2. Ebene hat ein Bild (das ist etwas verwirrend, aber stimmt so ... dieser Code ruft sich rekursiv auf)
+level == 2: nur die 2. Ebene ist in einem Grid
+level <= 3: die Navigation ist z.Z. nur für max drei Level ausgelegt
+children:   Flag, wenn es Unterseiten gibt.
+current:    Flag für den Menüpunkt, der die aktuelle Seite repräsentiert.
+active:     Flag, wenn ein Menüpunkt in der Rootline ist.
+pid:        Dem Navigation-Item kann optional eine pid übergeben werden, z.B. wenn eine Navigation in einem Contentelement verwendet wird.
+            In der Praxis wird das kaum vorkommen, wenn Navigationen im Seitenheader verwendet werden.
+#}
+
+{% set children = item.children ? 'has-children ' %}
+{% set current = item.current ? 'current ' %}
+{% set active = item.active ? 'active ' %}
+{% set link =
+    {
+        'config':
+            {
+                'uri': item.link,
+                'target': item.target,
+                'class': 'nav-link ' ~ active ~ current
+            }
+    }
+%}
+{% set level = level + 1 %}
+
+<li id="navmmenu{{ pid }}-{{ item.uid }}" class="nav-item {{ children }}">
+
+    {% embed '@object/links/link.twig' with link %}
+        {% block linkContent %}
+            {% if level == 3 and item.image %}
+                {% include '@object/pictures/picture.twig' with item.image only %}
+            {% endif %}
+            {{ item.title }}
+        {% endblock %}
+    {% endembed %}
+
+    {% if item.children and level <= 3 %}
+        <ul class="{{ (level == 2) ? 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center d-none' : '' }} level-{{ level }} list-unstyled">
+            {% for item in item.children %}
+                {% include '@component/navigation/navmmenus/_navmmenu-item/navmmenu-item.twig' with {
+                    pid: pid,
+                    item: item,
+                    level: level
+                } only %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

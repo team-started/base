@@ -1,0 +1,17 @@
+{
+    "name": "starterteam/site-package-freya",
+    "type": "typo3-cms-extension",
+    "description": "StarterTeam sitepackage demo extension for EXT:starter-freya",
+    "license": "proprietary",
+    "require": {
+        "php": "^7.4",
+        "typo3/cms-core": "^11.5",
+        "starterteam/starter": "dev-main",
+        "starterteam/starter-freya": "dev-main"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "sitepackage_freya"
+        }
+    }
+}

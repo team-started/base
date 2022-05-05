@@ -1,0 +1,10 @@
+{% if tx_starter_cta_link.config.uri %}
+
+    <div class="c-modulefooter">
+        {% include '@object/buttons/button.twig' with {
+            'link': tx_starter_cta_link,
+            'text': tx_starter_cta_text,
+        } only %}
+    </div>
+
+{% endif %}

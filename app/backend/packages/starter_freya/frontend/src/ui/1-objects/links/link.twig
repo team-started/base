@@ -1,0 +1,20 @@
+{#
+{% block linkContent %}: ermöglich es den übergebenen {{ text }} als Default Inhalt zu setzen. Sollte dies nicht
+gewünscht sein, kann in dem aufrufenden Template {% block linkContent %} überschrieben werden.
+
+see: https://twig.symfony.com/doc/3.x/tags/embed.html
+#}
+
+{% set target = config.target ? 'target="' ~ config.target ~ '"' %}
+{% set title = config.title ? 'title="' ~ config.title ~ '"' %}
+{% set class = config.class ? 'class="' ~ config.class ~ '"' %}
+
+{% if config.uri %}
+    <a href="{{ config.uri }}" {{ target }} {{ title }} {{ class }}>
+        {% block linkContent %}{{ text }}{% endblock %}
+    </a>
+{% else %}
+    <span class="{{ config.class }}">
+        {% block linkContent %}{{ text }}{% endblock %}
+    </span>
+{% endif %}

@@ -1,0 +1,5 @@
+<ul class="list-unstyled">
+    {% for item in items %}
+        {% include '@playground/p-navigation/_nav-item/nav-item.twig' with { item: item } only %}
+    {% endfor %}
+</ul>

@@ -1,0 +1,43 @@
+tt_content.starter_media {
+  templateName = {$tx_startertwig.ceFolderName}/m05-media/m05-media.twig
+  dataProcessors {
+    10 {
+      imageConfig {
+
+        default {
+          maxW = 512
+          mediaQuery = 512w
+        }
+
+        variants {
+          3 {
+            config {
+              maxW = 1024
+              mediaQuery = 1024w
+            }
+          }
+
+          5 {
+            config {
+              maxW = 340
+              mediaQuery = 340w
+            }
+          }
+
+          7 {
+            config {
+              maxW = 256
+              mediaQuery = 256w
+            }
+          }
+        }
+      }
+
+      imageConfigPlaceholder {
+        default {
+          maxW = 40
+        }
+      }
+    }
+  }
+}

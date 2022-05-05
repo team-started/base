@@ -1,0 +1,10 @@
+{% if header.header or overline.tx_starter_overline or subheader.subheader or date %}
+    <div class="c-moduleheader">
+        {% include '@object/overlines/overline.twig' with overline only %}
+        {% include '@object/headings/heading.twig' with header only %}
+        {% include '@object/subheaders/subheader.twig' with subheader only %}
+        {% include '@object/dates/date.twig' with {
+            'date': date,
+        } only %}
+    </div>
+{% endif %}

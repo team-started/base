@@ -1,0 +1,68 @@
+{#
+style="display: block; width: 100%; max-width: 100%;"
+--> als inline style, damit das für Lazysizes sofort da ist und Bootstrap nutzt auch "display: block"
+additionalClass: optionale zusätzliche Klassen, wie z.B. .rounded oder .float-left
+
+renderedPictureContent: nur das eigentliche Bild mit LazyLoading, picture wegen den Varienten (webp, ...)
+renderedLinkContent:    Wrapper, wenn es einen Link gibt
+figure:         per default wird <figure> immer gewrappt, da das der Standard für Contentbilder ist (description immer möglich)
+
+siehe:          https://getbootstrap.com/docs/4.0/content/images/ (beachte auch Quellcode)
+#}
+
+{% if default.uri.default %}
+
+    {% set renderedPictureContent %}
+        <picture>
+            {# WebP #}
+            {% if default.webP.default %}
+                <source
+                type="image/webp"
+                data-srcset="
+                    {% for variant in variants %}
+                    {{ variant.webP.default }} {{ variant.mq }},
+                    {% endfor %}
+                "/>
+            {% endif %}
+            {# other image formats #}
+            <source
+                data-srcset="
+                {% for variant in variants %}
+                    {{ variant.uri.default }} {{ variant.mq }},
+                {% endfor %}
+            "/>
+            <img
+                src="{{ placeholder.uri.default }}"
+                data-src="{{ default.uri.default }}"
+                alt="{{ metaData.alternative }}"
+                title="{{ metaData.title }}"
+                data-sizes="auto"
+                class="o-image figure-img img-fluid lazyload {{ additionalClass }}"
+                style="display: block; width: 100%; max-width: 100%;"
+            />
+        </picture>
+    {% endset %}
+
+    {% set renderedLinkContent %}
+        {% if metaData.link.config.uri %}
+            {% embed '@object/links/link.twig' with metaData.link %}
+                {% block linkContent %}
+                    {{ renderedPictureContent }}
+                {% endblock %}
+            {% endembed %}
+        {% else %}
+            {{ renderedPictureContent }}
+        {% endif %}
+    {% endset %}
+
+    {% if not figure %}
+        {{ renderedLinkContent }}
+    {% else %}
+        {% embed '@object/pictures/_figure/figure.twig' %}
+            {% block figure %}
+                {{ renderedLinkContent }}
+            {% endblock %}
+        {% endembed %}
+    {% endif %}
+
+{% endif %}

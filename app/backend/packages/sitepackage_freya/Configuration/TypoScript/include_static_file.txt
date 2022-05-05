@@ -1,0 +1,1 @@
+EXT:starter_freya/Configuration/TypoScript
