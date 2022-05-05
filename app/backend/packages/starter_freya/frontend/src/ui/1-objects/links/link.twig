@@ -1,7 +1,10 @@
 {#
+Das Link Partial regelt auch den Fall, wenn es keinen Link gibt.
+In diesem Fall wird standardmäßig ein span mit der übergebenen Klasse gewrappt.
+noSpanIfNoLink: Gibt nur den linkContent aus, wenn es keinen Link gibt.
+
 {% block linkContent %}: ermöglich es den übergebenen {{ text }} als Default Inhalt zu setzen. Sollte dies nicht
 gewünscht sein, kann in dem aufrufenden Template {% block linkContent %} überschrieben werden.
-
 see: https://twig.symfony.com/doc/3.x/tags/embed.html
 #}
 
@@ -14,7 +17,11 @@ see: https://twig.symfony.com/doc/3.x/tags/embed.html
         {% block linkContent %}{{ text }}{% endblock %}
     </a>
 {% else %}
-    <span class="{{ config.class }}">
+    {% if noSpanIfNoLink %}
         {% block linkContent %}{{ text }}{% endblock %}
-    </span>
+    {% else %}
+        <span {{ class }}>
+            {% block linkContent %}{{ text }}{% endblock %}
+        </span>
+    {% endif %}
 {% endif %}
