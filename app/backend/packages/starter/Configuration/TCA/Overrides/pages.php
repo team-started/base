@@ -51,6 +51,21 @@ defined('TYPO3') || die();
                     ]
                 ),
             ],
+            'tx_starter_breadcrumb' => [
+                'exclude' => true,
+                'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:pages.tx_starter_breadcrumb',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'items' => [
+                        [
+                            0 => '',
+                            1 => '',
+                        ],
+                    ],
+                    'default' => 1,
+                ],
+            ]
         ]
     );
 
@@ -61,4 +76,11 @@ defined('TYPO3') || die();
             '--linebreak--,' . $column
         );
     }
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        $table,
+        'standard',
+        'tx_starter_breadcrumb',
+        'after:doktype'
+    );
 })();

@@ -2,7 +2,8 @@
 # Extend table structure for table 'pages'
 #
 CREATE TABLE pages (
-	tx_starter_nav_media int(11) unsigned DEFAULT '0' NOT NULL
+	tx_starter_nav_media int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_starter_breadcrumb tinyint(4) unsigned DEFAULT '1' NOT NULL
 );
 
 #

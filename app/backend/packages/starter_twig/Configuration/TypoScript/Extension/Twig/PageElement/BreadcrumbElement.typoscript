@@ -1,0 +1,13 @@
+lib.breadcrumbElement = PTI
+lib.breadcrumbElement {
+  templateName = {$tx_startertwig.componentFolderName}/breadcrumbs/breadcrumb.twig
+
+  dataProcessors {
+    10 = StarterTeam\StarterTwig\DataProcessing\Page\BreadcrumbDataProcessor
+    10 {
+      special = rootline
+      special.range = 0|-1
+      includeNotInMenu = 1
+    }
+  }
+}

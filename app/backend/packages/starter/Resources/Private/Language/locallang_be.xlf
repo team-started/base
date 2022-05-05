@@ -31,6 +31,9 @@
 			<trans-unit id="pages.tx_starter_nav_media">
 				<source>Navigation image</source>
 			</trans-unit>
+			<trans-unit id="pages.tx_starter_breadcrumb">
+				<source>Breadcrumb</source>
+			</trans-unit>
 
 <!-- label sys_file_reference -->
 			<trans-unit id="sys_file_reference.tx_starter_class">

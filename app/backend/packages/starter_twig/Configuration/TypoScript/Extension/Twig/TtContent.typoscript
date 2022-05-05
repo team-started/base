@@ -11,3 +11,5 @@ lib.twigContentElement {
 @import 'EXT:starter_twig/Configuration/TypoScript/Extension/Twig/ContentElement/StarterAccordion.typoscript'
 @import 'EXT:starter_twig/Configuration/TypoScript/Extension/Twig/ContentElement/StarterTextMedia.typoscript'
 @import 'EXT:starter_twig/Configuration/TypoScript/Extension/Twig/ContentElement/StarterMedia.typoscript'
+
+@import 'EXT:starter_twig/Configuration/TypoScript/Extension/Twig/PageElement/'

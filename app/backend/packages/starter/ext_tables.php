@@ -9,7 +9,7 @@ defined('TYPO3') || die();
         );
     }
 
-    foreach (['tt_content'] as $table) {
+    foreach (['tt_content', 'pages'] as $table) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
             $table,
             'EXT:starter/Resources/Private/Language/locallang_csh_' . str_replace('_', '', $table) . '.xlf'
