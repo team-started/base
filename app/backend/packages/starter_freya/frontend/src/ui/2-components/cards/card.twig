@@ -1,56 +1,58 @@
 {#
-Diese Komponente wird überall verwendet, wo es ein Accordion gibt.
-see: src/ui/3-modules/m26-accordion
+Diese Komponente wird überall verwendet, wo es eine Card gibt.
+see: https://getbootstrap.com/docs/4.0/components/card/
 
-see: https://getbootstrap.com/docs/5.0/components/accordion/
-see: https://getbootstrap.com/docs/5.0/components/collapse/
+pid:				uid des Modules, in welches die Card eingebettet ist
+uid:				uid der Card
+header_layout: 		das header_layout ist per default 5, also <h5>
+additionalClassImg: Bootstrap Klasse für Card-Images
+additionalClass:	Bootstrap Klasse(n)
 
-itemUid:        uid eines Accordion Item
-toggle:         Schalter, ob ein Item geöffnet bleibt, wenn sich ein anderes öffnet, oder nicht
-uid:            uid des CE, daraus wird eine uid für das Accordion erzeugt
-grid:           Für ein Item: Optionen für TextMedia, also wenn ein Item Bild und Text hat
-image:          Für ein Item: das Bild
-imageorient:    Für ein Item: Bildausrichtung für TextMedia (inside, beside, links, rechts)
-text:           Für ein Item: der Text
-title:          Für ein Item: der Titel
+Klasse(n) card:	"card" ist eine Bootstrap Klasse, ist daher fest hinterlegt.
 #}
 
-{% set uid = 'acc' ~ uid %}
+{% set identifier = 'card' %}
 
-<div class="card">
+<div id="{{ identifier }}{{ pid }}-{{ uid }}" class="card">
+
 	{% if category or date %}
 		<div class="card-header">
 			{% include '@object/categorys/category.twig' with {
 				text: category,
 			} only %}
 			{% include '@object/dates/date.twig' with {
-				'date': date,
+				date: date,
 			} only %}
 		</div>
 	{% endif %}
+
 	<div class="card-body">
 		{% embed '@object/links/link.twig' with link|merge({ noSpanIfNoLink: true }) %}
 			{% block linkContent %}
-				{% include '@object/pictures/picture.twig' with image only %}
+				{% include '@object/pictures/picture.twig' with image|merge({ additionalClassImg: additionalClassImg|default('card-img') }) only %}
 			{% endblock %}
 		{% endembed %}
 		{% include '@object/headings/heading.twig' with {
 			header: header,
-			header_layout: 5,
+			header_layout: header_layout|default(5),
+			additionalClass: additionalClass|default('card-title'),
 		} only %}
         {% include '@object/subheaders/subheader.twig' with {
 			subheader: subheader,
 		} only %}
 		{% include '@object/rtes/rte.twig' with {
-			'rte': text
+			rte: text,
+			additionalClass: additionalClass|default('card-text'),
 		} only %}
 	</div>
+
 	{% if link and link_text %}
 		<div class="card-footer">
 			{% include '@object/buttons/button.twig' with {
-				'link': link,
-				'text': link_text,
+				link: link,
+				text: link_text,
 			} only %}
 		</div>
 	{% endif %}
+
 </div>

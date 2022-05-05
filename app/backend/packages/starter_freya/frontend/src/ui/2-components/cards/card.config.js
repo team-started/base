@@ -8,6 +8,7 @@ module.exports = {
         category: '',
         date: '',
         header: _.lorem(50, 'header:'),
+        header_layout: '',
         image: '@picture--card',
         link: {
             config: {
@@ -33,6 +34,7 @@ module.exports = {
             context: {
                 category: _.lorem(20, 'category:'),
                 date: '05.05.2022',
+                header_layout: '4',
                 image: '@picture--card',
                 link: {
                     config: {
