@@ -1,7 +1,7 @@
 'use strict';
 
-const accordion = require('../../3-modules/m26-accordion/m26-accordion.config');
+const carousel = require('../../2-components/carousels/carousel.config');
 
 module.exports = {
-    context: accordion.context,
+    context: carousel.context,
 };
