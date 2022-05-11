@@ -1,40 +1,58 @@
 {# 
+Default Options:    siehe src/ui/2-components/carousels/index.js
+
 noLastComma: Nur ein Dummy, vermeidet den JS Error, weil am Ende der JSON ein Komma steht.
 #}
 
-{% set autoplay = autoplay > 0 ? '"autoplay": { "delay":' ~ autoplay ~ '},' %}
-{% set navigation = navigation ? '"navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" },' %}
-{% set pagination = pagination ? '"pagination": { "el": ".swiper-pagination", "clickable": true },' %}
+{% set autoplay = autoplay > 0 ?
+    '"autoplay": { "delay": ' ~ autoplay ~ '},'
+%}
+{% set navigation = navigation ?
+    '"navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" },'
+%}
+{% set pagination = pagination ?
+    '"pagination": { "el": ".swiper-pagination", "clickable": true },'
+%}
+{% set slidesPerView = '
+    "slidesPerView": ' ~ slidesPerView.xs ~ ',
+    "breakpoints": {
+        "576": {
+            "slidesPerView": ' ~ slidesPerView.sm ~ '
+        },
+        "768": {
+            "slidesPerView": ' ~ slidesPerView.md ~ '
+        },
+        "992": {
+            "slidesPerView": ' ~ slidesPerView.lg ~ '
+        },
+        "1200": {
+            "slidesPerView": ' ~ slidesPerView.xl ~ '
+        },
+        "1400": {
+            "slidesPerView": ' ~ slidesPerView.xxl ~ '
+        }
+    },
+' %}
+{% set speed = '"speed": ' ~ speed ~ ',' %}
 {% set noLastComma = '"noLastComma": true' %}
 
 
 <!-- Slider main container -->
 <div  class="swiper-container c-swiper"
       data-swiper='{
-            "loop": true,
-            "slidesPerView": 1,
-            "spaceBetween": 16,
-            "speed": 1400,
             {{ autoplay }}
-            "breakpoints": {
-                "720": {
-                    "slidesPerView": 2
-                },
-                "1024": {
-                    "slidesPerView": 3
-                }
-            },
             {{ navigation }}
             {{ pagination }}
+            {{ slidesPerView }}
+            {{ speed }}
             {{ noLastComma }}
         }'>
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-  </div>
+
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
 
     {% if pagination %}
         <div class="swiper-pagination"></div>

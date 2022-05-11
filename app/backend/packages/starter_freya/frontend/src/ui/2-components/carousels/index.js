@@ -12,22 +12,23 @@ function Component() {
         let sliderSelector = '.swiper-container',
             defaultOptions = {
                 autoHeight: true,
+                loop: true,
+                spaceBetween: 16,
             };
 
         var nSlider = document.querySelectorAll(sliderSelector);
 
         [].forEach.call(nSlider, function (slider, index, arr) {
-            var data = slider.getAttribute('data-swiper') || {};
+            let data = slider.getAttribute('data-swiper') || {};
 
+            let dataOptions = null;
             if (data) {
-                var dataOptions = JSON.parse(data);
+                dataOptions = JSON.parse(data);
             }
 
             slider.options = Object.assign({}, defaultOptions, dataOptions);
 
-            var swiper = new Swiper(slider, slider.options);
-
-            console.log(slider.options.autoplay);
+            let swiper = new Swiper(slider, slider.options);
 
             /* stop on hover */
             if (
@@ -36,12 +37,10 @@ function Component() {
             ) {
                 slider.addEventListener('mouseenter', function (e) {
                     swiper.autoplay.stop();
-                    console.log('stop');
                 });
 
                 slider.addEventListener('mouseleave', function (e) {
                     swiper.autoplay.start();
-                    console.log('start');
                 });
             }
         });
