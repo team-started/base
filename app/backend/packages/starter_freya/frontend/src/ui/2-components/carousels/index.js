@@ -1,38 +1,49 @@
+// see: https://swiperjs.com/swiper-api
+//
+// import Swiper: lädt nur die benötigten Module
+//
+// Hier werden die Data-Atributes der Swipers ausgewertet.
+
 import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
 Swiper.use([Autoplay, Navigation, Pagination]);
 
 function Component() {
     function init() {
-        console.log('swipoer');
+        let sliderSelector = '.swiper-container',
+            defaultOptions = {
+                autoHeight: true,
+            };
 
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 16,
-            speed: 1400,
+        var nSlider = document.querySelectorAll(sliderSelector);
 
-            autoplay: {
-                delay: 6000,
-            },
+        [].forEach.call(nSlider, function (slider, index, arr) {
+            var data = slider.getAttribute('data-swiper') || {};
 
-            breakpoints: {
-                720: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
+            if (data) {
+                var dataOptions = JSON.parse(data);
+            }
 
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+            slider.options = Object.assign({}, defaultOptions, dataOptions);
 
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+            var swiper = new Swiper(slider, slider.options);
+
+            console.log(slider.options.autoplay);
+
+            /* stop on hover */
+            if (
+                typeof slider.options.autoplay !== 'undefined' &&
+                slider.options.autoplay !== false
+            ) {
+                slider.addEventListener('mouseenter', function (e) {
+                    swiper.autoplay.stop();
+                    console.log('stop');
+                });
+
+                slider.addEventListener('mouseleave', function (e) {
+                    swiper.autoplay.start();
+                    console.log('start');
+                });
+            }
         });
     }
 

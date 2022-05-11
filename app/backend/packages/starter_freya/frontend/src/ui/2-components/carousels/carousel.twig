@@ -1,20 +1,47 @@
+{# 
+noLastComma: Nur ein Dummy, vermeidet den JS Error, weil am Ende der JSON ein Komma steht.
+#}
+
+{% set autoplay = autoplay > 0 ? '"autoplay": { "delay":' ~ autoplay ~ '},' %}
+{% set navigation = navigation ? '"navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" },' %}
+{% set pagination = pagination ? '"pagination": { "el": ".swiper-pagination", "clickable": true },' %}
+{% set noLastComma = '"noLastComma": true' %}
+
+
 <!-- Slider main container -->
-<div class="swiper c-swiper">
+<div  class="swiper-container c-swiper"
+      data-swiper='{
+            "loop": true,
+            "slidesPerView": 1,
+            "spaceBetween": 16,
+            "speed": 1400,
+            {{ autoplay }}
+            "breakpoints": {
+                "720": {
+                    "slidesPerView": 2
+                },
+                "1024": {
+                    "slidesPerView": 3
+                }
+            },
+            {{ navigation }}
+            {{ pagination }}
+            {{ noLastComma }}
+        }'>
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
     <div class="swiper-slide">Slide 1</div>
     <div class="swiper-slide">Slide 2</div>
     <div class="swiper-slide">Slide 3</div>
-    ...
   </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+    {% if pagination %}
+        <div class="swiper-pagination"></div>
+    {% endif %}
 
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
+    {% if navigation %}
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    {% endif %}
 </div>
