@@ -2,7 +2,8 @@
 
 module.exports = {
     context: {
-        autoplay: 2000,
+        autoplay: true,
+        delay: 3000,
         items: [],
         navigation: false,
         pagination: false,
@@ -20,8 +21,7 @@ module.exports = {
         {
             name: 'no-autoplay',
             context: {
-                autoplay: 0,
-                navigation: true,
+                autoplay: false,
             },
         },
         {
@@ -34,6 +34,12 @@ module.exports = {
             name: 'pagination',
             context: {
                 pagination: true,
+            },
+        },
+        {
+            name: 'delay',
+            context: {
+                delay: 1000,
             },
         },
         {
@@ -54,15 +60,6 @@ module.exports = {
                     xl: 2,
                     xxl: 2,
                 },
-            },
-        },
-        {
-            name: 'all-options',
-            context: {
-                autoplay: 2000,
-                navigation: true,
-                pagination: true,
-                speed: 1500,
             },
         },
     ],

@@ -1,45 +1,38 @@
 {# 
-Default Options:    siehe src/ui/2-components/carousels/index.js
+Default Options für Javascript, siehe src/ui/2-components/carousels/index.js
 
-noLastComma: Nur ein Dummy, vermeidet den JS Error, weil am Ende der JSON ein Komma steht.
+noLastComma: Nur ein Dummy, vermeidet den JS Error, wenn am Ende der JSON (data-swiper) ein Komma steht.
 #}
 
-{% set autoplay = autoplay > 0 ?
-    '"autoplay": { "delay": ' ~ autoplay ~ '},'
-%}
-{% set navigation = navigation ?
-    '"navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" },'
-%}
-{% set pagination = pagination ?
-    '"pagination": { "el": ".swiper-pagination", "clickable": true },'
-%}
+{% set autoplay = autoplay|default(true) ? '"autoplay": { "delay": ' ~ delay|default(3000) ~ '},' %}
+{% set navigation = navigation|default(false) ? '"navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" },' %}
+{% set pagination = pagination|default(false) ? '"pagination": { "el": ".swiper-pagination", "clickable": true },' %}
 {% set slidesPerView = '
-    "slidesPerView": ' ~ slidesPerView.xs ~ ',
+    "slidesPerView": ' ~ slidesPerView.xs|default(1) ~ ',
     "breakpoints": {
         "576": {
-            "slidesPerView": ' ~ slidesPerView.sm ~ '
+            "slidesPerView": ' ~ slidesPerView.sm|default(2) ~ '
         },
         "768": {
-            "slidesPerView": ' ~ slidesPerView.md ~ '
+            "slidesPerView": ' ~ slidesPerView.md|default(3) ~ '
         },
         "992": {
-            "slidesPerView": ' ~ slidesPerView.lg ~ '
+            "slidesPerView": ' ~ slidesPerView.lg|default(4) ~ '
         },
         "1200": {
-            "slidesPerView": ' ~ slidesPerView.xl ~ '
+            "slidesPerView": ' ~ slidesPerView.xl|default(5) ~ '
         },
         "1400": {
-            "slidesPerView": ' ~ slidesPerView.xxl ~ '
+            "slidesPerView": ' ~ slidesPerView.xxl|default(6) ~ '
         }
     },
 ' %}
-{% set speed = '"speed": ' ~ speed ~ ',' %}
+{% set speed = '"speed": ' ~ speed|default(1500) ~ ',' %}
 {% set noLastComma = '"noLastComma": true' %}
 
-
 <!-- Slider main container -->
-<div  class="swiper-container c-swiper"
-      data-swiper='{
+<div    class="swiper-container c-swiper"
+        data-swiper='{
             {{ autoplay }}
             {{ navigation }}
             {{ pagination }}
