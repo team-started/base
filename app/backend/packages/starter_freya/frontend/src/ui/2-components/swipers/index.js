@@ -1,4 +1,5 @@
 // see: https://swiperjs.com/swiper-api
+// code example: https://gist.github.com/pavelblednov/1ab7debae9fa9ee275d914ba04ffe7d4
 //
 // import Swiper: lädt nur die benötigten Module
 //

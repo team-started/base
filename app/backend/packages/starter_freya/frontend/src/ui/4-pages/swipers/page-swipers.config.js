@@ -1,7 +1,7 @@
 'use strict';
 
-const carousel = require('../../2-components/carousels/carousel.config');
+const swiper = require('../../2-components/swipers/swiper.config');
 
 module.exports = {
-    context: carousel.context,
+    context: swiper.context,
 };
