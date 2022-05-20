@@ -20,6 +20,9 @@ module.exports = {
             inside: '',
         },
         bodytext: _.lorem(1000, 'textmedia:'),
+        media_size_small: 6,
+        media_size_medium: 4,
+        media_size_large: 3,
     },
     variants: [
         {
@@ -47,6 +50,9 @@ module.exports = {
                     x: 'left',
                     inside: false,
                 },
+                media_size_small: 12,
+                media_size_medium: 6,
+                media_size_large: 6,
             },
         },
         {
@@ -65,6 +71,9 @@ module.exports = {
                     x: 'left',
                     inside: false,
                 },
+                media_size_small: 12,
+                media_size_medium: 6,
+                media_size_large: 6,
             },
         },
         {
