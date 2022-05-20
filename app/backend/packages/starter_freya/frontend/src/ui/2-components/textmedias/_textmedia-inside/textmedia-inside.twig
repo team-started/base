@@ -13,7 +13,10 @@ thisAlignX:         Bild links oder rechts, inclusive dem entsprecheden margin .
 <div class="d-flex align-items-center flex-column-reverse d-md-block clearfix">
     <div class="col-{{ thisMediaSizeSmall|default(12) }} w-md-col{{ media_size_medium|default(3) }} w-lg-col{{ media_size_large|default(6) }}
                 {{ thisImageHideOnSmall }} {{ thisImageHideOnMedium }} {{ thisImageHideOnLarge }} mt-3 mt-md-0 {{ thisAlignX }}">
-        {% include '@object/pictures/picture.twig' with image only %}
+        {% include '@component/medias/media.twig' with {
+            items: items,
+            grid: grid,
+        } only %}
     </div>
     {% include '@object/rtes/rte.twig' with {
         'rte': bodytext

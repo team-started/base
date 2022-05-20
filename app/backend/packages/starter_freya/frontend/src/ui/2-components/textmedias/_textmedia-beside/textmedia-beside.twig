@@ -13,6 +13,9 @@ thisAlignX:     Bild links oder rechts ... default: Bild links.
     </div>
     <div class="col-{{ thisMediaSizeSmall|default(12) }} col-md-{{ media_size_medium|default(3) }} col-lg-{{ media_size_large|default(6) }}
                 {{ thisImageHideOnSmall }} {{ thisImageHideOnMedium }} {{ thisImageHideOnLarge }} mt-3 mt-md-0">
-        {% include '@object/pictures/picture.twig' with image only %}
+        {% include '@component/medias/media.twig' with {
+            items: items,
+            grid: grid,
+        } only %}
     </div>
 </div>
