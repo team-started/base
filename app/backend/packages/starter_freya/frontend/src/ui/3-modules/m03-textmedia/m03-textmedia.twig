@@ -11,22 +11,23 @@ componentBackground: Wenn der Background fluid ist, dann wird er im Container ge
     <div id="c{{ uid }}" class="m-{{ CType }} {{ componentBackground }}">
 
         {% include '@component/module/moduleheaders/moduleheader.twig' with {
-            'date': date,
-            'header': header,
-            'subheader': subheader,
-            'overline': overline,
+            date: date,
+            header: header,
+            overline: overline,
+            subheader: subheader,
         } only %}
 
         {% include '@component/textmedias/textmedia.twig' with {
-            'image': image,
-            'imageorient': imageorient,
-            'grid': grid,
-            'bodytext': bodytext,
+            assets: assets,
+            bodytext: bodytext,
+            image: image,
+            imageorient: imageorient,
+            grid: grid,
         } only %}
 
         {% include '@component/module/modulefooters/modulefooter.twig' with {
-            'tx_starter_cta_link': tx_starter_cta_link,
-            'tx_starter_cta_text': tx_starter_cta_text,
+            tx_starter_cta_link: tx_starter_cta_link,
+            tx_starter_cta_text: tx_starter_cta_text,
         } only %}
 
     </div>

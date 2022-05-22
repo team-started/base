@@ -13,12 +13,12 @@ componentBackground: Wenn der Background fluid ist, dann wird er im Container ge
         {% include '@component/module/moduleheaders/moduleheader.twig' with {
             date: date,
             header: header,
-            subheader: subheader,
             overline: overline,
+            subheader: subheader,
         } only %}
 
         {% include '@component/medias/media.twig' with {
-            items: items,
+            assets: assets,
             grid: grid,
         } only %}
 

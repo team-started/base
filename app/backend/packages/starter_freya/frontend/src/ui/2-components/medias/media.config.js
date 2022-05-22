@@ -2,7 +2,7 @@
 
 module.exports = {
     context: {
-        items: [
+        assets: [
             {
                 image: '@picture--link',
             },
@@ -20,7 +20,7 @@ module.exports = {
             name: 'images3',
             label: '3 images (1-2-3)',
             context: {
-                items: [
+                assets: [
                     {
                         image: '@picture--link',
                     },
@@ -44,7 +44,7 @@ module.exports = {
             name: 'images7',
             label: '7 images (2-3-4)',
             context: {
-                items: [
+                assets: [
                     {
                         image: '@picture--link',
                     },

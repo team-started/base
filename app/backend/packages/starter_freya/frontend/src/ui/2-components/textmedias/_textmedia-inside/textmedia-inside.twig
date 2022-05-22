@@ -14,7 +14,7 @@ thisAlignX:         Bild links oder rechts, inclusive dem entsprecheden margin .
     <div class="col-{{ thisMediaSizeSmall|default(12) }} w-md-col{{ media_size_medium|default(3) }} w-lg-col{{ media_size_large|default(6) }}
                 {{ thisImageHideOnSmall }} {{ thisImageHideOnMedium }} {{ thisImageHideOnLarge }} mt-3 mt-md-0 {{ thisAlignX }}">
         {% include '@component/medias/media.twig' with {
-            items: items,
+            assets: assets,
             grid: grid,
         } only %}
     </div>
