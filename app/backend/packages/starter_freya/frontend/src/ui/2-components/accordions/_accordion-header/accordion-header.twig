@@ -2,14 +2,14 @@
 siehe src/ui/2-components/accordions/accordion.twig
 #}
 
-<h2 class="accordion-header" id="heading{{ itemUid }}">
+<h2 class="accordion-header" id="heading{{ accordionItem.itemUid }}">
     <button class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapse{{ itemUid }}"
+            data-bs-target="#collapse{{ accordionItem.itemUid }}"
             aria-expanded="false"
-            aria-controls="collapse{{ itemUid }}"
+            aria-controls="collapse{{ accordionItem.itemUid }}"
     >
-        {{ title }}
+        {{ accordionItem.title }}
     </button>
 </h2>

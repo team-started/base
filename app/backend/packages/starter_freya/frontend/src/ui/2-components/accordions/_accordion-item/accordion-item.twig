@@ -5,14 +5,12 @@ siehe src/ui/2-components/accordions/accordion.twig
 {% if accordionItem.title %}
     <div class="accordion-item">
         {% include '@component/accordions/_accordion-header/accordion-header.twig' with {
-            itemUid: itemUid,
-            title: accordionItem.title,
+            accordionItem: accordionItem,
         } only %}
         {% include '@component/accordions/_accordion-body/accordion-body.twig' with {
-            uid: uid,
-            itemUid: itemUid,
-            toggle: toggle,
             accordionItem: accordionItem,
+            uid: uid,
+            toggle: toggle,
         } only %}
     </div>
 {% endif %}

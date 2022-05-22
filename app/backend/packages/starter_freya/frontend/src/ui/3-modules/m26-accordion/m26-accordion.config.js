@@ -1,17 +1,13 @@
 'use strict';
 
 const globalConfig = require('../module-general.config');
+const accordionConfig = require('../../2-components/accordions/accordion.config');
 
 module.exports = {
     context: {
         ...globalConfig,
+        ...accordionConfig.context,
         CType: 'accordion',
-        items: [
-            '@accordion-item',
-            '@accordion-item--text',
-            '@accordion-item--image',
-            '@accordion-item--text-image',
-        ],
-        tx_starter_accordion_toggle: true,
     },
+    variants: accordionConfig.variants,
 };

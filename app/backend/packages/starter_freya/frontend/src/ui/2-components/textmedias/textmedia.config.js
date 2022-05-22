@@ -89,7 +89,7 @@ module.exports = {
             label: 'multiple images inside left 12-6-6',
             name: 'multiple-images',
             context: {
-                ...mediaConfig.variants[0].context,
+                ...mediaConfig.variants[0].context /* Variante mit drei Bildern */,
                 imageorient: {
                     x: 'left',
                     inside: true,

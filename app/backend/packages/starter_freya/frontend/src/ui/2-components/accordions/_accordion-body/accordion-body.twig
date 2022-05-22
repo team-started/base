@@ -2,9 +2,9 @@
 siehe src/ui/2-components/accordions/accordion.twig
 #}
 
-<div id="collapse{{ itemUid }}"
+<div id="collapse{{ accordionItem.itemUid }}"
      class="accordion-collapse collapse"
-     aria-labelledby="heading{{ itemUid }}"
+     aria-labelledby="heading{{ accordionItem.itemUid }}"
      data-bs-parent="{{ toggle|default(true) ? '#' ~ uid }}">
 
     <div class="accordion-body">

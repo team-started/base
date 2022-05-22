@@ -19,13 +19,11 @@ title:          Für ein Item: der Titel
 
 <div class="c-accordion accordion" id="{{ uid }}">
     {% for accordionItem in items %}
-        {% set itemUid = uid ~ '-' ~ loop.index %}
-
         {% include '@component/accordions/_accordion-item/accordion-item.twig' with {
             uid: uid,
             itemUid: itemUid,
             toggle: toggle,
-            accordionItem: accordionItem,
+            accordionItem: accordionItem|merge({'itemUid': uid ~ '-' ~ loop.index}),
         } only %}
     {% endfor %}
 </div>

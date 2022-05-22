@@ -24,14 +24,14 @@ module.exports = {
         {
             name: 'image',
             context: {
-                ...mediaConfig.context,
+                ...mediaConfig.context /* default mit einem Bild */,
                 title: _.lorem(100, 'title image:'),
             },
         },
         {
             name: 'text-image',
             context: {
-                ...textmediaConfig.variants[5].context,
+                ...textmediaConfig.variants[5].context /* Variante mit drei Bildern */,
                 imageorient: {
                     x: 'right',
                     inside: true,
