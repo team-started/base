@@ -4,8 +4,6 @@ const _ = require('../../../../../config/helpers');
 const mediaConfig = require('../../medias/media.config');
 const textmediaConfig = require('../../textmedias/textmedia.config');
 
-console.log(textmediaConfig.variants[3].context);
-
 module.exports = {
     context: {
         title: '',
@@ -34,9 +32,6 @@ module.exports = {
             name: 'text-image',
             context: {
                 ...textmediaConfig.variants[5].context,
-                grid: {
-                    hideOnSmall: false,
-                },
                 imageorient: {
                     x: 'right',
                     inside: true,
