@@ -18,18 +18,14 @@ title:          Für ein Item: der Titel
 {% set uid = 'acc' ~ uid %}
 
 <div class="c-accordion accordion" id="{{ uid }}">
-    {% for accordion in items %}
+    {% for accordionItem in items %}
         {% set itemUid = uid ~ '-' ~ loop.index %}
-        
+
         {% include '@component/accordions/_accordion-item/accordion-item.twig' with {
-            'itemUid': itemUid,
-            'toggle': toggle,
-            'uid': uid,
-            'grid': accordion.grid,
-            'image': accordion.image,
-            'imageorient': accordion.imageorient,
-            'text': accordion.text,
-            'title': accordion.title,
+            uid: uid,
+            itemUid: itemUid,
+            toggle: toggle,
+            accordionItem: accordionItem,
         } only %}
     {% endfor %}
 </div>

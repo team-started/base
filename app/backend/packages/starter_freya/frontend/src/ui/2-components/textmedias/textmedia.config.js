@@ -99,5 +99,17 @@ module.exports = {
                 media_size_large: 6,
             },
         },
+        {
+            name: 'no-text',
+            context: {
+                bodytext: '',
+            },
+        },
+        {
+            name: 'no-image',
+            context: {
+                assets: null,
+            },
+        },
     ],
 };

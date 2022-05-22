@@ -8,22 +8,12 @@ siehe src/ui/2-components/accordions/accordion.twig
      data-bs-parent="{{ toggle|default(true) ? '#' ~ uid }}">
 
     <div class="accordion-body">
-        {% if text and image %}
-            {% include '@component/textmedias/textmedia.twig' with {
-                'image': image,
-                'imageorient': imageorient,
-                'grid': grid,
-                'text': text,
-            } only %}
-        {% elseif text %}
-            {% include '@object/rtes/rte.twig' with {
-                'rte': text
-            } only %}
-        {% elseif image %}
-            {% include '@object/pictures/picture.twig' with image only %}
-        {% else %}
-            sorry, no content given
-        {% endif %}
+        {% include '@component/textmedias/textmedia.twig' with {
+            assets: accordionItem.assets,
+            bodytext: accordionItem.text,
+            imageorient: accordionItem.imageorient,
+            grid: accordionItem.grid,
+        } only %}
     </div>
 
 </div>

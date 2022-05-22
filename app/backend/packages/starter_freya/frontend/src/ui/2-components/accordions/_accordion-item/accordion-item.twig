@@ -2,20 +2,17 @@
 siehe src/ui/2-components/accordions/accordion.twig
 #}
 
-{% if title %}
+{% if accordionItem.title %}
     <div class="accordion-item">
         {% include '@component/accordions/_accordion-header/accordion-header.twig' with {
-            'itemUid': itemUid,
-            'title': title,
+            itemUid: itemUid,
+            title: accordionItem.title,
         } only %}
         {% include '@component/accordions/_accordion-body/accordion-body.twig' with {
-            'itemUid': itemUid,
-            'image': image,
-            'imageorient': imageorient,
-            'grid': grid,
-            'text': text,
-            'toggle': toggle,
-            'uid': uid,
+            uid: uid,
+            itemUid: itemUid,
+            toggle: toggle,
+            accordionItem: accordionItem,
         } only %}
     </div>
 {% endif %}

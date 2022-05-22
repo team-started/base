@@ -13,8 +13,21 @@ thisImageHideOnSmall, thisImageHideOnMedium, thisImageHideOnLarge: Verbigt Bilde
 {% set thisImageHideOnMedium = grid.showOnMedium ? '' : 'd-md-none-only' %}
 {% set thisImageHideOnLarge = grid.showOnLarge ? '' : 'd-lg-none-only d-xl-none-only d-xxl-none-only' %}
 
-{% if imageorient.inside %}
-    {% include '@component/textmedias/_textmedia-inside/textmedia-inside.twig' %}
-{% else %}
-    {% include '@component/textmedias/_textmedia-beside/textmedia-beside.twig' %}
+{% if bodytext and assets %} {# der Normalfall #}
+    {% if imageorient.inside %}
+        {% include '@component/textmedias/_textmedia-inside/textmedia-inside.twig' %}
+    {% else %}
+        {% include '@component/textmedias/_textmedia-beside/textmedia-beside.twig' %}
+    {% endif %}
+{% elseif bodytext %} {# kein Text #}
+    {% include '@object/rtes/rte.twig' with {
+        'rte': bodytext
+    } only %}
+{% elseif assets %} {# kein Bild #}
+    {% include '@component/medias/media.twig' with {
+        assets: assets,
+        grid: grid,
+    } only %}
+{% else %} {# gar nix #}
+    sorry, no content given
 {% endif %}
