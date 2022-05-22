@@ -7,7 +7,7 @@ const textmediaConfig = require('../../textmedias/textmedia.config');
 module.exports = {
     context: {
         title: '',
-        text: '',
+        text: _.lorem(1000, 'text:'),
         imageorient: {
             x: '',
             inside: false,
@@ -17,7 +17,6 @@ module.exports = {
         {
             name: 'text',
             context: {
-                text: _.lorem(1000, 'text text:'),
                 title: _.lorem(100, 'title text:'),
             },
         },
@@ -36,7 +35,6 @@ module.exports = {
                     x: 'right',
                     inside: true,
                 },
-                text: _.lorem(1000, 'textmedia:'),
                 title: _.lorem(100, 'title text and image:'),
             },
         },

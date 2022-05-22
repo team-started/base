@@ -1,5 +1,12 @@
 {#
 siehe src/ui/2-components/accordions/accordion.twig
+
+assets:         ein oder meherere Bilder
+bodytext:       Für ein Item: der Text
+grid:           Breite des Bildbereiches neben dem Text
+imageorient:    Bildausrichtung (inside, beside, links, rechts)
+
+Ob es ein Bild, Text oder beides gibt, regelt die Komponente textmedia.
 #}
 
 <div id="collapse{{ accordionItem.itemUid }}"
@@ -11,8 +18,8 @@ siehe src/ui/2-components/accordions/accordion.twig
         {% include '@component/textmedias/textmedia.twig' with {
             assets: accordionItem.assets,
             bodytext: accordionItem.text,
-            imageorient: accordionItem.imageorient,
             grid: accordionItem.grid,
+            imageorient: accordionItem.imageorient,
         } only %}
     </div>
 

@@ -2,15 +2,13 @@
 siehe src/ui/2-components/accordions/accordion.twig
 #}
 
-{% if accordionItem.title %}
-    <div class="accordion-item">
-        {% include '@component/accordions/_accordion-header/accordion-header.twig' with {
-            accordionItem: accordionItem,
-        } only %}
-        {% include '@component/accordions/_accordion-body/accordion-body.twig' with {
-            accordionItem: accordionItem,
-            uid: uid,
-            toggle: toggle,
-        } only %}
-    </div>
-{% endif %}
+<div class="accordion-item">
+    {% include '@component/accordions/_accordion-header/accordion-header.twig' with {
+        accordionItem: accordionItem,
+    } only %}
+    {% include '@component/accordions/_accordion-body/accordion-body.twig' with {
+        accordionItem: accordionItem,
+        uid: uid,
+        toggle: toggle,
+    } only %}
+</div>
