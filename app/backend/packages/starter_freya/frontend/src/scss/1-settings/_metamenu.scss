@@ -1,0 +1,6 @@
+// Trennzeichen für Metamenüs, diese sind keine Bootstrap Komponente.
+// see: src/ui/2-components/navigation/metamenus/index.scss
+// -
+// Bis auf dieses Trennzeichen werden die Styles von der Bootstrap-Komponente breadcrumb übernommen.
+
+$metamenu-divider: '|' !default;

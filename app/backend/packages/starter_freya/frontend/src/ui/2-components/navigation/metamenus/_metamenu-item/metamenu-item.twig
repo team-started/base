@@ -1,0 +1,26 @@
+{#
+current:    Flag für ein Item, das die aktuelle Seite repräsentiert.
+active:     Flag, wenn ein Item in der Rootline ist, was in diesem Fall unrelevant ist.
+item.uid:   Uid der jeweiligen Seite.
+#}
+
+{% set current = item.current ? 'current ' %}
+{% set active = item.active ? 'active ' %}
+{% set link =
+    {
+        'config':
+            {
+                'uri': item.link,
+                'target': item.target,
+                'class': active ~ current
+            }
+    }
+%}
+
+<li id="{{ identifierUid }}-{{ item.uid }}" class="c-{{ identifier }}-item">
+    {% embed '@object/links/link.twig' with link %}
+        {% block linkContent %}
+            {{ item.title }}
+        {% endblock %}
+    {% endembed %}
+</li>

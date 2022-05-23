@@ -1,0 +1,19 @@
+{#
+identifierUid:  zusammengesetzter String
+uid:            Dürfte immer leer sein, außer diese Komponente wird in einem Contentelement verwendet.
+#}
+
+{% set identifier = 'metamenu' %}
+{% set identifierUid = 'metamenu' ~ uid %}
+
+<nav>
+    <ul id="{{ identifierUid }}" class="c-{{ identifier }}">
+        {% for item in items %}
+            {% include '@component/navigation/metamenus/_metamenu-item/metamenu-item.twig' with {
+                identifier: identifier,
+                identifierUid: identifierUid,
+                item: item,
+            } only %}
+        {% endfor %}
+    </ul>
+</nav>

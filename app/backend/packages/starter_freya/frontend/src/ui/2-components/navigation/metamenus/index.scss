@@ -1,0 +1,17 @@
+// Bis auf das Trennzeichen werden die Styles von der Bootstrap-Komponente breadcrumb übernommen.
+
+$metamenu-divider: '|' !default;
+
+.c-metamenu {
+    @extend .breadcrumb;
+}
+
+.c-metamenu-item {
+    @extend .breadcrumb-item;
+
+    + .c-metamenu-item {
+        &::before {
+            content: $metamenu-divider;
+        }
+    }
+}
