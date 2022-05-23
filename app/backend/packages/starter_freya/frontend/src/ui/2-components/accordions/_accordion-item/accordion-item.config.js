@@ -28,14 +28,14 @@ module.exports = {
             },
         },
         {
-            name: 'text-image',
+            name: 'text-images',
             context: {
                 ...textmediaConfig.variants[5].context /* Variante mit drei Bildern */,
                 imageorient: {
                     x: 'right',
                     inside: true,
                 },
-                title: _.lorem(100, 'title text and image:'),
+                title: _.lorem(100, 'title text and images:'),
             },
         },
     ],

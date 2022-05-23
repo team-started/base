@@ -6,7 +6,7 @@ module.exports = {
             '@accordion-item',
             '@accordion-item--text',
             '@accordion-item--image',
-            '@accordion-item--text-image',
+            '@accordion-item--text-images',
         ],
         toggle: null,
     },
