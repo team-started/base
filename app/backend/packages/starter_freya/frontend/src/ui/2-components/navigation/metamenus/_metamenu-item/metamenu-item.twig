@@ -17,7 +17,7 @@ item.uid:   Uid der jeweiligen Seite.
     }
 %}
 
-<li id="{{ identifierUid }}-{{ item.uid }}" class="c-{{ identifier }}-item">
+<li id="{{ identifier }}{{ pid }}-{{ item.uid }}" class="c-{{ identifier }}-item">
     {% embed '@object/links/link.twig' with link %}
         {% block linkContent %}
             {{ item.title }}
