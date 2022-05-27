@@ -70,3 +70,39 @@
     @extend .d-none;
     @extend .d-xxl-block;
 }
+
+@include media-breakpoint-only(xs) { 
+    .d-xs-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(sm) { 
+    .d-sm-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(md) { 
+    .d-md-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(lg) { 
+    .d-lg-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(xl) { 
+    .d-xl-none-only {
+        display: none !important;
+    }
+ }
+
+@include media-breakpoint-only(xxl) { 
+    .d-xxl-none-only {
+        display: none !important;
+    }
+ }

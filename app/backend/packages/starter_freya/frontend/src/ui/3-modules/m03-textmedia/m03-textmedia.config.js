@@ -7,7 +7,7 @@ module.exports = {
     context: {
         ...globalConfig,
         ...textmediaConfig.context,
-        CType: 'textmedia',
+        CType: 'starter_textmedia',
     },
     variants: [...textmediaConfig.variants],
 };
