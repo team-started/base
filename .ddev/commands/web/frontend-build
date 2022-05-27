@@ -30,9 +30,17 @@ esac
 if [[ $FRONTEND_BUILD_FOLDER != "" && -d $FRONTEND_BUILD_FOLDER ]]
 then
     cd $FRONTEND_BUILD_FOLDER && \
+        nvm use && \
         npm i --quiet && \
         npm run build --silent
 else
     echo "[ERROR] No frontend available under '${FRONTEND_BUILD_FOLDER}'"
     exit 1
+fi
+
+if [[ -d $FRONTEND_BUILD_FOLDER/build/prototype ]]
+then
+    PUBLIC_PROTOTYPE=$BASE_PATH"backend/public/prototype/$1"
+    mkdir -p $PUBLIC_PROTOTYPE
+    rsync -r $FRONTEND_BUILD_FOLDER"build/prototype/" $PUBLIC_PROTOTYPE
 fi

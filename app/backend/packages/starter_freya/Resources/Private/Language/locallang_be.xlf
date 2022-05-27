@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-04-216T09:46:40Z"
+		  product-name="starter_freya">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_starter_width.container-sm">
+				<source>Content only to full width for "Small"</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md">
+				<source>Content only to full width for "Medium" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg">
+				<source>Content only to full width for "Large" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl">
+				<source>Content only to full width for "Extra large" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl">
+				<source>Content only to full width for "Extra extra large" or smaller</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-fluid">
+				<source>Content always over full screen width</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-sm-fixed">
+				<source>Always limit content to the width of "Small".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md-fixed">
+				<source>Always limit content to the width of "Medium".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg-fixed">
+				<source>Always limit content to the width of "Large".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl-fixed">
+				<source>Always limit content to the width of "Extra large".</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl-fixed">
+				<source>Always limit content to the width of "Extra extra large".</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.xsmall">
+				<source>Extra small</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.small">
+				<source>Small</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.medium">
+				<source>Medium</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.large">
+				<source>Large</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.xlarge">
+				<source>Extra large</source>
+			</trans-unit>
+			<trans-unit id="breakpoints.xxlarge">
+				<source>Extra extra large</source>
+			</trans-unit>
+
+			<trans-unit id="tx_starter_visibility.I.visibility-off">
+				<source>Visibility off</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_visibility.I.visibility-only-up">
+				<source>Visibility only up</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_visibility.I.visibility-until">
+				<source>Visibility until</source>
+			</trans-unit>
+			<trans-unit id="space_class.1">
+				<source>Extra small</source>
+			</trans-unit>
+			<trans-unit id="space_class.2">
+				<source>Small</source>
+			</trans-unit>
+			<trans-unit id="space_class.3">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="space_class.4">
+				<source>Large</source>
+			</trans-unit>
+			<trans-unit id="space_class.5">
+				<source>Extra large</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.12">
+				<source>Full width</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.11">
+				<source>11/12</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.10">
+				<source>10/12</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.9">
+				<source>3/4</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.8">
+				<source>8/12</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.7">
+				<source>7/12</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.6">
+				<source>Half</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.5">
+				<source>5/12</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.4">
+				<source>One-third</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.3">
+				<source>Quarter</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.2">
+				<source>2/12</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.1">
+				<source>1/12</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -10,14 +10,12 @@ thisAlignX:         Bild links oder rechts, inclusive dem entsprecheden margin .
 
 {% set thisAlignX = imageorient.x == 'right' ? 'float-md-end ms-md-3' : 'float-md-start me-md-3' %}
 
-
-
 <div class="d-flex align-items-center flex-column-reverse d-md-block clearfix">
     <div class="col-{{ thisGridImageColsSmall|default(12) }} w-md-col{{ grid.imageCols.medium|default(3) }} w-lg-col{{ grid.imageCols.large|default(6) }}
-                {{ thisImageHideOnSmall }} mt-3 mt-md-0 {{ thisAlignX }}">
+                {{ thisImageHideOnSmall }} {{ thisImageHideOnMedium }} {{ thisImageHideOnLarge }} mt-3 mt-md-0 {{ thisAlignX }}">
         {% include '@object/pictures/picture.twig' with image only %}
     </div>
     {% include '@object/rtes/rte.twig' with {
-        'rte': text
+        'rte': bodytext
     } only %}
 </div>

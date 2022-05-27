@@ -1,7 +1,5 @@
 'use strict';
 
-const _ = require('../../../../config/helpers');
-
 module.exports = {
     context: {
         config: {

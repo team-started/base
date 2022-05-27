@@ -1,0 +1,17 @@
+Index: Classes/Processor/ImageProcessor.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Classes/Processor/ImageProcessor.php b/Classes/Processor/ImageProcessor.php
+--- a/Classes/Processor/ImageProcessor.php
++++ b/Classes/Processor/ImageProcessor.php	(date 1643296235000)
+@@ -64,7 +64,7 @@
+      */
+     protected function addAbsRefPrefix(string $uri): string
+     {
+-        return $this->tsfe->absRefPrefix . $uri;
++        return $this->tsfe->getSite()->getBase() . ltrim($uri, '/');
+     }
+
+     /**

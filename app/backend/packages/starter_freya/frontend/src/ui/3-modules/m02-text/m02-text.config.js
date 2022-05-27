@@ -1,6 +1,5 @@
 'use strict';
 
-const _ = require('../../../../config/helpers');
 const globalConfig = require('../module-general.config');
 
 module.exports = {
@@ -28,7 +27,7 @@ module.exports = {
             name: 'show-by-mediaquery',
             label: 'show for medium only',
             context: {
-                tx_starter_showbyscreensize: 'd-md-only',
+                tx_starter_visibility: 'd-md-only',
             },
         },
     ],

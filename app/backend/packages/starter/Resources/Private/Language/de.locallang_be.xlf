@@ -66,6 +66,10 @@
 			<trans-unit id="palette.appearanceColor">
 				<target>Farbgebung</target>
 			</trans-unit>
+			<trans-unit id="palette.starterAppearanceBackground">
+				<source>Background options</source>
+				<target>Hintergrundoptionen</target>
+			</trans-unit>
 			<trans-unit id="palette.cta">
 				<source>Call-to-Action</source>
 				<target>Interaktionslinks (CTA)</target>
@@ -105,9 +109,17 @@
 			</trans-unit>
 
 			<trans-unit id="tt_content.tx_starter_backgroundcolor">
-				<target>Hintergrund Farbe</target>
+				<source>Background color</source>
+				<target>Hintergrundfarbe</target>
 			</trans-unit>
-
+			<trans-unit id="tt_content.tx_starter_background_fluid">
+				<source>Maximum area</source>
+				<target>maximale Fläche</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_visibility">
+				<source>Visibility on BreakPoints</source>
+				<target>Sichtbarkeit auf BreakPoints</target>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_bordercolor">
 				<target>Rahmen Farbe</target>
 			</trans-unit>
@@ -203,8 +215,17 @@
 			<trans-unit id="media_size_large">
 				<target>large</target>
 			</trans-unit>
-			<trans-unit id="media_size.default">
-				<target>Standard: volle Breite</target>
+			<trans-unit id="tt_content.tx_starter_media_size_small">
+				<source>Relationship between text and image (small)</source>
+				<target>Verhältnis zwischen Text und Bild (small)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_media_size_medium">
+				<source>Relationship between text and image (medium)</source>
+				<target>Verhältnis zwischen Text und Bild (medium)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_media_size_large">
+				<source>Relationship between text and image (large)</source>
+				<target>Verhältnis zwischen Text und Bild (large)</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
 				<source>Link</source>

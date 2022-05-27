@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-04-21T09:46:40Z"
+		  product-name="starter_freya">
+		<header/>
+		<body>
+
+			<trans-unit id="tt_content.tx_starter_width">
+				<source>Container behavior</source>
+				<target>Container-Verhalten</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

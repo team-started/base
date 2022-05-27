@@ -5,15 +5,17 @@ see: src/ui/2-components/accordions/_accordion-body/accordion-body.twig
 
 imageorient.inside:     Bild im Text oder neben dem Text, default: neben dem Text.
 thisGridImageColsSmall: Backendseitig kann auch eine 0 kommen, was 12 bedeutet.
+
+thisImageHideOnSmall, thisImageHideOnMedium, thisImageHideOnLarge: Verbigt Bilder für bestimmte Breakpoints.
 #}
 
 {% set thisGridImageColsSmall = grid.imageCols.small == 0 ? 12 : grid.imageCols.small %}
-{% set thisImageHideOnSmall = grid.hideOnSmall ? 'd-none d-md-block' : '' %}
-
-
+{% set thisImageHideOnSmall = grid.showOnSmall ? '' : 'd-xs-none-only d-sm-none-only' %}
+{% set thisImageHideOnMedium = grid.showOnMedium ? '' : 'd-md-none-only' %}
+{% set thisImageHideOnLarge = grid.showOnLarge ? '' : 'd-lg-none-only d-xl-none-only d-xxl-none-only' %}
 
 {% if imageorient.inside %}
-    {% include '@component/textmedias/_textmedia-inside/textmedia-inside.twig' with textmedia %}
+    {% include '@component/textmedias/_textmedia-inside/textmedia-inside.twig' %}
 {% else %}
-    {% include '@component/textmedias/_textmedia-beside/textmedia-beside.twig' with textmedia %}
+    {% include '@component/textmedias/_textmedia-beside/textmedia-beside.twig' %}
 {% endif %}

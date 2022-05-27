@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-04-216T09:46:40Z"
+		  product-name="starter_freya">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_starter_width.container-sm">
+				<source>Content only to full width for "Small"</source>
+				<target>Inhalt nur auf volle Breite bei "Small"</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md">
+				<source>Content only to full width for "Medium" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Medium" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg">
+				<source>Content only to full width for "Large" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Large" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl">
+				<source>Content only to full width for "Extra large" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Extra large" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl">
+				<source>Content only to full width for "Extra extra large" or smaller</source>
+				<target>Inhalt nur auf volle Breite bei "Extra extra large" oder kleiner</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-fluid">
+				<source>Content always over full screen width</source>
+				<target>Inhalt immer über volle Bildschirmbreite</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-sm-fixed">
+				<source>Always limit content to the width of "Small".</source>
+				<target>Inhalt immer auf die Breite von "Small" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-md-fixed">
+				<source>Always limit content to the width of "Medium".</source>
+				<target>Inhalt immer auf die Breite von "Medium" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-lg-fixed">
+				<source>Always limit content to the width of "Large".</source>
+				<target>Inhalt immer auf die Breite von "Large" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xl-fixed">
+				<source>Always limit content to the width of "Extra large".</source>
+				<target>Inhalt immer auf die Breite von "Extra large" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_width.container-xxl-fixed">
+				<source>Always limit content to the width of "Extra extra large".</source>
+				<target>Inhalt immer auf die Breite von "Extra extra large" begrenzen</target>
+			</trans-unit>
+			<trans-unit id="breakpoints.xsmall">
+				<source>Extra small</source>
+				<target>Extra small</target>
+			</trans-unit>
+			<trans-unit id="breakpoints.small">
+				<source>Small</source>
+				<target>Small</target>
+			</trans-unit>
+			<trans-unit id="breakpoints.medium">
+				<source>Medium</source>
+				<target>Medium</target>
+			</trans-unit>
+			<trans-unit id="breakpoints.large">
+				<source>Large</source>
+				<target>Large</target>
+			</trans-unit>
+			<trans-unit id="breakpoints.xlarge">
+				<source>Extra large</source>
+				<target>Extra large</target>
+			</trans-unit>
+			<trans-unit id="breakpoints.xxlarge">
+				<source>Extra extra large</source>
+				<target>Extra extra large</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_visibility.I.visibility-off">
+				<source>Visibility off</source>
+				<target>Sichtbarkeit ab</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_visibility.I.visibility-only-up">
+				<source>Visibility only up</source>
+				<target>Sichtbarkeit nur auf</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_visibility.I.visibility-until">
+				<source>Visibility until</source>
+				<target>Sichtbarkeit bis</target>
+			</trans-unit>
+			<trans-unit id="space_class.1">
+				<source>Extra small</source>
+				<target>Kleiner</target>
+			</trans-unit>
+			<trans-unit id="space_class.2">
+				<source>Small</source>
+				<target>Klein</target>
+			</trans-unit>
+			<trans-unit id="space_class.3">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="space_class.4">
+				<source>Large</source>
+				<target>Groß</target>
+			</trans-unit>
+			<trans-unit id="space_class.5">
+				<source>Extra large</source>
+				<target>Größer</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.12">
+				<source>Full width</source>
+				<target>Volle Breite</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.11">
+				<source>11/12</source>
+				<target>11/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.10">
+				<source>10/12</source>
+				<target>10/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.9">
+				<source>3/4</source>
+				<target>3/4</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.8">
+				<source>8/12</source>
+				<target>8/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.7">
+				<source>7/12</source>
+				<target>7/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.6">
+				<source>Half</source>
+				<target>Hälfte</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.5">
+				<source>5/12</source>
+				<target>5/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.4">
+				<source>One-third</source>
+				<target>Drittel</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.3">
+				<source>Quarter</source>
+				<target>Viertel</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.2">
+				<source>2/12</source>
+				<target>2/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.1">
+				<source>1/12</source>
+				<target>1/12</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -4,8 +4,6 @@ componentBackground: Wenn der Background fluid ist, dann wird er im Container ge
 
 {% set componentBackground = tx_starter_background_fluid ? '' : tx_starter_background %}
 
-
-
 {% extends '@component/containers/container.twig' %}
 
 {% block moduleContentBlock %}
@@ -19,7 +17,9 @@ componentBackground: Wenn der Background fluid ist, dann wird er im Container ge
             'overline': overline,
         } only %}
 
-        {{ bodytext }}
+        {% include '@object/rtes/rte.twig' with {
+            'rte': bodytext
+        } only %}
 
         {% include '@component/module/modulefooters/modulefooter.twig' with {
             'tx_starter_cta_link': tx_starter_cta_link,

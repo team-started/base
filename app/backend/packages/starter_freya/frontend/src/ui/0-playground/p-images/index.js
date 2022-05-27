@@ -1,4 +1,4 @@
-import testimage from '@/assets/images/_dev/logo.png';
+import testimage from '@/assets/images/logo.png';
 
 function Component($elements) {
     function init() {

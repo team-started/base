@@ -81,9 +81,35 @@ defined('TYPO3') or die();
                 ],
                 'default' => '',
             ],
+            'tx_starter_background_fluid' => [
+                'exclude' => true,
+                'label' => $translationFile . ':tt_content.tx_starter_background_fluid',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'items' => [
+                        [
+                            0 => '',
+                        ],
+                    ],
+                ],
+            ],
             'tx_starter_bordercolor' => [
                 'exclude' => true,
                 'label' => $translationFile . ':tt_content.tx_starter_bordercolor',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                    ],
+                    'maxitems' => 1,
+                ],
+                'default' => '',
+            ],
+            'tx_starter_visibility' => [
+                'exclude' => true,
+                'label' => $translationFile . ':tt_content.tx_starter_visibility',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -270,38 +296,29 @@ defined('TYPO3') or die();
             ],
             'tx_starter_media_size_small' => [
                 'exclude' => true,
-                'label' => $translationFile . ':media_size_small',
+                'label' => $translationFile . ':tt_content.tx_starter_media_size_small',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [$translationFile . ':media_size.default', ''],
-                    ],
-                    'default' => '',
+                    'items' => [],
                 ],
             ],
             'tx_starter_media_size_medium' => [
                 'exclude' => true,
-                'label' => $translationFile . ':media_size_medium',
+                'label' => $translationFile . ':tt_content.tx_starter_media_size_medium',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [$translationFile . ':tt_content.label.inheritfromsmallerdisplay', ''],
-                    ],
-                    'default' => '',
+                    'items' => [],
                 ],
             ],
             'tx_starter_media_size_large' => [
                 'exclude' => true,
-                'label' => $translationFile . ':media_size_large',
+                'label' => $translationFile . ':tt_content.tx_starter_media_size_large',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [$translationFile . ':tt_content.label.inheritfromsmallerdisplay', ''],
-                    ],
-                    'default' => '',
+                    'items' => [],
                 ],
             ],
             'tx_starter_imagecols_medium' => $GLOBALS['TCA']['tt_content']['columns']['imagecols'],
@@ -416,9 +433,23 @@ defined('TYPO3') or die();
         'after:colPos'
     );
 
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        'tt_content',
+        'frames',
+        '--linebreak--, tx_starter_visibility,',
+        'after:space_after_class'
+    );
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         '--palette--;' . $translationFile . ':palette.appearanceColor;starterAppearanceColor,',
+        '',
+        'after:space_after_class'
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--palette--;;starterAppearanceBackground,',
         '',
         'after:space_after_class'
     );

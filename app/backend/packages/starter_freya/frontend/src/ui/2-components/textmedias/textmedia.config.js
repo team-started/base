@@ -10,14 +10,16 @@ module.exports = {
                 medium: '4',
                 large: '3',
             },
-            hideOnSmall: '',
+            showOnSmall: true,
+            showOnMedium: true,
+            showOnLarge: true,
         },
         image: '@picture--metadata',
         imageorient: {
             x: '',
             inside: '',
         },
-        text: _.lorem(1000, 'textmedia:'),
+        bodytext: _.lorem(1000, 'textmedia:'),
     },
     variants: [
         {
@@ -40,7 +42,6 @@ module.exports = {
                         medium: '6',
                         large: '6',
                     },
-                    hideOnSmall: false,
                 },
                 imageorient: {
                     x: 'left',
@@ -58,7 +59,7 @@ module.exports = {
                         medium: '6',
                         large: '6',
                     },
-                    hideOnSmall: true,
+                    showOnSmall: false,
                 },
                 imageorient: {
                     x: 'left',
@@ -77,11 +78,13 @@ module.exports = {
             },
         },
         {
-            label: 'image inside left hide-on-small 6-4-3',
+            label: 'image inside left hide-on-medium 6-4-3',
             name: 'image-inside-left',
             context: {
                 grid: {
-                    hideOnSmall: true,
+                    showOnSmall: true,
+                    showOnMedium: false,
+                    showOnLarge: true,
                 },
                 imageorient: {
                     x: 'left',

@@ -1,0 +1,7 @@
+TCAdefaults {
+  tt_content {
+    tx_starter_media_size_small = 12
+    tx_starter_media_size_medium = 3
+    tx_starter_media_size_large = 4
+  }
+}

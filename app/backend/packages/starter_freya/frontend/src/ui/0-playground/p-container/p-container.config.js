@@ -7,7 +7,7 @@ module.exports = {
     context: {
         uid: 111,
         tx_starter_container: '',
-        tx_starter_showbyscreensize: '',
+        tx_starter_visibility: '',
         space_before_class: '',
         space_after_class: '',
         bodytext: _.lorem(200, 'max 200: '),
@@ -93,7 +93,7 @@ module.exports = {
             name: 'show-by-mediaquery',
             label: 'show for medium only',
             context: {
-                tx_starter_showbyscreensize: 'd-md-only',
+                tx_starter_visibility: 'd-md-only',
             },
         },
         {
