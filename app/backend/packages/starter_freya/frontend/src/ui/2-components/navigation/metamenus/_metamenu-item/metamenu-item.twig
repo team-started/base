@@ -1,9 +1,12 @@
 {#
-current:    Flag für ein Item, das die aktuelle Seite repräsentiert.
-active:     Flag, wenn ein Item in der Rootline ist, was in diesem Fall unrelevant ist.
-item.uid:   Uid der jeweiligen Seite.
+doktype:        TYPO3 doktype: 1 wird ignoriert (weil Default), 3 = externer Link, 199 = Spacer, [...] 
+current:        Flag für ein Item, das die aktuelle Seite repräsentiert.
+active:         Flag, wenn ein Item in der Rootline ist, was in diesem Fall unrelevant ist.
+menuUid:        Uid des gesamten Menus (das ist keine page uid!)
+item.data.uid:  Uid des Menu-Item (= page uid des Items)
 #}
 
+{% set doktype = item.data.doktype > 1 ? 'doktype-' ~ item.data.doktype  %}
 {% set current = item.current ? 'current ' %}
 {% set active = item.active ? 'active ' %}
 {% set link =
@@ -17,7 +20,7 @@ item.uid:   Uid der jeweiligen Seite.
     }
 %}
 
-<li id="{{ identifier }}{{ pid }}-{{ item.uid }}" class="c-{{ identifier }}-item">
+<li id="{{ identifier }}{{ menuUid }}-{{ item.data.uid }}" class="c-{{ identifier }}-item {{ doktype }}">
     {% embed '@object/links/link.twig' with link %}
         {% block linkContent %}
             {{ item.title }}

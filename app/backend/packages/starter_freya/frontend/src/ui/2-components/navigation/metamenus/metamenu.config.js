@@ -2,42 +2,51 @@
 
 module.exports = {
     context: {
+        uid: 333,
         items: [
             {
-                uid: 1,
+                data: {
+                    uid: 1,
+                    doktype: 3,
+                },
                 title: 'Seite 1',
                 link: '#',
                 target: '',
                 active: 0,
                 current: 0,
-                spacer: 0,
             },
             {
-                uid: 2,
+                data: {
+                    uid: 2,
+                    doktype: 1,
+                },
                 title: 'Seite 2 (aktuelle Seite)',
                 link: '#',
                 target: '',
                 active: 1,
                 current: 1,
-                spacer: 0,
             },
             {
-                uid: 3,
+                data: {
+                    uid: 3,
+                    doktype: 1,
+                },
                 title: 'Seite 3',
                 link: '#',
                 target: '',
                 active: 0,
                 current: 0,
-                spacer: 0,
             },
             {
-                uid: 4,
+                data: {
+                    uid: 4,
+                    doktype: 1,
+                },
                 title: 'Seite 4',
                 link: '#',
                 target: '',
                 active: 0,
                 current: 0,
-                spacer: 0,
             },
         ],
     },
