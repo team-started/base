@@ -72,11 +72,15 @@ class StarterCeMediaProcessor implements PtiDataProcessor
             'overline' => $this->headlineProcessor->processOverLine($data),
             'space_before_class' => $data['space_before_class'],
             'space_after_class' => $data['space_after_class'],
+            // columns are deprecated since 4.0.0-RC1 and would be remove in 5.0.0
             'columns' => [
                 'small' => $this->getColumnValue($data['imagecols'], 1),
                 'medium' => $this->getColumnValue($data['tx_starter_imagecols_medium']),
                 'large' => $this->getColumnValue($data['tx_starter_imagecols_large']),
             ],
+            'imagecols' => $this->getColumnValue($data['imagecols'], 1),
+            'tx_starter_imagecols_medium' => $this->getColumnValue($data['tx_starter_imagecols_medium'], 1),
+            'tx_starter_imagecols_large' => $this->getColumnValue($data['tx_starter_imagecols_large'], 1),
             'items' => $this->renderGalleryItems($data),
             'tx_starter_visibility' => $data['tx_starter_visibility'],
             'tx_starter_background_fluid' => (bool) $data['tx_starter_background_fluid'],

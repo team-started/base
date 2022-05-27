@@ -105,6 +105,54 @@
 				<source>Extra large</source>
 				<target>Größer</target>
 			</trans-unit>
+			<trans-unit id="tx_starter_media_size.12">
+				<source>Full width</source>
+				<target>Volle Breite</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.11">
+				<source>11/12</source>
+				<target>11/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.10">
+				<source>10/12</source>
+				<target>10/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.9">
+				<source>3/4</source>
+				<target>3/4</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.8">
+				<source>8/12</source>
+				<target>8/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.7">
+				<source>7/12</source>
+				<target>7/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.6">
+				<source>Half</source>
+				<target>Hälfte</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.5">
+				<source>5/12</source>
+				<target>5/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.4">
+				<source>One-third</source>
+				<target>Drittel</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.3">
+				<source>Quarter</source>
+				<target>Viertel</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.2">
+				<source>2/12</source>
+				<target>2/12</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_media_size.1">
+				<source>1/12</source>
+				<target>1/12</target>
+			</trans-unit>
 
 		</body>
 	</file>

@@ -2,6 +2,7 @@ mod.wizards.newContentElement.wizardItems {
   common {
     # TYPO3-Core CE's
     show := addToList(text)
+    show := addToList(starter_textmedia)
 
     # EXT:starter CE's
     show := addToList(starter_media)

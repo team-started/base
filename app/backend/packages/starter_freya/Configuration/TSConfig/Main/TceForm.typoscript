@@ -6,10 +6,33 @@ TCEFORM {
   tt_content {
     # TYPO3-Core CE's
     CType.keepItems := addToList(text)
+    CType.keepItems := addToList(starter_textmedia)
 
     # EXT:starter CE's
     CType.keepItems := addToList(starter_media)
     CType.keepItems := addToList(starter_accordion)
+
+    # disable TYPO3-Core fields
+    image_zoom.disabled = 1
+
+    imagecols {
+      types {
+        starter_textmedia.disabled = 1
+      }
+    }
+
+    # disable EXT:starter fields
+    tx_starter_imagecols_medium {
+      types {
+        starter_textmedia.disabled = 1
+      }
+    }
+
+    tx_starter_imagecols_large {
+      types {
+        starter_textmedia.disabled = 1
+      }
+    }
 
     tx_starter_width {
       addItems {
@@ -27,6 +50,68 @@ TCEFORM {
       }
     }
 
+    tx_starter_media_size_small {
+      types {
+        starter_media.disabled = 1
+      }
+
+      addItems {
+        12 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.12
+        11 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.11
+        10 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.10
+        9 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.9
+        8 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.8
+        7 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.7
+        6 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.6
+        5 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.5
+        4 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.4
+        3 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.3
+        2 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.2
+        1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.1
+      }
+    }
+
+    tx_starter_media_size_medium {
+      types {
+        starter_media.disabled = 1
+      }
+
+      addItems {
+        12 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.12
+        11 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.11
+        10 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.10
+        9 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.9
+        8 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.8
+        7 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.7
+        6 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.6
+        5 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.5
+        4 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.4
+        3 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.3
+        2 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.2
+        1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.1
+      }
+    }
+
+    tx_starter_media_size_large {
+      types {
+        starter_media.disabled = 1
+      }
+
+      addItems {
+        12 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.12
+        11 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.11
+        10 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.10
+        9 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.9
+        8 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.8
+        7 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.7
+        6 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.6
+        5 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.5
+        4 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.4
+        3 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.3
+        2 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.2
+        1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.1
+      }
+    }
     space_before_class {
       addItems {
         mt-1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:space_class.1
@@ -44,6 +129,17 @@ TCEFORM {
         mb-3 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:space_class.3
         mb-4 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:space_class.4
         mb-5 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:space_class.5
+      }
+    }
+
+    imageorient {
+      removeItems = 0,1,2,8,9,10
+    }
+
+    assets {
+      config {
+        minitems = 1
+        maxitems = 1
       }
     }
   }
