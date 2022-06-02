@@ -48,7 +48,7 @@ Klasse(n) card:	"card" ist eine Bootstrap Klasse, ist daher fest hinterlegt.
 		} only %}
 	</div>
 
-	{% if link and link_text %}
+	{% if link.config.uri and link_text %}
 		<div class="card-footer">
 			{% include '@object/buttons/button.twig' with {
 				link: link,
