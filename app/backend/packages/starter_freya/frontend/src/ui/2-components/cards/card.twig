@@ -17,27 +17,29 @@ Klasse(n) card:	"card" ist eine Bootstrap Klasse, ist daher fest hinterlegt.
 
 	{% if category or date %}
 		<div class="card-header">
-			{% include '@object/categorys/category.twig' with {
-				text: category,
-			} only %}
-			{% include '@object/dates/date.twig' with {
-				date: date,
-			} only %}
+		{% include '@object/categorys/category.twig' with {
+			text: category,
+		} only %}
+		{% include '@object/dates/date.twig' with {
+			date: date,
+		} only %}
 		</div>
 	{% endif %}
 
 	<div class="card-body">
-		{% embed '@object/links/link.twig' with link|merge({ noSpanIfNoLink: true }) %}
-			{% block linkContent %}
-				{% include '@object/pictures/picture.twig' with image|merge({ additionalClassImg: additionalClassImg|default('card-img') }) only %}
-			{% endblock %}
-		{% endembed %}
+		{% if image %}
+			{% embed '@object/links/link.twig' with link|default('')|merge({ noSpanIfNoLink: true }) %}
+				{% block linkContent %}
+					{% include '@object/pictures/picture.twig' with image|merge({ additionalClassImg: additionalClassImg|default('card-img') }) only %}
+				{% endblock %}
+			{% endembed %}
+		{% endif %}
 		{% include '@object/headings/heading.twig' with {
 			header: header,
 			header_layout: header_layout|default(5),
 			additionalClass: additionalClass|default('card-title'),
 		} only %}
-        {% include '@object/subheaders/subheader.twig' with {
+		{% include '@object/subheaders/subheader.twig' with {
 			subheader: subheader,
 		} only %}
 		{% include '@object/rtes/rte.twig' with {

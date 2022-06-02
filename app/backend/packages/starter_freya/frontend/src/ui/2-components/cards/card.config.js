@@ -9,7 +9,7 @@ module.exports = {
         date: '',
         header: _.lorem(50, 'header:'),
         header_layout: '',
-        image: '@picture--card',
+        image: '',
         link: {
             config: {
                 uri: '',
