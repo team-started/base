@@ -1,0 +1,58 @@
+{# 
+Default Options für Javascript, siehe src/ui/2-components/carousels/index.js
+
+noLastComma: Nur ein Dummy, vermeidet den JS Error, wenn am Ende der JSON (data-swiper) ein Komma steht.
+#}
+
+{% set autoplay = autoplay|default(true) ? '"autoplay": { "delay": ' ~ delay|default(3000) ~ '},' %}
+{% set navigation = navigation|default(false) ? '"navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" },' %}
+{% set pagination = pagination|default(false) ? '"pagination": { "el": ".swiper-pagination", "clickable": true },' %}
+{% set slidesPerView = '
+    "slidesPerView": ' ~ slidesPerView.xs|default(1) ~ ',
+    "breakpoints": {
+        "576": {
+            "slidesPerView": ' ~ slidesPerView.sm|default(2) ~ '
+        },
+        "768": {
+            "slidesPerView": ' ~ slidesPerView.md|default(3) ~ '
+        },
+        "992": {
+            "slidesPerView": ' ~ slidesPerView.lg|default(4) ~ '
+        },
+        "1200": {
+            "slidesPerView": ' ~ slidesPerView.xl|default(5) ~ '
+        },
+        "1400": {
+            "slidesPerView": ' ~ slidesPerView.xxl|default(6) ~ '
+        }
+    },
+' %}
+{% set speed = '"speed": ' ~ speed|default(1500) ~ ',' %}
+{% set noLastComma = '"noLastComma": true' %}
+
+<!-- Slider main container -->
+<div    class="swiper-container c-swiper"
+        data-swiper='{
+            {{ autoplay }}
+            {{ navigation }}
+            {{ pagination }}
+            {{ slidesPerView }}
+            {{ speed }}
+            {{ noLastComma }}
+        }'>
+
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+
+    {% if pagination %}
+        <div class="swiper-pagination"></div>
+    {% endif %}
+
+    {% if navigation %}
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    {% endif %}
+</div>
