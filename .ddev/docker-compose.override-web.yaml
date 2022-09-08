@@ -5,3 +5,4 @@ services:
     ports:
       - 3000 # needed for frontend tool fractal
       - 3002 # needed for browserSync
+    platform: linux/amd64
