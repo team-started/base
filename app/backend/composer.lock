@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afc7010ccf55357f8ff24ff7efb5849d",
+    "content-hash": "2cea19e86c9a4d7d59c793287150a9a9",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2427,12 +2427,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_freya",
-                "reference": "915311e2235121c81674edaadd51830a259aece6"
+                "reference": "9ed793ea45eefda1281c9b609706ce2906e6e69f"
             },
             "require": {
                 "php": "^7.4",
-                "starterteam/starter": "^4.1 || dev-main",
-                "starterteam/starter-freya": "^4.1 || dev-main",
+                "starterteam/starter": "dev-main",
+                "starterteam/starter-freya": "dev-main",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
@@ -2455,12 +2455,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_nessa",
-                "reference": "3a9726040760522496856bd730130cf9e850c8ff"
+                "reference": "c2c0418a375d8cc99015381b3ad6308a000b8846"
             },
             "require": {
                 "php": "^7.4",
-                "starterteam/starter": "^4.1 || dev-main",
-                "starterteam/starter-nessa": "^4.1 || dev-main",
+                "starterteam/starter": "dev-main",
+                "starterteam/starter-nessa": "dev-main",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
@@ -2528,11 +2528,11 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_freya",
-                "reference": "fae3ffa1ab4607ed4e71e6d81ddd828cd1c6558f"
+                "reference": "1bfacc88f3684b40a7fda540bd421ba27b0eedb5"
             },
             "require": {
                 "php": "^7.4",
-                "starterteam/starter-twig": "^4.1",
+                "starterteam/starter-twig": "dev-main",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
@@ -2568,11 +2568,11 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_nessa",
-                "reference": "438b471183e945289bcd079e048511767f1e57a5"
+                "reference": "e928e730a0813da37a7960e81b86eb3b1ea3cd99"
             },
             "require": {
                 "php": "^7.4",
-                "starterteam/starter": "^4.1",
+                "starterteam/starter": "dev-main",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
@@ -2616,12 +2616,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig",
-                "reference": "720cfd0612db042dd27dae037d81c8c88efba42c"
+                "reference": "9f5a357255711b1a0605a64e5f19af4c20493c71"
             },
             "require": {
                 "php": "^7.4",
                 "pti/pti": "dev-feature/support_t3v11",
-                "starterteam/starter": "^4.1",
+                "starterteam/starter": "dev-main",
                 "twig/twig": "^3",
                 "typo3/cms-core": "^11.5"
             },
@@ -8093,6 +8093,7 @@
                 "issues": "https://github.com/PHP-CS-Fixer/diff/issues",
                 "source": "https://github.com/PHP-CS-Fixer/diff/tree/v2.0.2"
             },
+            "abandoned": true,
             "time": "2020-10-14T08:32:19+00:00"
         },
         {
