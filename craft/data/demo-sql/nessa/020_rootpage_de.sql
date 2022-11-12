@@ -9,7 +9,7 @@ INSERT INTO `pages` SET
 	is_siteroot = 1,
 	backend_layout = 'pagets__HeroLayout',
 	backend_layout_next_level = 'pagets__DefaultLayout',
-	tsconfig_includes = 'EXT:sitepackage_nessa/Configuration/TypoScript/TSConfig/PageTs.typoscript',
+	tsconfig_includes = 'EXT:sitepackage_nessa/Configuration/TSConfig/PageTs.typoscript',
 	description = 'Theme-Nessa DE - Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Sed a libero. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Aenean imperdiet. Nullam vel sem.',
 	keywords = 'TYPO3, Theme Erweiterung, Sitepackage'
 ;
@@ -24,7 +24,7 @@ INSERT INTO `pages` SET
 	is_siteroot = 1,
 	backend_layout = 'pagets__HeroLayout',
 	backend_layout_next_level = 'pagets__DefaultLayout',
-	tsconfig_includes = 'EXT:sitepackage_nessa/Configuration/TypoScript/TSConfig/PageTs.typoscript',
+	tsconfig_includes = 'EXT:sitepackage_nessa/Configuration/TSConfig/PageTs.typoscript',
 
 	title = 'Theme Nessa',
 	description = 'Theme-Nessa EN - Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Sed a libero. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Aenean imperdiet. Nullam vel sem.',
