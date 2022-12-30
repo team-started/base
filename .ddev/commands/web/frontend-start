@@ -30,7 +30,6 @@ esac
 if [[ $FRONTEND_BUILD_FOLDER != "" && -d $FRONTEND_BUILD_FOLDER ]]
 then
     cd $FRONTEND_BUILD_FOLDER && \
-        nvm use && \
         npm i --quiet && \
         npm run start --silent
 else

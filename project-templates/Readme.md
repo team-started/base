@@ -20,7 +20,7 @@
 
 ### 1.1 Systemvoraussetzungen für lokale Entwicklung
 
-* [ddev][1] Version 1.21.1
+* [ddev][1] Version 1.21.4
 
 ### 1.2 Installation
 
