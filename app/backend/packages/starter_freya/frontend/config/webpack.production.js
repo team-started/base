@@ -17,14 +17,14 @@ module.exports = merge(common, {
     devtool: BUILD.useSourceMap ? BUILD.typeSourceMap : false,
 
     output: {
-        publicPath: '/',
-        path: BUILD.dist,
+        publicPath: '../',
+        path: BUILD.assets,
         filename: BUILD.hashJs
-            ? `${BUILD.assetsFolder}/${BUILD.jsFolder}/[name].[hash].min.js`
-            : `${BUILD.assetsFolder}/${BUILD.jsFolder}/[name].min.js`,
+            ? `${BUILD.jsFolder}/[name].[hash].min.js`
+            : `${BUILD.jsFolder}/[name].min.js`,
         chunkFilename: BUILD.hashJs
-            ? `${BUILD.assetsFolder}/${BUILD.jsFolder}/[name].[hash].min.js`
-            : `${BUILD.assetsFolder}/${BUILD.jsFolder}/[name].min.js`,
+            ? `${BUILD.jsFolder}/[name].[hash].min.js`
+            : `${BUILD.jsFolder}/[name].min.js`,
     },
 
     stats: BUILD.showStats ? STATS : 'errors-only',
@@ -60,11 +60,11 @@ module.exports = merge(common, {
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: BUILD.hashCss
-                ? `${BUILD.assetsFolder}/${BUILD.cssFolder}/[name].[hash].min.css`
-                : `${BUILD.assetsFolder}/${BUILD.cssFolder}/[name].min.css`,
+                ? `${BUILD.cssFolder}/[name].[hash].min.css`
+                : `${BUILD.cssFolder}/[name].min.css`,
             chunkFilename: BUILD.hashCss
-                ? `${BUILD.assetsFolder}/${BUILD.cssFolder}/[name].[hash].min.css`
-                : `${BUILD.assetsFolder}/${BUILD.cssFolder}/[name].min.css`,
+                ? `${BUILD.cssFolder}/[name].[hash].min.css`
+                : `${BUILD.cssFolder}/[name].min.css`,
         }),
 
         (BUILD.buildManifest ? true : undefined) && new WebpackManifestPlugin(),

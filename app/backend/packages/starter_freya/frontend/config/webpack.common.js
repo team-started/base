@@ -5,6 +5,7 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const { resolve } = require('path');
 
 const { DIR, DEV, BUILD, RESOLVER, ICONS, isDevelopment } = require('./settings');
+const assetsFolder = isDevelopment ? `${BUILD.assetsFolder}/` : '';
 
 module.exports = {
     // Where webpack looks to start building the bundle
@@ -16,7 +17,7 @@ module.exports = {
     // Where webpack outputs the assets and bundles
     output: {
         path: BUILD.dist,
-        filename: `${BUILD.assetsFolder}/${BUILD.jsFolder}/[name].js`,
+        filename: `${assetsFolder}${BUILD.jsFolder}/[name].js`,
     },
 
     // Determine how modules within the project are treated
@@ -31,8 +32,8 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                     filename: BUILD.hashAssets
-                        ? `${BUILD.assetsFolder}/${BUILD.imageFolder}/[name].[hash][ext]`
-                        : `${BUILD.assetsFolder}/${BUILD.imageFolder}/[name][ext]`,
+                        ? `${assetsFolder}${BUILD.imageFolder}/[name].[hash][ext]`
+                        : `${assetsFolder}${BUILD.imageFolder}/[name][ext]`,
                 },
             },
 
@@ -42,8 +43,8 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                     filename: BUILD.hashAssets
-                        ? `${BUILD.assetsFolder}/${BUILD.fontFolder}/[name].[hash][ext]`
-                        : `${BUILD.assetsFolder}/${BUILD.fontFolder}/[name][ext]`,
+                        ? `${assetsFolder}${BUILD.fontFolder}/[name].[hash][ext]`
+                        : `${assetsFolder}${BUILD.fontFolder}/[name][ext]`,
                 },
             },
         ],
