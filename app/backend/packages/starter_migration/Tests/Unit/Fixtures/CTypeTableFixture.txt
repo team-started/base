@@ -1,0 +1,6 @@
+Hersteller|Name|Standard|Freie Lizenz|Lizenzpflichtig
+7zip|7zip|X|X|
+Adobe|Reader DC|X|X|
+|Acrobat Pro|||X
+|Creative Cloud|||X
+|Creative Suite CS3|||X

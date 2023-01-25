@@ -13,6 +13,7 @@ return static function (\Rector\Config\RectorConfig $rectorConfig): void {
         __DIR__ . '/packages/starter/',
         __DIR__ . '/packages/starter_twig/',
         __DIR__ . '/packages/starter_nessa/',
+        __DIR__ . '/packages/starter_migration/',
         __DIR__ . '/packages/customer_sitepackage/',
         __DIR__ . '/packages/sitepackage_nessa/',
     ]);

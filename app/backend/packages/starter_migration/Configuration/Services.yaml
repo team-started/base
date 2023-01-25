@@ -1,0 +1,17 @@
+# Configuration/Services.yaml
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  StarterTeam\StarterMigration\:
+    resource: '../Classes/*'
+
+  _instanceof:
+    StarterTeam\StarterMigration\Service\MigrationServiceInterface:
+      tags: ['CtypeMigration']
+
+  StarterTeam\StarterMigration\Service\MigrationService:
+    arguments:
+      $migrators: !tagged_iterator CtypeMigration

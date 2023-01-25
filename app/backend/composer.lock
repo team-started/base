@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c30eda8ed8fec64ab87215e48689d193",
+    "content-hash": "2263bf5f8476071e6b971819b65a4e89",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2571,6 +2571,57 @@
             "support": {
                 "issues": "https://gitlab.com/starterteam/team/starter-freya/-/issues"
             },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "starterteam/starter-migration",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/starter_migration",
+                "reference": "31a4433e46c1e5711e0f4846f15ec14eb42666e8"
+            },
+            "require": {
+                "php": "^7.4",
+                "starterteam/starter": "dev-main",
+                "typo3/cms-core": "^11.5"
+            },
+            "require-dev": {
+                "michielroos/typo3scan": "^1.7",
+                "nimut/testing-framework": "^6.0",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.8",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpunit/phpunit": "^9.5",
+                "rector/rector": "^0.13.6",
+                "saschaegerer/phpstan-typo3": "^1.8",
+                "typo3/coding-standards": "^0.5.2"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "starter_migration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StarterTeam\\StarterMigration\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "StarterTeam\\StarterMigration\\Tests\\": "Tests/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "StarterTeam content element migrations",
             "transport-options": {
                 "relative": true
             }
@@ -8403,7 +8454,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "starterteam/site-package-freya": 20,
-        "starterteam/site-package-nessa": 20
+        "starterteam/site-package-nessa": 20,
+        "starterteam/starter-migration": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
