@@ -59,7 +59,7 @@
     },
     "require-dev": {
         "michielroos/typo3scan": "^1.7",
-        "rector/rector": "0.13.4",
+        "rector/rector": "^0.13.4",
         "symplify/monorepo-builder": "^10.0",
         "typo3/coding-standards": "^0.5.0"
     },
