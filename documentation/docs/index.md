@@ -8,4 +8,5 @@
 
 1. [Distribution](base/index.md)
 1. [EXT:starter](starter/index.md)
+1. [EXT:starter-migration](starter_migration/index.md)
 1. [EXT:starter-twig](starter_twig/index.md)
