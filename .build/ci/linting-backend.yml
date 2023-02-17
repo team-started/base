@@ -19,6 +19,16 @@ rector:
     - composer run ci:php:rector -d app/backend
 
 ###
+# Lint PHP code with php-cs-fixer
+# see https://github.com/FriendsOfPhp/PHP-CS-Fixer
+###
+backend:phpCsFixer:
+  extends: .backend-linting
+  script:
+    - composer install -d app/backend
+    - composer run ci:php:cs -d app/backend
+
+###
 # PHP syntax check
 # see https://github.com/php-parallel-lint/PHP-Parallel-Lint
 ###

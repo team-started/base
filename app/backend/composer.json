@@ -59,7 +59,7 @@
         "michielroos/typo3scan": "^1.7",
         "ssch/typo3-rector": "^1.1",
         "symplify/monorepo-builder": "^10.0",
-        "typo3/coding-standards": "^0.5.0"
+        "typo3/coding-standards": "^0.6.1"
     },
     "autoload": {
         "psr-4": {
@@ -116,6 +116,14 @@
         }
     },
     "scripts": {
+		"ci:php:cs": [
+			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --dry-run --using-cache no --diff",
+			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --dry-run --using-cache no --diff"
+		],
+		"ci:php:cs-fix": [
+			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --using-cache no",
+			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --using-cache no"
+		],
 		"ci:php:rector": [
 			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
 		],

@@ -15,7 +15,7 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['starter_twig']['finderNotPath'] = [
     '0-draft',
     '0-playground',
     '4-pages',
-    '_preview'
+    '_preview',
 ];
 
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:starter/Resources/Private/Language/locallang_be.xlf'][] =
