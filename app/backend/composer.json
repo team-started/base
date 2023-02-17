@@ -57,7 +57,7 @@
     },
     "require-dev": {
         "michielroos/typo3scan": "^1.7",
-        "rector/rector": "0.13.4",
+        "ssch/typo3-rector": "^1.1",
         "symplify/monorepo-builder": "^10.0",
         "typo3/coding-standards": "^0.5.0"
     },
@@ -116,6 +116,9 @@
         }
     },
     "scripts": {
+		"ci:php:rector": [
+			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
+		],
         "create-symlinks": [
             "ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"
         ],

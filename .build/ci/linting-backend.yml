@@ -1,5 +1,6 @@
 .backend-linting:
   image: $CI_REGISTRY_IMAGE:backend
+  stage: backend-linting
   variables:
     SCAN_FOLDER: "./app/backend/packages"
   rules:
@@ -13,10 +14,9 @@ stages:
 ###
 rector:
   extends: .backend-linting
-  stage: backend-linting
   script:
     - composer install -d app/backend
-    - app/backend/vendor/bin/rector --ansi --dry-run --no-progress-bar --output-format=console --config=app/backend/rector.php
+    - composer run ci:php:rector -d app/backend
 
 ###
 # PHP syntax check

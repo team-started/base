@@ -70,10 +70,13 @@
 		"typo3/cms-viewpage": "^11.5"
 	},
 	"require-dev": {
-		"rector/rector": "^0.12.15",
+		"ssch/typo3-rector": "^1.1",
 		"typo3/coding-standards": "^0.5.0"
 	},
 	"scripts": {
+		"ci:php:rector": [
+			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
+		],
 		"post-install-cmd": [
 			"ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"
 		]
