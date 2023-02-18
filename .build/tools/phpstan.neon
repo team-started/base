@@ -1,0 +1,25 @@
+includes:
+  - phpstan-baseline.neon
+parameters:
+    level: max
+    phpVersion: 70400
+    reportUnmatchedIgnoredErrors: true
+    checkMissingIterableValueType: false
+    paths:
+       - ../../app/backend/packages/customer_sitepackage
+       - ../../app/backend/packages/sitepackage_freya
+       - ../../app/backend/packages/sitepackage_nessa
+       - ../../app/backend/packages/starter
+       - ../../app/backend/packages/starter_freya
+       - ../../app/backend/packages/starter_nessa
+       - ../../app/backend/packages/starter_twig
+    excludePaths:
+        - ../../app/backend/packages/starter_nessa/frontend
+        - ../../app/backend/packages/starter_freya/frontend
+    ignoreErrors:
+        -
+            message: "#^Cannot call method fetchAllAssociative\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
+            path: *
+        -
+            message: "#^Cannot call method fetchOne\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
+            path: *

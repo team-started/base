@@ -57,6 +57,9 @@
     },
     "require-dev": {
         "michielroos/typo3scan": "^1.7",
+        "phpstan/extension-installer": "^1.2",
+        "phpstan/phpstan": "^1.9",
+        "saschaegerer/phpstan-typo3": "^1.8",
         "ssch/typo3-rector": "^1.1",
         "symplify/monorepo-builder": "^10.0",
         "typo3/coding-standards": "^0.6.1"
@@ -112,7 +115,8 @@
             "typo3/class-alias-loader": true,
             "typo3/cms-composer-installers": true,
             "helhum/dotenv-connector": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "phpstan/extension-installer": true
         }
     },
     "scripts": {
@@ -123,6 +127,12 @@
 		"ci:php:cs-fix": [
 			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --using-cache no",
 			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --using-cache no"
+		],
+		"ci:php:stan": [
+			"phpstan --configuration=../../.build/tools/phpstan.neon"
+		],
+		"ci:php:phpstan-baseline": [
+			"phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
 		],
 		"ci:php:rector": [
 			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"

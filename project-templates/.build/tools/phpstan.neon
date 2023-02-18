@@ -1,0 +1,9 @@
+includes:
+  - phpstan-baseline.neon
+parameters:
+    level: max
+    phpVersion: 70400
+    reportUnmatchedIgnoredErrors: true
+    checkMissingIterableValueType: false
+    paths:
+       - ../../app/backend/packages/customer_sitepackage

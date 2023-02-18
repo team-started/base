@@ -29,6 +29,16 @@ backend:phpCsFixer:
     - composer run ci:php:cs -d app/backend
 
 ###
+# PHPStan finds bugs in your code without writing tests
+# see https://phpstan.org/
+###
+backend:phpStan:
+  extends: .backend-linting
+  script:
+    - composer install -d app/backend
+    - composer run ci:php:stan -d app/backend
+
+###
 # PHP syntax check
 # see https://github.com/php-parallel-lint/PHP-Parallel-Lint
 ###
