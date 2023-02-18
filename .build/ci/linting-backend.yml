@@ -12,7 +12,7 @@ stages:
 ###
 # Rector with PHP and TYPO3 rules
 ###
-rector:
+backend:rector:
   extends: .backend-linting
   script:
     - composer install -d app/backend
