@@ -9,3 +9,4 @@
 1. [Distribution](base/index.md)
 1. [EXT:starter](starter/index.md)
 1. [EXT:starter-twig](starter_twig/index.md)
+1. [EXT:starter-twig-news](starter_twig_news/index.md)

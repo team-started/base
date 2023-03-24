@@ -1,0 +1,34 @@
+Index: Classes/Processor/ImageProcessor.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Classes/Processor/ImageProcessor.php b/Classes/Processor/ImageProcessor.php
+--- a/Classes/Processor/ImageProcessor.php
++++ b/Classes/Processor/ImageProcessor.php	(date 1678805504420)
+@@ -25,7 +25,10 @@
+         $this->tsfe = $GLOBALS['TSFE'];
+     }
+
+-    public function renderImage(FileInterface $file, array $conf = []): array
++    /**
++     * @param string|FileInterface $file
++     */
++    public function renderImage($file, array $conf = []): array
+     {
+         $defaultImageResource = $this->contentObject->getImgResource($file, $conf);
+         if (is_null($defaultImageResource) || !isset($defaultImageResource[3])) {
+@@ -53,11 +56,11 @@
+     }
+
+     /**
+-     * @param \TYPO3\CMS\Core\Resource\FileInterface $file
++     * @param string|FileInterface $file
+      * @param array $configuration
+      * @return string
+      */
+-    protected function renderRetinaImage(FileInterface $file, array $configuration): string
++    protected function renderRetinaImage($file, array $configuration): string
+     {
+         $retinaConfiguration = $this->getImageConfigurationForRetina($configuration);
+         $image = $this->contentObject->getImgResource($file, $retinaConfiguration);

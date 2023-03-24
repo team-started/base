@@ -13,6 +13,7 @@ parameters:
        - ../../app/backend/packages/starter_freya
        - ../../app/backend/packages/starter_nessa
        - ../../app/backend/packages/starter_twig
+       - ../../app/backend/packages/starter_twig_news
     excludePaths:
         - ../../app/backend/packages/starter_nessa/frontend
         - ../../app/backend/packages/starter_freya/frontend

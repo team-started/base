@@ -10,13 +10,14 @@ use Ssch\TYPO3Rector\Set\Typo3LevelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
-        getcwd() . '/packages/customer_sitepackage/',
-        getcwd() . '/packages/sitepackage_freya/',
-        getcwd() . '/packages/sitepackage_nessa/',
-        getcwd() . '/packages/starter/',
-        getcwd() . '/packages/starter_freya/',
-        getcwd() . '/packages/starter_nessa/',
+        //getcwd() . '/packages/customer_sitepackage/',
+        //getcwd() . '/packages/sitepackage_freya/',
+        //getcwd() . '/packages/sitepackage_nessa/',
+        //getcwd() . '/packages/starter/',
+        //getcwd() . '/packages/starter_freya/',
+        //getcwd() . '/packages/starter_nessa/',
         getcwd() . '/packages/starter_twig/',
+        getcwd() . '/packages/starter_twig_news/',
     ]);
 
     $rectorConfig->phpVersion(PhpVersion::PHP_74);

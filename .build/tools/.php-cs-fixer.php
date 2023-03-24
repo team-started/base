@@ -11,6 +11,7 @@ $config
         __DIR__ . '/../../app/backend/packages/starter_freya',
         __DIR__ . '/../../app/backend/packages/starter_nessa',
         __DIR__ . '/../../app/backend/packages/starter_twig',
+        __DIR__ . '/../../app/backend/packages/starter_twig_news',
     ])
     ->exclude([
         'TCA',
