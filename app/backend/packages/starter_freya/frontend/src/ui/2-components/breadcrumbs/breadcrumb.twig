@@ -1,0 +1,19 @@
+{#
+identifier: zusammengesetzter String
+uid:        Dürfte immer leer sein, außer diese Komponente wird in einem Contentelement verwendet.
+breadcrumb: Ist die nötige Klasse für Bootstrap und ist deswegen nicht variabel.
+#}
+
+{% set identifier = 'breadcrumb' %}
+
+<nav>
+    <ol id="{{ identifier }}{{ uid }}" class="breadcrumb c-{{ identifier }} {{ additionalClass }}">
+        {% for item in items %}
+            {% include '@component/breadcrumbs/_breadcrumb-item/breadcrumb-item.twig' with {
+                identifier: identifier,
+                menuUid: uid,
+                item: item,
+            } only %}
+        {% endfor %}
+    </ol>
+</nav>

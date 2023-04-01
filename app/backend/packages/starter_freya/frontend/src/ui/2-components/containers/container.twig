@@ -1,11 +1,16 @@
 {#
-containerContent: Enthält den jeweilige Inhalt des Containers
+containerContent:   Enthält den jeweilige Inhalt des Containers.
+containerId:        Im Regelfall ist die uid die uid des Contentelements.
+                    Es gibt aber Fälle, in denen es kein Contentelement ist, z.B. ein Breadcrumb.
+                    In diesem Fall wird der identifier der Komponente genommen.
 
 Wenn es einen Hintergrund über volle Breite gibt, wird um den Container ein zusätzlicher Wrapper gesetzt.
 #}
 
+{% set containerId = uid ? 'con' ~ uid : identifier %}
+
 {% set containerContent %}
-    <div id="con{{ uid }}" class="{{ tx_starter_container|default('container') }} container-{{ CType|default('no-type') }} {{ tx_starter_visibility }} {{ space_before_class }} {{ space_after_class }}">
+    <div id="{{ containerId }}" class="{{ tx_starter_container|default('container') }} container-{{ CType|default('no-type') }} {{ tx_starter_visibility }} {{ space_before_class }} {{ space_after_class }}">
         {% block moduleContentBlock %}{% endblock %}
     </div>
 {% endset %}

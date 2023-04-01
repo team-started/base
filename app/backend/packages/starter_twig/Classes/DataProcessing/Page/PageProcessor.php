@@ -33,7 +33,9 @@ class PageProcessor extends AbstractPageProcessor implements PtiDataProcessor, P
 
     protected function getContentHtml(): string
     {
-        return $this->cObj->cObjGetSingle('< styles.content.get', []);
+        $breadcrumbHtml = $this->cObj->cObjGetSingle('< lib.breadcrumbElement', []);
+        $normalContent = $this->cObj->cObjGetSingle('< styles.content.get', []);
+        return $breadcrumbHtml . $normalContent;
     }
 
     public function getLogoData(): ?array
