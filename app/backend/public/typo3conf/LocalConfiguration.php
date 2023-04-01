@@ -5,7 +5,6 @@ return [
         'debug' => false,
         'explicitADmode' => 'explicitAllow',
         'lockSSL' => true,
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
