@@ -15,7 +15,9 @@ Die lokale Entwicklung basiert DDEV, um auf allen Betriebsystem eine einheitlich
 
 * EXT:starter
 * EXT:starter-twig
-* EXT:starter-nessa (Theme)
+* EXT:starter-twig-news
+* EXT:starter-freya (Theme mit Twig-Templates)
+* EXT:starter-nessa (Theme mit Fluid-Templates)
 
 ## Kernfunktionen
 
