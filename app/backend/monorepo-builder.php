@@ -18,7 +18,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
 
     $parameters->set(Option::DEFAULT_BRANCH_NAME, 'main');
-    $parameters->set(Option::PACKAGE_ALIAS_FORMAT, '<major>.x-dev');
+    $parameters->set(Option::PACKAGE_ALIAS_FORMAT, '<major>.<minor>-dev');
     $parameters->set(Option::PACKAGE_DIRECTORIES, [
         __DIR__ . '/packages',
     ]);
