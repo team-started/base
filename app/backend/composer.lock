@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22fd2db7d5a99cc51aff38cc839885d0",
+    "content-hash": "cb9f01314a310b67bf8d2cfab3ec5cf3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2581,10 +2581,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_freya",
-                "reference": "9ed793ea45eefda1281c9b609706ce2906e6e69f"
+                "reference": "aa69d0bb65a9a531288de896db4c00a74bbbe9bc"
             },
             "require": {
-                "php": "^7.4",
+                "php": "^7.4 || ^8.1",
                 "starterteam/starter": "dev-main",
                 "starterteam/starter-freya": "dev-main",
                 "typo3/cms-core": "^11.5"
@@ -2609,10 +2609,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_nessa",
-                "reference": "c2c0418a375d8cc99015381b3ad6308a000b8846"
+                "reference": "3c2ec39709b34e8bcd5898129ca6d1d2416c8d06"
             },
             "require": {
-                "php": "^7.4",
+                "php": "^7.4 || ^8.1",
                 "starterteam/starter": "dev-main",
                 "starterteam/starter-nessa": "dev-main",
                 "typo3/cms-core": "^11.5"
@@ -2637,11 +2637,11 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter",
-                "reference": "a1985b0e7d3c1a49dba36e6ce8c5566111a466eb"
+                "reference": "0ff831067b859eaae7eadd75811ede02036fecfb"
             },
             "require": {
                 "ichhabrecht/content-defender": "^3.2",
-                "php": "^7.4",
+                "php": "^7.4 || ^8.1",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
@@ -2682,10 +2682,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_freya",
-                "reference": "1bfacc88f3684b40a7fda540bd421ba27b0eedb5"
+                "reference": "b642eaffc00cf82c4c198d966a1ea927171fced7"
             },
             "require": {
-                "php": "^7.4",
+                "php": "^7.4 || ^8.1",
                 "starterteam/starter-twig": "dev-main",
                 "typo3/cms-core": "^11.5"
             },
@@ -2722,10 +2722,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_nessa",
-                "reference": "e928e730a0813da37a7960e81b86eb3b1ea3cd99"
+                "reference": "3938c689c5cbdeadaafe6638298b2aa8628cef2a"
             },
             "require": {
-                "php": "^7.4",
+                "php": "^7.4 || ^8.1",
                 "starterteam/starter": "dev-main",
                 "typo3/cms-core": "^11.5"
             },
@@ -2770,11 +2770,11 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig",
-                "reference": "35bd846544bc96694dfd2350646176ced43323d9"
+                "reference": "f5fb78cf9b35b702aab87d2abdb52591b09d83e4"
             },
             "require": {
-                "php": "^7.4",
-                "pti/pti": "dev-feature/support_t3v11",
+                "php": "^7.4 || ^8.1",
+                "pti/pti": "dev-feature/support_t3v11 || dev-master",
                 "starterteam/starter": "dev-main",
                 "twig/twig": "^3",
                 "typo3/cms-core": "^11.5"
@@ -2816,11 +2816,11 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig_news",
-                "reference": "59cc04b0032ea82de714a8547a0db16b3d13df45"
+                "reference": "01790f81e53f69d0be8c3d229e463d01874488c3"
             },
             "require": {
                 "georgringer/news": "^9.4",
-                "php": "^7.4",
+                "php": "^7.4 || ^8.1",
                 "starterteam/starter-twig": "4.x-dev",
                 "typo3/cms-core": "^11.5"
             },
@@ -9091,7 +9091,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4"
+        "php": "^7.4 || ^8.1"
     },
     "platform-dev": [],
     "platform-overrides": {

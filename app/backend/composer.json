@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.1",
         "cweagans/composer-patches": "^1.7",
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^7.1",
@@ -131,13 +131,31 @@
 			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --using-cache no"
 		],
 		"ci:php:stan": [
-			"phpstan --configuration=../../.build/tools/phpstan.neon"
+			"@ci:php:stan8.1"
 		],
 		"ci:php:phpstan-baseline": [
+			"@ci:php:phpstan-baseline8.1"
+		],
+		"ci:php:stan8.1": [
+			"phpstan --configuration=../../.build/tools/phpstan.neon"
+		],
+		"ci:php:phpstan-baseline8.1": [
 			"phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
 		],
+		"ci:php:stan7.4": [
+			"phpstan --configuration=../../.build/tools/phpstan-74.neon"
+		],
+		"ci:php:phpstan-baseline7.4": [
+			"phpstan --configuration=../../.build/tools/phpstan-74.neon --generate-baseline=../../.build/tools/phpstan-baseline-74.neon"
+		],
 		"ci:php:rector": [
+			"@ci:php:rector8.1"
+		],
+		"ci:php:rector8.1": [
 			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
+		],
+		"ci:php:rector7.4": [
+			"rector process --dry-run --clear-cache --config=../../.build/tools/rector-74.php"
 		],
         "create-symlinks": [
             "ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"

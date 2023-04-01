@@ -26,7 +26,7 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->sets([
         SetList::CODE_QUALITY,
         SetList::DEAD_CODE,
-        LevelSetList::UP_TO_PHP_81,
+        LevelSetList::UP_TO_PHP_74,
         Typo3LevelSetList::UP_TO_TYPO3_11,
     ]);
 
@@ -55,13 +55,5 @@ return static function (RectorConfig $rectorConfig): void {
             getcwd() . '/**/Configuration/*.php',
             getcwd() . '/**/Configuration/**/*.php',
         ],
-        // Remove this rules if PHP 8.1 is minimum requirement
-        \Rector\Php80\Rector\FunctionLike\UnionTypesRector::class,
-        \Rector\Php80\Rector\Switch_\ChangeSwitchToMatchRector::class,
-        \Rector\Php80\Rector\Catch_\RemoveUnusedVariableInCatchRector::class,
-        \Rector\Php80\Rector\Class_\ClassPropertyAssignToConstructorPromotionRector::class,
-        \Rector\Php81\Rector\FuncCall\NullToStrictStringFuncCallArgRector::class,
-        \Rector\Php81\Rector\Property\ReadOnlyPropertyRector::class,
-        \Rector\Php81\Rector\ClassConst\FinalizePublicClassConstantRector::class,
     ]);
 };

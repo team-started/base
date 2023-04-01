@@ -4,7 +4,7 @@
     "description": "StarterTeam sitepackage extension for EXT:starter-nessa",
     "license": "proprietary",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.1",
         "typo3/cms-core": "^11.5",
         "starterteam/starter": "dev-main",
         "starterteam/starter-nessa": "dev-main"

@@ -1,8 +1,11 @@
 .backend-linting:
-  image: $CI_REGISTRY_IMAGE:backend
+  image: $CI_REGISTRY_IMAGE:backend-$PHP_VERSION
   stage: backend-linting
   variables:
     SCAN_FOLDER: "./app/backend/packages"
+  parallel:
+    matrix:
+      - PHP_VERSION: ['7.4', '8.1']
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
@@ -16,7 +19,7 @@ backend:rector:
   extends: .backend-linting
   script:
     - composer install -d app/backend
-    - composer run ci:php:rector -d app/backend
+    - composer run ci:php:rector$PHP_VERSION -d app/backend
 
 ###
 # Lint PHP code with php-cs-fixer
@@ -36,7 +39,7 @@ backend:phpStan:
   extends: .backend-linting
   script:
     - composer install -d app/backend
-    - composer run ci:php:stan -d app/backend
+    - composer run ci:php:stan$PHP_VERSION -d app/backend
 
 ###
 # PHP syntax check

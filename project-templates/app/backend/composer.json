@@ -37,12 +37,11 @@
 		}
 	},
 	"require": {
+		"php": "^7.4 || ^8.1",
 		"cweagans/composer-patches": "^1.7",
 		"helhum/dotenv-connector": "^3.0",
 		"helhum/typo3-console": "^7.1",
-		"pti/pti": "dev-feature/support_t3v11",
-		"starterteam/customer-site-package": "@dev",
-		"starterteam/starter": "@VERSION_BUGFIX@",
+		"starterteam/customer-site-package": "@dev-main",
 		"typo3/cms-backend": "^11.5",
 		"typo3/cms-belog": "^11.5",
 		"typo3/cms-beuser": "^11.5",
@@ -92,8 +91,17 @@
 		"ci:php:phpstan-baseline": [
 			"phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
 		],
+		"ci:php:stan-74": [
+			"phpstan --configuration=../../.build/tools/phpstan-74.neon"
+		],
+		"ci:php:phpstan-baseline-74": [
+			"phpstan --configuration=../../.build/tools/phpstan-74.neon --generate-baseline=../../.build/tools/phpstan-baseline-74.neon"
+		],
 		"ci:php:rector": [
 			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
+		],
+		"ci:php:rector-74": [
+			"rector process --dry-run --clear-cache --config=../../.build/tools/rector-74.php"
 		],
 		"post-install-cmd": [
 			"ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"
