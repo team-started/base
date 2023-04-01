@@ -8898,20 +8898,20 @@
         },
         {
             "name": "symplify/monorepo-builder",
-            "version": "10.0.21",
+            "version": "10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/monorepo-builder.git",
-                "reference": "2d4e00fd60582e799cd289f48a0f62a3753f1f41"
+                "reference": "5f97613a2015b74aa86a7330b47a88c283877fd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/2d4e00fd60582e799cd289f48a0f62a3753f1f41",
-                "reference": "2d4e00fd60582e799cd289f48a0f62a3753f1f41",
+                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/5f97613a2015b74aa86a7330b47a88c283877fd4",
+                "reference": "5f97613a2015b74aa86a7330b47a88c283877fd4",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "bin": [
                 "bin/monorepo-builder"
@@ -8919,7 +8919,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "9.5-dev"
+                    "dev-main": "10.3-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -8928,7 +8928,7 @@
             ],
             "description": "Prefixed version of Not only Composer tools to build a Monorepo.",
             "support": {
-                "source": "https://github.com/symplify/monorepo-builder/tree/10.0.21"
+                "source": "https://github.com/symplify/monorepo-builder/tree/10.3.3"
             },
             "funding": [
                 {
@@ -8940,7 +8940,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-04T16:34:30+00:00"
+            "time": "2022-06-13T14:01:16+00:00"
         },
         {
             "name": "symplify/smart-file-system",
