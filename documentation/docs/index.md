@@ -1,7 +1,8 @@
 # Starter-Distribution
 
-[![pipeline status](https://gitlab.com/starterteam/team/base/badges/main/pipeline.svg)](https://gitlab.com/starterteam/team/base)
-[![DDEV version](https://img.shields.io/badge/DDEV-1.21.1-blue)](https://github.com/drud/ddev/releases/tag/v1.21.1)
+[![DDEV version](https://img.shields.io/badge/DDEV-1.21.4-blue)](https://github.com/drud/ddev/releases/tag/v1.21.4)
+![PHP 7.4](https://img.shields.io/badge/PHP-7.4-brightgreen)
+![PHP 8.1](https://img.shields.io/badge/PHP-8.1-brightgreen)
 [![TYPO3 v11.5](https://img.shields.io/badge/TYPO3-11.5-orange)](https://get.typo3.org/version/11)
 
 # Inhaltsübersicht
