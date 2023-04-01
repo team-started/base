@@ -23,19 +23,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/packages',
     ]);
 
-    // for "merge" command
-    $parameters->set(Option::DATA_TO_APPEND, [
-        ComposerJsonSection::REQUIRE_DEV => [
-            'rector/rector' => '^0.12.15',
-            'typo3/coding-standards' => '^0.5.0',
-        ],
-        ComposerJsonSection::SCRIPTS => [
-            'post-install-cmd' => [
-                'ln -sf vendor/helhum/typo3-console/typo3cms typo3cms',
-            ],
-        ],
-    ]);
-
     $services = $containerConfigurator->services();
 
     // release workers - in order to execute
