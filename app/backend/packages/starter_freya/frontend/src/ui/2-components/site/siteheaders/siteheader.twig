@@ -1,1 +1,40 @@
-siteheader
+{% set identifier = 'siteheader' %}
+
+<div class="c-{{ identifier }}">
+    <div class="c-{{ identifier }}__top d-flex justify-content-between align-items-center">
+        <div class="d-flex flex-column align-items-start w-33">
+            {% for item in contact %}
+                {% set item = item|merge({ 'additionalClass': 'c-' ~ identifier ~'__contact' }) %}
+                {% include '@component/icons/icon.twig' with item only %}
+            {% endfor %}
+        </div>
+        <div class="w-33">
+            {% include '@object/images/image.twig' with {
+                'src': '/assets/images/logo.svg',
+                'alt': '',
+                'title': '',
+                'additionalClass': 'c-' ~ identifier ~'__logo'
+            } only %}
+        </div>
+        <div class="d-flex justify-content-end w-33">
+            {% for item in sm %}
+                {% set item = item|merge({ 'additionalClass': 'c-' ~ identifier ~'__sm' }) %}
+                {% include '@component/icons/icon.twig' with item only %}
+            {% endfor %}
+        </div>
+    </div>
+    <hr>
+    <div class="c-{{ identifier }}__nav">
+        <div class="d-lg-none c-{{ identifier }}__nav-mobile">
+            <div class="text-end">
+                <span class="c-{{ identifier }}__toggle collapsed" data-bs-toggle="collapse" data-bs-target="#{{ identifier }}-collapse"></span>
+            </div>
+            <div id="{{ identifier }}-collapse" class="collapse">
+                {% include '@component/navigation/navaccmenus/navaccmenu.twig' with navigation only %}
+            </div>
+        </div>
+        <div class="d-lg-from c-{{ identifier }}__nav-desktop">
+            {% include '@component/navigation/navmmenus/navmmenu.twig' with navigation only %}
+        </div>
+    </div>
+</div>

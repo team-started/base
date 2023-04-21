@@ -1,0 +1,46 @@
+{#
+CType:              meint in diesem Fall 'ComponentType'
+class:              string der nötigen Klassen
+textMargin:         Abstand zwischen Bild und Text
+additionalClass:    hier können Klassen für das Templating übergeben werden
+#}
+
+{% set CType = 'icon' %}
+{% if text %}
+    {# text-right, default #}
+    {% set class = 'align-items-center' %}
+    {% set textMargin = 'ms-2' %}
+
+    {% if layout == 'text-bottom' %}
+        {% set class = 'flex-column align-items-center' %}
+        {% set textMargin = 'mt-2' %}
+    {% endif %}
+
+    {% if layout == 'text-left' %}
+        {% set class = 'flex-row-reverse align-items-center' %}
+        {% set textMargin = 'me-2' %}
+    {% endif %}
+
+    {% if layout == 'text-top' %}
+        {% set class = 'flex-column-reverse align-items-center' %}
+        {% set textMargin = 'mb-2' %}
+    {% endif %}
+
+    {% set class = 'd-flex ' ~ class %}
+{% endif %}
+{% set link = link|default('')|merge({ 'additionalClass': class }) %}
+
+<div class="c-{{ CType }} {{ additionalClass }}">
+    {% embed '@object/links/link.twig' with link %}
+        {% block linkContent %}
+            <span>
+                {% include '@object/images/image.twig' with image only %}
+            </span>
+            {% if text %}
+                <span class="{{ textMargin }}">
+                    {{ text }}
+                </span>
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+</div>
