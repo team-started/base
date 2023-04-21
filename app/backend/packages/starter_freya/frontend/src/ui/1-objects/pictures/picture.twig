@@ -1,11 +1,12 @@
 {#
 style="display: block; width: 100%; max-width: 100%;"
 --> als inline style, damit das für Lazysizes sofort da ist und Bootstrap nutzt auch "display: block"
-additionalClass: optionale zusätzliche Klassen, wie z.B. .rounded oder .float-left
+additionalClassPicture: optionale zusätzliche Klassen, wie z.B. .d-lg-none
+additionalClassImg:     optionale zusätzliche Klassen, wie z.B. .rounded oder .float-left
 
 renderedPictureContent: nur das eigentliche Bild mit LazyLoading, picture wegen den Varienten (webp, ...)
 renderedLinkContent:    Wrapper, wenn es einen Link gibt
-figure:         per default wird <figure> immer gewrappt, da das der Standard für Contentbilder ist (description immer möglich)
+figure:         per default wird <figure> immer gewrappt, da das der Standard für Bilder ist (Bildunterschriften im Content die Regel)
 
 siehe:          https://getbootstrap.com/docs/4.0/content/images/ (beachte auch Quellcode)
 #}
@@ -13,7 +14,7 @@ siehe:          https://getbootstrap.com/docs/4.0/content/images/ (beachte auch 
 {% if default.uri.default %}
 
     {% set renderedPictureContent %}
-        <picture>
+        <picture class="{{ additionalClassPicture }}">
             {# WebP #}
             {% if default.webP.default %}
                 <source
@@ -37,7 +38,7 @@ siehe:          https://getbootstrap.com/docs/4.0/content/images/ (beachte auch 
                 alt="{{ metaData.alternative }}"
                 title="{{ metaData.title }}"
                 data-sizes="auto"
-                class="o-image figure-img img-fluid lazyload {{ additionalClass }}"
+                class="o-image figure-img img-fluid lazyload {{ additionalClassImg }}"
                 style="display: block; width: 100%; max-width: 100%;"
             />
         </picture>

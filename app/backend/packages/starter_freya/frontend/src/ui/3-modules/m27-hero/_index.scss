@@ -1,0 +1,17 @@
+$hero-overlay-top: $spacer * 3 !default; // entspricht mt-5;
+$hero-overlay-left: $spacer * 3 !default; // entspricht ml-5;
+$hero-overlay-max-width: 50% !default;
+
+.m-hero {
+    &__overlay {
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            top: $hero-overlay-top;
+            left: $hero-overlay-left;
+            box-sizing: border-box;
+            max-width: $hero-overlay-max-width;
+            margin: 0 !important;
+            background-color: $white;
+        }
+    }
+}

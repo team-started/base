@@ -1,0 +1,8 @@
+// CE 27 Hero
+// Setzt die Position und Breite des Overlay im Hero ab medium.
+// Zu langer Text wird abgeschnitten, die Textlängen sind in der Verantwortlichkeit des Redakteurs.
+// Es können hier %, px, rem verwendet werden.
+
+$hero-overlay-top: $spacer * 3; // entspricht mt-5;
+$hero-overlay-left: $spacer * 3; // entspricht ml-5;
+$hero-overlay-max-width: 50%;
