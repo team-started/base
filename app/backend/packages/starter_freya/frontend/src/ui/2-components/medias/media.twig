@@ -1,0 +1,17 @@
+{#
+Diese Komponente regelt den Bildbereich für ein und mehrere Bilder.
+
+see: src/ui/2-components/textmedias/textmedia.twig
+see: src/ui/3-modules/m05-media/m05-media.twig
+
+grid.imageCols.small, grid.imageCols.medium, grid.imageCols.large: Anzahl der Bilder je Zeile innerhalb des Bildbereiches. 
+#}
+
+<div
+    class="row row-cols-1 row-cols-sm-{{ grid.imageCols.small|default(1) }} row-cols-md-{{ grid.imageCols.medium|default(1) }} row-cols-lg-{{ grid.imageCols.large|default(1) }} g-3">
+    {% for asset in assets %}
+        <div class="col">
+            {% include '@object/pictures/picture.twig' with asset.image only %}
+        </div>
+    {% endfor %}
+</div>

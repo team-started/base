@@ -1,12 +1,13 @@
 'use strict';
 
 const _ = require('../../../../../config/helpers');
+const mediaConfig = require('../../medias/media.config');
+const textmediaConfig = require('../../textmedias/textmedia.config');
 
 module.exports = {
     context: {
         title: '',
-        text: '',
-        image: null,
+        text: _.lorem(1000, 'text:'),
         imageorient: {
             x: '',
             inside: false,
@@ -17,65 +18,24 @@ module.exports = {
             name: 'text',
             context: {
                 title: _.lorem(100, 'title text:'),
-                text: _.lorem(1000, 'text text:'),
             },
         },
         {
             name: 'image',
             context: {
+                ...mediaConfig.context /* default mit einem Bild */,
                 title: _.lorem(100, 'title image:'),
-                image: '@picture',
             },
         },
         {
-            name: 'text-image-inside-right',
+            name: 'text-images',
             context: {
-                grid: {
-                    imageCols: {
-                        small: '12',
-                        medium: '6',
-                        large: '6',
-                    },
-                    hideOnSmall: false,
-                },
-                image: '@picture--metadata',
+                ...textmediaConfig.variants[5].context /* Variante mit drei Bildern */,
                 imageorient: {
                     x: 'right',
                     inside: true,
                 },
-                text: _.lorem(1000, 'textmedia:'),
-                title: _.lorem(100, 'title text-image-inside-right:'),
-            },
-        },
-        {
-            name: 'text-image-beside-left',
-            context: {
-                grid: {
-                    imageCols: {
-                        small: '12',
-                        medium: '6',
-                        large: '6',
-                    },
-                    hideOnSmall: false,
-                },
-                image: '@picture--metadata',
-                imageorient: {
-                    x: 'left',
-                    inside: false,
-                },
-                text: _.lorem(1000, 'textmedia:'),
-                title: _.lorem(100, 'title text-image-beside-left:'),
-            },
-        },
-        {
-            name: 'text-image-hide-on-small',
-            context: {
-                grid: {
-                    hideOnSmall: true,
-                },
-                image: '@picture--metadata',
-                text: _.lorem(100, 'textmedia:'),
-                title: _.lorem(100, 'title text-image-hide-on-small:'),
+                title: _.lorem(100, 'title text and images:'),
             },
         },
     ],

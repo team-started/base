@@ -1,25 +1,24 @@
 'use strict';
 
 const _ = require('../../../../config/helpers');
+const mediaConfig = require('../medias/media.config');
 
 module.exports = {
     context: {
+        ...mediaConfig.context,
         grid: {
-            imageCols: {
-                small: '6',
-                medium: '4',
-                large: '3',
-            },
             showOnSmall: true,
             showOnMedium: true,
             showOnLarge: true,
         },
-        image: '@picture--metadata',
         imageorient: {
             x: '',
             inside: '',
         },
         bodytext: _.lorem(1000, 'textmedia:'),
+        media_size_small: 6,
+        media_size_medium: 4,
+        media_size_large: 3,
     },
     variants: [
         {
@@ -36,17 +35,13 @@ module.exports = {
             label: 'image beside left 12-6-6',
             name: 'image-beside-left-show',
             context: {
-                grid: {
-                    imageCols: {
-                        small: '12',
-                        medium: '6',
-                        large: '6',
-                    },
-                },
                 imageorient: {
                     x: 'left',
                     inside: false,
                 },
+                media_size_small: 12,
+                media_size_medium: 6,
+                media_size_large: 6,
             },
         },
         {
@@ -54,17 +49,15 @@ module.exports = {
             name: 'image-beside-left-hide',
             context: {
                 grid: {
-                    imageCols: {
-                        small: '12',
-                        medium: '6',
-                        large: '6',
-                    },
                     showOnSmall: false,
                 },
                 imageorient: {
                     x: 'left',
                     inside: false,
                 },
+                media_size_small: 12,
+                media_size_medium: 6,
+                media_size_large: 6,
             },
         },
         {
@@ -90,6 +83,32 @@ module.exports = {
                     x: 'left',
                     inside: true,
                 },
+            },
+        },
+        {
+            label: 'multiple images inside left 12-6-6',
+            name: 'multiple-images',
+            context: {
+                ...mediaConfig.variants[0].context /* Variante mit drei Bildern */,
+                imageorient: {
+                    x: 'left',
+                    inside: true,
+                },
+                media_size_small: 12,
+                media_size_medium: 6,
+                media_size_large: 6,
+            },
+        },
+        {
+            name: 'no-text',
+            context: {
+                bodytext: '',
+            },
+        },
+        {
+            name: 'no-image',
+            context: {
+                assets: null,
             },
         },
     ],
