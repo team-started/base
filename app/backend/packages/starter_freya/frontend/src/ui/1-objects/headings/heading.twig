@@ -18,7 +18,7 @@ header_link.config.uri:     der Link wird nur optional embeded
 {% set thisFontSize = tx_starter_headerfontsize ? 'h' ~ tx_starter_headerfontsize : 'h' ~ thisHeaderLayout %}
 
 {% if header and thisHeaderLayout != 100 %}
-    <{{ thisHeadingTag }} class="o-heading {{ thisFontSize }} {{ header_position }} {{ tx_starter_headercolor }}">
+    <{{ thisHeadingTag }} class="o-heading {{ thisFontSize }} {{ header_position }} {{ tx_starter_headercolor }} {{ additionalClass }}">
         {% if header_link.config.uri %}
             {% embed '@object/links/link.twig' with {
                 'header': header,

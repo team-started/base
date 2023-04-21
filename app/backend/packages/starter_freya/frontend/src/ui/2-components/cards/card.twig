@@ -1,0 +1,60 @@
+{#
+Diese Komponente wird überall verwendet, wo es eine Card gibt.
+see: https://getbootstrap.com/docs/4.0/components/card/
+
+pid:				uid des Modules, in welches die Card eingebettet ist
+uid:				uid der Card
+header_layout: 		das header_layout ist per default 5, also <h5>
+additionalClassImg: Bootstrap Klasse für Card-Images
+additionalClass:	Bootstrap Klasse(n)
+
+Klasse(n) card:	"card" ist eine Bootstrap Klasse, ist daher fest hinterlegt.
+#}
+
+{% set identifier = 'card' %}
+
+<div id="{{ identifier }}{{ pid }}-{{ uid }}" class="card">
+
+	{% if category or date %}
+		<div class="card-header">
+		{% include '@object/categorys/category.twig' with {
+			text: category,
+		} only %}
+		{% include '@object/dates/date.twig' with {
+			date: date,
+		} only %}
+		</div>
+	{% endif %}
+
+	<div class="card-body">
+		{% if image %}
+			{% embed '@object/links/link.twig' with link|default('')|merge({ noSpanIfNoLink: true }) %}
+				{% block linkContent %}
+					{% include '@object/pictures/picture.twig' with image|merge({ additionalClassImg: additionalClassImg|default('card-img') }) only %}
+				{% endblock %}
+			{% endembed %}
+		{% endif %}
+		{% include '@object/headings/heading.twig' with {
+			header: header,
+			header_layout: header_layout|default(5),
+			additionalClass: additionalClass|default('card-title'),
+		} only %}
+		{% include '@object/subheaders/subheader.twig' with {
+			subheader: subheader,
+		} only %}
+		{% include '@object/rtes/rte.twig' with {
+			rte: text,
+			additionalClass: additionalClass|default('card-text'),
+		} only %}
+	</div>
+
+	{% if link.config.uri and link_text %}
+		<div class="card-footer">
+			{% include '@object/buttons/button.twig' with {
+				link: link,
+				text: link_text,
+			} only %}
+		</div>
+	{% endif %}
+
+</div>

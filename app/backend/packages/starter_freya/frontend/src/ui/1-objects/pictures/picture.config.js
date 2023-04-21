@@ -200,5 +200,52 @@ module.exports = {
                 ],
             },
         },
+        {
+            name: 'card',
+            context: {
+                figure: false,
+                placeholder: {
+                    uri: {
+                        default: 'https://via.placeholder.com/80x45/ccc/F00?text=png-45',
+                    },
+                },
+                default: {
+                    uri: {
+                        default: 'https://via.placeholder.com/200x113/ccc/F00?text=png-200',
+                    },
+                    mq: '200w',
+                    width: 200,
+                    height: 113,
+                    webP: {
+                        default: 'https://via.placeholder.com/200x113.webp/ccc/000?text=WebP-200',
+                        fileType: 'image/webp',
+                    },
+                },
+                variants: [
+                    {
+                        mq: '400w',
+                        uri: {
+                            default: 'https://via.placeholder.com/400x226/ccc/F00?text=png-400',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/400x226.webp/ccc/000?text=WebP-400',
+                            fileType: 'image/webp',
+                        },
+                    },
+                    {
+                        mq: '800w',
+                        uri: {
+                            default: 'https://via.placeholder.com/800x450/ccc/F00?text=png-800',
+                        },
+                        webP: {
+                            default:
+                                'https://via.placeholder.com/800x450.webp/ccc/000?text=WebP-800',
+                            fileType: 'image/webp',
+                        },
+                    },
+                ],
+            },
+        },
     ],
 };
