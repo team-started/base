@@ -9,7 +9,7 @@ Die lokale Entwicklung basiert DDEV, um auf allen Betriebsystem eine einheitlich
 
 * Docker
 * Git
-* DDEV 1.21.4
+* DDEV 1.22.1
 
 ## StarterTeam - Extensions
 
