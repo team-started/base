@@ -22,15 +22,17 @@
     "require": {
         "php": "^7.4 || ^8.1",
         "cweagans/composer-patches": "^1.7",
+        "georgringer/news": "^9.4",
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^7.1",
         "ichhabrecht/content-defender": "^3.2",
+        "pti/pti": "dev-feature/support_t3v11 || dev-master",
         "starterteam/site-package-freya": "dev-main",
         "starterteam/site-package-nessa": "dev-main",
-		"starterteam/starter": "dev-main",
-		"starterteam/starter-freya": "dev-main",
-		"starterteam/starter-nessa": "dev-main",
-		"starterteam/starter-twig": "dev-main",
+        "starterteam/starter": "dev-main",
+        "starterteam/starter-freya": "dev-main",
+        "starterteam/starter-nessa": "dev-main",
+        "starterteam/starter-twig": "dev-main",
         "starterteam/starter-twig-news": "dev-main",
         "twig/twig": "^3",
         "typo3/cms-backend": "^11.5",
@@ -73,6 +75,7 @@
         "psr-4": {
             "StarterTeam\\StarterFreya\\": "packages/starter_freya/Classes",
             "StarterTeam\\StarterNessa\\": "packages/starter_nessa/Classes",
+            "StarterTeam\\StarterTwigNews\\": "packages/starter_twig_news/Classes",
             "StarterTeam\\StarterTwig\\": "packages/starter_twig/Classes",
             "StarterTeam\\Starter\\": "packages/starter/Classes"
         }
@@ -93,18 +96,28 @@
     ],
     "extra": {
         "typo3/cms": {
-			"cms-package-dir": "{$vendor-dir}/typo3/cms"
+            "extension-key": [
+                "customer_sitepackage",
+                "starter_freya",
+                "starter_twig",
+                "sitepackage_nessa",
+                "starter",
+                "starter_nessa",
+                "starter_twig_news",
+                "sitepackage_freya"
+            ],
+            "cms-package-dir": "{$vendor-dir}/typo3/cms"
         },
-		"enable-patching": true,
-		"composer-exit-on-patch-failure": true,
-		"patches": {
-			"pti/pti": {
-				"Prepend site base uri to assets": "patches/pti/pti_prepend_site_uri_assets.patch",
-				"Fix allowed data type for image processing": "patches/pti/data_types_image_processing.patch",
-				"Make file collection records renderable": "patches/pti/make_file_collections_renderable.patch",
-				"Preview image rendering runs into exception": "patches/pti/preview_image_runs_into_exception.patch"
-			}
-		}
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
+        "patches": {
+            "pti/pti": {
+                "Prepend site base uri to assets": "patches/pti/pti_prepend_site_uri_assets.patch",
+                "Fix allowed data type for image processing": "patches/pti/data_types_image_processing.patch",
+                "Make file collection records renderable": "patches/pti/make_file_collections_renderable.patch",
+                "Preview image rendering runs into exception": "patches/pti/preview_image_runs_into_exception.patch"
+            }
+        }
     },
     "config": {
         "secure-http": true,
@@ -128,41 +141,41 @@
         }
     },
     "scripts": {
-		"ci:php:cs": [
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --dry-run --using-cache no --diff",
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --dry-run --using-cache no --diff"
-		],
-		"ci:php:cs-fix": [
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --using-cache no",
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --using-cache no"
-		],
-		"ci:php:stan": [
-			"@ci:php:stan8.1"
-		],
-		"ci:php:phpstan-baseline": [
-			"@ci:php:phpstan-baseline8.1"
-		],
-		"ci:php:stan8.1": [
-			"phpstan --configuration=../../.build/tools/phpstan.neon"
-		],
-		"ci:php:phpstan-baseline8.1": [
-			"phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
-		],
-		"ci:php:stan7.4": [
-			"phpstan --configuration=../../.build/tools/phpstan-74.neon"
-		],
-		"ci:php:phpstan-baseline7.4": [
-			"phpstan --configuration=../../.build/tools/phpstan-74.neon --generate-baseline=../../.build/tools/phpstan-baseline-74.neon"
-		],
-		"ci:php:rector": [
-			"@ci:php:rector8.1"
-		],
-		"ci:php:rector8.1": [
-			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
-		],
-		"ci:php:rector7.4": [
-			"rector process --dry-run --clear-cache --config=../../.build/tools/rector-74.php"
-		],
+        "ci:php:cs": [
+            "php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --dry-run --using-cache no --diff",
+            "php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --dry-run --using-cache no --diff"
+        ],
+        "ci:php:cs-fix": [
+            "php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --using-cache no",
+            "php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --using-cache no"
+        ],
+        "ci:php:stan": [
+            "@ci:php:stan8.1"
+        ],
+        "ci:php:phpstan-baseline": [
+            "@ci:php:phpstan-baseline8.1"
+        ],
+        "ci:php:stan8.1": [
+            "phpstan --configuration=../../.build/tools/phpstan.neon"
+        ],
+        "ci:php:phpstan-baseline8.1": [
+            "phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
+        ],
+        "ci:php:stan7.4": [
+            "phpstan --configuration=../../.build/tools/phpstan-74.neon"
+        ],
+        "ci:php:phpstan-baseline7.4": [
+            "phpstan --configuration=../../.build/tools/phpstan-74.neon --generate-baseline=../../.build/tools/phpstan-baseline-74.neon"
+        ],
+        "ci:php:rector": [
+            "@ci:php:rector8.1"
+        ],
+        "ci:php:rector8.1": [
+            "rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
+        ],
+        "ci:php:rector7.4": [
+            "rector process --dry-run --clear-cache --config=../../.build/tools/rector-74.php"
+        ],
         "create-symlinks": [
             "ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"
         ],
@@ -173,6 +186,16 @@
             "@create-symlinks"
         ]
     },
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "replace": {
+        "starterteam/customer-site-package": "self.version",
+        "starterteam/site-package-freya": "self.version",
+        "starterteam/site-package-nessa": "self.version",
+        "starterteam/starter": "self.version",
+        "starterteam/starter-freya": "self.version",
+        "starterteam/starter-nessa": "self.version",
+        "starterteam/starter-twig": "self.version",
+        "starterteam/starter-twig-news": "self.version"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
