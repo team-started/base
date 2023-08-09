@@ -1,6 +1,6 @@
-tt_content.nessa_download_list =< lib.contentElement
-tt_content.nessa_download_list {
-  templateName = NessaDownloadList
+tt_content.starter_download =< lib.contentElement
+tt_content.starter_download {
+  templateName = StarterDownload
 
   dataProcessing {
     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor

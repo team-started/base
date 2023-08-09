@@ -15,25 +15,41 @@ VALUES
 	(11, 1669360732, 1, '2', '/user_upload/_default/images/coffee/olivia-anne-snyder-R5RtlMOYgX8-unsplash.jpg', 'b94bb2b367cd5375f9268c7b50c4b15a1ccc4ee7', '5fcdd6b05f77f18c38c3a5de68e97d04b609cfd1', 'jpg', 'image/jpeg', 'olivia-anne-snyder-R5RtlMOYgX8-unsplash.jpg', '66e7903b9ddbcfb39804ad597500fc2a31a1a06c', 1112736, 1669360711, 1669360366),
 	(12, 1669360732, 1, '2', '/user_upload/_default/images/coffee/pariwat-pannium-WLk7wdUpKXc-unsplash.jpg', '3421de25f86ea6505a4f38f5e2282d8966a0e22d', '5fcdd6b05f77f18c38c3a5de68e97d04b609cfd1', 'jpg', 'image/jpeg', 'pariwat-pannium-WLk7wdUpKXc-unsplash.jpg', 'e54bc8da5e68760318c4097435ef64d02a7c900d', 736524, 1669360711, 1669360326),
 	(13, 1669360732, 1, '2', '/user_upload/_default/images/coffee/samedy-nguon-DCcF-mJtTlA-unsplash.jpg', '5dd36a973b4325326724d5983a0b6e5ecd2373a3', '5fcdd6b05f77f18c38c3a5de68e97d04b609cfd1', 'jpg', 'image/jpeg', 'samedy-nguon-DCcF-mJtTlA-unsplash.jpg', 'd18e7fc28ebf73b228a1bcc17c3fecfd861e09c7', 1913521, 1669360711, 1669360427),
-	(14, 1669360732, 1, '2', '/user_upload/_default/images/coffee/tabitha-turner-3n3mPoGko8g-unsplash.jpg', 'c2198b793c46529000077b924d925e5d4c6f81cc', '5fcdd6b05f77f18c38c3a5de68e97d04b609cfd1', 'jpg', 'image/jpeg', 'tabitha-turner-3n3mPoGko8g-unsplash.jpg', '5ededc30d14718f0b66b96e942517dfbff4c16f4', 257710, 1669360711, 1669360271)
+	(14, 1669360732, 1, '2', '/user_upload/_default/images/coffee/tabitha-turner-3n3mPoGko8g-unsplash.jpg', 'c2198b793c46529000077b924d925e5d4c6f81cc', '5fcdd6b05f77f18c38c3a5de68e97d04b609cfd1', 'jpg', 'image/jpeg', 'tabitha-turner-3n3mPoGko8g-unsplash.jpg', '5ededc30d14718f0b66b96e942517dfbff4c16f4', 257710, 1669360711, 1669360271),
+	(15, 1691473301, 1, '5', '/user_upload/_default/files/LoremIpsum.docx', '8a9dfd5e2b3069b6ca5518fe840482889ceb659a', '94358a916dfea35318cdf1268cb9756f67a407da', 'docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'LoremIpsum.docx', 'ff440d7607be56496dde021e0fe84df7ca503d7f', 6689, 1691473287, 1683533205),
+	(16, 1691473301, 1, '5', '/user_upload/_default/files/LoremIpsum.dotx', 'ec0f27170e234a5fb5c8d575370fe798e882bdb4', '94358a916dfea35318cdf1268cb9756f67a407da', 'dotx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'LoremIpsum.dotx', '29ab33998680fe2ab42573bf69b7dcf649354034', 14986, 1691473287, 1683533205),
+	(17, 1691473301, 1, '5', '/user_upload/_default/files/LoremIpsum.pdf', 'e4d47b1dc2370b750fb94b1360c4b265402872f5', '94358a916dfea35318cdf1268cb9756f67a407da', 'pdf', 'application/pdf', 'LoremIpsum.pdf', 'c761fbad13ceab42294314b2cab8643332f7225b', 77123, 1691473287, 1683533205),
+	(18, 1691473301, 1, '5', '/user_upload/_default/files/LoremIpsum.pptx', '708b224ccd992714ccea74e4508b39ec437e8016', '94358a916dfea35318cdf1268cb9756f67a407da', 'pptx', 'application/vnd.openxmlformats-officedocument.presentationml.presentation', 'LoremIpsum.pptx', '4fad3c590a66c2addb2a824cb03a9f614e66212c', 32184, 1691473287, 1683533205),
+	(19, 1691473301, 1, '5', '/user_upload/_default/files/LoremIpsum.xlsx', '56dab2549196a6f8b522eb91913ed570693075b8', '94358a916dfea35318cdf1268cb9756f67a407da', 'xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'LoremIpsum.xlsx', 'a7bdd66944259c68fb05169ad6d54192be43707f', 4707, 1691473287, 1683533205),
+	(20, 1691473301, 1, '5', '/user_upload/_default/files/LoremIpsum.zip', '247133175a379e723ca26eeb2d5cbfd31a1a784e', '94358a916dfea35318cdf1268cb9756f67a407da', 'zip', 'application/zip', 'LoremIpsum.zip', '33b57584c6f0c9262f4129b9c3b95c34dc7679cb', 39835, 1691473287, 1683533205)
 ;
 
-
-INSERT INTO `sys_file_metadata` (`uid`, `pid`, `file`, `sys_language_uid`, `l10n_parent`, `title`, `description`, `alternative`, `tstamp`, `crdate`, `width`, `height`)
+INSERT INTO `sys_file_metadata` (`uid`, `pid`, `file`, `sys_language_uid`, `l10n_parent`, `t3_origuid`, `title`, `alternative`, `description`, `tstamp`, `crdate`, `width`, `height`)
 VALUES
-	(1, 0, 1, 0, 0, NULL, 'Ein gesunder Nadelwald in dichtem Nebel.', 'Nadelwald im Nebel', 1645446736, 1645436840, 6000, 4000),
-	(2, 0, 2, 0, 0, NULL, 'Ein entlaubter Baum beim Winter-Sonnenuntergang', 'Entlaubter Baum im Winter', 1645446856, 1645436840, 4128, 2752),
-	(3, 0, 3, 0, 0, NULL, 'Eine Aufnahme der Meeresoberfläche mit den Umrissen eines Tieres unter Wasser', 'Meerwasser mit Tierumgrisse', 1645446971, 1645436840, 2624, 3936),
-	(4, 0, 4, 0, 0, NULL, 'Ein Spaziergänger macht einen ausführlichen Spaziergang im verschneiten Wald', 'Spaziergang im Winterwald', 1645447062, 1645436840, 6000, 4000),
-	(5, 0, 5, 0, 0, NULL, 'Viele kleine Kaffeebohnen', 'Kaffeebohnen fallen in den Kaffee', 1669360728, 1669360728, 4000, 6000),
-	(6, 0, 6, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 4480, 6720),
-	(7, 0, 7, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3696, 5544),
-	(8, 0, 8, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 6185, 4123),
-	(9, 0, 9, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 4480, 6720),
-	(10, 0, 10, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3087, 4631),
-	(11, 0, 11, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3089, 2048),
-	(12, 0, 12, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 2810, 4219),
-	(13, 0, 13, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 2880, 3840),
-	(14, 0, 14, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3000, 3996)
+	(1, 0, 1, 0, 0, 0, NULL, 'Ein gesunder Nadelwald in dichtem Nebel.', 'Nadelwald im Nebel', 1645446736, 1645436840, 6000, 4000),
+	(2, 0, 2, 0, 0, 0, NULL, 'Ein entlaubter Baum beim Winter-Sonnenuntergang', 'Entlaubter Baum im Winter', 1645446856, 1645436840, 4128, 2752),
+	(3, 0, 3, 0, 0, 0, NULL, 'Eine Aufnahme der Meeresoberfläche mit den Umrissen eines Tieres unter Wasser', 'Meerwasser mit Tierumgrisse', 1645446971, 1645436840, 2624, 3936),
+	(4, 0, 4, 0, 0, 0, NULL, 'Ein Spaziergänger macht einen ausführlichen Spaziergang im verschneiten Wald', 'Spaziergang im Winterwald', 1645447062, 1645436840, 6000, 4000),
+	(5, 0, 5, 0, 0, 0, NULL, 'Viele kleine Kaffeebohnen', 'Kaffeebohnen fallen in den Kaffee', 1669360728, 1669360728, 4000, 6000),
+	(6, 0, 6, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 4480, 6720),
+	(7, 0, 7, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3696, 5544),
+	(8, 0, 8, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 6185, 4123),
+	(9, 0, 9, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 4480, 6720),
+	(10, 0, 10, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3087, 4631),
+	(11, 0, 11, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3089, 2048),
+	(12, 0, 12, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 2810, 4219),
+	(13, 0, 13, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 2880, 3840),
+	(14, 0, 14, 0, 0, 0, NULL, NULL, NULL, 1669360728, 1669360728, 3000, 3996),
+	(15, 0, 15, 0, 0, 0, 'Word Dokument', 'Ein Beispiel Word-Dokument', 'Praesent ut ligula non mi varius sagittis. In ac felis quis tortor malesuada pretium. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum.', 1691473300, 1691473300, 0, 0),
+	(16, 0, 15, 1, 15, 15, 'Word document', 'Example Microsoft Word document', 'Praesent ut ligula non mi varius sagittis. In ac felis quis tortor malesuada pretium. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum.', 1691564829, 1691564802, 0, 0),
+	(17, 0, 16, 0, 0, 0, NULL, NULL, NULL, 1691473300, 1691473300, 0, 0),
+	(18, 0, 16, 1, 17, 17, NULL, NULL, NULL, 1691473300, 1691473300, 0, 0),
+	(19, 0, 17, 0, 0, 0, 'PDF Dokument', 'Ein Beispiel PDF-Dokument', 'Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Donec vitae sapien ut libero venenatis faucibus. Praesent egestas tristique nibh.', 1691473300, 1691473300, 595, 842),
+	(20, 0, 17, 1, 19, 19, 'PDF document', 'Example PDF document', 'Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Donec vitae sapien ut libero venenatis faucibus. Praesent egestas tristique nibh.', 1691473300, 1691473300, 595, 842),
+	(21, 0, 18, 0, 0, 0, 'PowerPoint Dokument', 'Ein Beispiel PowerPoint Dokument', 'Quisque malesuada placerat nisl. Pellentesque auctor neque nec urna. Ut tincidunt tincidunt erat.', 1691473300, 1691473300, 0, 0),
+	(22, 0, 18, 1, 21, 21, 'PowerPoint document', 'Example PowerPoint document', 'Quisque malesuada placerat nisl. Pellentesque auctor neque nec urna. Ut tincidunt tincidunt erat.', 1691473300, 1691473300, 0, 0),
+	(23, 0, 19, 0, 0, 0, 'Excel Dokument', 'Ein Beispiel Excel Dokument', 'Nunc nec neque. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero..', 1691473300, 1691473300, 0, 0),
+	(24, 0, 19, 1, 23, 23, 'Excel document',  'Example Excel document', 'Nunc nec neque. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero..', 1691473300, 1691473300, 0, 0),
+	(25, 0, 20, 0, 0, 0, 'Zip Datei', 'Ein Beispiel Zip-Datei', 'Phasellus nec sem in justo pellentesque facilisis. Phasellus accumsan cursus velit. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.', 1691473300, 1691473300, 0, 0),
+	(26, 0, 20, 1, 25, 25, 'Zip file',  'Example ZIP file', 'Phasellus nec sem in justo pellentesque facilisis. Phasellus accumsan cursus velit. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.', 1691473300, 1691473300, 0, 0)
 ;
-

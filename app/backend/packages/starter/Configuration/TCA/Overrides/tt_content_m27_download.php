@@ -3,15 +3,18 @@
 defined('TYPO3') || die();
 
 (function () {
-    $translationFile = 'LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:';
-    $cType = 'nessa_download_list';
+    $allowedFileExtensions = 'doc,docx,jpg,jpeg,pdf,ppt,pptx,xls,xlsx,zip';
+    $translationFile = 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:';
+    $cType = 'starter_download';
 
     $GLOBALS['TCA']['tt_content']['types'][$cType] = [
         'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media;nessaUploads,
+            bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media;uploads,
+            --palette--;;uploadslayout,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
             --palette--;;language,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
@@ -22,16 +25,22 @@ defined('TYPO3') || die();
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
     ',
         'columnsOverrides' => [
+            'bodytext' => [
+                'config' => [
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'default',
+                ],
+            ],
             'media' => [
                 'config' => [
-                    'minitems' => 1,
-                    'maxitems' => 99,
+                    'minitems' => 0,
+                    'maxitems' => 10,
                     'overrideChildTca' => [
                         'columns' => [
                             'uid_local' => [
                                 'config' => [
                                     'appearance' => [
-                                        'elementBrowserAllowed' => 'doc,docx,jpg,jpeg,pdf,ppt,pptx,xls,xlsx,zip',
+                                        'elementBrowserAllowed' => $allowedFileExtensions,
                                     ],
                                 ],
                             ],
@@ -58,6 +67,6 @@ defined('TYPO3') || die();
             'starter-ctype-' . $cType,
         ],
         'CType',
-        'starter_nessa'
+        'starter'
     );
 })();

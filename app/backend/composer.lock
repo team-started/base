@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb9f01314a310b67bf8d2cfab3ec5cf3",
+    "content-hash": "13801773357e743952467d941bb58218",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2581,12 +2581,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_freya",
-                "reference": "aa69d0bb65a9a531288de896db4c00a74bbbe9bc"
+                "reference": "1e44a67f9f589aec3c9713fa6aedcd0db8c6a0d9"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
-                "starterteam/starter": "dev-main",
-                "starterteam/starter-freya": "dev-main",
+                "starterteam/starter": "^4.1",
+                "starterteam/starter-freya": "^4.1",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
@@ -2609,12 +2609,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_nessa",
-                "reference": "3c2ec39709b34e8bcd5898129ca6d1d2416c8d06"
+                "reference": "ce8b0e5500e300bb5196b3564049587991943292"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
-                "starterteam/starter": "dev-main",
-                "starterteam/starter-nessa": "dev-main",
+                "starterteam/starter": "^4.1",
+                "starterteam/starter-nessa": "^4.1",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
@@ -2637,7 +2637,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter",
-                "reference": "0ff831067b859eaae7eadd75811ede02036fecfb"
+                "reference": "f6b8b76647aeb7c1d1fee6dc54068f4466ea9b59"
             },
             "require": {
                 "ichhabrecht/content-defender": "^3.2",
@@ -2647,7 +2647,7 @@
             "type": "typo3-cms-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "4.x-dev"
+                    "dev-main": "4.2-dev"
                 },
                 "typo3/cms": {
                     "extension-key": "starter"
@@ -2682,15 +2682,18 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_freya",
-                "reference": "b642eaffc00cf82c4c198d966a1ea927171fced7"
+                "reference": "79e74747b32f4384f0a7a9f93f7962e93fb1c5df"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
-                "starterteam/starter-twig": "dev-main",
+                "starterteam/starter-twig": "^4.1",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
+                "branch-alias": {
+                    "dev-main": "4.2-dev"
+                },
                 "typo3/cms": {
                     "extension-key": "starter_freya"
                 }
@@ -2722,17 +2725,17 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_nessa",
-                "reference": "3938c689c5cbdeadaafe6638298b2aa8628cef2a"
+                "reference": "8f92babc1e158d3f25052a137420d32f61b8bed4"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
-                "starterteam/starter": "dev-main",
+                "starterteam/starter": "^4.1",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "4.x-dev"
+                    "dev-main": "4.2-dev"
                 },
                 "typo3/cms": {
                     "extension-key": "starter_nessa"
@@ -2770,22 +2773,22 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig",
-                "reference": "f5fb78cf9b35b702aab87d2abdb52591b09d83e4"
+                "reference": "b7d34fb36c0fc56772c50a98b87d765fbfe8a2d6"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
                 "pti/pti": "dev-feature/support_t3v11 || dev-master",
-                "starterteam/starter": "dev-main",
+                "starterteam/starter": "^4.1",
                 "twig/twig": "^3",
                 "typo3/cms-core": "^11.5"
             },
             "suggest": {
-                "starterteam/starter-twig-news": "4.x-dev"
+                "starterteam/starter-twig-news": "^4.0 || 4.1-dev"
             },
             "type": "typo3-cms-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "4.x-dev"
+                    "dev-main": "4.2-dev"
                 },
                 "typo3/cms": {
                     "extension-key": "starter_twig"
@@ -2816,18 +2819,18 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig_news",
-                "reference": "01790f81e53f69d0be8c3d229e463d01874488c3"
+                "reference": "f9f1d271b3a0fc0cfce0bb72d5a88fdb400cbde2"
             },
             "require": {
                 "georgringer/news": "^9.4",
                 "php": "^7.4 || ^8.1",
-                "starterteam/starter-twig": "4.x-dev",
+                "starterteam/starter-twig": "^4.1",
                 "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "4.x-dev"
+                    "dev-main": "4.2-dev"
                 },
                 "typo3/cms": {
                     "extension-key": "starter_twig_news"
@@ -9086,6 +9089,10 @@
     "stability-flags": {
         "starterteam/site-package-freya": 20,
         "starterteam/site-package-nessa": 20,
+        "starterteam/starter": 20,
+        "starterteam/starter-freya": 20,
+        "starterteam/starter-nessa": 20,
+        "starterteam/starter-twig": 20,
         "starterteam/starter-twig-news": 20
     },
     "prefer-stable": true,

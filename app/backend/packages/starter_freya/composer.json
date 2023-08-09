@@ -22,6 +22,9 @@
         "starterteam/starter-twig": "^4.1"
     },
     "extra": {
+		"branch-alias": {
+			"dev-main": "4.2-dev"
+		},
         "typo3/cms": {
             "extension-key": "starter_freya"
         }

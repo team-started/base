@@ -1,0 +1,4 @@
+
+tt_content.starter_download {
+  templateName = {$tx_startertwig.ceFolderName}/m27-download/m27-download.twig
+}
