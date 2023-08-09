@@ -1,7 +1,0 @@
-version: '3.6'
-
-services:
-  web:
-    ports:
-      - 3000 # needed for frontend tool fractal
-      - 3002 # needed for browserSync

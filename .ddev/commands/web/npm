@@ -1,7 +1,0 @@
-#!/bin/bash
-
-## Description: Run NPM in docker
-## Usage: npm
-## Example: "ddev npm"
-
-cd /var/www/html/app/frontend/ && npm $@

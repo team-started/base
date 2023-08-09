@@ -1,9 +1,0 @@
-#!/bin/bash
-
-## Description: Run rector in packages folder
-## Usage: rector [args]
-## Example: "ddev rector" or "ddev rector --dry-run"
-
-cd /var/www/html/app/backend/
-
-php ./vendor/bin/rector process $@
