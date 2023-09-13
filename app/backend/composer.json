@@ -187,14 +187,14 @@
         ]
     },
     "replace": {
-        "starterteam/customer-site-package": "dev-main",
-        "starterteam/site-package-freya": "dev-main",
-        "starterteam/site-package-nessa": "dev-main",
-        "starterteam/starter": "dev-main",
-        "starterteam/starter-freya": "dev-main",
-        "starterteam/starter-nessa": "dev-main",
-        "starterteam/starter-twig": "dev-main",
-        "starterteam/starter-twig-news": "dev-main"
+        "starterteam/customer-site-package": "4.3.0",
+        "starterteam/site-package-freya": "4.3.0",
+        "starterteam/site-package-nessa": "4.3.0",
+        "starterteam/starter": "4.3.0",
+        "starterteam/starter-freya": "4.3.0",
+        "starterteam/starter-nessa": "4.3.0",
+        "starterteam/starter-twig": "4.3.0",
+        "starterteam/starter-twig-news": "4.3.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
