@@ -186,16 +186,6 @@
             "@create-symlinks"
         ]
     },
-    "replace": {
-        "starterteam/customer-site-package": "4.3.0",
-        "starterteam/site-package-freya": "4.3.0",
-        "starterteam/site-package-nessa": "4.3.0",
-        "starterteam/starter": "4.3.0",
-        "starterteam/starter-freya": "4.3.0",
-        "starterteam/starter-nessa": "4.3.0",
-        "starterteam/starter-twig": "4.3.0",
-        "starterteam/starter-twig-news": "4.3.0"
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
