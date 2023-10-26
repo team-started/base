@@ -20,7 +20,7 @@ return static function (RectorConfig $rectorConfig): void {
         getcwd() . '/packages/starter_twig_news/',
     ]);
 
-    $rectorConfig->phpVersion(PhpVersion::PHP_81);
+    $rectorConfig->phpVersion(PhpVersion::PHP_74);
     $rectorConfig->importNames();
 
     $rectorConfig->sets([
@@ -32,28 +32,35 @@ return static function (RectorConfig $rectorConfig): void {
 
     $rectorConfig->skip([
         // @see https://github.com/sabbelasichon/typo3-rector/issues/2536
-        '/**/Configuration/ExtensionBuilder/*',
+        getcwd() . '/packages/**/Configuration/ExtensionBuilder/*',
         // We skip those directories on purpose as there might be node_modules or similar
         // that include typescript which would result in false positive processing
-        '/**/Resources/**/node_modules/*',
-        '/**/Resources/**/NodeModules/*',
-        '/**/Resources/**/BowerComponents/*',
-        '/**/Resources/**/bower_components/*',
-        '/**/Resources/**/build/*',
-        '/**/.build/*',
-        '/**/frontend/*',
-        '/**/Documentation/*',
-        '/vendor/*',
-        '/Build/*',
-        '/public/*',
-        '/.github/*',
-        '/.Build/*',
+        getcwd() . '/packages/**/Resources/**/node_modules/*',
+        getcwd() . '/packages/**/Resources/**/NodeModules/*',
+        getcwd() . '/packages/**/Resources/**/BowerComponents/*',
+        getcwd() . '/packages/**/Resources/**/bower_components/*',
+        getcwd() . '/packages/**/Resources/**/build/*',
+        getcwd() . '/packages/**/.build/*',
+        getcwd() . '/packages/**/frontend/*',
+        getcwd() . '/packages/**/Documentation/*',
+        getcwd() . '/.Build/*',
+        getcwd() . '/config/*',
+        getcwd() . '/patches/*',
+        getcwd() . '/public/*',
+        getcwd() . '/var/*',
+        getcwd() . '/vendor/*',
+        getcwd() . '/packages/starter_freya/Resources/**/DevFrontend/*',
+        getcwd() . '/packages/starter_freya/Resources/**/Frontend/*',
         \Rector\PostRector\Rector\NameImportingPostRector::class => [
             'ext_localconf.php',
             'ext_tables.php',
             'ClassAliasMap.php',
-            getcwd() . '/**/Configuration/*.php',
-            getcwd() . '/**/Configuration/**/*.php',
+            getcwd() . '/packages/**/Configuration/*.php',
+            getcwd() . '/packages/**/Configuration/**/*.php',
+        ],
+        // skip this rule to have a performance boost
+        \Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector::class => [
+            getcwd() . '/packages/**/Configuration/TCA/*',
         ],
     ]);
 };

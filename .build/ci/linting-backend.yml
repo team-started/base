@@ -6,6 +6,21 @@
   parallel:
     matrix:
       - PHP_VERSION: ['7.4', '8.1']
+  before_script:
+    - mv app/backend/composer.json app/backend/composer.json.orig
+    - mv app/backend/composer.lock app/backend/composer.lock.orig
+    - cp .build/composer/composer.testing.json app/backend/composer.json
+    - rm -rf app/backend/vendor/ app/backend/var/ app/backend/public/typo3conf/ext/
+    - php -v | grep '^PHP';
+    - |
+      composer require --no-ansi --no-interaction --no-progress --no-install \
+        typo3/cms-core:^11.5.24 \
+        typo3/cms-backend:^11.5.24 \
+        typo3/cms-frontend:^11.5.24 \
+        typo3/cms-install:^11.5.24 \
+        typo3/cms-fluid:^11.5.24 \
+        -d app/backend
+      composer update --no-ansi --no-interaction --no-progress --with-dependencies -d app/backend;
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
@@ -18,7 +33,6 @@ stages:
 backend:rector:
   extends: .backend-linting
   script:
-    - composer install -d app/backend
     - composer run ci:php:rector$PHP_VERSION -d app/backend
 
 ###
@@ -28,7 +42,6 @@ backend:rector:
 backend:phpCsFixer:
   extends: .backend-linting
   script:
-    - composer install -d app/backend
     - composer run ci:php:cs -d app/backend
 
 ###
@@ -38,7 +51,6 @@ backend:phpCsFixer:
 backend:phpStan:
   extends: .backend-linting
   script:
-    - composer install -d app/backend
     - composer run ci:php:stan$PHP_VERSION -d app/backend
 
 ###

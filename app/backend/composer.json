@@ -152,19 +152,19 @@
         "ci:php:stan": [
             "@ci:php:stan8.1"
         ],
-        "ci:php:phpstan-baseline": [
-            "@ci:php:phpstan-baseline8.1"
+        "ci:php:stan-baseline": [
+            "@ci:php:stan-baseline8.1"
         ],
         "ci:php:stan8.1": [
             "phpstan --configuration=../../.build/tools/phpstan.neon"
         ],
-        "ci:php:phpstan-baseline8.1": [
+        "ci:php:stan-baseline8.1": [
             "phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
         ],
         "ci:php:stan7.4": [
             "phpstan --configuration=../../.build/tools/phpstan-74.neon"
         ],
-        "ci:php:phpstan-baseline7.4": [
+        "ci:php:stan-baseline7.4": [
             "phpstan --configuration=../../.build/tools/phpstan-74.neon --generate-baseline=../../.build/tools/phpstan-baseline-74.neon"
         ],
         "ci:php:rector": [

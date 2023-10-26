@@ -3,16 +3,22 @@
   image: docker:19.03.12
   services:
     - docker:19.03.12-dind
+  parallel:
+    matrix:
+      - PHP_VERSION: ['7.4', '8.1']
   variables:
-    PHP_VERSION: '7.4'
     ALPINE_VERSION: '3.12'
     COMPOSER_VERSION: '2'
     NODE_VERSION: '14.15.1'
     SURF_VERSION: '2.3'
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build -t $DOCKER_IMAGE_TAG $DOCKER_IMAGE_PATH
+    - docker build -t $DOCKER_IMAGE_TAG $DOCKER_IMAGE_PATH --build-arg PHP_VERSION="$PHP_VERSION" --build-arg ALPINE_VERSION="$ALPINE_VERSION" --build-arg COMPOSER_VERSION="$COMPOSER_VERSION" --build-arg NODE_VERSION="$NODE_VERSION" --build-arg SURF_VERSION="$SURF_VERSION"
     - docker push $DOCKER_IMAGE_TAG
+  rules:
+    - changes:
+        - $DOCKER_IMAGE_PATH/*
+        - ./.build/ci/container-build.yml
 
 stages:
   - devops-build
@@ -21,13 +27,6 @@ stages:
 # Job to build a docker container for general backend linting
 ##
 build:backend-lint-container:
-  extends: .build-container
-  variables:
-    PHP_VERSION: '8.1'
-    DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:backend-$PHP_VERSION
-    DOCKER_IMAGE_PATH: ./.build/docker/lint-backend/
-
-build:backend-lint-container74:
   extends: .build-container
   variables:
     DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:backend-$PHP_VERSION

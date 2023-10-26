@@ -1,7 +1,7 @@
 include:
   - local: '/.build/ci/templates/deployTemplate.yml'
-  - local: '/.build/ci/templates/monorepoSplitTemplate.yml'
   - local: '/.build/ci/container-build.yml'
+  - local: '/.build/ci/split-packages.yml'
   - local: '/.build/ci/linting-backend.yml'
   #- local: '/.build/ci/linting-frontend.yml'
   - local: '/.build/ci/documentation.yml'
@@ -33,25 +33,3 @@ variables:
   NODE_CACHE_DIR: "$CI_PROJECT_DIR/.cache/node_modules"
   COMPOSER_CACHE_DIR: "$CI_PROJECT_DIR/.cache/composer"
   SURF_WORKSPACE: "$CI_PROJECT_DIR/.caches/surf_workspace"
-
-split:packages:
-  extends: .split-monorepo:template
-  variables:
-    TAG: ""
-  script:
-    - echo "Splitting $PACKAGE_DIRECTORY to $REPOSITORY_NAME"
-    - php /splitter/entrypoint.php
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-      allow_failure: false
-
-split:packages:tagged:
-  extends: .split-monorepo:template
-  variables:
-    TAG: $CI_COMMIT_TAG
-  script:
-    - echo "Splitting with tag ($TAG) $PACKAGE_DIRECTORY to $REPOSITORY_NAME"
-    - php /splitter/entrypoint.php
-  rules:
-    - if: $CI_COMMIT_TAG
-      allow_failure: false

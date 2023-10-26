@@ -1,5 +1,5 @@
 includes:
-  - phpstan-baseline.neon
+  - phpstan-baseline-74.neon
 parameters:
     level: max
     phpVersion: 70400

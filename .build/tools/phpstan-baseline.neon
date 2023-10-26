@@ -9,8 +9,3 @@ parameters:
 			message: "#^Unable to resolve the template type T in call to method static method TYPO3\\\\CMS\\\\Core\\\\Utility\\\\GeneralUtility\\:\\:makeInstance\\(\\)$#"
 			count: 1
 			path: ../../app/backend/packages/starter_twig/Classes/Twig/TwigEnvironment.php
-
-		-
-			message: "#^Call to an undefined method object\\:\\:getRenderedItemData\\(\\)\\.$#"
-			count: 1
-			path: ../../app/backend/packages/starter_twig_news/Classes/DataProcessing/Records/CategoriesProcessorService.php
