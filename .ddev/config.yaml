@@ -14,6 +14,8 @@ database:
     type: mariadb
     version: "10.2"
 hooks:
+    pre-start:
+        - exec-host: if [ ! -e app/backend/.env ]; then cp app/backend/.env.dist app/backend/.env; echo -e "\033[0;31m!!! No .env file was available, now you use a copy of .env.dist !!!\033[0;0m"; fi
     post-start:
         - exec: chmod 755 -R /var/www/html/craft/
         - exec: composer install -d /var/www/html/app/backend
