@@ -11,6 +11,7 @@ TCEFORM {
     # EXT:starter CE's
     CType.keepItems := addToList(starter_media)
     CType.keepItems := addToList(starter_accordion)
+    CType.keepItems := addToList(starter_distribution_navigation)
     CType.keepItems := addToList(starter_download)
 
     # disable TYPO3-Core fields
