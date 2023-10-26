@@ -49,6 +49,11 @@ Die Projektdaten können von Production oder Staging lokal aktualisiert (synchro
 > Eine detaillierte Beschreibung zur Konfiguration und Nutzung der [Projektsynchronisation][3] befindet sich der Dokumentation
 > der Starter-Distribution.
 
+### 1.5 Frontend
+
+- **Frontend bauen:** `ddev frontend-build`
+- **Frontend mit Fractal:** `ddev frontend-start`
+
 ## 2. Deployment
 
 Durch das integrierte Surf-Deployment mittels Gitlab-CI, kann der aktuelle Stand auf eine Staging- und einen
