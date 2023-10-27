@@ -13,4 +13,5 @@ Thumbs.db
 .sass-cache
 node_modules
 
-/Resources/Public
+/Resources/Public/*
+!/Resources/Public/Icons

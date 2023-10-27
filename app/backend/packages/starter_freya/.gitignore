@@ -43,5 +43,5 @@ yarn-error.log*
 
 # TYPO3
 /Resources/Private/Frontend
-/Resources/Public
-!/Resources/Public/.gitkeep
+/Resources/Public/*
+!/Resources/Public/Icons
