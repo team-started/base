@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af6fd182030d93e9046981867633247b",
+    "content-hash": "7b5c65966e6c666d7424a1132957d1b3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2626,13 +2626,13 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_freya",
-                "reference": "16eb8d73d7b17d3a070d978bd68df3df7294de9d"
+                "reference": "301c0ca50db676d46c4cef1ad1ecc4e6f10c30a8"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
                 "starterteam/starter": "^4.3",
                 "starterteam/starter-freya": "^4.3",
-                "typo3/cms-core": "^11"
+                "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -2656,13 +2656,13 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_nessa",
-                "reference": "20301bfae7da756f15f1423e897b12ead6437ba8"
+                "reference": "5d9ebda8633b534f8bb801c34850dd47d1bbad5d"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
                 "starterteam/starter": "^4.3",
                 "starterteam/starter-nessa": "^4.3",
-                "typo3/cms-core": "^11"
+                "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -2686,12 +2686,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter",
-                "reference": "b74d78f04e9e965d8ee458a5b28de53d38f2b8de"
+                "reference": "72ae45acf228c2acbbc307796c5f253fe4a25235"
             },
             "require": {
-                "ichhabrecht/content-defender": "^3",
+                "ichhabrecht/content-defender": "^3.2",
                 "php": "^7.4 || ^8.1",
-                "typo3/cms-core": "^11"
+                "typo3/cms-core": "^11.5"
             },
             "suggest": {
                 "starterteam/starter-freya": "Frontend theme based on Twig template engine",
@@ -2739,12 +2739,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_freya",
-                "reference": "990cbe9fa02e99846a6b2f895ebc07ac3153db42"
+                "reference": "e99d8806134dda05623755ba265e301be89dbfa0"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
                 "starterteam/starter-twig": "^4.3",
-                "typo3/cms-core": "^11"
+                "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -2784,12 +2784,12 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_nessa",
-                "reference": "231bd0b339157d4345f9d60e97f5213a34e97552"
+                "reference": "55291f2ee6a290d63728f627945a55fb9e295434"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
                 "starterteam/starter": "^4.3",
-                "typo3/cms-core": "^11"
+                "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -2834,14 +2834,14 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig",
-                "reference": "ef7c9638bb80467d8c1d869babef85a8209c5710"
+                "reference": "2cc07018d417db2f93804a0c1f3f409108445a97"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
-                "pti/pti": "dev-feature/support_t3v11 || ^3",
+                "pti/pti": "dev-feature/support_t3v11 || ^3 || dev-master",
                 "starterteam/starter": "^4.3",
                 "twig/twig": "^3",
-                "typo3/cms-core": "^11"
+                "typo3/cms-core": "^11.5"
             },
             "suggest": {
                 "starterteam/starter-twig-news": "Processing package for EXT:news to work with Twig templates"
@@ -2882,13 +2882,13 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig_news",
-                "reference": "f3cdefa7893b924f7200bb7bca995450012ea785"
+                "reference": "0efee96e23c02b0639c5ce95710fcabc31b3cb6a"
             },
             "require": {
-                "georgringer/news": "^9",
+                "georgringer/news": "^9.4",
                 "php": "^7.4 || ^8.1",
                 "starterteam/starter-twig": "^4.3",
-                "typo3/cms-core": "^11"
+                "typo3/cms-core": "^11.5"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -8967,16 +8967,16 @@
         },
         {
             "name": "symplify/monorepo-builder",
-            "version": "10.3.3",
+            "version": "11.2.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/monorepo-builder.git",
-                "reference": "5f97613a2015b74aa86a7330b47a88c283877fd4"
+                "reference": "4069de89595f188b9931454ba6753662e66a10d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/5f97613a2015b74aa86a7330b47a88c283877fd4",
-                "reference": "5f97613a2015b74aa86a7330b47a88c283877fd4",
+                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/4069de89595f188b9931454ba6753662e66a10d3",
+                "reference": "4069de89595f188b9931454ba6753662e66a10d3",
                 "shasum": ""
             },
             "require": {
@@ -8991,13 +8991,19 @@
                     "dev-main": "10.3-dev"
                 }
             },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Prefixed version of Not only Composer tools to build a Monorepo.",
             "support": {
-                "source": "https://github.com/symplify/monorepo-builder/tree/10.3.3"
+                "issues": "https://github.com/symplify/monorepo-builder/issues",
+                "source": "https://github.com/symplify/monorepo-builder/tree/11.2.19"
             },
             "funding": [
                 {
@@ -9009,7 +9015,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-13T14:01:16+00:00"
+            "time": "2023-10-20T06:31:52+00:00"
         },
         {
             "name": "symplify/smart-file-system",
@@ -9181,14 +9187,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pti/pti": 20,
-        "starterteam/site-package-freya": 20,
-        "starterteam/site-package-nessa": 20,
-        "starterteam/starter": 20,
-        "starterteam/starter-freya": 20,
-        "starterteam/starter-nessa": 20,
-        "starterteam/starter-twig": 20,
-        "starterteam/starter-twig-news": 20
+        "pti/pti": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
