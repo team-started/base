@@ -106,9 +106,7 @@
         "patches": {
             "pti/pti": {
                 "Prepend site base uri to assets": "patches/pti/pti_prepend_site_uri_assets.patch",
-                "Fix allowed data type for image processing": "patches/pti/data_types_image_processing.patch",
-                "Make file collection records renderable": "patches/pti/make_file_collections_renderable.patch",
-                "Preview image rendering runs into exception": "patches/pti/preview_image_runs_into_exception.patch"
+                "Make file collection records renderable": "patches/pti/make_file_collections_renderable.patch"
             }
         }
     },
