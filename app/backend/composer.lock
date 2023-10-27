@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10282122b0f2c883029c279160ea54b2",
+    "content-hash": "ddd9d4cdf6ed6af451483bad5c3611c9",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2532,12 +2532,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chriwo/typo3-pti.git",
-                "reference": "b73f1c95cac047232a70044d1244475c5fd31b84"
+                "reference": "68fe48779701ca16d985035eab51262282e61e93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chriwo/typo3-pti/zipball/b73f1c95cac047232a70044d1244475c5fd31b84",
-                "reference": "b73f1c95cac047232a70044d1244475c5fd31b84",
+                "url": "https://api.github.com/repos/chriwo/typo3-pti/zipball/68fe48779701ca16d985035eab51262282e61e93",
+                "reference": "68fe48779701ca16d985035eab51262282e61e93",
                 "shasum": ""
             },
             "require": {
@@ -2574,7 +2574,7 @@
             "support": {
                 "source": "https://github.com/chriwo/typo3-pti/tree/feature/support_t3v11"
             },
-            "time": "2023-03-14T10:36:20+00:00"
+            "time": "2023-10-27T07:18:42+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -2626,7 +2626,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_freya",
-                "reference": "301c0ca50db676d46c4cef1ad1ecc4e6f10c30a8"
+                "reference": "31e9300fd6d5d14253f584767d081c51dca4e94e"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
@@ -2647,6 +2647,7 @@
             ],
             "description": "StarterTeam sitepackage demo extension for EXT:starter-freya",
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -2656,7 +2657,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_nessa",
-                "reference": "5d9ebda8633b534f8bb801c34850dd47d1bbad5d"
+                "reference": "9e8d9c12b1769603b5c046414cd061a85930e190"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
@@ -2677,6 +2678,7 @@
             ],
             "description": "StarterTeam sitepackage extension for EXT:starter-nessa",
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -2686,7 +2688,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter",
-                "reference": "72ae45acf228c2acbbc307796c5f253fe4a25235"
+                "reference": "d1b6e541ebb0b15b5118d95910fd8899472add6a"
             },
             "require": {
                 "ichhabrecht/content-defender": "^3.2",
@@ -2730,6 +2732,7 @@
             ],
             "description": "Add description...",
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -2739,7 +2742,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_freya",
-                "reference": "e99d8806134dda05623755ba265e301be89dbfa0"
+                "reference": "7276bdd06fc30c811672c9a3b2259cc515dde326"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
@@ -2775,6 +2778,7 @@
                 "issues": "https://gitlab.com/starterteam/team/starter-freya/-/issues"
             },
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -2784,7 +2788,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_nessa",
-                "reference": "55291f2ee6a290d63728f627945a55fb9e295434"
+                "reference": "99a47e57a098742ebae1f5d0cc7f1312560ea34d"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
@@ -2825,6 +2829,7 @@
                 "issues": "https://gitlab.com/starterteam/team/starter-nessa/-/issues"
             },
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -2834,7 +2839,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig",
-                "reference": "2cc07018d417db2f93804a0c1f3f409108445a97"
+                "reference": "4c589bf5ebeb61976b6bc7922da9a6170a6af5f9"
             },
             "require": {
                 "php": "^7.4 || ^8.1",
@@ -2873,6 +2878,7 @@
             ],
             "description": "TYPO3 data processing to handle twig templates",
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -2882,7 +2888,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig_news",
-                "reference": "0efee96e23c02b0639c5ce95710fcabc31b3cb6a"
+                "reference": "55bdcc449154195973d01dbb9f7d3e2a68a00076"
             },
             "require": {
                 "georgringer/news": "^9.4",
@@ -2917,6 +2923,7 @@
             ],
             "description": "TYPO3 data processing to handle twig templates for EXT:news",
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -8218,16 +8225,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.35.1",
+            "version": "v3.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "ec1ccc264994b6764882669973ca435cf05bab08"
+                "reference": "e889301f276c6ce2c391d6aafae9a162e785b064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/ec1ccc264994b6764882669973ca435cf05bab08",
-                "reference": "ec1ccc264994b6764882669973ca435cf05bab08",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/e889301f276c6ce2c391d6aafae9a162e785b064",
+                "reference": "e889301f276c6ce2c391d6aafae9a162e785b064",
                 "shasum": ""
             },
             "require": {
@@ -8299,7 +8306,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.35.1"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.36.0"
             },
             "funding": [
                 {
@@ -8307,7 +8314,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-12T13:47:26+00:00"
+            "time": "2023-10-27T10:12:29+00:00"
         },
         {
             "name": "helmich/typo3-typoscript-parser",
@@ -9187,7 +9194,14 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pti/pti": 20
+        "pti/pti": 20,
+        "starterteam/site-package-freya": 20,
+        "starterteam/site-package-nessa": 20,
+        "starterteam/starter": 20,
+        "starterteam/starter-freya": 20,
+        "starterteam/starter-nessa": 20,
+        "starterteam/starter-twig": 20,
+        "starterteam/starter-twig-news": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

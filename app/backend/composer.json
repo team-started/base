@@ -26,7 +26,14 @@
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^7.1",
         "ichhabrecht/content-defender": "^3.2",
-        "pti/pti": "dev-feature/support_t3v11 || ^3 || dev-master",
+        "pti/pti": "dev-feature/support_t3v11",
+        "starterteam/site-package-freya": "@dev",
+        "starterteam/site-package-nessa": "@dev",
+        "starterteam/starter": "@dev",
+        "starterteam/starter-freya": "@dev",
+        "starterteam/starter-nessa": "@dev",
+        "starterteam/starter-twig": "@dev",
+        "starterteam/starter-twig-news": "@dev",
         "twig/twig": "^3",
         "typo3/cms-backend": "^11.5",
         "typo3/cms-belog": "^11.5",
@@ -76,7 +83,10 @@
     "repositories": [
         {
             "type": "path",
-            "url": "./packages/*"
+            "url": "./packages/*",
+			"options": {
+				"symlink": true
+			}
         },
         {
             "type": "composer",
