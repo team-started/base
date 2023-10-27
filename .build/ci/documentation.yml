@@ -1,5 +1,5 @@
 .documentation:
-  image: $CI_REGISTRY_IMAGE:backend
+  image: $CI_REGISTRY_IMAGE:backend-8.1
   variables:
     DOC_FOLDER: "./documentation"
     STATIC_FOLDER: "$DOC_FOLDER/static/"
