@@ -1,0 +1,6 @@
+{% render '@siteheader' %}
+
+{% include '@module/m26-accordion/m26-accordion.twig' with accordion|merge({'uid': 111}) only %}
+{% include '@module/m26-accordion/m26-accordion.twig' with accordion|merge({'uid': 222}) only %}
+
+{% render '@sitefooter' %}
