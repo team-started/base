@@ -6,8 +6,8 @@
     "require": {
         "php": "^7.4 || ^8.1",
         "typo3/cms-core": "^11.5",
-        "starterteam/starter": "^4.4",
-        "starterteam/starter-nessa": "^4.4"
+        "starterteam/starter": "^4.5",
+        "starterteam/starter-nessa": "^4.5"
     },
     "config": {
         "vendor-dir": ".Build/vendor",

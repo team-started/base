@@ -19,7 +19,7 @@
     "require": {
         "php": "^7.4 || ^8.1",
         "typo3/cms-core": "^11.5",
-        "starterteam/starter-twig": "^4.4"
+        "starterteam/starter-twig": "^4.5"
     },
     "config": {
         "vendor-dir": ".Build/vendor",
@@ -31,7 +31,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "4.4-dev"
+            "dev-main": "4.5-dev"
         },
         "typo3/cms": {
             "extension-key": "starter_freya",
