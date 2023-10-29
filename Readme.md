@@ -31,12 +31,12 @@ Die lokale Entwicklung basiert DDEV, um auf allen Betriebsystem eine einheitlich
 
 Technischen Support bei Fragen und Problemen gibt es
 
-* in der [Dokumentation](https://docs-distribution.starter.team)
+* in der [Dokumentation](https://docs.starter.team/)
 * im [Ticketsystem](https://gitlab.com/starterteam/team/base/-/issues)
 * im Slack-Channel von TYPO3 in der Gruppe "[starter-team](https://typo3.slack.com/archives/GD9FSSVFS)"
 
 ## Zusätzliche Informationen
 
-* **Mitarbeit:** In der [Dokumentation](https://docs-distribution.starter.team/Mitarbeit/index.html) gibt es detaillierte Informationen wie sich jeder in dem Projekt engagieren kann
-* **Versions-Historie:** Ein Blick in die [Versions-History](https://docs-distribution.starter.team/Changelog/changelog.html) zeigt alle bereits realisierten Features
+* **Mitarbeit:** In der [Dokumentation](https://docs.starter.team/base/Mitarbeit/index.html) gibt es detaillierte Informationen wie sich jeder in dem Projekt engagieren kann
+* **Versions-Historie:** Ein Blick in die [Versions-History](https://docs.starter.team/base/Changelog/index.html) zeigt alle bereits realisierten Features
 * **Roadmap:** Werft einen Blick die [Roadmap](https://gitlab.com/starterteam/team/base/-/milestones) um zu prüfen welche Entwicklungen priorisiert sind
