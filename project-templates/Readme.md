@@ -6,7 +6,7 @@
 | ----------  |-----------------------------------------------------------------------------------------------------------------------------------|
 | Production  |                                                                                                                                   |
 | Staging     |                                                                                                                                   |
-| Development | https://starter-base.ddev.site<br>MailHog: https://starter-base.ddev.site:8025<br>phpMyAdmin:	https://starter-base.ddev.site:8036 |
+| Development | https://starter-base.ddev.site<br>Mailpit: https://starter-base.ddev.site:8025<br>phpMyAdmin:	https://starter-base.ddev.site:8036 |
 
 ## 2. Hostingpartner
 
@@ -20,7 +20,7 @@
 
 ### 1.1 Systemvoraussetzungen für lokale Entwicklung
 
-* [ddev][1] Version 1.21.4
+* [ddev][1] Version 1.22.7
 
 ### 1.2 Installation
 
