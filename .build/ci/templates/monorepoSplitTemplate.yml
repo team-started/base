@@ -15,6 +15,10 @@
         SPLIT_REPOSITORY: "team/starter-twig"
       - LOCAL_PATH: "app/backend/packages/starter_twig_news"
         SPLIT_REPOSITORY: "team/starter-twig-news"
+      - LOCAL_PATH: "app/frontend/starter_freya_fractal_starterkit"
+        SPLIT_REPOSITORY: "team/starter-freya-fractal-starterkit"
+      - LOCAL_PATH: "app/frontend/starter_nessa_starterkit"
+        SPLIT_REPOSITORY: "team/starter-nessa-starterkit"
   variables:
     GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
     PACKAGE_DIRECTORY: $LOCAL_PATH

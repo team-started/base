@@ -3,9 +3,10 @@ const pkg = require('../package.json');
 
 const root = resolve(__dirname, '../');
 const config = resolve(root, 'config');
-const src = resolve(root, 'Assets');
-const assets = resolve(root, 'Assets');
-const dist = resolve(root, '../Resources/Public');
+const src = resolve(root, 'src');
+const assets = resolve(src, 'assets');
+const build = resolve(root, 'build');
+const dist = resolve(build, 'static');
 
 const year = new Date().getFullYear();
 
@@ -32,15 +33,19 @@ const settings = {
     },
     BUILD: {
         dist,
+        assets: resolve(dist, 'assets'),
         jsFolder: 'JavaScript',
         cssFolder: 'Css',
         fontFolder: 'Fonts',
         imageFolder: 'Images',
+        assetsFolder: 'assets',
+        publicFolder: 'public',
         showStats: true,
         hashJs: false,
         hashCss: false,
         hashAssets: false,
         buildManifest: false,
+        bundleAnalyzer: false,
         useSourceMap: false,
         // https://webpack.js.org/configuration/devtool/
         typeSourceMap: 'source-map',

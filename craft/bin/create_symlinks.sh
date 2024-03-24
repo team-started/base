@@ -8,14 +8,15 @@ cd /var/www/html/app/backend/public && \
   ln -snvf ../../../documentation/static/ docs
 
 ##
-# create symlinks for public and private folder of EXT:starter-freya
+# Create symlinks for public and private folder of EXT:starter-freya
+# This TYPO3 extension use theme package "starter_freya_fractal_starterkit"
 ##
 cd /var/www/html/app/backend/packages/starter_freya/Resources/Private && \
-  ln -snvf ../../frontend/src/ui Frontend
+    ln -snvf ../../../../../frontend/starter_freya_fractal_starterkit/src/ui/ Frontend
 
-mkdir -p /var/www/html/app/backend/packages/starter_freya/frontend/build/static/assets
-cd /var/www/html/app/backend/packages/starter_freya/Resources/Public && \
-  ln -snvf ../../frontend/build/static/assets Frontend
+#mkdir -p /var/www/html/app/backend/packages/starter_freya/frontend/build/static/assets
+#cd /var/www/html/app/backend/packages/starter_freya/Resources/Public && \
+#  ln -snvf ../../frontend/build/static/assets Frontend
 
 ##
 # create an symlink to show the prototype from fractal

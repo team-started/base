@@ -42,5 +42,8 @@ module.exports = {
         'scss/no-global-function-names': null,
         'scss/at-extend-no-missing-placeholder': null,
         'function-no-unknown': null,
+        'selector-class-pattern': null,
+        'scss/dollar-variable-pattern': null,
+        'scss/percent-placeholder-pattern': null,
     },
 };

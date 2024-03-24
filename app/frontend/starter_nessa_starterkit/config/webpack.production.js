@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -17,7 +18,7 @@ module.exports = merge(common, {
 
     output: {
         publicPath: '../',
-        path: BUILD.dist,
+        path: BUILD.assets,
         filename: BUILD.hashJs
             ? `${BUILD.jsFolder}/[name].[hash].min.js`
             : `${BUILD.jsFolder}/[name].min.js`,

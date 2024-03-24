@@ -7,18 +7,22 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const { resolve } = require('path');
 
 const { DIR, DEV, BUILD, RESOLVER, isDevelopment } = require('./settings');
+const assetsFolder = isDevelopment ? `${BUILD.assetsFolder}/` : '';
 
 module.exports = {
     // Where webpack looks to start building the bundle
     entry: {
-        app: [`${DIR.src}/JavaScript/app.js`, `${DIR.src}/Sass/app.scss`],
-        rte: [`${DIR.src}/Sass/rte.scss`],
+        app: [
+            `${DIR.src}/${BUILD.assetsFolder}/JavaScript/app.js`,
+            `${DIR.src}/${BUILD.assetsFolder}/Sass/app.scss`,
+        ],
+        rte: [`${DIR.src}/${BUILD.assetsFolder}/Sass/rte.scss`],
     },
 
     // Where webpack outputs the assets and bundles
     output: {
         path: BUILD.dist,
-        filename: `${BUILD.jsFolder}/[name].min.js`,
+        filename: `${assetsFolder}${BUILD.jsFolder}/[name].min.js`,
     },
 
     // Determine how modules within the project are treated
@@ -33,8 +37,8 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                     filename: BUILD.hashAssets
-                        ? `${BUILD.imageFolder}/[name].[hash][ext]`
-                        : `${BUILD.imageFolder}/[name][ext]`,
+                        ? `${assetsFolder}${BUILD.imageFolder}/[name].[hash][ext]`
+                        : `${assetsFolder}${BUILD.imageFolder}/[name][ext]`,
                 },
             },
 
@@ -44,8 +48,8 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                     filename: BUILD.hashAssets
-                        ? `${BUILD.fontFolder}/[name].[hash][ext]`
-                        : `${BUILD.fontFolder}/[name][ext]`,
+                        ? `${assetsFolder}${BUILD.fontFolder}/[name].[hash][ext]`
+                        : `${assetsFolder}${BUILD.fontFolder}/[name][ext]`,
                 },
             },
         ],
@@ -53,26 +57,26 @@ module.exports = {
 
     // Customize the webpack build process
     plugins: [
-        // Removes/cleans build folders and unused assets when rebuilding
-        new CleanWebpackPlugin(),
-        // TODO: Nicht sicher, ob das hier noch gebraucht wird
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            isotope: 'isotope-layout',
-        }),
-        new ESLintPlugin(),
-        //new StylelintPlugin(),
         // Images: Copy image files to build folder
         new CopyWebpackPlugin({
             patterns: [
                 {
                     from: DIR.images,
-                    to: resolve(BUILD.dist, BUILD.imageFolder),
+                    to: resolve(BUILD.assets, BUILD.imageFolder),
                 },
             ],
         }),
+        new ESLintPlugin(),
+        new StylelintPlugin(),
+        // Removes/cleans build folders and unused assets when rebuilding
+        // new CleanWebpackPlugin(),
+        // TODO: Nicht sicher, ob das hier noch gebraucht wird
+        // new webpack.ProvidePlugin({
+        //     $: 'jquery',
+        //     jQuery: 'jquery',
+        //     'window.jQuery': 'jquery',
+        //     isotope: 'isotope-layout',
+        // }),
         new WebpackBar(isDevelopment ? DEV.barOption : BUILD.barOption),
     ],
 

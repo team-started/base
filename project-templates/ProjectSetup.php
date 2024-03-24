@@ -60,14 +60,14 @@ class ProjectSetup
     /**
      * Bundles all actions
      */
-    public function run()
+    public function run(): void
     {
         $this->initVariables();
         $this->createFromTemplates();
         $this->replaceInFiles();
     }
 
-    protected function initVariables()
+    protected function initVariables(): void
     {
         $versionBugfix = preg_replace('~(\d+)\.(\d+)\.(\d+)~', '$1.$2.*', $this->version);
 
@@ -82,7 +82,7 @@ class ProjectSetup
     /**
      * Copies templates, replaces variables
      */
-    protected function createFromTemplates()
+    protected function createFromTemplates(): void
     {
         foreach ($this->templates as $dest => $src) {
             $destPath = $this->buildDir . $dest;
@@ -106,7 +106,7 @@ class ProjectSetup
     /**
      * Search and replace strings in files
      */
-    protected function replaceInFiles()
+    protected function replaceInFiles(): void
     {
         foreach ($this->replacements as $replacement) {
             $searchValues = array_keys($replacement['replace']);
@@ -130,7 +130,7 @@ class ProjectSetup
      * Just echo to terminal right now
      * @param mixed $msg
      */
-    protected function log($msg)
+    protected function log($msg): void
     {
         if (!is_object($msg)) {
             echo "$msg\n";

@@ -19,8 +19,11 @@ if [ $# -eq 0 ] ; then
 fi
 
 case $1 in
-    freya|nessa)
-        FRONTEND_BUILD_FOLDER=$THEME_FRONTEND_FOLDER"starter_$1/frontend/"
+    freya)
+        FRONTEND_BUILD_FOLDER=$CUSTOM_FRONTEND_PATH"starter_freya_fractal_starterkit/"
+	;;
+    nessa)
+        FRONTEND_BUILD_FOLDER=$CUSTOM_FRONTEND_PATH"starter_nessa_starterkit/"
 	;;
     *)
         echo "[ERROR] Invalid theme name: $1"
@@ -30,8 +33,17 @@ esac
 if [[ $FRONTEND_BUILD_FOLDER != "" && -d $FRONTEND_BUILD_FOLDER ]]
 then
     cd $FRONTEND_BUILD_FOLDER && \
-        npm i --quiet && \
-        npm run build --silent
+        npm i --quiet
+
+    case $1 in
+        nessa)
+            npm run build
+    	;;
+        *)
+            npm run build:clean && \
+            npm run build:icons && \
+            npm run build:webpack
+    esac
 else
     echo "[ERROR] No frontend available under '${FRONTEND_BUILD_FOLDER}'"
     exit 1
@@ -42,4 +54,10 @@ then
     PUBLIC_PROTOTYPE=$BASE_PATH"backend/public/prototype/$1"
     mkdir -p $PUBLIC_PROTOTYPE
     rsync -r $FRONTEND_BUILD_FOLDER"build/prototype/" $PUBLIC_PROTOTYPE
+fi
+
+if [[ -d $FRONTEND_BUILD_FOLDER/build/static/assets ]]
+then
+    mkdir -p $THEME_FRONTEND_FOLDER"starter_$1/Resources/Public/Frontend"
+    rsync -r --delete $FRONTEND_BUILD_FOLDER"build/static/assets/" $THEME_FRONTEND_FOLDER"starter_$1/Resources/Public/Frontend"
 fi

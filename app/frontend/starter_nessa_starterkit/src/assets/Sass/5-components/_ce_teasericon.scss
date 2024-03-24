@@ -1,13 +1,17 @@
-.ctype-nessa_teaser_icon {
+.ctype-nessa {
+  &_teaser_icon {
     padding-top: 20px;
+  }
 }
 
-.c-teaser-icon__body {
+.c-teaser-icon {
+  &__body {
     @include nessa-teaser(15px 30px, 15px 0);
-}
+  }
 
-.c-teaser-icon__title {
+  &__title {
     margin-top: 10px;
     margin-bottom: 15px;
     font-weight: 700;
+  }
 }
