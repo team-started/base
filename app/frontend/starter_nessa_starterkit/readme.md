@@ -1,4 +1,4 @@
-# Frontend theme Starter Freya Fractal Starterkit
+# Frontend theme Starter Nessa Starterkit
 
 ## Setup
 
@@ -6,8 +6,6 @@ Requires a node version `>=16 <17` and npm version `>=8`
 
 ## Application architecture
 
-* [Twig](https://twig.symfony.com/)
-* [fractal](https://fractal.build/)
 * [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 * [Sass](https://sass-lang.com/)
 * [PostCSS](https://postcss.org/)
@@ -24,27 +22,11 @@ $ nvm use
 $ npm i
 ```
 
-### Development
-
-```sh
-# watch in development-mode
-$ npm start
-```
-
 ### Production
 
 ```sh
 # build assets for production with minifications
 $ npm run build
-
-# build icon fonts
-$ npm run build:icons
-
-# preview fractal
-$ npm run preview:fractal
-
-# analyze bundle - set bundleAnalyzer to tru (see Developer Settings)
-$ npm run preview:analyze
 ```
 
 ### Linting
@@ -68,17 +50,6 @@ $ npm run lint:css
 ### Webpack
 
 Webpack setting's can be done in `config/settings.webpack.js`
-
-### Fractal
-**Many core fuctions of Fractal are not longer working**, because of Namespacing, f.e:
-- Includes: ~~`{% include '@object %}`~~ -> `{% include '@object/objects/object.twig' %}`
-- Handles: ~~`"handle": "clickme"`~~
-
-see: `fractal.config.js`, `tsconfig.json`, `settings.webpack.js`
-
-#### Folders
-
-A Folder always needs to be written in plural "buttons", because of namespacing issues.
 
 ### Developer Settings
 
