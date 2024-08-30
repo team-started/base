@@ -6,7 +6,6 @@ namespace StarterTeam\StarterTwig\Service;
 
 use PrototypeIntegration\PrototypeIntegration\Processor\MediaProcessor;
 use TYPO3\CMS\Core\Resource\FileInterface;
-use UnexpectedValueException;
 
 class RenderMediaService
 {
@@ -27,7 +26,7 @@ class RenderMediaService
                 $imageConfiguration,
                 $thumbnailConfiguration
             );
-        } catch (UnexpectedValueException $invalidArgumentException) {
+        } catch (\UnexpectedValueException $invalidArgumentException) {
             trigger_error($invalidArgumentException->getMessage(), E_USER_WARNING);
         }
 
@@ -42,7 +41,7 @@ class RenderMediaService
                 $imageConfiguration,
                 $thumbnailConfiguration
             );
-        } catch (UnexpectedValueException $invalidArgumentException) {
+        } catch (\UnexpectedValueException $invalidArgumentException) {
             trigger_error($invalidArgumentException->getMessage(), E_USER_WARNING);
         }
 

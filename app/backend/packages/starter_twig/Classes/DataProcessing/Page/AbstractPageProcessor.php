@@ -6,7 +6,6 @@ namespace StarterTeam\StarterTwig\DataProcessing\Page;
 
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 /**
@@ -22,18 +21,14 @@ abstract class AbstractPageProcessor
 
     protected Context $context;
 
-    protected ObjectManager $objectManager;
-
     public function __construct(
         ContentObjectRenderer $cObj,
         TypoScriptService $typoScriptService,
-        Context $context,
-        ObjectManager $objectManager
+        Context $context
     ) {
         $this->cObj = $cObj;
         $this->typoScriptService = $typoScriptService;
         $this->context = $context;
-        $this->objectManager = $objectManager;
     }
 
     public function setContentObjectRenderer(ContentObjectRenderer $cObj): void

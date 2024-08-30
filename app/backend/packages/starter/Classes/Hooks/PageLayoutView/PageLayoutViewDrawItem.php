@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\Hooks\PageLayoutView;
 
-use Exception;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Backend\Form\FormDataCompiler;
 use TYPO3\CMS\Backend\Form\FormDataGroup\TcaDatabaseRecord;
@@ -49,7 +48,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
      * @param array $row : The current data row for this item
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row): void
+    public function preProcess(PageLayoutView &$parentObject, bool &$drawItem, string &$headerContent, string &$itemContent, array &$row): void
     {
         if (!isset($this->supportedContentTypes[$row['CType']])) {
             return;
@@ -79,7 +78,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
 
             $itemContent = $this->view->render();
             $headerContent = '';
-        } catch (Exception $exception) {
+        } catch (\Exception $exception) {
             $message = $GLOBALS['BE_USER']->errorMsg;
             if (empty($message)) {
                 $message = $exception->getMessage() . ' ' . $exception->getCode();

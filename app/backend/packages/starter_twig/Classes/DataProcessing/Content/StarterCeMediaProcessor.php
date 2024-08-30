@@ -128,7 +128,7 @@ class StarterCeMediaProcessor implements PtiDataProcessor
      * @param int|string $default
      * @return int|string
      */
-    protected function getColumnValue($value, $default = 'inherit')
+    protected function getColumnValue(int|string $value, int|string $default = 'inherit')
     {
         if (($value === 0 || $value === '') && ($default !== 0 && $default !== '')) {
             return $default;

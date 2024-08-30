@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace StarterTeam\StarterTwigNews\View;
 
 use PrototypeIntegration\PrototypeIntegration\View\ExtbaseViewAdapter;
-use RuntimeException;
 use StarterTeam\StarterTwigNews\DataProcessing\Content\Ce76NewsDetail;
 
 class NewsDetailTwigView extends ExtbaseViewAdapter
@@ -20,7 +19,7 @@ class NewsDetailTwigView extends ExtbaseViewAdapter
     public function render(): string
     {
         if (empty($this->settings['detail']['templateName'])) {
-            throw new RuntimeException('No template file defined article detail view');
+            throw new \RuntimeException('No template file defined article detail view');
         }
         $this->template = $this->settings['detail']['templateName'];
 

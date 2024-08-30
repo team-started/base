@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace StarterTeam\StarterTwigNews\View;
 
 use PrototypeIntegration\PrototypeIntegration\View\ExtbaseViewAdapter;
-use RuntimeException;
 use StarterTeam\StarterTwigNews\DataProcessing\Content\Ce75NewsList;
 
 class NewsListTwigView extends ExtbaseViewAdapter
@@ -20,7 +19,7 @@ class NewsListTwigView extends ExtbaseViewAdapter
     public function render(): string
     {
         if (empty($this->settings['list']['templateName'])) {
-            throw new RuntimeException('No template file defined for Ce75-NewsList');
+            throw new \RuntimeException('No template file defined for Ce75-NewsList');
         }
 
         $this->template = $this->settings['list']['templateName'];

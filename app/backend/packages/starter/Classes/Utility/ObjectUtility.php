@@ -7,6 +7,4 @@ namespace StarterTeam\Starter\Utility;
 /**
  * Class ObjectUtility
  */
-class ObjectUtility extends AbstractUtility
-{
-}
+class ObjectUtility extends AbstractUtility {}

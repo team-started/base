@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace StarterTeam\StarterTwigNews\View;
 
 use PrototypeIntegration\PrototypeIntegration\View\ExtbaseViewAdapter;
-use RuntimeException;
 use StarterTeam\StarterTwigNews\DataProcessing\Content\Ce77NewsDateMenu;
 
 class NewsDateMenuTwigView extends ExtbaseViewAdapter
@@ -20,7 +19,7 @@ class NewsDateMenuTwigView extends ExtbaseViewAdapter
     public function render(): string
     {
         if (empty($this->settings['dateMenu']['templateName'])) {
-            throw new RuntimeException('No template file defined for Ce77-NewsDateMenu');
+            throw new \RuntimeException('No template file defined for Ce77-NewsDateMenu');
         }
 
         $this->template = $this->settings['dateMenu']['templateName'];

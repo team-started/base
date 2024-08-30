@@ -26,7 +26,7 @@ class TcaCTypeItem implements FormDataProviderInterface
 
         $result['processedTca']['columns']['CType']['config']['items'] = array_filter(
             $result['processedTca']['columns']['CType']['config']['items'],
-            fn ($item) => in_array($item[1], $allowedCTypes)
+            fn($item) => in_array($item[1], $allowedCTypes)
         );
         $result['processedTca']['columns']['CType']['config']['default'] = $inlineContentSettings['default'];
 

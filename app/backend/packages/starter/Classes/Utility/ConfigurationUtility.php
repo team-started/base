@@ -281,7 +281,7 @@ class ConfigurationUtility
 
         $inlineContentSettings = array_filter(
             $formDataResult['pageTsConfig']['tx_starter.']['inlineContentElementSettings.'],
-            fn ($itemSettings) => (int)$itemSettings['colPos'] === $currentColPos
+            fn($itemSettings) => (int)$itemSettings['colPos'] === $currentColPos
         );
 
         return array_shift($inlineContentSettings);
