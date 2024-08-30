@@ -30,4 +30,7 @@ return RectorConfig::configure()
     ->withRules([
         \Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector::class,
         \Ssch\TYPO3Rector\CodeQuality\General\ConvertImplicitVariablesToExplicitGlobalsRector::class,
+    ])
+    ->withSkip([
+        getcwd() . '/packages/starter_nessa/ext_tables.php',
     ]);

@@ -13,8 +13,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ImageProcessorService implements NewsProcessorInterface
 {
-    protected RenderMediaService $renderMediaService;
-
     protected ImageProcessor $imageProcessor;
 
     private array $defaultProcessorOptions = [
@@ -32,9 +30,8 @@ class ImageProcessorService implements NewsProcessorInterface
 
     private string $dummyImage = '';
 
-    public function __construct(RenderMediaService $renderMediaService, ImageProcessor $imageProcessor)
+    public function __construct(protected RenderMediaService $renderMediaService, ImageProcessor $imageProcessor)
     {
-        $this->renderMediaService = $renderMediaService;
         $this->imageProcessor = $imageProcessor;
     }
 

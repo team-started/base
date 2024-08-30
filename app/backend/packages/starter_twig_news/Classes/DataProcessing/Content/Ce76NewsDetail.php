@@ -9,8 +9,6 @@ use StarterTeam\StarterTwigNews\DataProcessing\Records\NewsProcessorService;
 
 class Ce76NewsDetail implements PtiDataProcessor
 {
-    protected NewsProcessorService $newsProcessorService;
-
     private array $defaultProcessorOptions = [
         'previewOnly' => false,
         'preferConfigurationIndex' => 'detail',
@@ -23,9 +21,8 @@ class Ce76NewsDetail implements PtiDataProcessor
         'media' => true,
     ];
 
-    public function __construct(NewsProcessorService $newsProcessorService)
+    public function __construct(protected NewsProcessorService $newsProcessorService)
     {
-        $this->newsProcessorService = $newsProcessorService;
     }
 
     public function process(array $data, array $configuration): ?array

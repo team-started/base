@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Twig\View;
 
+use RuntimeException;
+use Exception;
 use PrototypeIntegration\PrototypeIntegration\View\TemplateBasedView;
 use StarterTeam\StarterTwig\Twig\TwigEnvironment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -14,25 +16,22 @@ class TwigView extends AbstractView implements ViewInterface, TemplateBasedView
 {
     protected TwigEnvironment $twigEnvironment;
 
-    protected string $template;
-
-    public function __construct(string $template = '')
+    public function __construct(protected string $template = '')
     {
-        $this->template = $template;
         $this->twigEnvironment = GeneralUtility::makeInstance(TwigEnvironment::class);
     }
 
     public function render(): string
     {
         if ($this->template === '') {
-            throw new \RuntimeException('Template file missing.', 1_519_205_250_412);
+            throw new RuntimeException('Template file missing.', 1_519_205_250_412);
         }
 
         try {
             $this->moveCustomGlobalsIntoTwigEnvironment();
             return $this->twigEnvironment->render($this->template, $this->variables);
-        } catch (\Exception $exception) {
-            throw new \RuntimeException('Twig view error: ' . $exception->getMessage(), 1_519_205_228_169, $exception);
+        } catch (Exception $exception) {
+            throw new RuntimeException('Twig view error: ' . $exception->getMessage(), 1_519_205_228_169, $exception);
         }
     }
 

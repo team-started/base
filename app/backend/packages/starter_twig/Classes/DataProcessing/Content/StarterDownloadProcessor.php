@@ -31,8 +31,6 @@ class StarterDownloadProcessor implements PtiDataProcessor
 
     protected RichtextProcessor $richTextProcessor;
 
-    protected HeadlineProcessor $headlineProcessor;
-
     protected LoggerInterface $logger;
 
     protected array $configuration = [];
@@ -40,12 +38,11 @@ class StarterDownloadProcessor implements PtiDataProcessor
     public function __construct(
         FileProcessor $fileProcessor,
         RichtextProcessor $richTextProcessor,
-        HeadlineProcessor $headlineProcessor,
+        protected HeadlineProcessor $headlineProcessor,
         LogManagerInterface $logManager
     ) {
         $this->fileProcessor = $fileProcessor;
         $this->richTextProcessor = $richTextProcessor;
-        $this->headlineProcessor = $headlineProcessor;
         $this->logger = $logManager->getLogger(self::class);
     }
 
@@ -120,7 +117,7 @@ class StarterDownloadProcessor implements PtiDataProcessor
 
         if (!empty($data['filelink_sorting'])) {
             $fieldToSort = (string)static::SORT_MAPPING[$data['filelink_sorting']];
-            uasort($downloadFiles, fn($a, $b): int => strcmp($a[$fieldToSort], $b[$fieldToSort]));
+            uasort($downloadFiles, fn($a, $b): int => strcmp((string) $a[$fieldToSort], (string) $b[$fieldToSort]));
 
             if ($data['filelink_sorting_direction'] === 'desc') {
                 $downloadFiles = array_reverse($downloadFiles, true);

@@ -12,16 +12,10 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class CategoriesProcessorService implements NewsProcessorInterface
 {
-    private ContentObjectRenderer $contentObjectRenderer;
-
-    private EventDispatcherInterface $eventDispatcher;
-
     private array $properties = ['uid', 'title', 'description'];
 
-    public function __construct(ContentObjectRenderer $contentObjectRenderer, EventDispatcherInterface $eventDispatcher)
+    public function __construct(private readonly ContentObjectRenderer $contentObjectRenderer, private readonly EventDispatcherInterface $eventDispatcher)
     {
-        $this->contentObjectRenderer = $contentObjectRenderer;
-        $this->eventDispatcher = $eventDispatcher;
     }
 
     public function canHandle(string $processStatement): bool

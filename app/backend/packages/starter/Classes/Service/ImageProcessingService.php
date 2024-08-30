@@ -30,17 +30,15 @@ class ImageProcessingService
         ],
     ];
 
-    protected ContentObjectRenderer $contentObjectRenderer;
-
     protected TypoScriptFrontendController $tsfe;
 
     /**
      * ImageProcessingService constructor.
      * @SusppressWarning(PHPMD.Superglobals)
      */
-    public function __construct(ContentObjectRenderer $contentObjectRenderer)
-    {
-        $this->contentObjectRenderer = $contentObjectRenderer;
+    public function __construct(
+        protected ContentObjectRenderer $contentObjectRenderer,
+    ) {
         $this->tsfe = $GLOBALS['TSFE'];
     }
 
@@ -172,7 +170,7 @@ class ImageProcessingService
 
                 // match strings like "100c-300" and transform them to "200c-600"
                 $splitRegexp = '/^(\d*)([cm]?)([+-]?)(\d*)$/';
-                preg_match($splitRegexp, $defaultValue, $matches);
+                preg_match($splitRegexp, (string) $defaultValue, $matches);
                 [$_, $value, $cropMode, $cropOffsetDirection, $cropOffsetValue] = $matches;
 
                 $newValue = 2 * ((int)$value);

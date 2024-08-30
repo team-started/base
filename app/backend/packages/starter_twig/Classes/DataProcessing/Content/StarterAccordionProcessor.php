@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
+use Exception;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use Psr\Log\LoggerInterface;
 use StarterTeam\StarterTwig\Processor\BodyTextProcessor;
@@ -42,29 +43,17 @@ class StarterAccordionProcessor implements PtiDataProcessor
 
     protected array $configuration = [];
 
-    protected ContentObjectRenderer $contentObject;
-
-    protected HeadlineProcessor $headlineProcessor;
-
-    protected BodyTextProcessor $bodyTextProcessor;
-
-    protected RenderMediaService $renderMediaService;
-
     protected LoggerInterface $logger;
 
     protected ?array $assetFields = null;
 
     public function __construct(
-        ContentObjectRenderer $contentObjectRenderer,
-        HeadlineProcessor $headlineProcessor,
-        BodyTextProcessor $bodyTextProcessor,
-        RenderMediaService $renderMediaService,
+        protected ContentObjectRenderer $contentObject,
+        protected HeadlineProcessor $headlineProcessor,
+        protected BodyTextProcessor $bodyTextProcessor,
+        protected RenderMediaService $renderMediaService,
         LogManagerInterface $logManager
     ) {
-        $this->contentObject = $contentObjectRenderer;
-        $this->headlineProcessor = $headlineProcessor;
-        $this->bodyTextProcessor = $bodyTextProcessor;
-        $this->renderMediaService = $renderMediaService;
         $this->logger = $logManager->getLogger(self::class);
     }
 
@@ -124,7 +113,7 @@ class StarterAccordionProcessor implements PtiDataProcessor
         foreach ($accordionItems as $accordionItem) {
             try {
                 $accordionData[] = $this->translateSliderItem($accordionItem);
-            } catch (\Exception $exception) {
+            } catch (Exception $exception) {
                 // There was an error rendering the accordionItem. Log the error and ignore the item
                 $message = sprintf('Could not render accordion item with UID %s', $accordionItem['uid']);
                 $this->logger->warning($message, ['exception' => $exception]);

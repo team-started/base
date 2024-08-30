@@ -9,11 +9,8 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class TeaserProcessorService implements NewsProcessorInterface
 {
-    private ContentObjectRenderer $contentObjectRenderer;
-
-    public function __construct(ContentObjectRenderer $contentObjectRenderer)
+    public function __construct(private readonly ContentObjectRenderer $contentObjectRenderer)
     {
-        $this->contentObjectRenderer = $contentObjectRenderer;
     }
 
     public function canHandle(string $processStatement): bool

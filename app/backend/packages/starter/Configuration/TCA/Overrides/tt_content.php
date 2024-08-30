@@ -1,11 +1,14 @@
 <?php
 
+use StarterTeam\Starter\Utility\ConfigurationUtility;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+
 defined('TYPO3') || die();
 
 // add content element type icons
 (function () {
-    foreach (\StarterTeam\Starter\Utility\ConfigurationUtility::$contentElements as $ceId => $properties) {
-        \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+    foreach (ConfigurationUtility::$contentElements as $ceId => $properties) {
+        ArrayUtility::mergeRecursiveWithOverrule(
             $GLOBALS['TCA']['tt_content'],
             [
                 'ctrl' => [
@@ -22,7 +25,7 @@ defined('TYPO3') || die();
 
 (function () {
     // define new palettes for content elements
-    \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+    ArrayUtility::mergeRecursiveWithOverrule(
         $GLOBALS['TCA']['tt_content'],
         [
             'palettes' => [

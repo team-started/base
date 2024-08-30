@@ -46,11 +46,9 @@ class ImageProcessor implements DataProcessorInterface
 {
     protected ImageProcessingService $imageProcessingService;
 
-    protected ContentDataProcessor $contentDataProcessor;
-
-    public function __construct(ContentDataProcessor $contentDataProcessor)
-    {
-        $this->contentDataProcessor = $contentDataProcessor;
+    public function __construct(
+        protected ContentDataProcessor $contentDataProcessor,
+    ) {
     }
 
     public function process(

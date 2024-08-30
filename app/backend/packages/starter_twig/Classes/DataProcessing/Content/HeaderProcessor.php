@@ -15,16 +15,8 @@ class HeaderProcessor implements PtiDataProcessor
 {
     protected array $configuration = [];
 
-    protected ContentObjectRenderer $contentObject;
-
-    protected HeadlineProcessor $headlineProcessor;
-
-    public function __construct(
-        ContentObjectRenderer $contentObjectRenderer,
-        HeadlineProcessor $headlineProcessor
-    ) {
-        $this->contentObject = $contentObjectRenderer;
-        $this->headlineProcessor = $headlineProcessor;
+    public function __construct(protected ContentObjectRenderer $contentObject, protected HeadlineProcessor $headlineProcessor)
+    {
     }
 
     public function process(array $data, array $configuration): ?array

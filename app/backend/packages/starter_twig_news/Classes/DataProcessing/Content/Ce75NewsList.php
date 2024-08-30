@@ -13,8 +13,6 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 class Ce75NewsList implements PtiDataProcessor
 {
-    protected NewsProcessorService $newsProcessorService;
-
     protected array $processorConfiguration = [
         'previewOnly' => true,
         'preferConfigurationIndex' => 'list',
@@ -26,9 +24,8 @@ class Ce75NewsList implements PtiDataProcessor
         'link' => true,
     ];
 
-    public function __construct(NewsProcessorService $newsProcessorService)
+    public function __construct(protected NewsProcessorService $newsProcessorService)
     {
-        $this->newsProcessorService = $newsProcessorService;
     }
 
     public function process(array $data, array $configuration): ?array

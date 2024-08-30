@@ -37,7 +37,7 @@ class CeDownloadMigration implements UpgradeWizardInterface
             ->where(
                 $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('nessa_download_list'))
             )
-            ->execute();
+            ->executeStatement();
 
         return true;
     }
@@ -70,7 +70,7 @@ class CeDownloadMigration implements UpgradeWizardInterface
             ->where(
                 $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('nessa_download_list'))
             )
-            ->execute()
+            ->executeQuery()
             ->fetchOne();
 
         if (is_int($result)) {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\Updates;
 
+use PDO;
 use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Driver\Exception;
 use Doctrine\DBAL\Schema\Column;
@@ -84,12 +85,12 @@ class CtaFieldMigration implements UpgradeWizardInterface
                 $queryBuilder->expr()->or(
                     $queryBuilder->expr()->neq(
                         $newFieldName,
-                        $queryBuilder->createNamedParameter('', \PDO::PARAM_STR)
+                        $queryBuilder->createNamedParameter('', PDO::PARAM_STR)
                     ),
                     $queryBuilder->expr()->isNotNull($newFieldName)
                 )
             )
-            ->execute();
+            ->executeStatement();
     }
 
     /**
@@ -150,12 +151,12 @@ class CtaFieldMigration implements UpgradeWizardInterface
                 $queryBuilder->expr()->or(
                     $queryBuilder->expr()->neq(
                         $fieldName,
-                        $queryBuilder->createNamedParameter('', \PDO::PARAM_STR)
+                        $queryBuilder->createNamedParameter('', PDO::PARAM_STR)
                     ),
                     $queryBuilder->expr()->isNotNull($fieldName)
                 )
             )
-            ->execute()
+            ->executeQuery()
             ->fetchOne();
 
         if (is_int($result)) {

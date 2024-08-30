@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\Utility;
 
+use InvalidArgumentException;
+use RuntimeException;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -105,21 +107,21 @@ class ConfigurationUtility
         array $removeSettings = []
     ): void {
         if ($table === '') {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Given table is of type "' . gettype($cType) . '" but a string is expected.',
                 1_303_236_963
             );
         }
 
         if ($cType === '') {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Given CType is of type "' . gettype($cType) . '" but a string is expected.',
                 1_303_236_963
             );
         }
 
         if ($field === '') {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Given field is of type "' . gettype($field) . '" but a string is expected.',
                 1_303_236_964
             );
@@ -128,13 +130,13 @@ class ConfigurationUtility
         if (!isset($GLOBALS['TCA'][$table]['types'][$cType])
             || !is_array($GLOBALS['TCA'][$table]['types'][$cType])
         ) {
-            throw new \RuntimeException('Given CType was not found.', 1_303_237_468);
+            throw new RuntimeException('Given CType was not found.', 1_303_237_468);
         }
 
         if (!isset($GLOBALS['TCA'][$table]['columns'][$field])
             || !is_array($GLOBALS['TCA'][$table]['columns'][$field])
         ) {
-            throw new \RuntimeException('Given field was not found.', 1_303_237_468);
+            throw new RuntimeException('Given field was not found.', 1_303_237_468);
         }
 
         $configToOverride = &$GLOBALS['TCA'][$table]['types'][$cType]['columnsOverrides'][$field]['config'];

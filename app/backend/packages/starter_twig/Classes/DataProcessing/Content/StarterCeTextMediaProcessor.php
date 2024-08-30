@@ -22,31 +22,16 @@ class StarterCeTextMediaProcessor implements PtiDataProcessor
 
     protected array $configuration = [];
 
-    protected ContentObjectRenderer $contentObject;
-
-    protected HeadlineProcessor $headlineProcessor;
-
-    protected BodyTextProcessor $bodyTextProcessor;
-
-    protected CtaProcessor $ctaProcessor;
-
-    protected RenderMediaService $renderMediaService;
-
     protected LoggerInterface $logger;
 
     public function __construct(
-        ContentObjectRenderer $contentObjectRenderer,
-        HeadlineProcessor $headlineProcessor,
-        BodyTextProcessor $bodyTextProcessor,
-        CtaProcessor $ctaProcessor,
-        RenderMediaService $renderMediaService,
+        protected ContentObjectRenderer $contentObject,
+        protected HeadlineProcessor $headlineProcessor,
+        protected BodyTextProcessor $bodyTextProcessor,
+        protected CtaProcessor $ctaProcessor,
+        protected RenderMediaService $renderMediaService,
         LogManagerInterface $logManager
     ) {
-        $this->contentObject = $contentObjectRenderer;
-        $this->headlineProcessor = $headlineProcessor;
-        $this->bodyTextProcessor = $bodyTextProcessor;
-        $this->ctaProcessor = $ctaProcessor;
-        $this->renderMediaService = $renderMediaService;
         $this->logger = $logManager->getLogger(self::class);
     }
 

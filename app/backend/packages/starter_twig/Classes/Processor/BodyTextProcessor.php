@@ -41,7 +41,7 @@ class BodyTextProcessor
         }
 
         if (array_key_exists($dataField, $data) && $data[$dataField] !== '') {
-            $value = strip_tags($data[$dataField]);
+            $value = strip_tags((string) $data[$dataField]);
         }
 
         return $value;

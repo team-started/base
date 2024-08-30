@@ -180,7 +180,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
                     $queryBuilder->expr()->eq('fieldname', $queryBuilder->createNamedParameter($searchValue))
                 )
                 ->set('fieldname', $replaceValue)
-                ->execute();
+                ->executeStatement();
         }
     }
 
@@ -195,7 +195,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         $queryBuilder
             ->update($table)
             ->set($newFieldName, $queryBuilder->quoteIdentifier($oldFieldName), false)
-            ->execute();
+            ->executeStatement();
         $this->alterTable($table, $oldFieldName);
     }
 
@@ -224,7 +224,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
 
         if (array_key_exists($fieldName, $allFields)) {
             $return = $allFields[$fieldName]['Type'] . ' ';
-            $return .= strtolower($allFields[$fieldName]['Null']) === 'no' ? 'NOT NULL' : 'NULL';
+            $return .= strtolower((string) $allFields[$fieldName]['Null']) === 'no' ? 'NOT NULL' : 'NULL';
 
             return $return . (' default "' . $allFields[$fieldName]['Default'] . '"');
         }
@@ -242,7 +242,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         $allFields = [];
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionByName('Default');
         $statement = $queryBuilder->query('SHOW FULL COLUMNS FROM ' . $table);
-        while ($fieldRow = $statement->fetch()) {
+        while ($fieldRow = $statement->fetchAssociative()) {
             if (is_array($fieldRow) && array_key_exists('Field', $fieldRow)) {
                 $allFields[$fieldRow['Field']] = $fieldRow;
             }
@@ -261,7 +261,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         $allTables = [];
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionByName('Default');
         $statement = $queryBuilder->query('SHOW TABLE STATUS FROM `' . $queryBuilder->getDatabase() . '`');
-        while ($theTable = $statement->fetch()) {
+        while ($theTable = $statement->fetchAssociative()) {
             if (is_array($theTable) && array_key_exists('Name', $theTable)) {
                 $allTables[$theTable['Name']] = $theTable;
             }

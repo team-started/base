@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\DataProcessing;
 
+use Exception;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -29,7 +30,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
         foreach ($columnGridItems as $columnGridItem) {
             try {
                 $processedData[$targetVariableName][] = $this->translateColumnGridItem($columnGridItem, $cObj);
-            } catch (\Exception $exception) {
+            } catch (Exception) {
             }
         }
 

@@ -19,11 +19,8 @@ class RelatedProcessorService implements NewsProcessorInterface
         'link' => true,
     ];
 
-    private NewsProcessorService $newsProcessorService;
-
-    public function __construct(NewsProcessorService $newsProcessorService)
+    public function __construct(private readonly NewsProcessorService $newsProcessorService)
     {
-        $this->newsProcessorService = $newsProcessorService;
     }
 
     public function canHandle(string $processStatement): bool

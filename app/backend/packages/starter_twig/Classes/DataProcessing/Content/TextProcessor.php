@@ -19,27 +19,15 @@ class TextProcessor implements PtiDataProcessor
 {
     protected array $configuration = [];
 
-    protected ContentObjectRenderer $contentObject;
-
-    protected HeadlineProcessor $headlineProcessor;
-
-    protected BodyTextProcessor $bodyTextProcessor;
-
-    protected CtaProcessor $ctaProcessor;
-
     protected LoggerInterface $logger;
 
     public function __construct(
-        ContentObjectRenderer $contentObjectRenderer,
-        HeadlineProcessor $headlineProcessor,
-        BodyTextProcessor $bodyTextProcessor,
-        CtaProcessor $ctaProcessor,
+        protected ContentObjectRenderer $contentObject,
+        protected HeadlineProcessor $headlineProcessor,
+        protected BodyTextProcessor $bodyTextProcessor,
+        protected CtaProcessor $ctaProcessor,
         LogManagerInterface $logManager
     ) {
-        $this->contentObject = $contentObjectRenderer;
-        $this->headlineProcessor = $headlineProcessor;
-        $this->bodyTextProcessor = $bodyTextProcessor;
-        $this->ctaProcessor = $ctaProcessor;
         $this->logger = $logManager->getLogger(self::class);
     }
 

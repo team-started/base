@@ -18,11 +18,8 @@ class LinkProcessorService implements NewsProcessorInterface
         'default' => 'getDetailPidFromDefaultDetailPid',
     ];
 
-    private ContentObjectRenderer $contentObjectRenderer;
-
-    public function __construct(ContentObjectRenderer $contentObjectRenderer)
+    public function __construct(private readonly ContentObjectRenderer $contentObjectRenderer)
     {
-        $this->contentObjectRenderer = $contentObjectRenderer;
     }
 
     public function canHandle(string $processStatement): bool
@@ -59,22 +56,17 @@ class LinkProcessorService implements NewsProcessorInterface
 
     private function getLinkConfigurationByNewsType(News $newsRecord, array $configuration): array
     {
-        switch (NewsProcessorService::NEWS_TYPE[$newsRecord->getType()]) {
-            case 'internal':
-                $typoLinkConfig = [
-                    'parameter' => $newsRecord->getInternalurl(),
-                    'target' => '_self',
-                ];
-                break;
-            case 'external':
-                $typoLinkConfig = [
-                    'parameter' => $newsRecord->getExternalurl(),
-                    'target' => '_blank',
-                ];
-                break;
-            default:
-                $typoLinkConfig = $this->getLinkToNewsItem($newsRecord, $configuration);
-        }
+        $typoLinkConfig = match (NewsProcessorService::NEWS_TYPE[$newsRecord->getType()]) {
+            'internal' => [
+                'parameter' => $newsRecord->getInternalurl(),
+                'target' => '_self',
+            ],
+            'external' => [
+                'parameter' => $newsRecord->getExternalurl(),
+                'target' => '_blank',
+            ],
+            default => $this->getLinkToNewsItem($newsRecord, $configuration),
+        };
 
         return $typoLinkConfig;
     }

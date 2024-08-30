@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Processor;
 
+use DateTime;
 use PrototypeIntegration\PrototypeIntegration\Formatter\DateTimeFormatter;
 
 class DateDataProcessor
@@ -36,7 +37,7 @@ class DateDataProcessor
         $this->dateTimeFormatter = $dateTimeFormatter;
     }
 
-    public function process(?\DateTime $dateTime, array $formatPattern): ?array
+    public function process(?DateTime $dateTime, array $formatPattern): ?array
     {
         if (is_null($dateTime)) {
             return null;

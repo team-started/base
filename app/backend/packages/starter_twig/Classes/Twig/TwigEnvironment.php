@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Twig;
 
+use Exception;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Extension\DebugExtension;
@@ -31,11 +32,6 @@ class TwigEnvironment extends Environment implements SingletonInterface
 
         $additionalLoaders = array_merge($this->getAdditionalLoaders(), [$this->defineFileSystemLoader()]);
         $loader = new ChainLoader($additionalLoaders);
-
-        parent::__construct($loader, [
-            'cache' => $this->getConfigurationWithKey('disableCache') ? false : static::getCacheDirectory(),
-            'debug' => $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'],
-        ]);
 
         if ($this->isDebug()) {
             $this->addExtension(new DebugExtension());
@@ -65,14 +61,14 @@ class TwigEnvironment extends Environment implements SingletonInterface
     /**
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function getNamespaces(): array
     {
         $namespaces = $this->getConfigurationWithKey('namespaces');
 
         if (!is_array($namespaces)) {
-            throw new \Exception('Namespaces must configured as array', 1_676_655_866);
+            throw new Exception('Namespaces must configured as array', 1_676_655_866);
         }
 
         return array_map(

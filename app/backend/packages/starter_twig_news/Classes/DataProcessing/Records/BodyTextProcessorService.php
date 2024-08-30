@@ -9,7 +9,7 @@ use PrototypeIntegration\PrototypeIntegration\Processor\RichtextProcessor;
 
 class BodyTextProcessorService implements NewsProcessorInterface
 {
-    private RichtextProcessor $richTextProcessor;
+    private readonly RichtextProcessor $richTextProcessor;
 
     public function __construct(RichtextProcessor $richTextProcessor)
     {

@@ -1,8 +1,10 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+
 defined('TYPO3') || die();
 
-\TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+ArrayUtility::mergeRecursiveWithOverrule(
     $GLOBALS['TCA']['sys_file_reference'],
     [
         'palettes' => [

@@ -15,20 +15,8 @@ abstract class AbstractPageProcessor
 {
     protected array $conf = [];
 
-    protected ContentObjectRenderer $cObj;
-
-    protected TypoScriptService $typoScriptService;
-
-    protected Context $context;
-
-    public function __construct(
-        ContentObjectRenderer $cObj,
-        TypoScriptService $typoScriptService,
-        Context $context
-    ) {
-        $this->cObj = $cObj;
-        $this->typoScriptService = $typoScriptService;
-        $this->context = $context;
+    public function __construct(protected ContentObjectRenderer $cObj, protected TypoScriptService $typoScriptService, protected Context $context)
+    {
     }
 
     public function setContentObjectRenderer(ContentObjectRenderer $cObj): void

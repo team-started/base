@@ -1,5 +1,14 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
+use StarterTeam\StarterNessa\Configuration;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
+use StarterTeam\StarterNessa\Updates\CtaFieldMigration;
+use StarterTeam\StarterNessa\Updates\CeDownloadMigration;
+
 defined('TYPO3') || die();
 
 (function () {
@@ -10,33 +19,33 @@ defined('TYPO3') || die();
 
     if (TYPO3_MODE === 'BE') {
         // Add default UserTSConfig
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
+        ExtensionManagementUtility::addUserTSConfig(
             "@import 'EXT:starter_nessa/Configuration/TSConfig/User/Default.typoscript'"
         );
 
-        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-            \TYPO3\CMS\Core\Imaging\IconRegistry::class
+        $iconRegistry = GeneralUtility::makeInstance(
+            IconRegistry::class
         );
 
-        foreach (\StarterTeam\StarterNessa\Configuration::getContentElements() as $property) {
+        foreach (Configuration::getContentElements() as $property) {
             $iconRegistry->registerIcon(
                 $property['typeIconClass'],
-                \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                SvgIconProvider::class,
                 ['source' => $property['typeIconPath']]
             );
         }
 
-        foreach (\StarterTeam\StarterNessa\Configuration::getContentElementTables() as $property) {
+        foreach (Configuration::getContentElementTables() as $property) {
             $iconRegistry->registerIcon(
                 $property['typeIconClass'],
-                \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+                BitmapIconProvider::class,
                 ['source' => $property['typeIconPath']]
             );
         }
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['starterNessa_CtaFieldUpdateWizard']
-            = \StarterTeam\StarterNessa\Updates\CtaFieldMigration::class;
+            = CtaFieldMigration::class;
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['starterNessa_ContentElementDownloadListUpdateWizard']
-            = \StarterTeam\StarterNessa\Updates\CeDownloadMigration::class;
+            = CeDownloadMigration::class;
     }
 })();

@@ -12,17 +12,14 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class Ce77NewsDateMenu implements PtiDataProcessor
 {
-    protected ContentObjectRenderer $contentObjectRenderer;
-
     protected DateTimeFormatter $dateTimeFormatter;
 
     protected array $configuration = [];
 
     public function __construct(
-        ContentObjectRenderer $contentObjectRenderer,
+        protected ContentObjectRenderer $contentObjectRenderer,
         DateTimeFormatter $dateTimeFormatter
     ) {
-        $this->contentObjectRenderer = $contentObjectRenderer;
         $this->dateTimeFormatter = $dateTimeFormatter;
     }
 

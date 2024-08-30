@@ -15,16 +15,8 @@ class StarterDistributionNavigationProcessor implements PtiDataProcessor
 
     public const FALLBACK_TITLE_FIELD = 'nav_title // title';
 
-    protected ContentObjectRenderer $contentObjectRenderer;
-
-    protected HeadlineProcessor $headlineProcessor;
-
-    public function __construct(
-        ContentObjectRenderer $contentObjectRenderer,
-        HeadlineProcessor $headlineProcessor
-    ) {
-        $this->contentObjectRenderer = $contentObjectRenderer;
-        $this->headlineProcessor = $headlineProcessor;
+    public function __construct(protected ContentObjectRenderer $contentObjectRenderer, protected HeadlineProcessor $headlineProcessor)
+    {
     }
 
     public function process(array $data, array $configuration): ?array

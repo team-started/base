@@ -19,26 +19,17 @@ class StarterCeMediaProcessor implements PtiDataProcessor
 {
     protected array $configuration = [];
 
-    protected ContentObjectRenderer $contentObject;
-
-    protected HeadlineProcessor $headlineProcessor;
-
-    protected RenderMediaService $renderMediaService;
-
     protected TypoLinkStringProcessor $typoLinkProcessor;
 
     protected LoggerInterface $logger;
 
     public function __construct(
-        ContentObjectRenderer $contentObjectRenderer,
-        HeadlineProcessor $headlineProcessor,
-        RenderMediaService $renderMediaService,
+        protected ContentObjectRenderer $contentObject,
+        protected HeadlineProcessor $headlineProcessor,
+        protected RenderMediaService $renderMediaService,
         TypoLinkStringProcessor $typoLinkStringProcessor,
         LogManagerInterface $logManager
     ) {
-        $this->contentObject = $contentObjectRenderer;
-        $this->headlineProcessor = $headlineProcessor;
-        $this->renderMediaService = $renderMediaService;
         $this->typoLinkProcessor = $typoLinkStringProcessor;
         $this->logger = $logManager->getLogger(self::class);
     }

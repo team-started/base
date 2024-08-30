@@ -1,11 +1,13 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+
 defined('TYPO3') || die();
 
 (function () {
     $translateFile = 'LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:';
 
-    \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+    ArrayUtility::mergeRecursiveWithOverrule(
         $GLOBALS['TCA']['tt_content']['columns'],
         [
             'tx_starter_visibility' => [

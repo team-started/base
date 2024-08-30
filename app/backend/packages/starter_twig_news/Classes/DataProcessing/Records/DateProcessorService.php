@@ -9,11 +9,8 @@ use StarterTeam\StarterTwig\Processor\DateDataProcessor;
 
 class DateProcessorService implements NewsProcessorInterface
 {
-    private DateDataProcessor $dateDataProcessor;
-
-    public function __construct(DateDataProcessor $dateDataProcessor)
+    public function __construct(private readonly DateDataProcessor $dateDataProcessor)
     {
-        $this->dateDataProcessor = $dateDataProcessor;
     }
 
     public function canHandle(string $processStatement): bool
