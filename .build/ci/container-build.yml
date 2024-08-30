@@ -5,7 +5,7 @@
     - docker:19.03.12-dind
   parallel:
     matrix:
-      - PHP_VERSION: ['7.4', '8.1']
+      - PHP_VERSION: ['8.2']
   variables:
     ALPINE_VERSION: '3.12'
     COMPOSER_VERSION: '2'

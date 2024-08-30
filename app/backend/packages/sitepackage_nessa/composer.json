@@ -4,11 +4,11 @@
     "description": "StarterTeam sitepackage extension for EXT:starter-nessa",
     "license": "proprietary",
     "require": {
-        "php": "^7.4 || ^8.1",
-        "typo3/cms-core": "^11.5",
-        "starterteam/starter": "^4.5",
-        "starterteam/starter-nessa": "^4.5"
-    },
+		"php": "^8.2",
+		"typo3/cms-core": "^12.4 || ^13.0",
+		"starterteam/starter": "^4.5 || dev-main",
+		"starterteam/starter-nessa": "^4.5 || dev-main"
+	},
     "config": {
         "vendor-dir": ".Build/vendor",
         "bin-dir": ".Build/bin",

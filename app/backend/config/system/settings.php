@@ -3,7 +3,6 @@ return [
     'BE' => [
         'compressionLevel' => '5',
         'debug' => false,
-        'explicitADmode' => 'explicitAllow',
         'lockSSL' => true,
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -46,25 +45,6 @@ return [
             'automaticInstallation' => '0',
             'offlineMode' => '1',
         ],
-        'news' => [
-            'advancedMediaPreview' => '1',
-            'archiveDate' => 'date',
-            'categoryBeGroupTceFormsRestriction' => '0',
-            'categoryRestriction' => '',
-            'contentElementPreview' => '1',
-            'contentElementRelation' => '1',
-            'dateTimeNotRequired' => '0',
-            'hidePageTreeForAdministrationModule' => '0',
-            'manualSorting' => '0',
-            'prependAtCopy' => '1',
-            'resourceFolderImporter' => '/news_import',
-            'rteForTeaser' => '0',
-            'showAdministrationModule' => '1',
-            'showImporter' => '0',
-            'slugBehaviour' => 'unique',
-            'storageUidImporter' => '1',
-            'tagPid' => '1',
-        ],
         'scheduler' => [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
@@ -100,12 +80,6 @@ return [
                         'compression' => 1,
                     ],
                 ],
-                'pagesection' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
-                    'options' => [
-                        'compression' => 1,
-                    ],
-                ],
                 'rootline' => [
                     'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
                     'options' => [
@@ -122,6 +96,7 @@ return [
         'features' => [
             'felogin.extbase' => true,
             'rearrangedRedirectMiddlewares' => true,
+            'security.usePasswordPolicyForFrontendUsers' => true,
             'unifiedPageTranslationHandling' => true,
         ],
         'ipAnonymization' => 2,

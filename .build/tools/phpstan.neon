@@ -2,9 +2,8 @@ includes:
   - phpstan-baseline.neon
 parameters:
     level: max
-    phpVersion: 80100
+    phpVersion: 80200
     reportUnmatchedIgnoredErrors: true
-    checkMissingIterableValueType: false
     paths:
        - ../../app/backend/packages/customer_sitepackage
        - ../../app/backend/packages/sitepackage_freya
@@ -18,6 +17,8 @@ parameters:
         - ../../app/backend/packages/starter_nessa/frontend
         - ../../app/backend/packages/starter_freya/frontend
     ignoreErrors:
+        -
+            identifier: missingType.iterableValue
         -
             message: "#^Cannot call method fetchAllAssociative\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
             path: *

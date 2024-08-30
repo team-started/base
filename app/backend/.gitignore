@@ -16,12 +16,6 @@ Thumbs.db
 
 /public/*
 !/public/.htaccess
-!/public/typo3conf
-!/public/typo3conf/.gitignore
-!/public/typo3conf/LocalConfiguration.php
-!/public/typo3conf/AdditionalConfiguration.php
-/public/typo3conf/ENABLE_INSTALL_TOOL
-/public/typo3conf/ext
 
 /.Build
 /vendor
