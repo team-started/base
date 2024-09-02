@@ -12,31 +12,19 @@
 		}
 	],
 	"require": {
-		"php": "^7.4 || ^8.1",
+		"php": "^8.2",
 		"cweagans/composer-patches": "^1.7",
-		"pti/pti": "dev-feature/support_t3v11 || ^3",
-		"twig/twig": "^3",
-		"georgringer/news": "^9",
-		"typo3/cms-core": "^11.5.24",
-		"typo3/cms-backend": "^11.5.24",
-		"typo3/cms-frontend": "^11.5.24",
-		"typo3/cms-install": "^11.5.24",
-		"typo3/cms-fluid": "^11.5.24"
+		"pti/pti": "^4.0 || dev-main",
+		"twig/twig": "^3.0",
+		"georgringer/news": "^11.4"
 	},
 	"require-dev": {
-		"michielroos/typo3scan": "^1.7",
-		"phpstan/extension-installer": "^1.2",
-		"phpstan/phpstan": "^1.9",
-		"saschaegerer/phpstan-typo3": "^1.8",
-		"ssch/typo3-rector": "^1.1",
-		"typo3/coding-standards": "^0.6.1"
+		"phpstan/extension-installer": "^1.4",
+		"phpstan/phpstan": "^1.11",
+		"saschaegerer/phpstan-typo3": "^1.10",
+		"ssch/typo3-rector": "^2.6",
+		"typo3/coding-standards": "^0.8.0"
 	},
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/chriwo/typo3-pti.git"
-		}
-	],
 	"config": {
 		"allow-plugins": {
 			"typo3/class-alias-loader": true,
@@ -50,50 +38,23 @@
 		"composer-exit-on-patch-failure": true,
 		"patches": {
 			"pti/pti": {
-				"Prepend site base uri to assets": "patches/pti/pti_prepend_site_uri_assets.patch",
 				"Make file collection records renderable": "patches/pti/make_file_collections_renderable.patch"
 			}
 		}
 	},
 	"scripts": {
 		"ci:php:cs": [
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --dry-run --using-cache no --diff",
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --dry-run --using-cache no --diff"
+			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --dry-run --using-cache no --diff"
 		],
 		"ci:php:cs-fix": [
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --using-cache no",
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --using-cache no"
+			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --using-cache no"
 		],
 		"ci:php:stan": [
-			"@ci:php:stan8.1"
-		],
-		"ci:php:stan-baseline": [
-			"@ci:php:stan-baseline8.1"
-		],
-		"ci:php:stan8.1": [
 			"phpstan --configuration=../../.build/tools/phpstan.neon"
 		],
-		"ci:php:stan-baseline8.1": [
-			"phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
-		],
-		"ci:php:stan7.4": [
-			"phpstan --configuration=../../.build/tools/phpstan-74.neon"
-		],
-		"ci:php:stan-baseline7.4": [
-			"phpstan --configuration=../../.build/tools/phpstan-74.neon --generate-baseline=../../.build/tools/phpstan-baseline-74.neon"
-		],
 		"ci:php:rector": [
-			"@ci:php:rector8.1"
-		],
-		"ci:php:rector8.1": [
-			"Composer\\Config::disableProcessTimeout",
 			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
-		],
-		"ci:php:rector7.4": [
-			"Composer\\Config::disableProcessTimeout",
-			"rector process --dry-run --clear-cache --config=../../.build/tools/rector-74.php"
 		]
 	},
-	"minimum-stability": "dev",
 	"prefer-stable": true
 }

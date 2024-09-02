@@ -1,16 +1,18 @@
 .backend-linting:
   image: $CI_REGISTRY_IMAGE:backend-$PHP_VERSION
-  stage: backend-linting
-  variables:
-    SCAN_FOLDER: "./app/backend/packages"
+  stage: code-linting
+  cache:
+    - key: ${CI_COMMIT_REF_SLUG}
+      paths:
+        - ${BACKEND_DIR}/vendor/
   parallel:
     matrix:
       - PHP_VERSION: ['8.2']
   before_script:
-    - mv app/backend/composer.json app/backend/composer.json.orig
-    - mv app/backend/composer.lock app/backend/composer.lock.orig
-    - cp .build/composer/composer.testing.json app/backend/composer.json
-    - rm -rf app/backend/vendor/ app/backend/var/ app/backend/public/typo3conf/ext/
+    - mv ${BACKEND_DIR}/composer.json ${BACKEND_DIR}/composer.json.orig
+    - mv ${BACKEND_DIR}/composer.lock ${BACKEND_DIR}/composer.lock.orig
+    - cp .build/composer/composer.testing.json ${BACKEND_DIR}/composer.json
+    - rm -rf ${BACKEND_DIR}/vendor/ ${BACKEND_DIR}/var/
     - php -v | grep '^PHP';
     - |
       composer require --no-ansi --no-interaction --no-progress --no-install \
@@ -20,12 +22,12 @@
         typo3/cms-install:^12.4.19 \
         typo3/cms-fluid:^12.4.19 \
         -d app/backend
-      composer update --no-ansi --no-interaction --no-progress --with-dependencies -d app/backend;
+      composer update --no-ansi --no-interaction --no-progress --with-dependencies -d ${BACKEND_DIR};
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
 stages:
-  - backend-linting
+  - code-linting
 
 ###
 # Rector with PHP and TYPO3 rules
@@ -33,7 +35,7 @@ stages:
 backend:rector:
   extends: .backend-linting
   script:
-    - composer run ci:php:rector$PHP_VERSION -d app/backend
+    - composer run ci:php:rector -d ${BACKEND_DIR}
 
 ###
 # Lint PHP code with php-cs-fixer
@@ -42,7 +44,7 @@ backend:rector:
 backend:phpCsFixer:
   extends: .backend-linting
   script:
-    - composer run ci:php:cs -d app/backend
+    - composer run ci:php:cs -d ${BACKEND_DIR}
 
 ###
 # PHPStan finds bugs in your code without writing tests
@@ -51,39 +53,4 @@ backend:phpCsFixer:
 backend:phpStan:
   extends: .backend-linting
   script:
-    - composer run ci:php:stan$PHP_VERSION -d app/backend
-
-###
-# PHP syntax check
-# see https://github.com/php-parallel-lint/PHP-Parallel-Lint
-###
-#phplint:
-#  extends: .backend-linting
-#  stage: backend-linting
-#  variables:
-#    REPORT_FOLDER: "documentation/doc/code-quality"
-#    SCAN_FOLDER: "./app/backend/packages"
-#  script:
-#    - parallel-lint --colors -e php --blame --no-progress $SCAN_FOLDER > $REPORT_FOLDER/php-code-style.md
-
-###
-# PHP code style check
-###
-#phpCS:
-#  stage: backend-linting
-#  variables:
-#    SCANNER_RELEASE: "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar"
-#  script:
-#    - curl -OL $SCANNER_RELEASE
-#    - php ./phpcs.phar ./Classes --standard=PSR2 --colors
-#  tags:
-#    - docker
-
-###
-# TypoScript linter
-###
-#typoscriptlint:
-#  stage: backend-linting
-#  script:
-#    - ./.craft/bin/typoscript-lint -c ./.build/typoscript-lint.yml --fail-on-warnings
-#  allow_failure: true
+    - composer run ci:php:stan -d ${BACKEND_DIR}

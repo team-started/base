@@ -18,9 +18,11 @@
 		"build:icons": "node ./config/compiler/icons.js",
 		"preview:fractal": "npx http-server build/prototype",
 		"preview:analyze": "npx http-server build/static",
-		"lint": "npm run lint:js && npm run lint:css",
-		"lint:js": "eslint . --fix",
-		"lint:css": "stylelint \"./src/**/*.scss\" --fix --config .stylelintrc.js --ignore-path .stylelintignore",
+		"lint": "npm run lint:js && npm run lint:scss",
+		"lint:js": "eslint . --fix-dry-run",
+		"lint:scss": "stylelint \"./src/**/*.scss\" --config .stylelintrc.js --ignore-path .stylelintignore",
+		"lint:fix:js": "eslint . --fix",
+		"lint:fix:scss": "stylelint \"./src/**/*.scss\" --fix --config .stylelintrc.js --ignore-path .stylelintignore",
 		"test": "echo \"No test specified\" && exit 0"
 	},
 	"dependencies": {

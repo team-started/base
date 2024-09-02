@@ -1,28 +1,39 @@
 .frontend-linting:
-  stage: frontend-linting
-  image: $CI_REGISTRY_IMAGE:frontend
-  variables:
-    SCAN_FOLDER: "./app/frontend/src"
-    FRONTEND_FOLDER: "./app/frontend"
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+  image: $CI_REGISTRY_IMAGE:frontend-$NODE_VERSION
+  stage: code-linting
+  cache:
+    - key: ${CI_COMMIT_REF_SLUG}
+      paths:
+        - ${FRONTEND_DIR}/${STARTER_KIT}/node_modules/
+  parallel:
+    matrix:
+      - NODE_VERSION: ['16.20.1']
+        STARTER_KIT: [ 'starter_freya_fractal_starterkit', 'starter_nessa_starterkit' ]
+  before_script:
+    - cd ${FRONTEND_DIR}/${STARTER_KIT}/src/ && npm install
 
 stages:
-  - frontend-linting
+  - code-linting
 
-JavaScript:
+frontend:JavaScript:
   extends: .frontend-linting
   script:
-    - cd ${CUSTOMER_SITEPACKAGE_PATH}/Build/ && npm install
-    - ${FRONTEND_FOLDER}/node_modules/.bin/eslint --c ${CUSTOMER_SITEPACKAGE_PATH}/Build/.eslintrc.js --ignore-path ${CUSTOMER_SITEPACKAGE_PATH}/Build/.eslintignore "${CUSTOMER_SITEPACKAGE_PATH}/Build/Assets/JavaScript/**/*.js"
-  only:
-    changes:
-      - ${CUSTOMER_SITEPACKAGE_PATH}/Build/JavaScript/*
+    - npm run lint:js
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+        - ${FRONTEND_DIR}/${STARTER_KIT}/src/**/*.js
+        - ${FRONTEND_DIR}/${STARTER_KIT}/package.json
+        - ${FRONTEND_DIR}/${STARTER_KIT}/package-lock.json
 
-Sass:
+
+frontend:Sass:
   extends: .frontend-linting
   script:
-    - cd ${CUSTOMER_SITEPACKAGE_PATH}/Build/ && npm install
-    - ${FRONTEND_FOLDER}/node_modules/.bin/stylelint "${SCAN_FOLDER}/**/*.scss" --config ${FRONTEND_FOLDER}/.stylelintrc --ignore-path ${FRONTEND_FOLDER}/.stylelintignore
-  only:
-    - merge_requests
+    - npm run lint:scss
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+        - ${FRONTEND_DIR}/${STARTER_KIT}/src/**/*.scss
+        - ${FRONTEND_DIR}/${STARTER_KIT}/package.json
+        - ${FRONTEND_DIR}/${STARTER_KIT}/package-lock.json

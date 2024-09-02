@@ -1,9 +1,8 @@
 include:
-  - local: '/.build/ci/templates/deployTemplate.yml'
   - local: '/.build/ci/container-build.yml'
-  - local: '/.build/ci/split-packages.yml'
   - local: '/.build/ci/linting-backend.yml'
-  #- local: '/.build/ci/linting-frontend.yml'
+  - local: '/.build/ci/linting-frontend.yml'
+  - local: '/.build/ci/split-packages.yml'
   - local: '/.build/ci/documentation.yml'
 
 #workflow:
@@ -14,7 +13,7 @@ include:
 
 stages:
   - devops-build
-  - backend-linting
+  - code-linting
   - split-packages
   - documentation
 
@@ -23,13 +22,10 @@ cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
     - .cache/.npm/
-    - app/frontend/node_modules/
-    - app/backend/vendor/
 
 variables:
-  APP_PUBLIC_DIRECTORY: 'public'
-  DEPLOYMENT_PHP_BINARY: "$PHP_BINARY"
-  # Tell composer to save and load it's cache within the .cache folder
+  # Tell composer to save and load its cache within the .cache folder
   NODE_CACHE_DIR: "$CI_PROJECT_DIR/.cache/node_modules"
   COMPOSER_CACHE_DIR: "$CI_PROJECT_DIR/.cache/composer"
-  SURF_WORKSPACE: "$CI_PROJECT_DIR/.caches/surf_workspace"
+  BACKEND_DIR: "app/backend"
+  FRONTEND_DIR: "app/frontend"
