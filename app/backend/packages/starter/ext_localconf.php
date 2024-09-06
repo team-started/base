@@ -72,8 +72,5 @@ defined('TYPO3') || die();
         // Hide content elements in page module
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][PageLayoutView::class]['modifyQuery'][]
             = PageViewQueryHook::class;
-
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['starterFieldPrefixMigration'] =
-            ConvertFieldNamesService::class;
     }
 })();
