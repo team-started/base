@@ -19,57 +19,46 @@ class ConfigurationUtility
      */
     public static array $contentElements = [
         'starter_carousel' => [
-            'typeIconClass' => 'content-carousel',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-carousel.svg',
             'previewTemplate' => 'Carousel',
         ],
         'starter_accordion' => [
-            'typeIconClass' => 'content-accordion',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-accordion.svg',
             'previewTemplate' => 'Accordion',
         ],
         'starter_distribution_navigation' => [
-            'typeIconClass' => 'starter-ctype-starter_distribution_navigation',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-special-menu.svg',
             'previewTemplate' => 'DistributionNavigation',
         ],
         'starter_download' => [
-            'typeIconClass' => 'starter-ctype-starter_download',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-database-export.svg',
             'previewTemplate' => 'Download',
         ],
         'starter_tab' => [
-            'typeIconClass' => 'content-tab',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-tab.svg',
             'previewTemplate' => 'Tab',
         ],
         'starter_textmedia' => [
-            'typeIconClass' => 'mimetypes-x-content-text-media',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-x-content-text-media.svg',
             'previewTemplate' => 'TextMedia',
         ],
         'starter_media' => [
-            'typeIconClass' => 'mimetypes-media-video',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-media-video.svg',
             'previewTemplate' => 'Media',
         ],
         'starter_gallery' => [
-            'typeIconClass' => 'content-image',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-image.svg',
             'previewTemplate' => 'Gallery',
         ],
         'starter_stop' => [
-            'typeIconClass' => 'starter-ctype-starter_stop',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/apps/apps-pagetree-drag-place-denied.svg',
             'previewTemplate' => 'Stop',
         ],
         'starter_teaser' => [
-            'typeIconClass' => 'starter-ctype-starter_teaser',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-teaser.svg',
             'previewTemplate' => 'Teaser',
         ],
         'starter_column_grid' => [
-            'typeIconClass' => 'starter-ctype-starter_column_grid',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-columns.svg',
             'previewTemplate' => 'ColumnGrid',
         ],

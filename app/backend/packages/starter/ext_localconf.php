@@ -2,10 +2,6 @@
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use StarterTeam\Starter\Hooks\PageLayoutView\PageLayoutViewDrawItem;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Imaging\IconRegistry;
-use StarterTeam\Starter\Utility\ConfigurationUtility;
-use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 use StarterTeam\Starter\Form\FormDataProvider\TcaColPosItem;
 use TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowDefaultValues;
 use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
@@ -30,47 +26,25 @@ defined('TYPO3') || die();
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['starter'] =
         PageLayoutViewDrawItem::class;
 
-    if (TYPO3_MODE === 'BE') {
-        $iconRegistry = GeneralUtility::makeInstance(
-            IconRegistry::class
-        );
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaColPosItem::class] = [
+        'depends' => [
+            DatabaseRowDefaultValues::class,
+        ],
+        'before' => [
+            TcaSelectItems::class,
+        ],
+    ];
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaCTypeItem::class] = [
+        'depends' => [
+            TcaSelectItems::class,
+        ],
+    ];
 
-        foreach (ConfigurationUtility::$contentElements as $identifier => $property) {
-            $iconRegistry->registerIcon(
-                'starter-ctype-' . $identifier,
-                SvgIconProvider::class,
-                ['source' => $property['typeIconPath']]
-            );
-        }
+    // Hide content elements in list module
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][DatabaseRecordList::class]['modifyQuery'][]
+        = PageViewQueryHook::class;
 
-        foreach (ConfigurationUtility::$contentElementTables as $identifier => $property) {
-            $iconRegistry->registerIcon(
-                $identifier,
-                SvgIconProvider::class,
-                ['source' => $property['typeIconPath']]
-            );
-        }
-
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaColPosItem::class] = [
-            'depends' => [
-                DatabaseRowDefaultValues::class,
-            ],
-            'before' => [
-                TcaSelectItems::class,
-            ],
-        ];
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaCTypeItem::class] = [
-            'depends' => [
-                TcaSelectItems::class,
-            ],
-        ];
-
-        // Hide content elements in list module
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][DatabaseRecordList::class]['modifyQuery'][]
-            = PageViewQueryHook::class;
-
-        // Hide content elements in page module
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][PageLayoutView::class]['modifyQuery'][]
-            = PageViewQueryHook::class;
-    }
+    // Hide content elements in page module
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][PageLayoutView::class]['modifyQuery'][]
+        = PageViewQueryHook::class;
 })();
