@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25fe9e424aa7eb7bcf194ce81cb41377",
+    "content-hash": "4c6fa4614e7488a2dc277fcb1564ef42",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1576,6 +1576,83 @@
             "time": "2024-02-06T17:48:27+00:00"
         },
         {
+            "name": "ichhabrecht/content-defender",
+            "version": "3.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IchHabRecht/content_defender.git",
+                "reference": "50b072c8477d779aac00ebc10d6b52d8edfd9099"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/IchHabRecht/content_defender/zipball/50b072c8477d779aac00ebc10d6b52d8edfd9099",
+                "reference": "50b072c8477d779aac00ebc10d6b52d8edfd9099",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "typo3/cms-backend": "^10.4 || ^11.5 || ^12.4",
+                "typo3/cms-core": "^10.4 || ^11.5 || ^12.4"
+            },
+            "conflict": {
+                "psr/container": "<1.1",
+                "typo3/testing-framework": ">=7.0.0 <7.0.4"
+            },
+            "replace": {
+                "typo3-ter/content-defender": "self.version"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.11 || ^3.8",
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpspec/prophecy": "^1.12.1",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^8.4 || ^9.0",
+                "typo3/cms-fluid-styled-content": "^10.4 || ^11.5 || ^12.4",
+                "typo3/cms-indexed-search": "^10.4 || ^11.5 || ^12.4",
+                "typo3/cms-workspaces": "^10.4 || ^11.5 || ^12.4",
+                "typo3/minimal": "^10.4 || ^11.5 || ^12.0",
+                "typo3/testing-framework": "^6.16 || ^7.0.2"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "content_defender",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/public"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IchHabRecht\\ContentDefender\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nicole Cordes",
+                    "email": "typo3@cordes.co",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Define allowed or denied content element types in your backend layouts",
+            "homepage": "https://github.com/IchHabRecht/content_defender",
+            "keywords": [
+                "TYPO3 CMS",
+                "backend",
+                "content",
+                "restrict"
+            ],
+            "support": {
+                "issues": "https://github.com/IchHabRecht/content_defender/issues",
+                "source": "https://github.com/IchHabRecht/content_defender/tree/3.4.3"
+            },
+            "time": "2024-04-29T07:35:37+00:00"
+        },
+        {
             "name": "lolli42/finediff",
             "version": "1.1.1",
             "source": {
@@ -2551,6 +2628,60 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "starterteam/starter",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/starter",
+                "reference": "b091d149811cf8951a68e2e064e8cc089f307f2a"
+            },
+            "require": {
+                "ichhabrecht/content-defender": "^3.2",
+                "php": "^8.2",
+                "typo3/cms-core": "^12.4 || ^13.0"
+            },
+            "suggest": {
+                "starterteam/starter-freya": "Frontend theme based on Twig template engine",
+                "starterteam/starter-nessa": "Frontend theme based an TYPO3 Fluid",
+                "starterteam/starter-twig": "Processing package for Twig template engine",
+                "starterteam/starter-twig-news": "Processing package for EXT:news to work with Twig templates"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.5-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "starter",
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/public"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StarterTeam\\Starter\\": "Classes"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Fell",
+                    "email": "marc@fell.hamburg"
+                },
+                {
+                    "name": "Christian Wolfram",
+                    "email": "c.wolfram@chriwo.de"
+                }
+            ],
+            "description": "Add description...",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "symfony/cache",
@@ -9849,7 +9980,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "starterteam/starter": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
