@@ -20,7 +20,9 @@
         "cweagans/composer-patches": "^1.7",
         "helhum/dotenv-connector": "^3.1",
         "helhum/typo3-console": "^8.1",
-        "starterteam/starter": "dev-main",
+        "starterteam/site-package-freya": "dev-main",
+        "starterteam/site-package-nessa": "dev-main",
+        "starterteam/starter-twig-news": "dev-main",
         "typo3/cms-backend": "^12.4",
         "typo3/cms-belog": "^12.4",
         "typo3/cms-beuser": "^12.4",
@@ -94,12 +96,7 @@
             "cms-package-dir": "{$vendor-dir}/typo3/cms"
         },
         "enable-patching": true,
-        "composer-exit-on-patch-failure": true,
-        "patches": {
-            "pti/pti": {
-                "Make file collection records renderable": "patches/pti/make_file_collections_renderable.patch"
-            }
-        }
+        "composer-exit-on-patch-failure": true
     },
     "config": {
         "secure-http": true,
@@ -139,5 +136,6 @@
             "rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
         ]
     },
-    "prefer-stable": true
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
