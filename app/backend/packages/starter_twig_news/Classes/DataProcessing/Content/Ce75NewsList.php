@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Content;
 
-use Override;
 use GeorgRinger\News\Domain\Model\Category;
 use GeorgRinger\News\Domain\Model\News;
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use StarterTeam\StarterTwigNews\DataProcessing\Records\NewsProcessorService;
 use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;

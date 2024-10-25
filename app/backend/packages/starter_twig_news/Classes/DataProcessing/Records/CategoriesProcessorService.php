@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
-use Override;
 use GeorgRinger\News\Domain\Model\Category;
 use GeorgRinger\News\Domain\Model\News;
+use Override;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use StarterTeam\StarterTwigNews\DataProcessing\Records\Event\CategoriesProcessorEvent;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;

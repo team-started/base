@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
-use Override;
 use Exception;
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use Psr\Log\LoggerInterface;
 use StarterTeam\StarterTwig\Processor\BodyTextProcessor;

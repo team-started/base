@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
-use Override;
 use GeorgRinger\News\Domain\Model\News;
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\RichtextProcessor;
 
 class BodyTextProcessorService implements NewsProcessorInterface

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
-use Override;
 use GeorgRinger\News\Domain\Model\FileReference;
 use GeorgRinger\News\Domain\Model\News;
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\ImageProcessor;
 use StarterTeam\StarterTwig\Service\RenderMediaService;
 use TYPO3\CMS\Core\Utility\ArrayUtility;

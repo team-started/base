@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\ViewHelpers\Format;
 
-use Override;
 use Closure;
+use Override;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;

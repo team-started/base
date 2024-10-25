@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
-use Override;
 use GeorgRinger\News\Domain\Model\News;
 use GeorgRinger\News\Domain\Model\TtContent;
+use Override;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 

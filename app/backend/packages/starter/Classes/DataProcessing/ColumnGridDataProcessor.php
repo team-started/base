@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\DataProcessing;
 
-use Override;
 use Exception;
+use Override;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
