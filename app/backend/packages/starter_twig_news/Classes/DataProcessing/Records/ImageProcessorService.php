@@ -14,8 +14,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ImageProcessorService implements NewsProcessorInterface
 {
-    protected ImageProcessor $imageProcessor;
-
     private array $defaultProcessorOptions = [
         'previewOnly' => true,
         'preferConfigurationIndex' => 'list',
@@ -31,9 +29,10 @@ class ImageProcessorService implements NewsProcessorInterface
 
     private string $dummyImage = '';
 
-    public function __construct(protected RenderMediaService $renderMediaService, ImageProcessor $imageProcessor)
-    {
-        $this->imageProcessor = $imageProcessor;
+    public function __construct(
+        protected RenderMediaService $renderMediaService,
+        protected ImageProcessor $imageProcessor,
+    ) {
     }
 
     #[Override]

@@ -6,9 +6,6 @@ namespace StarterTeam\StarterTwig\Processor;
 
 use PrototypeIntegration\PrototypeIntegration\Processor\RichtextProcessor;
 
-/**
- * Class BodyTextProcessor
- */
 class BodyTextProcessor
 {
     /**
@@ -16,11 +13,9 @@ class BodyTextProcessor
      */
     public const DEFAULT_DATA_FIELD_NAME = 'bodytext';
 
-    protected RichtextProcessor $rteProcessor;
-
-    public function __construct(RichtextProcessor $richTextProcessor)
-    {
-        $this->rteProcessor = $richTextProcessor;
+    public function __construct(
+        protected RichtextProcessor $rteProcessor,
+    ) {
     }
 
     public function processBodyText(array $data, string $dataField = self::DEFAULT_DATA_FIELD_NAME): string

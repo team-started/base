@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Content;
 
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Formatter\DateTimeFormatter;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -12,17 +13,15 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class Ce77NewsDateMenu implements PtiDataProcessor
 {
-    protected DateTimeFormatter $dateTimeFormatter;
-
     protected array $configuration = [];
 
     public function __construct(
         protected ContentObjectRenderer $contentObjectRenderer,
-        DateTimeFormatter $dateTimeFormatter
+        protected DateTimeFormatter $dateTimeFormatter,
     ) {
-        $this->dateTimeFormatter = $dateTimeFormatter;
     }
 
+    #[Override]
     public function process(array $data, array $configuration): ?array
     {
         $this->configuration = $configuration;

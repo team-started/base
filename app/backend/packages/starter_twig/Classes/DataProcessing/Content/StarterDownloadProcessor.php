@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\FileProcessor;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use PrototypeIntegration\PrototypeIntegration\Processor\RichtextProcessor;
@@ -27,25 +28,20 @@ class StarterDownloadProcessor implements PtiDataProcessor
         'size' => 'fileSize',
     ];
 
-    protected FileProcessor $fileProcessor;
-
-    protected RichtextProcessor $richTextProcessor;
-
     protected LoggerInterface $logger;
 
     protected array $configuration = [];
 
     public function __construct(
-        FileProcessor $fileProcessor,
-        RichtextProcessor $richTextProcessor,
+        protected FileProcessor $fileProcessor,
+        protected RichtextProcessor $richTextProcessor,
         protected HeadlineProcessor $headlineProcessor,
-        LogManagerInterface $logManager
+        LogManagerInterface $logManager,
     ) {
-        $this->fileProcessor = $fileProcessor;
-        $this->richTextProcessor = $richTextProcessor;
         $this->logger = $logManager->getLogger(self::class);
     }
 
+    #[Override]
     public function process(array $data, array $configuration): ?array
     {
         $this->configuration = $configuration;

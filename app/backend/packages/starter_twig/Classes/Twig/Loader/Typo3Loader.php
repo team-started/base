@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Twig\Loader;
 
+use Override;
 use Twig\Error\LoaderError;
 use Twig\Loader\LoaderInterface;
 use Twig\Source;
@@ -18,6 +19,7 @@ class Typo3Loader implements LoaderInterface
 
     protected array $errorCache = [];
 
+    #[Override]
     public function getSourceContext(string $name): Source
     {
         $path = $this->findTemplate($name);
@@ -31,16 +33,19 @@ class Typo3Loader implements LoaderInterface
         return new Source($content, $name, $path);
     }
 
+    #[Override]
     public function getCacheKey(string $name): string
     {
         return $name;
     }
 
+    #[Override]
     public function isFresh(string $name, int $time): bool
     {
         return \filemtime($this->findTemplate($name)) <= $time;
     }
 
+    #[Override]
     public function exists(string $name): bool
     {
         if (isset($this->cache[$name])) {

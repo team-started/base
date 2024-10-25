@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
+use Override;
 use Exception;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use Psr\Log\LoggerInterface;
@@ -14,9 +15,6 @@ use TYPO3\CMS\Core\Log\LogManagerInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
-/**
- * Class StarterAccordionProcessor
- */
 class StarterAccordionProcessor implements PtiDataProcessor
 {
     use AssetTrait;
@@ -52,11 +50,12 @@ class StarterAccordionProcessor implements PtiDataProcessor
         protected HeadlineProcessor $headlineProcessor,
         protected BodyTextProcessor $bodyTextProcessor,
         protected RenderMediaService $renderMediaService,
-        LogManagerInterface $logManager
+        LogManagerInterface $logManager,
     ) {
         $this->logger = $logManager->getLogger(self::class);
     }
 
+    #[Override]
     public function process(array $data, array $configuration): ?array
     {
         $this->configuration = $configuration;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Content;
 
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use StarterTeam\StarterTwigNews\DataProcessing\Records\NewsProcessorService;
 
@@ -21,10 +22,12 @@ class Ce76NewsDetail implements PtiDataProcessor
         'media' => true,
     ];
 
-    public function __construct(protected NewsProcessorService $newsProcessorService)
-    {
+    public function __construct(
+        protected NewsProcessorService $newsProcessorService,
+    ) {
     }
 
+    #[Override]
     public function process(array $data, array $configuration): ?array
     {
         $processedRecord = $this->newsProcessorService->process(

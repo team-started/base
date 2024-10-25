@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use Psr\Log\LoggerInterface;
 use StarterTeam\StarterTwig\Processor\BodyTextProcessor;
@@ -12,9 +13,6 @@ use StarterTeam\StarterTwig\Processor\HeadlineProcessor;
 use TYPO3\CMS\Core\Log\LogManagerInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
-/**
- * Class TextProcessor
- */
 class TextProcessor implements PtiDataProcessor
 {
     protected array $configuration = [];
@@ -26,11 +24,12 @@ class TextProcessor implements PtiDataProcessor
         protected HeadlineProcessor $headlineProcessor,
         protected BodyTextProcessor $bodyTextProcessor,
         protected CtaProcessor $ctaProcessor,
-        LogManagerInterface $logManager
+        LogManagerInterface $logManager,
     ) {
         $this->logger = $logManager->getLogger(self::class);
     }
 
+    #[Override]
     public function process(array $data, array $configuration): ?array
     {
         $this->configuration = $configuration;

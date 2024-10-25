@@ -4,21 +4,22 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use StarterTeam\StarterTwig\Processor\HeadlineProcessor;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
-/**
- * Class HeaderProcessor
- */
 class HeaderProcessor implements PtiDataProcessor
 {
     protected array $configuration = [];
 
-    public function __construct(protected ContentObjectRenderer $contentObject, protected HeadlineProcessor $headlineProcessor)
-    {
+    public function __construct(
+        protected ContentObjectRenderer $contentObject,
+        protected HeadlineProcessor $headlineProcessor,
+    ) {
     }
 
+    #[Override]
     public function process(array $data, array $configuration): ?array
     {
         $this->configuration = $configuration;

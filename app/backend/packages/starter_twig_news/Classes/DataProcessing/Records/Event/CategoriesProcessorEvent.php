@@ -9,11 +9,13 @@ use StarterTeam\StarterTwigNews\DataProcessing\Records\CategoriesProcessorServic
 
 final class CategoriesProcessorEvent
 {
-    private readonly News $newsRecord;
-
-    public function __construct(private readonly CategoriesProcessorService $processorService, News $newsRecord, private array $renderedItemData, private readonly array $configuration, private readonly array $processorConfiguration)
-    {
-        $this->newsRecord = $newsRecord;
+    public function __construct(
+        private readonly CategoriesProcessorService $processorService,
+        private readonly News $newsRecord,
+        private array $renderedItemData,
+        private readonly array $configuration,
+        private readonly array $processorConfiguration,
+    ) {
     }
 
     public function getProcessorService(): CategoriesProcessorService

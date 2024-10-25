@@ -10,11 +10,9 @@ use PrototypeIntegration\PrototypeIntegration\Processor\RichtextProcessor;
 
 class BodyTextProcessorService implements NewsProcessorInterface
 {
-    private readonly RichtextProcessor $richTextProcessor;
-
-    public function __construct(RichtextProcessor $richTextProcessor)
-    {
-        $this->richTextProcessor = $richTextProcessor;
+    public function __construct(
+        private readonly RichtextProcessor $richTextProcessor,
+    ) {
     }
 
     #[Override]

@@ -8,13 +8,11 @@ use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use StarterTeam\StarterTwig\DataProcessing\PageDataProcessorInterface;
 
-/**
- * Class PageProcessor
- */
 class PageProcessor extends AbstractPageProcessor implements PtiDataProcessor, PageDataProcessorInterface
 {
     use MenuProcessorTrait;
 
+    #[Override]
     public function process(array $data, array $configuration = []): ?array
     {
         $this->conf = $configuration;

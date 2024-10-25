@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\DataProcessing\Content;
 
+use Override;
 use PrototypeIntegration\PrototypeIntegration\Processor\PtiDataProcessor;
 use PrototypeIntegration\PrototypeIntegration\Processor\TypoLinkStringProcessor;
 use Psr\Log\LoggerInterface;
@@ -12,14 +13,9 @@ use StarterTeam\StarterTwig\Service\RenderMediaService;
 use TYPO3\CMS\Core\Log\LogManagerInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
-/**
- * Class StarterCeMediaProcessor
- */
 class StarterCeMediaProcessor implements PtiDataProcessor
 {
     protected array $configuration = [];
-
-    protected TypoLinkStringProcessor $typoLinkProcessor;
 
     protected LoggerInterface $logger;
 
@@ -27,13 +23,13 @@ class StarterCeMediaProcessor implements PtiDataProcessor
         protected ContentObjectRenderer $contentObject,
         protected HeadlineProcessor $headlineProcessor,
         protected RenderMediaService $renderMediaService,
-        TypoLinkStringProcessor $typoLinkStringProcessor,
-        LogManagerInterface $logManager
+        protected TypoLinkStringProcessor $typoLinkProcessor,
+        LogManagerInterface $logManager,
     ) {
-        $this->typoLinkProcessor = $typoLinkStringProcessor;
         $this->logger = $logManager->getLogger(self::class);
     }
 
+    #[Override]
     public function process(array $data, array $configuration): ?array
     {
         $this->configuration = $configuration;

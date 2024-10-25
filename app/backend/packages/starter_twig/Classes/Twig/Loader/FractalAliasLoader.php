@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Twig\Loader;
 
+use Override;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Twig\Error\LoaderError;
@@ -32,8 +33,9 @@ class FractalAliasLoader extends FilesystemLoader
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
      */
-    public function __construct(?string $templateRootPath = null)
-    {
+    public function __construct(
+        ?string $templateRootPath = null,
+    ) {
         $this->loadConfiguration();
         $this->setTemplatePath($templateRootPath);
 
@@ -50,6 +52,7 @@ class FractalAliasLoader extends FilesystemLoader
      * @return string|null The template name or null
      * @throws LoaderError
      */
+    #[Override]
     protected function findTemplate(string $name, bool $throw = true): ?string
     {
         if (isset($this->cache[$name])) {
