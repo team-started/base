@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\View;
 
-use RuntimeException;
 use PrototypeIntegration\PrototypeIntegration\View\ExtbaseViewAdapter;
+use RuntimeException;
 use StarterTeam\StarterTwigNews\DataProcessing\Content\Ce76NewsDetail;
 
 class NewsDetailTwigView extends ExtbaseViewAdapter

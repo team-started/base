@@ -24,7 +24,7 @@ class ContentElementsProcessorService implements NewsProcessorInterface
      * @return mixed
      * @throws ContentRenderingException
      */
-    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = [])
+    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         $contentElements = $newsRecord->getContentElements();
         if (is_null($contentElements)) {

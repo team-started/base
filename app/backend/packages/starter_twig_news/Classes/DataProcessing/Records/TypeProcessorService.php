@@ -16,7 +16,7 @@ class TypeProcessorService implements NewsProcessorInterface
     /**
      * @return mixed
      */
-    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = [])
+    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         return NewsProcessorService::NEWS_TYPE[$newsRecord->getType()] ?? 'default';
     }

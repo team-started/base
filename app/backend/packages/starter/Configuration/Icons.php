@@ -3,7 +3,7 @@
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
-return (function() {
+return (function () {
     $icons = [];
 
     foreach (ConfigurationUtility::$contentElements as $identifier => $property) {

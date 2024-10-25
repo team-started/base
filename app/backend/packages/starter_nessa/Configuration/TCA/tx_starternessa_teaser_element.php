@@ -191,7 +191,7 @@ return (function () {
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
                 'config' => [
-                    ### !!! Watch out for fieldName different from columnName
+                    //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
                     'allowed' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'],
                     'appearance' => [

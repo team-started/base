@@ -1,8 +1,8 @@
 <?php
 
 use StarterTeam\Starter\Configuration;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 
@@ -32,7 +32,7 @@ defined('TYPO3') || die();
                 'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:pages.tx_starter_nav_media',
                 'exclude' => true,
                 'config' => [
-                    ### !!! Watch out for fieldName different from columnName
+                    //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference',

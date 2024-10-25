@@ -24,7 +24,7 @@ class BodyTextProcessorService implements NewsProcessorInterface
     /**
      * @return mixed
      */
-    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = [])
+    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         return $this->richTextProcessor->processRteText($newsRecord->getBodytext());
     }

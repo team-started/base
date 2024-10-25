@@ -117,7 +117,7 @@ class StarterDownloadProcessor implements PtiDataProcessor
 
         if (!empty($data['filelink_sorting'])) {
             $fieldToSort = (string)static::SORT_MAPPING[$data['filelink_sorting']];
-            uasort($downloadFiles, fn($a, $b): int => strcmp((string) $a[$fieldToSort], (string) $b[$fieldToSort]));
+            uasort($downloadFiles, fn($a, $b): int => strcmp((string)$a[$fieldToSort], (string)$b[$fieldToSort]));
 
             if ($data['filelink_sorting_direction'] === 'desc') {
                 $downloadFiles = array_reverse($downloadFiles, true);

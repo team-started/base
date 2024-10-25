@@ -31,7 +31,7 @@ class RelatedProcessorService implements NewsProcessorInterface
     /**
      * @return mixed
      */
-    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = [])
+    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         if (!is_iterable($newsRecord->getRelated())) {
             return null;

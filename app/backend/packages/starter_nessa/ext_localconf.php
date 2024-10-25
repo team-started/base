@@ -1,13 +1,11 @@
 <?php
 
+use StarterTeam\StarterNessa\Configuration;
+use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Imaging\IconRegistry;
-use StarterTeam\StarterNessa\Configuration;
-use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
-use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
-use StarterTeam\StarterNessa\Updates\CtaFieldMigration;
-use StarterTeam\StarterNessa\Updates\CeDownloadMigration;
 
 defined('TYPO3') || die();
 

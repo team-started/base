@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Twig\View;
 
-use RuntimeException;
 use Exception;
 use PrototypeIntegration\PrototypeIntegration\View\TemplateBasedView;
+use RuntimeException;
 use StarterTeam\StarterTwig\Twig\TwigEnvironment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\View\AbstractView;

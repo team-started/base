@@ -118,7 +118,7 @@ class TwigEnvironment extends Environment implements SingletonInterface
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
      */
-    private function getConfigurationWithKey(string $key)
+    private function getConfigurationWithKey(string $key): array|string|null
     {
         if ($this->configuration === []) {
             $this->loadConfiguration();

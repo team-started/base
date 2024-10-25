@@ -22,13 +22,14 @@ $config
 // add own rule configuration
 $customRules = [
     'blank_line_after_namespace' => true,
-    'blank_lines_before_namespace' => true,
+    'global_namespace_import' => ['import_classes' => true, 'import_constants' => false, 'import_functions' => false],
     'no_blank_lines_after_class_opening' => true,
     'phpdoc_to_param_type' => true,
     'phpdoc_to_property_type' => true,
-    'phpdoc_to_return_type' => false,
+    'phpdoc_to_return_type' => true,
+    'single_line_empty_body' => false,
 ];
 
-$config->setRules(array_merge_recursive($config->getRules(), $customRules));
+$config->setRules(array_replace_recursive($config->getRules(), $customRules));
 
 return $config;

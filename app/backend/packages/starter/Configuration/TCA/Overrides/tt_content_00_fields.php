@@ -1,7 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 
@@ -247,7 +247,7 @@ defined('TYPO3') || die();
             'tx_starter_assets_medium' => [
                 'label' => $translationFile . ':starter.asset_medium_references',
                 'config' => [
-                    ### !!! Watch out for fieldName different from columnName
+                    //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
                     'allowed' => 'jpg,jpeg,png,svg',
                     'appearance' => [
@@ -277,7 +277,7 @@ defined('TYPO3') || die();
             'tx_starter_assets_large' => [
                 'label' => $translationFile . ':starter.asset_large_references',
                 'config' => [
-                    ### !!! Watch out for fieldName different from columnName
+                    //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
                     'allowed' => 'jpg,jpeg,png,svg',
                     'appearance' => [

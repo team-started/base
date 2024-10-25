@@ -33,8 +33,7 @@ class NewsProcessorService
          * @var iterable<NewsProcessorInterface> $newsProcessors
          */
         protected iterable $newsProcessors
-    )
-    {
+    ) {
     }
 
     public function process(News $newsRecord, array $processDataStatements, array $configuration = [], array $processorConfiguration = []): array

@@ -1,15 +1,14 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use StarterTeam\Starter\Hooks\PageLayoutView\PageLayoutViewDrawItem;
 use StarterTeam\Starter\Form\FormDataProvider\TcaColPosItem;
+use StarterTeam\Starter\Form\FormDataProvider\TcaCTypeItem;
+use StarterTeam\Starter\Hooks\Backend\PageViewQueryHook;
+use StarterTeam\Starter\Hooks\PageLayoutView\PageLayoutViewDrawItem;
 use TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowDefaultValues;
 use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
-use StarterTeam\Starter\Form\FormDataProvider\TcaCTypeItem;
 use TYPO3\CMS\Backend\RecordList\DatabaseRecordList;
-use StarterTeam\Starter\Hooks\Backend\PageViewQueryHook;
 use TYPO3\CMS\Backend\View\PageLayoutView;
-use StarterTeam\Starter\Domain\Service\Migration\ConvertFieldNamesService;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 

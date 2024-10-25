@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Service;
 
-use UnexpectedValueException;
 use PrototypeIntegration\PrototypeIntegration\Processor\MediaProcessor;
 use TYPO3\CMS\Core\Resource\FileInterface;
+use UnexpectedValueException;
 
 class RenderMediaService
 {

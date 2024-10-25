@@ -21,7 +21,7 @@ class DateProcessorService implements NewsProcessorInterface
     /**
      * @return mixed
      */
-    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = [])
+    public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         return $this->dateDataProcessor->process($newsRecord->getDatetime(), $this->getDateFormatSettings($configuration));
     }

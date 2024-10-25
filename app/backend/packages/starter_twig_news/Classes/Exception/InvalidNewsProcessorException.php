@@ -6,4 +6,6 @@ namespace StarterTeam\StarterTwigNews\Exception;
 
 use Exception;
 
-class InvalidNewsProcessorException extends Exception {}
+class InvalidNewsProcessorException extends Exception
+{
+}

@@ -433,7 +433,7 @@ return (function () {
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
                 'config' => [
-                    ### !!! Watch out for fieldName different from columnName
+                    //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
                     'allowed' => 'jpg,jpeg,png,svg',
                     'appearance' => [
@@ -471,7 +471,7 @@ return (function () {
             'assets_medium' => [
                 'label' => $translateFile . 'starter.asset_medium_references',
                 'config' => [
-                    ### !!! Watch out for fieldName different from columnName
+                    //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
                     'allowed' => 'jpg,jpeg,png,svg',
                     'appearance' => [
@@ -509,7 +509,7 @@ return (function () {
             'assets_large' => [
                 'label' => $translateFile . 'starter.asset_large_references',
                 'config' => [
-                    ### !!! Watch out for fieldName different from columnName
+                    //## !!! Watch out for fieldName different from columnName
                     'type' => 'file',
                     'allowed' => 'jpg,jpeg,png,svg',
                     'appearance' => [
