@@ -25,7 +25,7 @@ class Typo3Loader implements LoaderInterface
 
         if (is_bool($content)) {
             $this->errorCache[$name] = sprintf('Unable to get content of template "%s" in path "%s".', $name, $path);
-            throw new LoaderError($this->errorCache[$name]);
+            throw new LoaderError($this->errorCache[$name], 7941677856);
         }
 
         return new Source($content, $name, $path);
@@ -68,13 +68,13 @@ class Typo3Loader implements LoaderInterface
         }
 
         if (isset($this->errorCache[$name])) {
-            throw new LoaderError($this->errorCache[$name]);
+            throw new LoaderError($this->errorCache[$name], 7124511582);
         }
 
         $path = GeneralUtility::getFileAbsFileName($name);
         if ($path === '' || !\is_file($path)) {
             $this->errorCache[$name] = \sprintf('unable to find template "%s".', $name);
-            throw new LoaderError($this->errorCache[$name]);
+            throw new LoaderError($this->errorCache[$name], 1127355912);
         }
 
         $this->cache[$name] = $path;

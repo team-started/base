@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\Form\FormDataProvider;
 
+use Override;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Backend\Form\FormDataProviderInterface;
 
 class TcaColPosItem implements FormDataProviderInterface
 {
+    #[Override]
     public function addData(array $result): array
     {
         if ($result['tableName'] !== 'tt_content' || empty($result['databaseRow']['colPos'])) {

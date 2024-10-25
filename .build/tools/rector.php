@@ -25,7 +25,7 @@ return RectorConfig::configure()
         Typo3SetList::CODE_QUALITY,
         Typo3SetList::GENERAL,
         Typo3LevelSetList::UP_TO_TYPO3_12,
-        LevelSetList::UP_TO_PHP_82
+        LevelSetList::UP_TO_PHP_83
     ])
     ->withRules([
         \Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector::class,

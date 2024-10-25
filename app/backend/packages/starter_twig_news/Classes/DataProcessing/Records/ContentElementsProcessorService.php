@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
+use Override;
 use GeorgRinger\News\Domain\Model\News;
 use GeorgRinger\News\Domain\Model\TtContent;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -15,6 +16,7 @@ class ContentElementsProcessorService implements NewsProcessorInterface
     {
     }
 
+    #[Override]
     public function canHandle(string $processStatement): bool
     {
         return $processStatement === 'contentElements';
@@ -24,6 +26,7 @@ class ContentElementsProcessorService implements NewsProcessorInterface
      * @return mixed
      * @throws ContentRenderingException
      */
+    #[Override]
     public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         $contentElements = $newsRecord->getContentElements();

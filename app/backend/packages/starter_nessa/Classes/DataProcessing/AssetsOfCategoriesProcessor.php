@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterNessa\DataProcessing;
 
+use Override;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
@@ -21,6 +22,7 @@ class AssetsOfCategoriesProcessor implements DataProcessorInterface
     ) {
     }
 
+    #[Override]
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,

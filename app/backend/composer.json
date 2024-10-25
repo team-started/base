@@ -53,7 +53,7 @@
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^1.11",
         "saschaegerer/phpstan-typo3": "^1.10",
-        "ssch/typo3-rector": "^2.6",
+        "ssch/typo3-rector": "^2.10",
         "symplify/monorepo-builder": "^11.2",
         "typo3/coding-standards": "^0.8.0"
     },

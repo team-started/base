@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
+use Override;
 use GeorgRinger\News\Domain\Model\Category;
 use GeorgRinger\News\Domain\Model\News;
 use Psr\EventDispatcher\EventDispatcherInterface;
@@ -18,6 +19,7 @@ class CategoriesProcessorService implements NewsProcessorInterface
     {
     }
 
+    #[Override]
     public function canHandle(string $processStatement): bool
     {
         return $processStatement === 'categories';
@@ -26,6 +28,7 @@ class CategoriesProcessorService implements NewsProcessorInterface
     /**
      * @return mixed
      */
+    #[Override]
     public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         $categories = $newsRecord->getCategories();

@@ -17,7 +17,7 @@ class NewsDateMenuTwigView extends ExtbaseViewAdapter
     public function render(): string
     {
         if (empty($this->settings['dateMenu']['templateName'])) {
-            throw new RuntimeException('No template file defined for Ce77-NewsDateMenu');
+            throw new RuntimeException('No template file defined for Ce77-NewsDateMenu', 3014042619);
         }
 
         $this->template = $this->settings['dateMenu']['templateName'];

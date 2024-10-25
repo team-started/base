@@ -17,7 +17,7 @@ class NewsDetailTwigView extends ExtbaseViewAdapter
     public function render(): string
     {
         if (empty($this->settings['detail']['templateName'])) {
-            throw new RuntimeException('No template file defined article detail view');
+            throw new RuntimeException('No template file defined article detail view', 7793196134);
         }
         $this->template = $this->settings['detail']['templateName'];
 

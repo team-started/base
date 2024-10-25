@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
+use Override;
 use GeorgRinger\News\Domain\Model\FileReference;
 use GeorgRinger\News\Domain\Model\News;
 use PrototypeIntegration\PrototypeIntegration\Processor\ImageProcessor;
@@ -35,6 +36,7 @@ class ImageProcessorService implements NewsProcessorInterface
         $this->imageProcessor = $imageProcessor;
     }
 
+    #[Override]
     public function canHandle(string $processStatement): bool
     {
         return GeneralUtility::inList('listImage,media', $processStatement);
@@ -48,6 +50,7 @@ class ImageProcessorService implements NewsProcessorInterface
      *
      * @return mixed
      */
+    #[Override]
     public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         $this->setConfiguration($configuration, $processorConfiguration);

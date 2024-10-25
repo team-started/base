@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\DataProcessing;
 
+use Override;
 use StarterTeam\Starter\Service\ImageProcessingService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentDataProcessor;
@@ -51,6 +52,7 @@ class ImageProcessor implements DataProcessorInterface
     ) {
     }
 
+    #[Override]
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,

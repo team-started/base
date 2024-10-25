@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwigNews\DataProcessing\Records;
 
+use Override;
 use GeorgRinger\News\Domain\Model\News;
 
 class RelatedProcessorService implements NewsProcessorInterface
@@ -23,6 +24,7 @@ class RelatedProcessorService implements NewsProcessorInterface
     {
     }
 
+    #[Override]
     public function canHandle(string $processStatement): bool
     {
         return $processStatement === 'relatedItems';
@@ -31,6 +33,7 @@ class RelatedProcessorService implements NewsProcessorInterface
     /**
      * @return mixed
      */
+    #[Override]
     public function render(News $newsRecord, array $configuration = [], array $processorConfiguration = []): mixed
     {
         if (!is_iterable($newsRecord->getRelated())) {

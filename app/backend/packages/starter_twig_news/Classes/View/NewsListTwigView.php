@@ -17,7 +17,7 @@ class NewsListTwigView extends ExtbaseViewAdapter
     public function render(): string
     {
         if (empty($this->settings['list']['templateName'])) {
-            throw new RuntimeException('No template file defined for Ce75-NewsList');
+            throw new RuntimeException('No template file defined for Ce75-NewsList', 7597179001);
         }
 
         $this->template = $this->settings['list']['templateName'];
