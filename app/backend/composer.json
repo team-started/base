@@ -53,7 +53,7 @@
         "helmich/typo3-typoscript-lint": "^3.2",
         "michielroos/typo3scan": "^1.7",
         "phpstan/extension-installer": "^1.4",
-        "phpstan/phpstan": "^1.11",
+        "phpstan/phpstan": "^1.12",
         "saschaegerer/phpstan-typo3": "^1.10",
         "ssch/typo3-rector": "^2.10",
         "symplify/monorepo-builder": "^11.2",

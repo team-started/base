@@ -2,7 +2,7 @@ includes:
   - phpstan-baseline.neon
 parameters:
     level: max
-    phpVersion: 80200
+    phpVersion: 80300
     reportUnmatchedIgnoredErrors: true
     paths:
        - ../../app/backend/packages/customer_sitepackage
@@ -19,9 +19,3 @@ parameters:
     ignoreErrors:
         -
             identifier: missingType.iterableValue
-        -
-            message: "#^Cannot call method fetchAllAssociative\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
-            path: *
-        -
-            message: "#^Cannot call method fetchOne\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
-            path: *
