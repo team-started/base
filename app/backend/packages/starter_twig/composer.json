@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-		"php": "^8.2",
+		"php": "^8.3",
 		"pti/pti": "^v4.0.2 || dev-main",
 		"twig/twig": "^3",
 		"typo3/cms-core": "^12.4 || ^13.0",

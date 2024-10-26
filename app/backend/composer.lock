@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "989847fdbd2612341a9445800de3d1c6",
+    "content-hash": "5d40b3db6cb00bd1094a6559b77fdcea",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2791,10 +2791,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_freya",
-                "reference": "f06da32861e92ba5f4408b4e14cefbf0ac436fdc"
+                "reference": "c82b32ceb89a34e8dced19cddac7edbb367fa458"
             },
             "require": {
-                "php": "^8.2",
+                "php": "^8.3",
                 "starterteam/starter": "^4.5 || dev-main",
                 "starterteam/starter-freya": "^4.5 || dev-main",
                 "typo3/cms-core": "^12.4 || ^13.0"
@@ -2822,10 +2822,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/sitepackage_nessa",
-                "reference": "74d64bb0f2b83caa318ba47d7a6fc1c667c123a9"
+                "reference": "9715c4409cf073b26582f8dab149e0c99669d240"
             },
             "require": {
-                "php": "^8.2",
+                "php": "^8.3",
                 "starterteam/starter": "^4.5 || dev-main",
                 "starterteam/starter-nessa": "^4.5 || dev-main",
                 "typo3/cms-core": "^12.4 || ^13.0"
@@ -2853,11 +2853,11 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter",
-                "reference": "b091d149811cf8951a68e2e064e8cc089f307f2a"
+                "reference": "91ac77254d4ee720aa46ad56f9d80b6ffc65992a"
             },
             "require": {
                 "ichhabrecht/content-defender": "^3.2",
-                "php": "^8.2",
+                "php": "^8.3",
                 "typo3/cms-core": "^12.4 || ^13.0"
             },
             "suggest": {
@@ -2907,10 +2907,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_freya",
-                "reference": "0a60d934c312cead7b7d9ffac6298e4911fedf43"
+                "reference": "85cbb5f5d559face185793969d52141424f24f87"
             },
             "require": {
-                "php": "^8.2",
+                "php": "^8.3",
                 "starterteam/starter-twig": "^4.5 || dev-main",
                 "typo3/cms-core": "^12.4 || ^13.0"
             },
@@ -2953,10 +2953,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_nessa",
-                "reference": "f17cf39c47d063204cd3d77f4bdb065c3e3914e1"
+                "reference": "713f1d2ad4b4f95f0423219b74bdf4ba272cb2ac"
             },
             "require": {
-                "php": "^8.2",
+                "php": "^8.3",
                 "starterteam/starter": "^4.5 || dev-main",
                 "typo3/cms-core": "^12.4 || ^13.0"
             },
@@ -3004,10 +3004,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig",
-                "reference": "72a16aa9e3dfa36e202df27934e94a02141d74ed"
+                "reference": "0b9bb6cc658fde6004c0f23ffb8db46caaa94cc9"
             },
             "require": {
-                "php": "^8.2",
+                "php": "^8.3",
                 "pti/pti": "^v4.0.2 || dev-main",
                 "starterteam/starter": "^4.5 || dev-main",
                 "twig/twig": "^3",
@@ -3053,11 +3053,11 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig_news",
-                "reference": "a52f8d1420fc5a08e0cadcb2cad3c73aba01295a"
+                "reference": "7cc262c4eb15c02df6083ba235c46be57e5af303"
             },
             "require": {
                 "georgringer/news": "^11.4",
-                "php": "^8.2",
+                "php": "^8.3",
                 "starterteam/starter-twig": "^4.5 || dev-main",
                 "typo3/cms-core": "^12.4 || ^13.0"
             },
@@ -10402,7 +10402,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.3"
     },
     "platform-dev": {},
     "platform-overrides": {
