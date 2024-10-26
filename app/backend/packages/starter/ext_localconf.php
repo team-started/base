@@ -22,9 +22,6 @@ defined('TYPO3') || die();
             = 'EXT:starter/Configuration/RTE/Starter' . ucfirst($variant) . '.yaml';
     }
 
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['starter'] =
-        PageLayoutViewDrawItem::class;
-
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaColPosItem::class] = [
         'depends' => [
             DatabaseRowDefaultValues::class,
