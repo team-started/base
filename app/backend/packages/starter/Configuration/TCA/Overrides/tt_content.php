@@ -1,25 +1,8 @@
 <?php
 
-use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 
 defined('TYPO3') || die();
-
-// add content element type icons
-(function () {
-    foreach (ConfigurationUtility::$contentElements as $ceId => $properties) {
-        ArrayUtility::mergeRecursiveWithOverrule(
-            $GLOBALS['TCA']['tt_content'],
-            [
-                'ctrl' => [
-                    'typeicon_classes' => [
-                        $ceId => $properties['typeIconClass'],
-                    ],
-                ],
-            ]
-        );
-    }
-})();
 
 // @codingStandardsIgnoreStart
 

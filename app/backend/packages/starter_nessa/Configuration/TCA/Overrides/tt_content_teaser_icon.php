@@ -85,7 +85,7 @@ defined('TYPO3') || die();
         [
             $translationFile . 'CType.I.' . $cType,
             $cType,
-            'nessa-ctype-' . $cType,
+            'starter-ctype-' . $cType,
         ],
         'CType',
         'starter_nessa'
