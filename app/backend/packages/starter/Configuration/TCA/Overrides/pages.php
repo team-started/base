@@ -17,6 +17,12 @@ defined('TYPO3') || die();
 
     ExtensionManagementUtility::registerPageTSConfigFile(
         'starter',
+        'Configuration/TSConfig/Main.typoscript',
+        'Main page TS configuration'
+    );
+
+    ExtensionManagementUtility::registerPageTSConfigFile(
+        'starter',
         'Configuration/TSConfig/CkEditor.typoscript',
         'CkEditor configuration'
     );

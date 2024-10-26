@@ -1,1 +1,2 @@
+@import 'EXT:starter/Configuration/TSConfig/Main.typoscript'
 @import 'EXT:customer_sitepackage/Configuration/TSConfig/BackendLayouts/'
