@@ -71,7 +71,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
                 'select.' => [
                     'uidInList' => $data['uid'],
                     'where' =>
-                        '{#colPos}=' . ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element'],
+                        '{#colPos}=' . ConfigurationUtility::getColPosForStarterColumnElement(),
                 ],
             ]
         );

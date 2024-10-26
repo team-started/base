@@ -43,7 +43,7 @@ defined('TYPO3') || die();
                             ],
                             'colPos' => [
                                 'config' => [
-                                    'default' => ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element'],
+                                    'default' => ConfigurationUtility::getColPosForStarterColumnElement(),
                                 ],
                             ],
                         ],

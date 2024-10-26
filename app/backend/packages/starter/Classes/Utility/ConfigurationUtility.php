@@ -266,4 +266,9 @@ class ConfigurationUtility
 
         return array_shift($inlineContentSettings);
     }
+
+    public static function getColPosForStarterColumnElement(): int
+    {
+        return static::$contentGridElementsColPos['tx_starter_column_element'];
+    }
 }

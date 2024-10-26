@@ -25,8 +25,8 @@ class TcaColPosItem implements FormDataProviderInterface
 
         $result['processedTca']['columns']['colPos']['config']['items'] = [
             [
-                'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.colPos.nestedContentColPos',
-                $result['databaseRow']['colPos'],
+                'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.colPos.nestedContentColPos',
+                'value' => $result['databaseRow']['colPos'],
             ],
         ];
         unset($result['processedTca']['columns']['colPos']['config']['itemsProcFunc']);

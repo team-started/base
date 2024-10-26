@@ -2,13 +2,8 @@
 
 use StarterTeam\Starter\Form\FormDataProvider\TcaColPosItem;
 use StarterTeam\Starter\Form\FormDataProvider\TcaCTypeItem;
-use StarterTeam\Starter\Hooks\Backend\PageViewQueryHook;
-use StarterTeam\Starter\Hooks\PageLayoutView\PageLayoutViewDrawItem;
 use TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowDefaultValues;
 use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
-use TYPO3\CMS\Backend\RecordList\DatabaseRecordList;
-use TYPO3\CMS\Backend\View\PageLayoutView;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 
@@ -31,12 +26,4 @@ defined('TYPO3') || die();
             TcaSelectItems::class,
         ],
     ];
-
-    // Hide content elements in list module
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][DatabaseRecordList::class]['modifyQuery'][]
-        = PageViewQueryHook::class;
-
-    // Hide content elements in page module
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][PageLayoutView::class]['modifyQuery'][]
-        = PageViewQueryHook::class;
 })();
