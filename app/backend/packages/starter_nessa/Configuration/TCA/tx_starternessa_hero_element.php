@@ -205,7 +205,7 @@ return (function () {
                             ],
                             File::FILETYPE_IMAGE => [
                                 'showitem' => '
-                                --palette--;;imageoverlayPalette,
+                                --palette--;;nessaHeroImageOverlayPalette,
                                 --palette--;;filePalette',
                             ],
                             File::FILETYPE_VIDEO => [

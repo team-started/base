@@ -20,6 +20,9 @@ ArrayUtility::mergeRecursiveWithOverrule(
             'nessaPartnerOverlayPalette' => [
                 'showitem' => 'title,alternative,--linebreak--,link',
             ],
+            'nessaHeroImageOverlayPalette' => [
+                'showitem' => 'crop',
+            ]
         ],
     ]
 );
