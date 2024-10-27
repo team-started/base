@@ -69,6 +69,9 @@ return (function () {
                 '1' => 'tx_starter_accordion_element_text',
             ],
             'useColumnsForDefaultValues' => 'type',
+            'security' => [
+                'ignorePageTypeRestriction' => true,
+            ],
         ],
 
         'types' => [

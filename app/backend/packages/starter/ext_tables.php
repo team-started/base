@@ -2,14 +2,10 @@
 
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Http\ApplicationType;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 
 (function () {
-    foreach (['carousel_element', 'accordion_element', 'tab_element'] as $table) {
-    }
-
     if (($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface
         && ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()
     ) {

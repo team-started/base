@@ -68,6 +68,9 @@ return (function () {
                 '1' => 'tx_starter_carousel_element_text',
             ],
             'useColumnsForDefaultValues' => 'type',
+            'security' => [
+                'ignorePageTypeRestriction' => true,
+            ],
         ],
 
         'types' => [

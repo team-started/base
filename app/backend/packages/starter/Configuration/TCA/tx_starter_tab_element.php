@@ -69,6 +69,9 @@ return (function () {
                 '1' => 'tx_starter_tab_element_text',
             ],
             'useColumnsForDefaultValues' => 'type',
+            'security' => [
+                'ignorePageTypeRestriction' => true,
+            ],
         ],
 
         'types' => [

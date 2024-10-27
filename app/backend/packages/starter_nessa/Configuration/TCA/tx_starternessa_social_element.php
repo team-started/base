@@ -42,6 +42,9 @@ return (function () {
             'typeicon_classes' => [
                 'default' => 'starter-table-tx_starternessa_social_element',
             ],
+            'security' => [
+                'ignorePageTypeRestriction' => true,
+            ],
         ],
 
         'types' => [
