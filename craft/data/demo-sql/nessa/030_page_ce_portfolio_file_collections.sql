@@ -43,20 +43,18 @@ INSERT INTO `sys_file_collection` SET
   pid = @page,
   title = 'Dateisammlung 1 - mit manuell ausgewählten Dateien',
   type = 'static',
-  files = 6,
-  storage = 0,
-  folder = ''
+  files = 6
 ;
 SET @example_file_collection = LAST_INSERT_ID();
 
-INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `table_local`, `tablenames`, `fieldname`, `crop`)
+INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `tablenames`, `fieldname`, `crop`)
 VALUES
-	(@page, @file_image_1, @example_file_collection, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_2, @example_file_collection, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_3, @example_file_collection, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_4, @example_file_collection, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_5, @example_file_collection, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_6, @example_file_collection, 'sys_file', 'sys_file_collection', 'files', '')
+	(@page, @file_image_1, @example_file_collection, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_2, @example_file_collection, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_3, @example_file_collection, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_4, @example_file_collection, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_5, @example_file_collection, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_6, @example_file_collection, 'sys_file_collection', 'files', '')
 ;
 
 INSERT INTO `sys_file_collection` SET
@@ -65,20 +63,18 @@ INSERT INTO `sys_file_collection` SET
 	l10n_parent = @example_file_collection,
   title = 'File collection 1 - with manuell selected files',
   type = 'static',
-  files = 6,
-  storage = 0,
-  folder = ''
+  files = 6
 ;
 SET @example_file_collection_overlay = LAST_INSERT_ID();
 
-INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `table_local`, `tablenames`, `fieldname`, `crop`)
+INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `tablenames`, `fieldname`, `crop`)
 VALUES
-	(@page, @file_image_1, @example_file_collection_overlay, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_2, @example_file_collection_overlay, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_3, @example_file_collection_overlay, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_4, @example_file_collection_overlay, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_5, @example_file_collection_overlay, 'sys_file', 'sys_file_collection', 'files', ''),
-	(@page, @file_image_6, @example_file_collection_overlay, 'sys_file', 'sys_file_collection', 'files', '')
+	(@page, @file_image_1, @example_file_collection_overlay, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_2, @example_file_collection_overlay, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_3, @example_file_collection_overlay, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_4, @example_file_collection_overlay, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_5, @example_file_collection_overlay, 'sys_file_collection', 'files', ''),
+	(@page, @file_image_6, @example_file_collection_overlay, 'sys_file_collection', 'files', '')
 ;
 
 INSERT INTO `tt_content` SET
@@ -119,8 +115,7 @@ INSERT INTO `sys_file_collection` SET
   title = 'Dateisammlung 2 - Auswahl aus Ordner "coffee"',
   type = 'folder',
   files = 0,
-  storage = 1,
-  folder = '/user_upload/_default/images/coffee/'
+  folder_identifier = '1:/user_upload/_default/images/coffee/'
 ;
 SET @example_file_collection = LAST_INSERT_ID();
 
@@ -131,8 +126,7 @@ INSERT INTO `sys_file_collection` SET
   title = 'File collection 2 - Selection of folder "coffee"',
   type = 'folder',
   files = 0,
-  storage = 1,
-  folder = '/user_upload/_default/images/coffee/'
+  folder_identifier = '1:/user_upload/_default/images/coffee/'
 ;
 SET @example_file_collection_overlay = LAST_INSERT_ID();
 

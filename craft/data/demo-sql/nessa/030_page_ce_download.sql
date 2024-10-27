@@ -48,14 +48,14 @@ INSERT INTO `tt_content` SET
 ;
 SET @example_ce = LAST_INSERT_ID();
 
-INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `table_local`, `tablenames`, `fieldname`, `crop`)
+INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `tablenames`, `fieldname`, `crop`)
 VALUES
-	(@page, @file_download_1, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_2, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_3, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_4, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_5, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_6, @example_ce, 'sys_file', 'tt_content', 'media', '')
+	(@page, @file_download_1, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_2, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_3, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_4, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_5, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_6, @example_ce, 'tt_content', 'media', '')
 ;
 
 INSERT INTO `tt_content` SET
@@ -72,14 +72,14 @@ INSERT INTO `tt_content` SET
 ;
 SET @example_ce = LAST_INSERT_ID();
 
-INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `table_local`, `tablenames`, `fieldname`, `crop`)
+INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `tablenames`, `fieldname`, `crop`)
 VALUES
-	(@page, @file_download_1, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_2, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_3, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_4, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_5, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_6, @example_ce, 'sys_file', 'tt_content', 'media', '')
+	(@page, @file_download_1, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_2, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_3, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_4, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_5, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_6, @example_ce, 'tt_content', 'media', '')
 ;
 
 
@@ -98,14 +98,14 @@ INSERT INTO `tt_content` SET
 ;
 SET @example_ce = LAST_INSERT_ID();
 
-INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `table_local`, `tablenames`, `fieldname`, `crop`)
+INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `tablenames`, `fieldname`, `crop`)
 VALUES
-	(@page, @file_download_1, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_2, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_3, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_4, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_5, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_6, @example_ce, 'sys_file', 'tt_content', 'media', '')
+	(@page, @file_download_1, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_2, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_3, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_4, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_5, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_6, @example_ce, 'tt_content', 'media', '')
 ;
 
 INSERT INTO `tt_content` SET
@@ -123,12 +123,12 @@ INSERT INTO `tt_content` SET
 ;
 SET @example_ce = LAST_INSERT_ID();
 
-INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `table_local`, `tablenames`, `fieldname`, `crop`)
+INSERT INTO `sys_file_reference` (`pid`, `uid_local`, `uid_foreign`, `tablenames`, `fieldname`, `crop`)
 VALUES
-	(@page, @file_download_1, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_2, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_3, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_4, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_5, @example_ce, 'sys_file', 'tt_content', 'media', ''),
-	(@page, @file_download_6, @example_ce, 'sys_file', 'tt_content', 'media', '')
+	(@page, @file_download_1, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_2, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_3, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_4, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_5, @example_ce, 'tt_content', 'media', ''),
+	(@page, @file_download_6, @example_ce, 'tt_content', 'media', '')
 ;

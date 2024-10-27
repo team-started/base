@@ -65,7 +65,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -77,7 +76,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -117,7 +115,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -129,7 +126,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -138,7 +134,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_2,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -150,7 +145,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_2,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -159,7 +153,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_3,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -171,7 +164,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_3,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -209,7 +201,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -221,7 +212,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -230,7 +220,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_2,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -242,7 +231,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_2,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -251,7 +239,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_3,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -263,7 +250,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_3,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -272,7 +258,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_4,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;
@@ -284,7 +269,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_4,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets'
 ;

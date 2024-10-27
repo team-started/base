@@ -70,7 +70,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -83,7 +82,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -133,7 +131,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -146,7 +143,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -192,7 +188,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -205,7 +200,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -251,7 +245,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -264,7 +257,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_1,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.7151424287856072,\"width\":0.477,\"x\":0.234,\"y\":0.13193403298350825},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5817091454272864,\"width\":0.583,\"x\":0.056,\"y\":0.18140929535232383},\"selectedRatio\":\"quer\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7586206896551724,\"width\":0.675,\"x\":0.149,\"y\":0.18290854572713644},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -310,7 +302,6 @@ INSERT INTO `sys_file_reference` SET
 	pid = @page,
 	uid_local = @file_image_2,
 	uid_foreign = @example_ce,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.4047976011994003,\"width\":0.27,\"x\":0.415,\"y\":0.44227886056971516},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5307346326836582,\"width\":0.472,\"x\":0.391,\"y\":0.33883058470764615},\"selectedRatio\":\"quer2\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7301349325337332,\"width\":0.65,\"x\":0.062,\"y\":0.05547226386806597},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
@@ -323,7 +314,6 @@ INSERT INTO `sys_file_reference` SET
 	l10n_parent = @file_image_reference,
 	uid_local = @file_image_2,
 	uid_foreign = @example_ce_overlay,
-	table_local = 'sys_file',
 	tablenames = 'tt_content',
 	fieldname = 'assets',
 	crop = '{\"smartphone\":{\"cropArea\":{\"height\":0.4047976011994003,\"width\":0.27,\"x\":0.415,\"y\":0.44227886056971516},\"selectedRatio\":\"square\",\"focusArea\":null},\"tablet\":{\"cropArea\":{\"height\":0.5307346326836582,\"width\":0.472,\"x\":0.391,\"y\":0.33883058470764615},\"selectedRatio\":\"quer2\",\"focusArea\":null},\"desktop\":{\"cropArea\":{\"height\":0.7301349325337332,\"width\":0.65,\"x\":0.062,\"y\":0.05547226386806597},\"selectedRatio\":\"quer2\",\"focusArea\":null}}'
