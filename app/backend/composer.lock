@@ -1441,16 +1441,16 @@
         },
         {
             "name": "helhum/dotenv-connector",
-            "version": "v3.1.0",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helhum/dotenv-connector.git",
-                "reference": "36ad148c1ac934b011d50116395f885bd379f9ae"
+                "reference": "be118357a96e8c4e8a7a6a5cda2239e924af3d53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helhum/dotenv-connector/zipball/36ad148c1ac934b011d50116395f885bd379f9ae",
-                "reference": "36ad148c1ac934b011d50116395f885bd379f9ae",
+                "url": "https://api.github.com/repos/helhum/dotenv-connector/zipball/be118357a96e8c4e8a7a6a5cda2239e924af3d53",
+                "reference": "be118357a96e8c4e8a7a6a5cda2239e924af3d53",
                 "shasum": ""
             },
             "require": {
@@ -1496,7 +1496,7 @@
             ],
             "support": {
                 "issues": "https://github.com/helhum/dotenv-connector/issues",
-                "source": "https://github.com/helhum/dotenv-connector/tree/v3.1.0"
+                "source": "https://github.com/helhum/dotenv-connector/tree/v3.1.2"
             },
             "funding": [
                 {
@@ -1508,7 +1508,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-07T13:03:15+00:00"
+            "time": "2025-01-12T21:06:43+00:00"
         },
         {
             "name": "helhum/php-error-reporting",
