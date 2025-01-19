@@ -19,7 +19,7 @@
         "php": "^8.3",
         "cweagans/composer-patches": "^1.7",
         "helhum/dotenv-connector": "^3.1",
-        "helhum/typo3-console": "^8.1",
+        "helhum/typo3-console": "^8.2",
         "starterteam/site-package-freya": "dev-main",
         "starterteam/site-package-nessa": "dev-main",
         "starterteam/starter-twig-news": "dev-main",
