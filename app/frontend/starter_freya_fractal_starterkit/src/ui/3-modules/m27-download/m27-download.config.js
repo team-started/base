@@ -5,7 +5,7 @@ const globalConfig = require('../module-general.config');
 module.exports = {
   context: {
     ...globalConfig,
-    CType: 'starter-download',
+    CType: 'starter-m27-download',
     items: [
       {
         title: 'Microsoft Word document',

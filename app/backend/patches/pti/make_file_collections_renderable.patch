@@ -1,44 +1,33 @@
-Index: Classes/Processor/FileProcessor.php
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
+From 2873d76c0fad70b8721cd1dc443bba90a98c6074 Mon Sep 17 00:00:00 2001
+From: Christian Wolfram <c.wolfram@chriwo.de>
+Date: Mon, 20 Jan 2025 10:47:29 +0100
+Subject: [PATCH 1/5] [FEATURE] Render files from given file collection
+
+---
+ Classes/Processor/FileProcessor.php | 29 +++++++++++++++++++++++++++--
+ 1 file changed, 27 insertions(+), 2 deletions(-)
+
 diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcessor.php
+index fcc1294..159e55c 100644
 --- a/Classes/Processor/FileProcessor.php
 +++ b/Classes/Processor/FileProcessor.php
-@@ -5,7 +5,7 @@
- namespace PrototypeIntegration\PrototypeIntegration\Processor;
-
- use PrototypeIntegration\PrototypeIntegration\Formatter\StringFormatter;
--use TYPO3\CMS\Core\Resource\FileReference;
-+use TYPO3\CMS\Core\Resource\FileInterface;
- use TYPO3\CMS\Core\Utility\ArrayUtility;
- use TYPO3\CMS\Core\Utility\GeneralUtility;
- use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-@@ -95,37 +95,52 @@
+@@ -95,13 +95,38 @@ public function __construct(
       */
      public function renderFileCollection(string $table, string $fieldName, array $row, array $configuration = []): array
      {
 -        $this->configuration = $configuration;
 -        $this->setMetaDataConfiguration();
--
 +        $this->initialize($configuration);
+
          $fileCollector = GeneralUtility::makeInstance(FileCollector::class);
          $fileCollector->addFilesFromRelation($table, $fieldName, $row);
          $files = $fileCollector->getFiles();
 
--        $processedFiles = [];
--        foreach ($files as $file) {
--            $processedFiles[] = $this->getDownloadItem($file);
--        }
 +        return $this->processFileCollection($files);
 +    }
-
--        return $processedFiles;
++
 +    /**
-+     * @param string $table The referencing table
-+     * @param string $fieldName The field name containing the reference
-+     * @param array $row The referencing row (must be from $table and include $fieldName)
++     * @param array $collection The referencing uid of file collections
 +     * @param array $configuration
 +     * @return array
 +     */
@@ -52,12 +41,90 @@ diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcess
 +        return $this->processFileCollection($files);
 +    }
 +
-+    protected function initialize(array $configuration)
++    protected function initialize(array $configuration): void
 +    {
 +        $this->configuration = $configuration;
 +        $this->setMetaDataConfiguration();
++    }
++
++    protected function processFileCollection(array $files): array
++    {
+         $processedFiles = [];
+         foreach ($files as $file) {
+             $processedFiles[] = $this->getDownloadItem($file);
+
+From c132fc5b3e829750088a3291c9e29a49b892eada Mon Sep 17 00:00:00 2001
+From: Christian Wolfram <c.wolfram@chriwo.de>
+Date: Mon, 20 Jan 2025 13:07:50 +0100
+Subject: [PATCH 2/5] [TASK] Remove doc block parts which has no additional
+ information
+
+---
+ Classes/Processor/FileProcessor.php | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcessor.php
+index 159e55c..38a05b3 100644
+--- a/Classes/Processor/FileProcessor.php
++++ b/Classes/Processor/FileProcessor.php
+@@ -106,8 +106,6 @@ public function renderFileCollection(string $table, string $fieldName, array $ro
+
+     /**
+      * @param array $collection The referencing uid of file collections
+-     * @param array $configuration
+-     * @return array
+      */
+     public function renderFilesFromCollection(array $collection, array $configuration = []): array
+     {
+
+From e8d96494ae789f8b8f28af21ac552af210db7684 Mon Sep 17 00:00:00 2001
+From: Christian Wolfram <c.wolfram@chriwo.de>
+Date: Mon, 20 Jan 2025 13:13:28 +0100
+Subject: [PATCH 3/5] [TASK] Meaningful description for the parameter
+ "$collection"
+
+---
+ Classes/Processor/FileProcessor.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcessor.php
+index 38a05b3..be3a00a 100644
+--- a/Classes/Processor/FileProcessor.php
++++ b/Classes/Processor/FileProcessor.php
+@@ -105,7 +105,7 @@ public function renderFileCollection(string $table, string $fieldName, array $ro
      }
 
+     /**
+-     * @param array $collection The referencing uid of file collections
++     * @param array $collection The referencing with multiple uid of file collections
+      */
+     public function renderFilesFromCollection(array $collection, array $configuration = []): array
+     {
+
+From 363a6f8eeff49b43b63a0e8a0f371a3deed5d188 Mon Sep 17 00:00:00 2001
+From: Christian Wolfram <c.wolfram@chriwo.de>
+Date: Mon, 20 Jan 2025 13:43:00 +0100
+Subject: [PATCH 4/5] [TASK] Change parameter type to FileInterface instead of
+ FileReference
+
+---
+ Classes/Processor/FileProcessor.php | 22 ++++++++++++++++------
+ 1 file changed, 16 insertions(+), 6 deletions(-)
+
+diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcessor.php
+index be3a00a..1781009 100644
+--- a/Classes/Processor/FileProcessor.php
++++ b/Classes/Processor/FileProcessor.php
+@@ -5,7 +5,7 @@
+ namespace PrototypeIntegration\PrototypeIntegration\Processor;
+
+ use PrototypeIntegration\PrototypeIntegration\Formatter\StringFormatter;
+-use TYPO3\CMS\Core\Resource\FileReference;
++use TYPO3\CMS\Core\Resource\FileInterface;
+ use TYPO3\CMS\Core\Utility\ArrayUtility;
+ use TYPO3\CMS\Core\Utility\GeneralUtility;
+ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+@@ -136,10 +136,10 @@ protected function processFileCollection(array $files): array
      /**
       * Retrieve the download item from the db.
       *
@@ -68,35 +135,18 @@ diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcess
 -    protected function getDownloadItem(FileReference $item): array
 +    protected function getDownloadItem(FileInterface $item): array
      {
-         $fileFormatConfiguration = $this->configuration['formatSize'] ?: [];
--        $description = $this->getMetaDataDescription($item);
-
-         $downloadItem = [
+         $fileFormatConfiguration = $this->configuration['formatSize'] ?? [];
+         $description = $this->getMetaDataDescription($item);
+@@ -148,7 +148,7 @@ protected function getDownloadItem(FileReference $item): array
              'link' => [
                  'metaData' => [
--                    'description' => $description,
+                     'description' => $description,
 -                    'name' => $item->getTitle(),
-+                    'description' => $this->getMetaDataDescription($item),
 +                    'name' => $this->getMetaDataTitle($item),
                      'extension' => $item->getExtension(),
-                     'size' => $this->fileSizeProcessor->formatFileSize($item->getSize(), $fileFormatConfiguration)
-                 ]
-@@ -136,13 +151,7 @@
-         $linkConfig = $this->typoLinkStringProcessor->processTypoLinkString($linkString) ?: [];
-         ArrayUtility::mergeRecursiveWithOverrule($downloadItem['link'], $linkConfig);
-
--        $downloadImage = $this->previewImageProcessor->getPreviewImage($item, $this->configuration);
--        if (isset($downloadImage)) {
--            $downloadItem['image'] = $this->pictureProcessor->renderPicture(
--                $downloadImage,
--                $this->configuration['imageConfig']
--            );
--        }
-+        $downloadItem = $this->getPreviewImage($item, $downloadItem);
-
-         return $downloadItem;
-     }
-@@ -152,14 +161,14 @@
+                     'size' => $this->fileSizeProcessor->formatFileSize($item->getSize(), $fileFormatConfiguration),
+                 ],
+@@ -175,10 +175,10 @@ protected function getDownloadItem(FileReference $item): array
       * description-field. It's also possible to use an fallback field, if the defined field is not available
       * or empty.
       *
@@ -109,27 +159,13 @@ diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcess
      {
          $description = null;
 
--        if (! empty($this->metaDataConfiguration['downloadDescriptionField'])
-+        if (!empty($this->metaDataConfiguration['downloadDescriptionField'])
-             && $item->hasProperty($this->metaDataConfiguration['downloadDescriptionField'])
-         ) {
-             $description = $item->getProperty($this->metaDataConfiguration['downloadDescriptionField']);
-@@ -167,7 +176,7 @@
-
-         // fallback
-         if ((empty($description) || is_null($description))
--            && ! empty($this->metaDataConfiguration['downloadDescriptionFallbackField'])
-+            && !empty($this->metaDataConfiguration['downloadDescriptionFallbackField'])
-             && $item->hasProperty($this->metaDataConfiguration['downloadDescriptionFallbackField'])
-         ) {
-             $description = $item->getProperty($this->metaDataConfiguration['downloadDescriptionFallbackField']);
-@@ -178,6 +187,16 @@
+@@ -201,6 +201,16 @@ protected function getMetaDataDescription(FileReference $item): ?string
          return $description;
      }
 
 +    protected function getMetaDataTitle(FileInterface $item): string
 +    {
-+        $title = $item->hasProperty('title') ? $item->getProperty('title') : null;
++        $title = $item->hasProperty('title') ? $item->getProperty('title') : '';
 +        if (empty($title)) {
 +            $title = $item->getNameWithoutExtension();
 +        }
@@ -140,21 +176,41 @@ diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcess
      protected function setMetaDataConfiguration()
      {
          if (isset($this->configuration['metaDataDescription'])) {
-@@ -194,4 +213,31 @@
-             }
-         }
+
+From e6c37c53d6f9d8a60d80759c91634f095fdbc56d Mon Sep 17 00:00:00 2001
+From: Christian Wolfram <c.wolfram@chriwo.de>
+Date: Mon, 20 Jan 2025 13:49:12 +0100
+Subject: [PATCH 5/5] [TASK] Make rendering of preview image optional
+
+---
+ Classes/Processor/FileProcessor.php | 27 ++++++++++++++++++---------
+ 1 file changed, 18 insertions(+), 9 deletions(-)
+
+diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcessor.php
+index 1781009..743ad83 100644
+--- a/Classes/Processor/FileProcessor.php
++++ b/Classes/Processor/FileProcessor.php
+@@ -159,15 +159,7 @@ protected function getDownloadItem(FileInterface $item): array
+         $linkConfig = $this->typoLinkStringProcessor->processTypoLinkString($linkString) ?: [];
+         ArrayUtility::mergeRecursiveWithOverrule($downloadItem['link'], $linkConfig);
+
+-        $downloadImage = $this->previewImageProcessor->getPreviewImage($item, $this->configuration);
+-        if (isset($downloadImage)) {
+-            $downloadItem['image'] = $this->pictureProcessor->renderPicture(
+-                $downloadImage,
+-                $this->configuration['imageConfig']
+-            );
+-        }
+-
+-        return $downloadItem;
++        return $this->getPreviewImage($item, $downloadItem);
      }
-+
-+    protected function processFileCollection(array $files): array
-+    {
-+        $processedFiles = [];
-+        foreach ($files as $file) {
-+            $processedFiles[] = $this->getDownloadItem($file);
-+        }
-+
-+        return $processedFiles;
-+    }
-+
+
+     /**
+@@ -211,6 +203,23 @@ protected function getMetaDataTitle(FileInterface $item): string
+         return $title;
+     }
+
 +    protected function getPreviewImage(FileInterface $item, array $downloadItemData): array
 +    {
 +        if (empty($this->configuration['imageConfig'])) {
@@ -162,7 +218,7 @@ diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcess
 +        }
 +
 +        $downloadImage = $this->previewImageProcessor->getPreviewImage($item, $this->configuration);
-+        if (isset($downloadImage)) {
++        if ($downloadImage instanceof FileInterface) {
 +            $downloadItemData['image'] = $this->pictureProcessor->renderPicture(
 +                $downloadImage,
 +                $this->configuration['imageConfig']
@@ -171,4 +227,7 @@ diff --git a/Classes/Processor/FileProcessor.php b/Classes/Processor/FileProcess
 +
 +        return $downloadItemData;
 +    }
- }
++
+     protected function setMetaDataConfiguration()
+     {
+         if (isset($this->configuration['metaDataDescription'])) {
