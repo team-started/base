@@ -11,8 +11,8 @@
     ],
     "require": {
 		"php": "^8.3",
-		"pti/pti": "^v4.0.2 || dev-main",
-		"twig/twig": "^3",
+		"pti/pti": "^4.0 || dev-main",
+		"twig/twig": "^3.14.2",
 		"typo3/cms-core": "^12.4 || ^13.0",
 		"starterteam/starter": "^4.5 || dev-main"
     },

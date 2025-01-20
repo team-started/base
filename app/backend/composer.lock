@@ -1672,49 +1672,44 @@
         },
         {
             "name": "ichhabrecht/content-defender",
-            "version": "3.4.3",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/IchHabRecht/content_defender.git",
-                "reference": "50b072c8477d779aac00ebc10d6b52d8edfd9099"
+                "reference": "e850c080f3ba9544564e919d4257d1b337969673"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IchHabRecht/content_defender/zipball/50b072c8477d779aac00ebc10d6b52d8edfd9099",
-                "reference": "50b072c8477d779aac00ebc10d6b52d8edfd9099",
+                "url": "https://api.github.com/repos/IchHabRecht/content_defender/zipball/e850c080f3ba9544564e919d4257d1b337969673",
+                "reference": "e850c080f3ba9544564e919d4257d1b337969673",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "typo3/cms-backend": "^10.4 || ^11.5 || ^12.4",
-                "typo3/cms-core": "^10.4 || ^11.5 || ^12.4"
-            },
-            "conflict": {
-                "psr/container": "<1.1",
-                "typo3/testing-framework": ">=7.0.0 <7.0.4"
+                "php": "^8.1",
+                "typo3/cms-backend": "^11.5 || ^12.4 || ^13.4",
+                "typo3/cms-core": "^11.5 || ^12.4 || ^13.4"
             },
             "replace": {
                 "typo3-ter/content-defender": "self.version"
             },
             "require-dev": {
-                "doctrine/dbal": "^2.11 || ^3.8",
                 "php-parallel-lint/php-parallel-lint": "^1.4",
                 "phpspec/prophecy": "^1.12.1",
                 "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^8.4 || ^9.0",
-                "typo3/cms-fluid-styled-content": "^10.4 || ^11.5 || ^12.4",
-                "typo3/cms-indexed-search": "^10.4 || ^11.5 || ^12.4",
-                "typo3/cms-workspaces": "^10.4 || ^11.5 || ^12.4",
-                "typo3/minimal": "^10.4 || ^11.5 || ^12.0",
-                "typo3/testing-framework": "^6.16 || ^7.0.2"
+                "phpunit/phpunit": "^10.5",
+                "typo3/cms-fluid-styled-content": "^11.5 || ^12.4 || ^13.4",
+                "typo3/cms-indexed-search": "^11.5 || ^12.4 || ^13.4",
+                "typo3/cms-workspaces": "^11.5 || ^12.4 || ^13.4",
+                "typo3/minimal": "^11.5 || ^12.0 || ^13.0",
+                "typo3/testing-framework": "^7.0.4 || ^8.2.3"
             },
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
-                    "extension-key": "content_defender",
-                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
                     "app-dir": ".Build",
-                    "web-dir": ".Build/public"
+                    "web-dir": ".Build/public",
+                    "extension-key": "content_defender",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms"
                 }
             },
             "autoload": {
@@ -1743,9 +1738,9 @@
             ],
             "support": {
                 "issues": "https://github.com/IchHabRecht/content_defender/issues",
-                "source": "https://github.com/IchHabRecht/content_defender/tree/3.4.3"
+                "source": "https://github.com/IchHabRecht/content_defender/tree/3.5.1"
             },
-            "time": "2024-04-29T07:35:37+00:00"
+            "time": "2024-12-09T14:49:57+00:00"
         },
         {
             "name": "lolli42/finediff",
@@ -2707,13 +2702,13 @@
             },
             "type": "typo3-cms-extension",
             "extra": {
+                "typo3/cms": {
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/public",
+                    "extension-key": "pti"
+                },
                 "branch-alias": {
                     "dev-main": "3.0.x-dev"
-                },
-                "typo3/cms": {
-                    "extension-key": "pti",
-                    "app-dir": ".Build",
-                    "web-dir": ".Build/public"
                 }
             },
             "autoload": {
@@ -2998,13 +2993,13 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/starter_twig",
-                "reference": "e1715d4b04f54255f3a6939b9de9ab06cd5b1590"
+                "reference": "5b8a229b1d2dc38fee0bc2eeb5915f4d26d9d6ee"
             },
             "require": {
                 "php": "^8.3",
                 "pti/pti": "^4.0 || dev-main",
                 "starterteam/starter": "^4.5 || dev-main",
-                "twig/twig": "^3",
+                "twig/twig": "^3.14.2",
                 "typo3/cms-core": "^12.4 || ^13.0"
             },
             "suggest": {
@@ -6013,16 +6008,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.14.0",
+            "version": "v3.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "126b2c97818dbff0cdf3fbfc881aedb3d40aae72"
+                "reference": "acffa88cc2b40dbe42eaf3a5025d6c0d4600cc50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/126b2c97818dbff0cdf3fbfc881aedb3d40aae72",
-                "reference": "126b2c97818dbff0cdf3fbfc881aedb3d40aae72",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/acffa88cc2b40dbe42eaf3a5025d6c0d4600cc50",
+                "reference": "acffa88cc2b40dbe42eaf3a5025d6c0d4600cc50",
                 "shasum": ""
             },
             "require": {
@@ -6033,6 +6028,7 @@
                 "symfony/polyfill-php81": "^1.29"
             },
             "require-dev": {
+                "phpstan/phpstan": "^2.0",
                 "psr/container": "^1.0|^2.0",
                 "symfony/phpunit-bridge": "^5.4.9|^6.4|^7.0"
             },
@@ -6076,7 +6072,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.14.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.18.0"
             },
             "funding": [
                 {
@@ -6088,7 +6084,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T17:55:12+00:00"
+            "time": "2024-12-29T10:51:50+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
