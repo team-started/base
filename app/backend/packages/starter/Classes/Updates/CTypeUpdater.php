@@ -116,8 +116,11 @@ class CTypeUpdater implements UpgradeWizardInterface
         $expressionBuilder = $queryBuilder->expr();
         $whereExpressions = $expressionBuilder->or();
         foreach (self::MIGRATION_SETTINGS as $setting) {
-            $whereExpressions->add(
-                $expressionBuilder->eq('CType', $queryBuilder->createNamedParameter($setting['oldCType']))
+            $whereExpressions = $whereExpressions->with(
+                $expressionBuilder->eq(
+                    'CType',
+                    $queryBuilder->createNamedParameter($setting['oldCType'])
+                )
             );
         }
 
