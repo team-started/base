@@ -1,20 +1,27 @@
-{#
-{% block linkContent %}: ermöglich es den übergebenen {{ text }} als Default Inhalt zu setzen. Sollte dies nicht
-gewünscht sein, kann in dem aufrufenden Template {% block linkContent %} überschrieben werden.
+{% set noSpanIfNoLink = noSpanIfNoLink|default(false) %}
 
-see: https://twig.symfony.com/doc/3.x/tags/embed.html
-#}
+{% if config %}
+    {% set linkTarget = config.target ? 'target="' ~ config.target ~ '"' %}
+    {% set linkTitle = config.title ? 'title="' ~ config.title ~ '"' %}
+    {% set linkClass = config.class or additionalClass ? 'class="' ~ config.class ~ ' ' ~ additionalClass ~ '"' %}
 
-{% set target = config.target ? 'target="' ~ config.target ~ '"' %}
-{% set title = config.title ? 'title="' ~ config.title ~ '"' %}
-{% set class = config.class ? 'class="' ~ config.class ~ '"' %}
+    {% if config.uri %}
+        <a href="{{ config.uri }}" {{ linkTarget|raw }} {{ linkTitle|raw }} {{ linkClass|raw }}>
+    {% else %}
+        {% if noSpanIfNoLink == false %}
+            <span {{ linkClass|raw }}>
+        {% endif %}
+    {% endif %}
+{% endif %}
 
-{% if config.uri %}
-    <a href="{{ config.uri }}" {{ target }} {{ title }} {{ class }}>
-        {% block linkContent %}{{ text }}{% endblock %}
-    </a>
-{% else %}
-    <span class="{{ config.class }}">
-        {% block linkContent %}{{ text }}{% endblock %}
-    </span>
+{% block linkContent %}{{ text }}{% endblock %}
+
+{% if config %}
+    {% if config.uri %}
+        </a>
+    {% else %}
+        {% if noSpanIfNoLink == false %}
+            </span>
+        {% endif %}
+    {% endif %}
 {% endif %}

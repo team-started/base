@@ -1,0 +1,18 @@
+$icon-size: 1.3em !default;
+
+.c-download {
+  fill: currentcolor;
+
+  li :hover {
+    fill: $red;
+  }
+
+  svg {
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  &__meta {
+    font-size: 0.75em;
+  }
+}

@@ -1,0 +1,43 @@
+<div class="c-download">
+    
+    <ul class="list-group d-inline-flex">
+        
+        {%  for  item in items %}
+            <li class="list-group-item list-group-item-action">
+
+                {% embed '@object/links/link.twig' with { 
+                    config: item.link.config,
+                    additionalClass: 'd-flex text-decoration-none',
+                    _globals: _globals,
+                    item: item,
+                } only %}
+                    {% block linkContent %}
+                        <svg class="flex-shrink-0 me-2">
+                            <use xlink:href="{{ _globals.spritePath }}#download" />
+                        </svg>
+                        
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <span class="text-nowrap">{{ item.title }}</span>
+
+                                {% if item.fileType %}
+                                    <span class="ms-2 text-nowrap c-download__meta">{{ item.fileType }}</span>
+                                {% endif %}
+
+                                {% if item.fileSize %}
+                                    <span class="ms-2 text-nowrap c-download__meta">{{ item.fileSize }}</span>
+                                {% endif %}
+                            </div>
+                            {% if item.description %}
+                                <div class="fst-italic">{{ item.description }}</div>
+                            {% endif %}
+                        </div>
+                    {% endblock %}
+                {% endembed %}
+
+            </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
