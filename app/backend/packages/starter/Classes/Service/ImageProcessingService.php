@@ -14,10 +14,7 @@ use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
  */
 class ImageProcessingService
 {
-    /**
-     * @var array
-     */
-    public const DEFAULT_FILE_PROCESSOR_CONFIGURATION = [
+    public const array DEFAULT_FILE_PROCESSOR_CONFIGURATION = [
         'dataProcessing.' => [
             '10' => 'TYPO3\CMS\Frontend\DataProcessing\FilesProcessor',
             '10.' => [

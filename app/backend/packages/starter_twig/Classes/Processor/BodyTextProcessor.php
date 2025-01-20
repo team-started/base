@@ -8,10 +8,7 @@ use PrototypeIntegration\PrototypeIntegration\Processor\RichtextProcessor;
 
 class BodyTextProcessor
 {
-    /**
-     * @var string
-     */
-    public const DEFAULT_DATA_FIELD_NAME = 'bodytext';
+    public const string DEFAULT_DATA_FIELD_NAME = 'bodytext';
 
     public function __construct(
         protected RichtextProcessor $rteProcessor,
