@@ -23,6 +23,7 @@ working_dir:
     web: /var/www/html/app/backend
 use_dns_when_possible: true
 timezone: Europe/Berlin
+composer_root: app/backend/
 composer_version: ""
 web_environment:
     - TYPO3_ADMIN_USER=admin
