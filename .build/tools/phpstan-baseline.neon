@@ -1,6 +1,31 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Offset 0 does not exist on array\\{0\\?\\: string, 1\\?\\: ''\\|numeric\\-string, 2\\?\\: string, 3\\?\\: string, 4\\?\\: ''\\|numeric\\-string\\}\\.$#"
+			count: 1
+			path: ../../app/backend/packages/starter/Classes/Service/ImageProcessingService.php
+
+		-
+			message: "#^Offset 1 does not exist on array\\{0\\?\\: string, 1\\?\\: ''\\|numeric\\-string, 2\\?\\: string, 3\\?\\: string, 4\\?\\: ''\\|numeric\\-string\\}\\.$#"
+			count: 1
+			path: ../../app/backend/packages/starter/Classes/Service/ImageProcessingService.php
+
+		-
+			message: "#^Offset 2 does not exist on array\\{0\\?\\: string, 1\\?\\: ''\\|numeric\\-string, 2\\?\\: string, 3\\?\\: string, 4\\?\\: ''\\|numeric\\-string\\}\\.$#"
+			count: 1
+			path: ../../app/backend/packages/starter/Classes/Service/ImageProcessingService.php
+
+		-
+			message: "#^Offset 3 does not exist on array\\{0\\?\\: string, 1\\?\\: ''\\|numeric\\-string, 2\\?\\: string, 3\\?\\: string, 4\\?\\: ''\\|numeric\\-string\\}\\.$#"
+			count: 1
+			path: ../../app/backend/packages/starter/Classes/Service/ImageProcessingService.php
+
+		-
+			message: "#^Offset 4 does not exist on array\\{0\\?\\: string, 1\\?\\: ''\\|numeric\\-string, 2\\?\\: string, 3\\?\\: string, 4\\?\\: ''\\|numeric\\-string\\}\\.$#"
+			count: 1
+			path: ../../app/backend/packages/starter/Classes/Service/ImageProcessingService.php
+
+		-
 			message: "#^Parameter \\#1 \\$className of static method TYPO3\\\\CMS\\\\Core\\\\Utility\\\\GeneralUtility\\:\\:makeInstance\\(\\) expects class\\-string\\<object\\>, string given\\.$#"
 			count: 1
 			path: ../../app/backend/packages/starter_twig/Classes/Twig/TwigEnvironment.php

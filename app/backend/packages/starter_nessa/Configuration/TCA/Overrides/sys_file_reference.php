@@ -22,7 +22,7 @@ ArrayUtility::mergeRecursiveWithOverrule(
             ],
             'nessaHeroImageOverlayPalette' => [
                 'showitem' => 'crop',
-            ]
+            ],
         ],
     ]
 );

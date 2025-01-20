@@ -12,7 +12,7 @@ build:backend-lint-container:
     - docker:20.10.16-dind
   parallel:
     matrix:
-      - PHP_VERSION: [ '8.2' ]
+      - PHP_VERSION: [ '8.3' ]
   variables:
     DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:backend-$PHP_VERSION
     DOCKER_IMAGE_PATH: .build/docker/lint-backend/
