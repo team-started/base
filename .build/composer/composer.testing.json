@@ -12,10 +12,10 @@
 		}
 	],
 	"require": {
-		"php": "^8.2",
+		"php": "^8.3",
 		"cweagans/composer-patches": "^1.7",
 		"pti/pti": "^4.0 || dev-main",
-		"twig/twig": "^3.0",
+		"twig/twig": "^3.14.2",
 		"georgringer/news": "^11.4"
 	},
 	"require-dev": {
@@ -35,12 +35,7 @@
 	},
 	"extra": {
 		"enable-patching": true,
-		"composer-exit-on-patch-failure": true,
-		"patches": {
-			"pti/pti": {
-				"Make file collection records renderable": "patches/pti/make_file_collections_renderable.patch"
-			}
-		}
+		"composer-exit-on-patch-failure": true
 	},
 	"scripts": {
 		"ci:php:cs": [
