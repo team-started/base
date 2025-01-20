@@ -4,7 +4,7 @@
 
 tt_content.starter_download =< lib.twigContentElement
 tt_content.starter_download {
-  templateName = {$tx_startertwig.ceFolderName}/m27-download/m27-download.twig
+  templateName = {$tx_startertwig.namespaces.ceFolderName}/m27-download/m27-download.twig
 
   dataProcessors {
     10 = StarterTeam\StarterTwig\DataProcessing\Content\StarterDownloadProcessor

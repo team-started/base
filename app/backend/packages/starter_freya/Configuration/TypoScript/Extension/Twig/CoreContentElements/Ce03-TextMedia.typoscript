@@ -1,5 +1,5 @@
 tt_content.starter_textmedia {
-  templateName = {$tx_startertwig.ceFolderName}/m03-textmedia/m03-textmedia.twig
+  templateName = {$tx_startertwig.namespaces.ceFolderName}/m03-textmedia/m03-textmedia.twig
   dataProcessors {
     10 {
       imageConfig {

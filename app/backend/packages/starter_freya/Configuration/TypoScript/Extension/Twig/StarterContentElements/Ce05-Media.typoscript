@@ -1,5 +1,5 @@
 tt_content.starter_media {
-  templateName = {$tx_startertwig.ceFolderName}/m05-media/m05-media.twig
+  templateName = {$tx_startertwig.namespaces.ceFolderName}/m05-media/m05-media.twig
   dataProcessors {
     10 {
       imageConfig {
