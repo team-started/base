@@ -37,6 +37,15 @@ class TwigEnvironment extends Environment implements SingletonInterface
             $this->addExtension(new DebugExtension());
         }
 
+        parent::__construct(
+            $loader,
+            [
+                // fixme use TYPO3’s cache framework instead of filesystem for caching
+                'cache' => $this->configuration['disableCache'] ? false : static::getCacheDirectory(),
+                'debug' => $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'],
+            ]
+        );
+
         $this->addGlobal('env', 'CMS');
     }
 

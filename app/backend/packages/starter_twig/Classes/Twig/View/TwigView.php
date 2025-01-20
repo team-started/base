@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\StarterTwig\Twig\View;
 
-use Override;
 use Exception;
+use Override;
 use PrototypeIntegration\PrototypeIntegration\View\PtiViewInterface;
 use PrototypeIntegration\PrototypeIntegration\View\TemplateBasedViewInterface;
 use RuntimeException;
