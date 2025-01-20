@@ -27,8 +27,9 @@ class ConfigurationUtility
         'starter_distribution_navigation' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-special-menu.svg',
         ],
-        'starter_download' => [
+        'starter_m27_download' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-database-export.svg',
+            'allowedFileExtensions' => 'doc,docx,jpg,jpeg,pdf,potx,ppt,pptx,xls,xlsx,zip,msg,oft,rtf',
         ],
         'starter_tab' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-tab.svg',
@@ -270,5 +271,14 @@ class ConfigurationUtility
     public static function getColPosForStarterColumnElement(): int
     {
         return static::$contentGridElementsColPos['tx_starter_column_element'];
+    }
+
+    public static function getAllowedFileExtensions(string $CType): string
+    {
+        if (self::$contentElements[$CType]['allowedFileExtensions']) {
+            return self::$contentElements[$CType]['allowedFileExtensions'];
+        }
+
+        return '';
     }
 }

@@ -96,8 +96,9 @@
             "cms-package-dir": "{$vendor-dir}/typo3/cms"
         },
         "enable-patching": true,
-        "composer-exit-on-patch-failure": true
-    },
+        "composer-exit-on-patch-failure": true,
+		"patches-file": "composer.patches.json"
+	},
     "config": {
         "secure-http": true,
         "optimize-autoloader": true,

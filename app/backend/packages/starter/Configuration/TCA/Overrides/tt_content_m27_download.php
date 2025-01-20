@@ -1,13 +1,14 @@
 <?php
 
+use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 
 (function () {
-    $allowedFileExtensions = 'doc,docx,jpg,jpeg,pdf,ppt,pptx,xls,xlsx,zip';
     $translationFile = 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:';
-    $cType = 'starter_download';
+    $cType = 'starter_m27_download';
+    $allowedFileExtensions = ConfigurationUtility::getAllowedFileExtensions($cType);
 
     $GLOBALS['TCA']['tt_content']['types'][$cType] = [
         'showitem' => '
@@ -15,6 +16,7 @@ defined('TYPO3') || die();
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
+        --div--;' . $translationFile . 'tabs.download' . ';download,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media;uploads,
             --palette--;;uploadslayout,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
