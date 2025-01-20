@@ -27,50 +27,6 @@
                 'processor_path_lzw' => getenv('TYPO3_GFX_PROCESSOR_PATH_LZW'),
                 'processor_colorspace' => getenv('TYPO3_GFX_PROCESSOR_COLORSPACE'),
             ],
-            'LOG' => [
-                'writerConfiguration' => [
-                    \TYPO3\CMS\Core\Log\LogLevel::ALERT => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-alert.log'
-                        ]
-                    ],
-                    \TYPO3\CMS\Core\Log\LogLevel::CRITICAL => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-critical.log'
-                        ]
-                    ],
-                    \TYPO3\CMS\Core\Log\LogLevel::DEBUG => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-debug.log'
-                        ]
-                    ],
-                    \TYPO3\CMS\Core\Log\LogLevel::EMERGENCY => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-emergency.log'
-                        ]
-                    ],
-                    \TYPO3\CMS\Core\Log\LogLevel::ERROR => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-error.log'
-                        ]
-                    ],
-                    \TYPO3\CMS\Core\Log\LogLevel::INFO => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-info.log'
-                        ]
-                    ],
-                    \TYPO3\CMS\Core\Log\LogLevel::NOTICE => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-notice.log'
-                        ]
-                    ],
-                    \TYPO3\CMS\Core\Log\LogLevel::WARNING => [
-                        \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                            'logFile' => \TYPO3\CMS\Core\Core\Environment::getVarPath() . '/log/typo3-warning.log'
-                        ]
-                    ],
-                ]
-            ],
             'MAIL' => [
                 'transport' => getenv('TYPO3_MAIL_TRANSPORT'),
                 'transport_smtp_server' => getenv('TYPO3_MAIL_TRANSPORT_SMTP_SERVER'),
