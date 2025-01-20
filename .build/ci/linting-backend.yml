@@ -7,7 +7,7 @@
         - ${BACKEND_DIR}/vendor/
   parallel:
     matrix:
-      - PHP_VERSION: ['8.2']
+      - PHP_VERSION: ['8.3']
   before_script:
     - mv ${BACKEND_DIR}/composer.json ${BACKEND_DIR}/composer.json.orig
     - mv ${BACKEND_DIR}/composer.lock ${BACKEND_DIR}/composer.lock.orig
@@ -16,11 +16,11 @@
     - php -v | grep '^PHP';
     - |
       composer require --no-ansi --no-interaction --no-progress --no-install \
-        typo3/cms-core:^12.4.19 \
-        typo3/cms-backend:^12.4.19 \
-        typo3/cms-frontend:^12.4.19 \
-        typo3/cms-install:^12.4.19 \
-        typo3/cms-fluid:^12.4.19 \
+        typo3/cms-core:^12.4.25 \
+        typo3/cms-backend:^12.4.25 \
+        typo3/cms-frontend:^12.4.25 \
+        typo3/cms-install:^12.4.25 \
+        typo3/cms-fluid:^12.4.25 \
         -d app/backend
       composer update --no-ansi --no-interaction --no-progress --with-dependencies -d ${BACKEND_DIR};
   rules:
