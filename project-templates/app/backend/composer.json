@@ -78,30 +78,30 @@
 	},
 	"scripts": {
 		"ci:php:cs": [
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --dry-run --using-cache no --diff",
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --dry-run --using-cache no --diff"
+			"php-cs-fixer fix --config=../../build/.php-cs-fixer.php -v --dry-run --using-cache no --diff",
+			"php-cs-fixer fix --config=../../build/.php-cs-fixer-nonclasses.php -v --dry-run --using-cache no --diff"
 		],
 		"ci:php:cs-fix": [
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer.php -v --using-cache no",
-			"php-cs-fixer fix --config=../../.build/tools/.php-cs-fixer-nonclasses.php -v --using-cache no"
+			"php-cs-fixer fix --config=../../build/.php-cs-fixer.php -v --using-cache no",
+			"php-cs-fixer fix --config=../../build/.php-cs-fixer-nonclasses.php -v --using-cache no"
 		],
 		"ci:php:stan": [
-			"phpstan --configuration=../../.build/tools/phpstan.neon"
+			"phpstan --configuration=../../build/phpstan.neon"
 		],
 		"ci:php:phpstan-baseline": [
-			"phpstan --configuration=../../.build/tools/phpstan.neon --generate-baseline=../../.build/tools/phpstan-baseline.neon"
+			"phpstan --configuration=../../build/phpstan.neon --generate-baseline=../../build/phpstan-baseline.neon"
 		],
 		"ci:php:stan-74": [
-			"phpstan --configuration=../../.build/tools/phpstan-74.neon"
+			"phpstan --configuration=../../build/phpstan-74.neon"
 		],
 		"ci:php:phpstan-baseline-74": [
-			"phpstan --configuration=../../.build/tools/phpstan-74.neon --generate-baseline=../../.build/tools/phpstan-baseline-74.neon"
+			"phpstan --configuration=../../build/phpstan-74.neon --generate-baseline=../../build/phpstan-baseline-74.neon"
 		],
 		"ci:php:rector": [
-			"rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
+			"rector process --dry-run --clear-cache --config=../../build/rector.php"
 		],
 		"ci:php:rector-74": [
-			"rector process --dry-run --clear-cache --config=../../.build/tools/rector-74.php"
+			"rector process --dry-run --clear-cache --config=../../build/rector-74.php"
 		],
 		"post-install-cmd": [
 			"ln -sf vendor/helhum/typo3-console/typo3cms typo3cms"

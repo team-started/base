@@ -1,0 +1,72 @@
+name: Lint frontend code
+
+on:
+  pull_request:
+
+env:
+  FRONTEND_DIRECTORY: app/frontend
+
+jobs:
+  javascript-lint:
+    name: JavaScript coding standards
+    runs-on: ubuntu-latest
+    strategy:
+      # This prevents cancellation of matrix job runs, if one/two already failed and let the
+      # rest matrix jobs be executed anyway.
+      fail-fast: false
+      matrix:
+        node: [ '16.20' ]
+        package: [ 'starter_freya_fractal_starterkit', 'starter_nessa_starterkit' ]
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: ${{ env.FRONTEND_DIRECTORY }}
+          show-progress: false
+
+      - name: Use specified Node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}
+
+      - name: Lint JavaScript files
+        run: npm run lint:js
+        working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}
+
+  scss-lint:
+    name: CSS coding standards
+    runs-on: ubuntu-latest
+    strategy:
+      # This prevents cancellation of matrix job runs, if one/two already failed and let the
+      # rest matrix jobs be executed anyway.
+      fail-fast: false
+      matrix:
+        node: [ '16.20' ]
+        package: [ 'starter_freya_fractal_starterkit', 'starter_nessa_starterkit' ]
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: ${{ env.FRONTEND_DIRECTORY }}
+          show-progress: false
+
+      - name: Use specified Node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}
+
+      - name: Lint stylesheet files
+        run: npm run lint:scss
+        working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}

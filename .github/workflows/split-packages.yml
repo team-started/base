@@ -1,0 +1,67 @@
+name: 'Monorepo Packages Split'
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.MONOREPOSPLIT }}
+
+jobs:
+  packages_split:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          -
+            local_path: "app/backend/packages/starter"
+            split_repository: "starter"
+          -
+            local_path: "app/backend/packages/starter_freya"
+            split_repository: "starter-freya"
+          -
+            local_path: "app/backend/packages/starter_nessa"
+            split_repository: "starter-nessa"
+          -
+            local_path: "app/backend/packages/starter_twig"
+            split_repository: "starter-twig"
+          -
+            local_path: "app/backend/packages/starter_twig_news"
+            split_repository: "starter-twig-news"
+          -
+            local_path: "app/frontend/starter_freya_fractal_starterkit"
+            split_repository: "starter-freya-fractal-starterkit"
+          -
+            local_path: "app/frontend/starter_nessa_starterkit"
+            split_repository: "starter-nessa-starterkit"
+
+    steps:
+      -   uses: actions/checkout@v2
+
+      -
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        uses: "symplify/monorepo-split-github-action@2.1"
+        with:
+          package_directory: ${{ matrix.package.local_path }}
+          repository_organization: 'team-started'
+          repository_name: '${{ matrix.package.split_repository }}'
+          repository_host: github.com
+          user_name: "team-ci"
+          user_email: "team@starter.team"
+
+      -
+        if: "startsWith(github.ref, 'refs/tags/')"
+        uses: "symplify/monorepo-split-github-action@2.1"
+        with:
+          tag: ${GITHUB_REF#refs/tags/}
+          package_directory: ${{ matrix.package.local_path }}
+          repository_organization: 'team-started'
+          repository_name: '${{ matrix.package.split_repository }}'
+          repository_host: github.com
+          user_name: "team-ci"
+          user_email: "team@starter.team"

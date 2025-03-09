@@ -6,4 +6,4 @@ parameters:
     reportUnmatchedIgnoredErrors: true
     checkMissingIterableValueType: false
     paths:
-       - ../../app/backend/packages/customer_sitepackage
+       - ../app/backend/packages/customer_sitepackage

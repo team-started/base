@@ -1,9 +1,9 @@
 include:
-  - local: '/.build/ci/container-build.yml'
-  - local: '/.build/ci/linting-backend.yml'
-  - local: '/.build/ci/linting-frontend.yml'
-  - local: '/.build/ci/split-packages.yml'
-  - local: '/.build/ci/documentation.yml'
+  - local: '/.gitlab/ci/container-build.yml'
+  - local: '/.gitlab/ci/linting-backend.yml'
+  - local: '/.gitlab/ci/linting-frontend.yml'
+  - local: '/.gitlab/ci/split-packages.yml'
+  - local: '/.gitlab/ci/documentation.yml'
 
 #workflow:
 #  rules:

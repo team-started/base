@@ -1,5 +1,5 @@
 include:
-  - local: '/.build/ci/templates/monorepoSplitTemplate.yml'
+  - local: '/.gitlab/ci/templates/monorepoSplitTemplate.yml'
 
 stages:
   - split-packages

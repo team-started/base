@@ -1,3 +1,5 @@
 /node_modules
 /dist
 /build
+/src/ui/0-draft
+/src/ui/0-playground

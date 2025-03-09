@@ -11,7 +11,7 @@
   before_script:
     - mv ${BACKEND_DIR}/composer.json ${BACKEND_DIR}/composer.json.orig
     - mv ${BACKEND_DIR}/composer.lock ${BACKEND_DIR}/composer.lock.orig
-    - cp .build/composer/composer.testing.json ${BACKEND_DIR}/composer.json
+    - cp .gitlab/composer/composer.testing.json ${BACKEND_DIR}/composer.json
     - rm -rf ${BACKEND_DIR}/vendor/ ${BACKEND_DIR}/var/
     - php -v | grep '^PHP';
     - |

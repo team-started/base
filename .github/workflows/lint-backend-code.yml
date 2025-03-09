@@ -1,0 +1,180 @@
+name: Lint backend code
+
+on:
+  pull_request:
+
+env:
+  COMPOSER_FLAGS: --ansi --no-interaction --no-progress
+  COMPOSER_INSTALL_FLAGS: --prefer-dist
+  COMPOSER_UPDATE_FLAGS: ''
+  BACKEND_DIRECTORY: app/backend
+
+jobs:
+  php_coding_standards:
+    name: PHP Coding Standards
+    runs-on: ubuntu-latest
+    strategy:
+      # This prevents cancellation of matrix job runs, if one/two already failed and let the
+      # rest matrix jobs be executed anyway.
+      fail-fast: false
+      matrix:
+        php: [ '8.3' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            ${{ env.BACKEND_DIRECTORY }}
+            build
+          show-progress: false
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: intl, zip
+          ini-values: memory_limit=-1, error_reporting=E_ALL, display_errors=On
+          php-version: ${{ matrix.php }}
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install ${{ env.COMPOSER_INSTALL_FLAGS }} ${{ env.COMPOSER_FLAGS }} --working-dir=${{ env.BACKEND_DIRECTORY }}
+
+      - name: Validation of coding standards for PHP files
+        run: composer ci:php:cs --working-dir=${{ env.BACKEND_DIRECTORY }}
+
+  php_stan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+    strategy:
+      # This prevents cancellation of matrix job runs, if one/two already failed and let the
+      # rest matrix jobs be executed anyway.
+      fail-fast: false
+      matrix:
+        php: [ '8.3' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            ${{ env.BACKEND_DIRECTORY }}
+            build
+          show-progress: false
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: intl, zip
+          ini-values: memory_limit=-1, error_reporting=E_ALL, display_errors=On
+          php-version: ${{ matrix.php }}
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install ${{ env.COMPOSER_INSTALL_FLAGS }} ${{ env.COMPOSER_FLAGS }} --working-dir=${{ env.BACKEND_DIRECTORY }}
+
+      - name: Find bugs with PHPStan
+        run: composer ci:php:stan --working-dir=${{ env.BACKEND_DIRECTORY }}
+
+  php_rector:
+    name: Rector
+    runs-on: ubuntu-latest
+    strategy:
+      # This prevents cancellation of matrix job runs, if one/two already failed and let the
+      # rest matrix jobs be executed anyway.
+      fail-fast: false
+      matrix:
+        php: [ '8.3' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            ${{ env.BACKEND_DIRECTORY }}
+            build
+          show-progress: false
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: intl, zip
+          ini-values: memory_limit=-1, error_reporting=E_ALL, display_errors=On
+          php-version: ${{ matrix.php }}
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install ${{ env.COMPOSER_INSTALL_FLAGS }} ${{ env.COMPOSER_FLAGS }} --working-dir=${{ env.BACKEND_DIRECTORY }}
+
+      - name: Run rector
+        run: composer ci:php:rector --working-dir=${{ env.BACKEND_DIRECTORY }}
+
+#  typoscript_lint:
+#    name: TypoScript lint
+#    runs-on: ubuntu-latest
+#    continue-on-error: true
+#    strategy:
+#      # This prevents cancellation of matrix job runs, if one/two already failed and let the
+#      # rest matrix jobs be executed anyway.
+#      fail-fast: false
+#      matrix:
+#        php: [ '8.3' ]
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#        with:
+#          sparse-checkout: |
+#            ${{ env.BACKEND_DIRECTORY }}
+#            build
+#          show-progress: false
+#
+#      - name: Install PHP
+#        uses: shivammathur/setup-php@v2
+#        with:
+#          coverage: none
+#          extensions: intl, zip
+#          ini-values: memory_limit=-1, error_reporting=E_ALL, display_errors=On
+#          php-version: ${{ matrix.php }}
+#
+#      - name: Cache Composer packages
+#        id: composer-cache
+#        uses: actions/cache@v4
+#        with:
+#          path: vendor
+#          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+#          restore-keys: |
+#            ${{ runner.os }}-php-
+#
+#      - name: Install dependencies
+#        run: composer install ${{ env.COMPOSER_INSTALL_FLAGS }} ${{ env.COMPOSER_FLAGS }} --working-dir=${{ env.BACKEND_DIRECTORY }}
+#
+#      - name: Run TypoScript linter
+#        run: composer ci:typoscript --working-dir=${{ env.BACKEND_DIRECTORY }}
