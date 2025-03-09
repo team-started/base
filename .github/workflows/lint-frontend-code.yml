@@ -33,11 +33,11 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
         with:
-          working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ maxtrix.package }}
+          working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}
 
       - name: Lint JavaScript files
         run: npm run lint:js
-        working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ maxtrix.package }}
+        working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}
 
   scss-lint:
     name: CSS coding standards
@@ -65,8 +65,8 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
         with:
-          working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ maxtrix.package }}
+          working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}
 
       - name: Lint stylesheet files
         run: npm run lint:scss
-        working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ maxtrix.package }}
+        working-directory: ${{ env.FRONTEND_DIRECTORY }}/${{ matrix.package }}
