@@ -135,8 +135,24 @@
         ],
         "ci:php:rector": [
             "rector process --dry-run --clear-cache --config=../../.build/tools/rector.php"
-        ]
-    },
+        ],
+		"ci:typoscript": [
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/customer_sitepackage/Configuration/TypoScript/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/customer_sitepackage/Configuration/TSConfig/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/sitepackage_freya/Configuration/TypoScript/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/sitepackage_freya/Configuration/TSConfig/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/sitepackage_nessa/Configuration/TypoScript/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/sitepackage_nessa/Configuration/TSConfig/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter/Configuration/TypoScript/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter/Configuration/TSConfig/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter_freya/Configuration/TypoScript/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter_freya/Configuration/TSConfig/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter_nessa/Configuration/TypoScript/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter_nessa/Configuration/TSConfig/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter_twig/Configuration/TypoScript/",
+			"typoscript-lint --config=../../.build/typoscript-lint.yml --fail-on-warnings packages/starter_twig_news/Configuration/TypoScript/",
+		]
+	},
 	"minimum-stability": "dev",
 	"prefer-stable": true
 }
