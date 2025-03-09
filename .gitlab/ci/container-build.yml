@@ -15,7 +15,7 @@ build:backend-lint-container:
       - PHP_VERSION: [ '8.3' ]
   variables:
     DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:backend-$PHP_VERSION
-    DOCKER_IMAGE_PATH: .build/docker/lint-backend/
+    DOCKER_IMAGE_PATH: .gitlab/docker/lint-backend/
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build -t $DOCKER_IMAGE_TAG $DOCKER_IMAGE_PATH --build-arg PHP_VERSION="$PHP_VERSION"
@@ -23,8 +23,8 @@ build:backend-lint-container:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "main"'
       changes:
-        - .build/ci/container-build.yml
-        - .build/docker/lint-backend/*
+        - .gitlab/ci/container-build.yml
+        - .gitlab/docker/lint-backend/*
 
 ##
 # Job to build a docker container for general frontend linting
@@ -39,7 +39,7 @@ build:frontend-lint-container:
       - NODE_VERSION: [ '16.20.1' ]
   variables:
     DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:frontend-$NODE_VERSION
-    DOCKER_IMAGE_PATH: ./.build/docker/lint-frontend/
+    DOCKER_IMAGE_PATH: ./.gitlab/docker/lint-frontend/
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build -t $DOCKER_IMAGE_TAG $DOCKER_IMAGE_PATH --build-arg NODE_VERSION="$NODE_VERSION"
@@ -47,5 +47,5 @@ build:frontend-lint-container:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "main"'
       changes:
-        - .build/ci/container-build.yml
-        - .build/docker/lint-frontend/*
+        - .gitlab/ci/container-build.yml
+        - .gitlab/docker/lint-frontend/*

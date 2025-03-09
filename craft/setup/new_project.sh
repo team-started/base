@@ -96,7 +96,7 @@ rsync $SOURCE_DIR/.editorconfig $SOURCE_DIR/.gitattributes $PROJECT_TEMPLATES_DI
 ###
 # Sync gitlab-ci files and exclude customized pipeline
 ###
-rsync -r $SOURCE_DIR/.build $BUILD_DIR --exclude .gitlab-ci.yml
+rsync -r $SOURCE_DIR/build $BUILD_DIR
 
 ###
 # Sync DDEV files
