@@ -54,8 +54,8 @@ jobs:
           repository_organization: 'team-started'
           repository_name: '${{ matrix.package.split_repository }}'
           repository_host: github.com
-          user_name: '${{ env.REPO_USER }}'
-          user_email: '${{ env.REPO_USER_EMAIL }}'
+          user_name: '${{ vars.REPO_USER }}'
+          user_email: '${{ vars.REPO_USER_EMAIL }}'
 
       -
         if: "startsWith(github.ref, 'refs/tags/')"
@@ -66,5 +66,5 @@ jobs:
           repository_organization: 'team-started'
           repository_name: '${{ matrix.package.split_repository }}'
           repository_host: github.com
-          user_name: '${{ env.REPO_USER }}'
-          user_email: '${{ env.REPO_USER_EMAIL }}'
+          user_name: '${{ vars.REPO_USER }}'
+          user_email: '${{ vars.REPO_USER_EMAIL }}'
