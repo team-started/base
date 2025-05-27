@@ -38,3 +38,60 @@ INSERT INTO `sys_template` SET
 	title = 'Theme-Nessa',
 	include_static_file = 'EXT:sitepackage_nessa/Configuration/TypoScript/'
 ;
+
+INSERT INTO `sys_category` SET
+	pid = @nessa_root_de,
+	sorting = 64,
+	parent = 0,
+	title = 'Portfolio',
+	slug = 'portfolio'
+;
+SET @category_parent = LAST_INSERT_ID();
+
+INSERT INTO `sys_category` SET
+	pid = @nessa_root_de,
+	sys_language_uid = @language_en,
+	l10n_parent = @category_parent,
+	sorting = 64,
+	parent = 0,
+	title = 'Portfolio',
+	slug = 'portfolio'
+;
+
+INSERT INTO `sys_category` SET
+	pid = @nessa_root_de,
+	parent = @category_parent,
+	sorting = 640,
+	title = 'Beispiel A',
+	slug = 'beispiel-a'
+;
+SET @category = LAST_INSERT_ID();
+
+INSERT INTO `sys_category` SET
+	pid = @nessa_root_de,
+	parent = @category_parent,
+	sys_language_uid = @language_en,
+	l10n_parent = @category,
+	sorting = 640,
+	title = 'Example A',
+	slug = 'example-a'
+;
+
+INSERT INTO `sys_category` SET
+	pid = @nessa_root_de,
+	parent = @category_parent,
+	sorting = 768,
+	title = 'Beispiel B',
+	slug = 'beispiel-a'
+;
+SET @category = LAST_INSERT_ID();
+
+INSERT INTO `sys_category` SET
+	pid = @nessa_root_de,
+	parent = @category_parent,
+	sys_language_uid = @language_en,
+	l10n_parent = @category,
+	sorting = 768,
+	title = 'Example B',
+	slug = 'example-b'
+;
