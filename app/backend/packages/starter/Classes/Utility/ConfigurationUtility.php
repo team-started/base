@@ -43,9 +43,6 @@ class ConfigurationUtility
         'starter_gallery' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-image.svg',
         ],
-        'starter_stop' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/apps/apps-pagetree-drag-place-denied.svg',
-        ],
         'starter_teaser' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-teaser.svg',
         ],

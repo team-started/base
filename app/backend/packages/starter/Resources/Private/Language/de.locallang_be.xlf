@@ -249,12 +249,6 @@
 			<trans-unit id="CType.I.starter_gallery.description">
 				<target>Eine Bildergalerie mit beliebiger Anzahl an Bildern.</target>
 			</trans-unit>
-			<trans-unit id="CType.I.starter_stop">
-				<target>Stoppe rekursive Vererbung</target>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_stop.description">
-				<target>Beenden der Vererbung von vorherigen Inhalten.</target>
-			</trans-unit>
 			<trans-unit id="CType.I.starter_teaser">
 				<target>Teaser</target>
 			</trans-unit>

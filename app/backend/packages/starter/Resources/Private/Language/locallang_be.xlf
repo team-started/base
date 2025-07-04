@@ -227,12 +227,6 @@
 			<trans-unit id="CType.I.starter_gallery.description">
 				<source>A picture gallery with any number of pictures.</source>
 			</trans-unit>
-			<trans-unit id="CType.I.starter_stop">
-				<source>Stop recursive inheritance</source>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_stop.description">
-				<source>Stop inheriting from previous content.</source>
-			</trans-unit>
 			<trans-unit id="CType.I.starter_teaser">
 				<source>Teaser</source>
 			</trans-unit>
