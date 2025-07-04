@@ -96,24 +96,6 @@ TCEFORM {
       }
     }
 
-    assets {
-      config {
-        appearance {
-          fileUploadAllowed = 0
-          fileByUrlAllowed = 0
-        }
-      }
-    }
-
-    media {
-      config {
-        appearance {
-          fileUploadAllowed = 0
-          fileByUrlAllowed = 0
-        }
-      }
-    }
-
     // allow only h1, h2 and h3 as structured headline
     header_layout {
       removeItems = 4,5,6,99
@@ -192,6 +174,15 @@ TCEFORM {
         icofont-flora-flower = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tx_starternessa_teaser_element.icon.I.agricultural-water
         icofont-bathtub = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tx_starternessa_teaser_element.icon.I.consumption-water
         icofont-beverage = LLL:EXT:starter_nessa/Resources/Private/Language/locallang_be.xlf:tx_starternessa_teaser_element.icon.I.drink-water
+      }
+    }
+
+    assets {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+          fileByUrlAllowed = 0
+        }
       }
     }
   }
