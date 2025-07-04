@@ -28,10 +28,6 @@
 				<target>Seitenabschluss - Footer (vererbt)</target>
 			</trans-unit>
 
-			<trans-unit id="pages.tx_starter_nav_media">
-				<target>Bild für Navigation</target>
-			</trans-unit>
-
 <!-- label sys_file_reference -->
 			<trans-unit id="sys_file_reference.tx_starter_class">
 				<target>Klasse</target>

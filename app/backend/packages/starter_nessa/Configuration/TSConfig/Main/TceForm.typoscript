@@ -26,9 +26,6 @@ TCEFORM {
     fe_login_mode.disabled = 1
     categories.disabled = 1
 
-    // disable EXT:starter fields
-    tx_starter_nav_media.disabled = 1
-
     // disable EXT:starter_nessa fields
     nessa_social_element.disabled = 1
   }
