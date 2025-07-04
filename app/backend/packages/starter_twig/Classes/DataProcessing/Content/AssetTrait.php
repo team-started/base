@@ -68,9 +68,6 @@ trait AssetTrait
 
         $gridData = [
             'switchOrderOnSmall' => true,
-            'showOnSmall' => $items['tx_starter_show_small'],
-            'showOnMedium' => $items['tx_starter_show_medium'],
-            'showOnLarge' => $items['tx_starter_show_large'],
             'imageCols' => [
                 'small' => $this->getColumnSize($data['tx_starter_media_size_small']),
                 'medium' => $this->getColumnSize($data['tx_starter_media_size_medium']),
@@ -82,10 +79,6 @@ trait AssetTrait
                 'large' => $this->getColumnSize($data['tx_starter_media_size_large'], 12, true),
             ],
         ];
-
-        unset($items['tx_starter_show_small']);
-        unset($items['tx_starter_show_medium']);
-        unset($items['tx_starter_show_large']);
 
         return $gridData;
     }

@@ -32,18 +32,6 @@
 			<trans-unit id="sys_file_reference.tx_starter_class">
 				<target>Klasse</target>
 			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_small">
-				<source>Show on small</source>
-				<target>Zeige auf Smartphone</target>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_medium">
-				<source>Show on medium</source>
-				<target>Zeige auf Tablet</target>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_large">
-				<source>Show on large</source>
-				<target>Zeige auf Desktop</target>
-			</trans-unit>
 			<trans-unit id="sys_file_reference.tx_starter_show.I.0">
 				<source>Show</source>
 				<target>Anzeigen</target>

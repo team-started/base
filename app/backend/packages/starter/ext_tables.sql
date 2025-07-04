@@ -36,10 +36,7 @@ CREATE TABLE tt_content (
 # Extend table structure for table 'sys_file_reference'
 #
 CREATE TABLE sys_file_reference (
-	tx_starter_class varchar(60) DEFAULT '' NOT NULL,
-	tx_starter_show_small smallint(5) unsigned DEFAULT '0' NOT NULL,
-	tx_starter_show_medium smallint(5) unsigned DEFAULT '0' NOT NULL,
-	tx_starter_show_large smallint(5) unsigned DEFAULT '0' NOT NULL
+	tx_starter_class varchar(60) DEFAULT '' NOT NULL
 );
 
 #

@@ -82,19 +82,16 @@ defined('TYPO3') || die();
                             '0' => [
                                 'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
-                                        --palette--;;starterShowAssetPalette,
                                         --palette--;;filePalette',
                             ],
                             File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
-                                        --palette--;;starterShowAssetPalette,
                                         --palette--;;filePalette',
                             ],
                             File::FILETYPE_VIDEO => [
                                 'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                        --palette--;;starterShowAssetPalette,
                                         --palette--;;filePalette',
                             ],
                         ],

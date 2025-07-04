@@ -78,9 +78,6 @@ class ImageProcessorService implements NewsProcessorInterface
                     'uid' => null,
                     'default' => $this->imageProcessor->renderImage($this->dummyImage, $this->imageConfig),
                     'placeholder' => $this->imageProcessor->renderImage($this->dummyImage, $this->imagePlaceHolderConfig),
-                    'tx_starter_show_small' => true,
-                    'tx_starter_show_medium' => true,
-                    'tx_starter_show_large' => true,
                 ],
             ];
         }

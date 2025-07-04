@@ -32,15 +32,6 @@
 			<trans-unit id="sys_file_reference.tx_starter_class">
 				<source>Class</source>
 			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_small">
-				<source>Show on small</source>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_medium">
-				<source>Show on medium</source>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_large">
-				<source>Show on large</source>
-			</trans-unit>
 			<trans-unit id="sys_file_reference.tx_starter_show.I.0">
 				<source>Show</source>
 			</trans-unit>
