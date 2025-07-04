@@ -65,15 +65,6 @@ mod.wizards.newContentElement.wizardItems {
         }
       }
 
-      starter_column_grid {
-        iconIdentifier = starter-ctype-starter_column_grid
-        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_column_grid
-        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_column_grid.description
-        tt_content_defValues {
-          CType = starter_column_grid
-        }
-      }
-
       starter_m27_download {
         iconIdentifier = starter-ctype-starter_m27_download
         title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_m27_download
@@ -94,7 +85,6 @@ mod.wizards.newContentElement.wizardItems {
     show := addToList(starter_tab)
     show := addToList(starter_media)
     show := addToList(starter_gallery)
-    show := addToList(starter_column_grid)
   }
 
   special {

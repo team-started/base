@@ -46,9 +46,6 @@ class ConfigurationUtility
         'starter_teaser' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-teaser.svg',
         ],
-        'starter_column_grid' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-columns.svg',
-        ],
     ];
 
     /**
@@ -245,29 +242,6 @@ class ConfigurationUtility
         }
 
         return $mediaCropSettings;
-    }
-
-    public static array $contentGridElementsColPos = [
-        'tx_starter_column_element' => 1705,
-    ];
-
-    public static function getInlineElementSettings(array $formDataResult): ?array
-    {
-        $currentColPos = is_array($formDataResult['databaseRow']['colPos'])
-            ? (int)$formDataResult['databaseRow']['colPos'][0]
-            : (int)$formDataResult['databaseRow']['colPos'];
-
-        $inlineContentSettings = array_filter(
-            $formDataResult['pageTsConfig']['tx_starter.']['inlineContentElementSettings.'],
-            fn($itemSettings) => (int)$itemSettings['colPos'] === $currentColPos
-        );
-
-        return array_shift($inlineContentSettings);
-    }
-
-    public static function getColPosForStarterColumnElement(): int
-    {
-        return static::$contentGridElementsColPos['tx_starter_column_element'];
     }
 
     public static function getAllowedFileExtensions(string $CType): string
