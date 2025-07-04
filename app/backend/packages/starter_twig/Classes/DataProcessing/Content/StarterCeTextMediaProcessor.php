@@ -54,7 +54,7 @@ class StarterCeTextMediaProcessor implements PtiDataProcessor
             'tx_starter_backgroundcolor' => $data['tx_starter_backgroundcolor'],
             'tx_starter_background_fluid' => (bool)$data['tx_starter_background_fluid'],
             'tx_starter_container' => $data['tx_starter_width'],
-            'grid' => $this->getGrid($data, $mediaItems),
+            'grid' => $this->getGrid($mediaItems),
         ];
 
         return array_merge($twigData, $mediaItems);

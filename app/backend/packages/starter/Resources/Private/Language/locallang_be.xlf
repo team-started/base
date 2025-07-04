@@ -167,40 +167,6 @@
 				<source>Nested Element</source>
 			</trans-unit>
 
-			<trans-unit id="starter.asset_medium_references">
-				<source>Media element Breakpoint Medium</source>
-			</trans-unit>
-			<trans-unit id="starter.asset_large_references">
-				<source>Media element Breakpoint Large</source>
-			</trans-unit>
-
-			<trans-unit id="tt_content.imagecols">
-				<source>Image side by side (Small)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecols_medium">
-				<source>Image side by side (Medium)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecols_large">
-				<source>Image side by side (Large)</source>
-			</trans-unit>
-			<trans-unit id="media_size_small">
-				<source>small</source>
-			</trans-unit>
-			<trans-unit id="media_size_medium">
-				<source>medium</source>
-			</trans-unit>
-			<trans-unit id="media_size_large">
-				<source>large</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_small">
-				<source>Relationship between text and image (small)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_medium">
-				<source>Relationship between text and image (medium)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_large">
-				<source>Relationship between text and image (large)</source>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
 				<source>Link</source>
 			</trans-unit>

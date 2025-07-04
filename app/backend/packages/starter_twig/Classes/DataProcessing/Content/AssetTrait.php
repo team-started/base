@@ -50,7 +50,7 @@ trait AssetTrait
         26 => 'position-left-right',
     ];
 
-    protected function getGrid(array $data, ?array &$mediaItems): array
+    protected function getGrid(?array &$mediaItems): array
     {
         $items = null;
 
@@ -66,36 +66,7 @@ trait AssetTrait
             return [];
         }
 
-        $gridData = [
-            'switchOrderOnSmall' => true,
-            'imageCols' => [
-                'small' => $this->getColumnSize($data['tx_starter_media_size_small']),
-                'medium' => $this->getColumnSize($data['tx_starter_media_size_medium']),
-                'large' => $this->getColumnSize($data['tx_starter_media_size_large']),
-            ],
-            'textCols' => [
-                'small' => $this->getColumnSize($data['tx_starter_media_size_small'], 12, true),
-                'medium' => $this->getColumnSize($data['tx_starter_media_size_medium'], 12, true),
-                'large' => $this->getColumnSize($data['tx_starter_media_size_large'], 12, true),
-            ],
-        ];
-
-        return $gridData;
-    }
-
-    /**
-     * @param int|string $value
-     */
-    protected function getColumnSize(int|string $value, int $columnBase = 12, bool $calculateWithColumnBase = false): int
-    {
-        $value = (int)$value;
-        $size = $value == 0 ? $columnBase : $value;
-
-        if ($calculateWithColumnBase && $value > 0) {
-            $size = $columnBase - $value;
-        }
-
-        return $size;
+        return ['switchOrderOnSmall' => true];
     }
 
     protected function getImagePosition(int $imagePosition): ?array

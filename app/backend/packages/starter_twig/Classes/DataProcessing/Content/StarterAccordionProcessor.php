@@ -134,7 +134,7 @@ class StarterAccordionProcessor implements PtiDataProcessor
             'bodytext' => $this->bodyTextProcessor->processBodyText($accordionItem),
             'image' => $assets,
             'tx_starter_imageorient' => $this->getImagePosition((int)$accordionItem['imageorient']),
-            'grid' => $this->getGrid($accordionItem, $assets),
+            'grid' => $this->getGrid($assets),
         ];
     }
 

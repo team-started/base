@@ -23,19 +23,6 @@ TCEFORM {
       }
     }
 
-    # disable EXT:starter fields
-    tx_starter_imagecols_medium {
-      types {
-        starter_textmedia.disabled = 1
-      }
-    }
-
-    tx_starter_imagecols_large {
-      types {
-        starter_textmedia.disabled = 1
-      }
-    }
-
     tx_starter_width {
       addItems {
         container-sm = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_width.container-sm
@@ -52,68 +39,6 @@ TCEFORM {
       }
     }
 
-    tx_starter_media_size_small {
-      types {
-        starter_media.disabled = 1
-      }
-
-      addItems {
-        12 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.12
-        11 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.11
-        10 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.10
-        9 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.9
-        8 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.8
-        7 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.7
-        6 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.6
-        5 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.5
-        4 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.4
-        3 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.3
-        2 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.2
-        1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.1
-      }
-    }
-
-    tx_starter_media_size_medium {
-      types {
-        starter_media.disabled = 1
-      }
-
-      addItems {
-        12 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.12
-        11 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.11
-        10 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.10
-        9 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.9
-        8 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.8
-        7 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.7
-        6 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.6
-        5 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.5
-        4 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.4
-        3 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.3
-        2 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.2
-        1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.1
-      }
-    }
-
-    tx_starter_media_size_large {
-      types {
-        starter_media.disabled = 1
-      }
-
-      addItems {
-        12 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.12
-        11 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.11
-        10 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.10
-        9 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.9
-        8 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.8
-        7 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.7
-        6 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.6
-        5 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.5
-        4 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.4
-        3 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.3
-        2 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.2
-        1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:tx_starter_media_size.1
-      }
-    }
     space_before_class {
       addItems {
         mt-1 = LLL:EXT:starter_freya/Resources/Private/Language/locallang_be.xlf:space_class.1
