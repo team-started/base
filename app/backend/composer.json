@@ -75,10 +75,6 @@
 			"options": {
 				"symlink": true
 			}
-        },
-        {
-            "type": "composer",
-            "url": "https://packagist.starter.team"
         }
     ],
     "extra": {
