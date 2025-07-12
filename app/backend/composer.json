@@ -57,7 +57,8 @@
         "saschaegerer/phpstan-typo3": "^1.10",
         "ssch/typo3-rector": "^2.10",
         "symplify/monorepo-builder": "^11.2",
-        "typo3/coding-standards": "^0.8.0"
+        "typo3/coding-standards": "^0.8.0",
+        "typo3/testing-framework": "^8.2"
     },
     "autoload": {
         "psr-4": {
